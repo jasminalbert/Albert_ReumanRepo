@@ -2,7 +2,7 @@ print(precip)
 
 #Q1
 
-precip[precip>39]
+precip[precip>39] #Dan's change
 precip[precip<31]
 precip[precip == 40.2]
 precip[precip<=46 & precip>=15]
