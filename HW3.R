@@ -6,7 +6,7 @@ precip[precip>39] #my change
 precip[precip<31]
 precip[precip == 40.2]
 precip[precip<=46 & precip>=15]
-precip[precip>40 | precip<13]
+precip[precip>40 | precip<13] #my second change
 
 
 #Q2
