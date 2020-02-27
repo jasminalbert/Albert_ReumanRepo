@@ -9,6 +9,7 @@ precip[precip<=46 & precip>=15]
 precip[precip>40 | precip<13] #Jasmin change
 
 
+
 #Q2
 
 mean(precip)
