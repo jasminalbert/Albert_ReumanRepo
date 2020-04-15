@@ -24,14 +24,9 @@ lottery_normcop <- function(B, B.sharp, delta, q12){
 	rsharp.2 <- mean(rsharp2.t)
 	
 	Delta.Ib1 <- rbar.1 - rsharp.1 + q12*rsharp.2
-	
-	return <- cat(" rbar.1 = ",round(rbar.1,digits=6),"\n","rsharp.1 = ",round(rsharp.1,digits=6),"\n","rsharp.2 = ",round(rsharp.2,digits=6),"\n","Delta.Ib1 = ", round(Delta.Ib1, digits=6))
+
+  return(c(rbar.1=rbar.1,rsharp.1=rsharp.1,rsharp.2=rsharp.2,Delta.Ib1=Delta.Ib1))
 }
-
-
-
-
-
 
 
 
