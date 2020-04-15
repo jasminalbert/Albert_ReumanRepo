@@ -1,3 +1,8 @@
+# function to produce storage effect value contributing to coesxistence.
+# B and B.sharp are independent but identical matrices representing environmental noise
+# delta is death rate
+# q12 is scaling factor 
+
 lottery_normcop <- function(B, B.sharp, delta, q12){
 	
 	B1 <- B[,1]
