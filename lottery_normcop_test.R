@@ -46,11 +46,28 @@ sigma[1,2] #by guess-and-check we got the covariance to be about the same as Ell
 #3) covariance between the columns is also about the same as Ellner's
 #4) But we have left-tail association
 plot(logB[1:1000,1],logB[1:1000,2],type="p")
+B_left <- exp(logB)
+#making B.sharp
+ccop.sharp<-claytonCopula(param=1.05,dim=2)
+logB_pre.sharp<-rCopula(totT,ccop)
+logB.sharp<-logB_pre.sharp 
+logB.sharp[,1]<-qnorm(logB_pre.sharp[,1],mean=mu.B[1],sd=sqrt(sigma[1,1]))
+logB.sharp[,2]<-qnorm(logB_pre.sharp[,2],mean=mu.B[2],sd=sqrt(sigma[1,1]))
+B_left.sharp <- exp(logB.sharp)
+
+lottery_normcop(B = B_left, B.sharp = B_left.sharp, delta = 0.25, q12 = 1)
 #Jasmin: write a function that gives you your logB, call it twice
 
 #try it with moderately right-tail associated noise
+logB_pre<-rCopula(totT,claytonCopula(param=1.05,dim=2))
 logB_pre<-(-logB_pre+1)
+
 plot(logB_pre[1:1000,1],logB_pre[1:1000,2],type="p") #plot to see what it looks like, and also look at marginals
+logB <- logB_pre
+logB[,1] <- qnorm(logB_pre[,1], mean = mu.B[1], sd = 		sigma.B[1])
+logB[,2] <- qnorm(logB_pre[,2], mean = mu.B[2], sd = 		sigma.B[2])
+plot(logB[1:1000,1],logB[1:1000,2],type="p")
+
 #Jasmin: proceed in the same way as above
 
 
