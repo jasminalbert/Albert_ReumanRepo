@@ -2,8 +2,9 @@
 library(copula)
 
 source("lottery_normcop.R")
-totT <- 1000
-LeftTailMod <- function(mu.B, sigma.B, rho, totT){
+source("lottery_normcop_test.R")
+
+LeftTailMod <- function(mu.B, sigma.B, totT){
 	
 	ccop <- claytonCopula(param = 1.05, dim = 2)
 	logB_pre <- rCopula(totT, ccop)
@@ -16,7 +17,7 @@ LeftTailMod <- function(mu.B, sigma.B, rho, totT){
 	
 }
 
-RightTailMod <- function(mu.B, sigma.B, rho, totT){
+RightTailMod <- function(mu.B, sigma.B, totT){
 	ccop <- claytonCopula(param = 1.05, dim = 2)
 	logB_pre <- rCopula(totT, ccop)
 	
@@ -28,6 +29,8 @@ RightTailMod <- function(mu.B, sigma.B, rho, totT){
 	
 	return(exp(logB))
 }
+
+#testing the fucntions 
 
 set.seed(121212)
 Bleft <- LeftTailMod(mu.B = mu.B, sigma.B = sigma.B, totT = totT)
