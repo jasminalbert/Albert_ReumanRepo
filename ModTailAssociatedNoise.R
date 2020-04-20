@@ -30,6 +30,8 @@ RightTailMod <- function(mu.B, sigma.B, totT){
 	return(exp(logB))
 }
 
+
+
 #testing the fucntions 
 
 set.seed(121212)
@@ -46,6 +48,33 @@ Bright.sharp <- RightTailMod(mu.B = mu.B, sigma.B = sigma.B, totT = totT)
 
 plot(Bright[1:1000,1], Bright[1:1000,2], type = 'p')
 
+#combine into one functin
+ModTail <- function(mu.B, sigma.B, rho, totT, tail){
+	
+	ccop <- claytonCopula(param = 1.05, dim = 2)
+	logB_pre <- rCopula(totT, ccop)
+	
+	if (tail == 'left') {
+		logBpre <- logB_pre
+	}
+	if (tail == 'right') {
+		logBpre <- -(logB_pre + 1)
+	}
+	if (!any(tail == 'right' || tail == 'left')) {
+		stop("Error: tail must defined as left or right")
+	}
+	
+	logB <- logBpre
+	logB[,1] <- qnorm(logB_pre[,1], mean = mu.B[1], sd = sigma.B[1])
+	logB[,2] <- qnorm(logB_pre[,2], mean = mu.B[2], sd = sigma.B[2])
+	
+	
+	return(exp(logB))
+	
+}
+
+Bleft <- ModTail(mu.B = mu.B, sigma.B = sigma.B, totT = totT, tail = 'left')
+Bright <- ModTail(mu.B = mu.B, sigma.B = sigma.B, totT = totT, tail = 'right')
 
 
 
