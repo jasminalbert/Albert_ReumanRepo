@@ -26,20 +26,20 @@ get_noise<-function(mn,sdev,n,check=FALSE)
   #***get the extreme tail association noise 
 
   # for extreme left tail dep.
-  B_ELT<-retd(n = n, d = d, rl = -1)
+  B_ELT<-retd(n = n, d = 2, rl = -1)
   B_ELT[,1]<-B_ELT[,1]*sdev[1]+mn[1]
   B_ELT[,2]<-B_ELT[,2]*sdev[2]+mn[2]
   
-  B_ELT_sharp<-retd(n = n, d = d, rl = -1)
+  B_ELT_sharp<-retd(n = n, d = 2, rl = -1)
   B_ELT_sharp[,1]<-B_ELT_sharp[,1]*sdev[1]+mn[1]
   B_ELT_sharp[,2]<-B_ELT_sharp[,2]*sdev[2]+mn[2]
   
   # for extreme right tail dep.
-  B_ERT<-retd(n = n, d = d, rl = 1)
+  B_ERT<-retd(n = n, d = 2, rl = 1)
   B_ERT[,1]<-B_ERT[,1]*sdev[1]+mn[1]
   B_ERT[,2]<-B_ERT[,2]*sdev[2]+mn[2]
 
-  B_ERT_sharp<-retd(n = n, d = d, rl = 1)
+  B_ERT_sharp<-retd(n = n, d = 2, rl = 1)
   B_ERT_sharp[,1]<-B_ERT_sharp[,1]*sdev[1]+mn[1]
   B_ERT_sharp[,2]<-B_ERT_sharp[,2]*sdev[2]+mn[2]
 
