@@ -43,6 +43,7 @@ get_noise<-function(mn,sdev,n,check=FALSE)
   B_ERT_sharp[,1]<-B_ERT_sharp[,1]*sdev[1]+mn[1]
   B_ERT_sharp[,2]<-B_ERT_sharp[,2]*sdev[2]+mn[2]
 
+  allcors<-c(cor(B_ELT)[1,2],cor(B_ELT_sharp)[1,2],cor(B_ERT)[1,2],cor(B_ERT_sharp)[1,2])
   
   #***Now make sure it has the right properties
 
@@ -61,39 +62,15 @@ get_noise<-function(mn,sdev,n,check=FALSE)
     hist(B_ERT_sharp[,1],50,main=paste0("B_ERT_sharp[,1], mean=",round(mean(B_ERT_sharp[,1]),3),"; sd=",round(sd(B_ERT_sharp[,1]),3)))
     hist(B_ERT_sharp[,2],50,main=paste0("B_ERT_sharp[,2], mean=",round(mean(B_ERT_sharp[,2]),3),"; sd=",round(sd(B_ERT_sharp[,2]),3)))
     
-     
+    #check these are all about the same
+    print(allcors) 
   }
 
   #***get the moderate tail association noise
   
-  # for mod. left tail dep.
-  B_MLT <- ModTail(mu=mn, sd=sdev, totT=n, tail='left')
-  B_MLT_sharp <- ModTail(mu=mn, sd=sdev, totT=n, tail='left')
-  
-  # for mod. right tail dep.
-  B_MRT <- ModTail(mu=mn, sd=sdev, totT=n, tail='right')
-  B_MRT_sharp <- ModTail(mu=mn, sd=sdev, totT=n, tail='right')
 
-allcors<-c(cor(B_ELT)[1,2],cor(B_ELT_sharp)[1,2],cor(B_ERT)[1,2],cor(B_ERT_sharp)[1,2],cor(B_MLT)[1,2],cor(B_MLT_sharp)[1,2],cor(B_MRT)[1,2],cor(B_MRT_sharp)[1,2])
-  
   #***Now make sure it has the right properties
-  if (check)
-  {
-   hist(B_MLT[,1],50,main=paste0("B_MLT[,1], mean=",round(mean(B_MLT[,1]),3),"; sd=",round(sd(B_MLT[,1]),3)))
-    hist(B_MLT[,2],50,main=paste0("B_MLT[,2], mean=",round(mean(B_MLT[,2]),3),"; sd=",round(sd(B_MLT[,2]),3)))
-
-    hist(B_MLT_sharp[,1],50,main=paste0("B_MLT_sharp[,1], mean=",round(mean(B_MLT_sharp[,1]),3),"; sd=",round(sd(B_MLT_sharp[,1]),3)))
-    hist(B_MLT_sharp[,2],50,main=paste0("B_MLT_sharp[,2], mean=",round(mean(B_MLT_sharp[,2]),3),"; sd=",round(sd(B_MLT_sharp[,2]),3)))
     
-    hist(B_MRT[,1],50,main=paste0("B_MRT[,1], mean=",round(mean(B_MRT[,1]),3),"; sd=",round(sd(B_MRT[,1]),3)))
-    hist(B_MRT[,2],50,main=paste0("B_MRT[,2], mean=",round(mean(B_MRT[,2]),3),"; sd=",round(sd(B_MRT[,2]),3)))
-    
-    hist(B_MRT_sharp[,1],50,main=paste0("B_MRT_sharp[,1], mean=",round(mean(B_MRT_sharp[,1]),3),"; sd=",round(sd(B_MRT_sharp[,1]),3)))
-    hist(B_MRT_sharp[,2],50,main=paste0("B_MRT_sharp[,2], mean=",round(mean(B_MRT_sharp[,2]),3),"; sd=",round(sd(B_MRT_sharp[,2]),3)))
-    
-    #check these are all about the same
-    print(allcors)
-  }
   
   #***get the symmetric tail association noise
   rho<-mean(allcors)
@@ -114,9 +91,7 @@ allcors<-c(cor(B_ELT)[1,2],cor(B_ELT_sharp)[1,2],cor(B_ERT)[1,2],cor(B_ERT_sharp
   }
   
   return(list(B_ELT=B_ELT,B_ELT_sharp=B_ELT_sharp,
-  			  B_MLT=B_MLT,B_MLT_sharp=B_MLT_sharp,
               B_sym=B_sym,B_sym_sharp=B_sym_sharp,
-              B_MRT=B_MRT,B_MRT_sharp=B_MRT_sharp,
               B_ERT=B_ERT,B_ERT_sharp=B_ERT_sharp))  
 }
 
