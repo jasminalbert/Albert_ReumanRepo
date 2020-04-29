@@ -26,8 +26,10 @@ ModTail <- function(mu, sd, totT, tail){
 }
 
 B_MLT <- ModTail(mu=mn, sd=sdev, totT=n, tail='left')
+B_MLT_sharp <- ModTail(mu=mn, sd=sdev, totT=n, tail='left')
 cor(B_MLT)[1,2]
 B_MRT <- ModTail(mu=mn, sd=sdev, totT=n, tail='right')
+B_MRT_sharp <- ModTail(mu=mn, sd=sdev, totT=n, tail='right')
 cor(B_MRT)[1,2]
 plot(B_MRT[1:1000,1], B_MRT[1:1000,2])
 plot(B_MLT[1:1000,1], B_MLT[1:1000,2])
