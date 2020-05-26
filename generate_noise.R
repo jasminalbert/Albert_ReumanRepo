@@ -95,21 +95,21 @@ get_noise<-function(mn,sdev,n,check=FALSE)
               B_ERT=B_ERT,B_ERT_sharp=B_ERT_sharp))  
 }
 
-res<-get_noise(mn=c(.5,.6),sdev=c(.8,.8),n=10^6,check = FALSE)
+#res<-get_noise(mn=c(.5,.6),sdev=c(.8,.8),n=10^6,check = FALSE)
 
-lapply(res, head)
+#lapply(res, head)
 
 #checking plots
-plot(res$B_ELT[1:1000,1], res$B_ELT[1:1000,2])
-plot(res$B_ELT_sharp[1:1000,1], res$B_ELT_sharp[1:1000,2])
-plot(res$B_MLT[1:1000,1], res$B_MLT[1:1000,2])
-plot(res$B_MLT_sharp[1:1000,1], res$B_MLT_sharp[1:1000,2])
-plot(res$B_sym[1:1000,1], res$B_sym[1:1000,2])
-plot(res$B_sym_sharp[1:1000,1], res$B_sym_sharp[1:1000,2])
-plot(res$B_MRT[1:1000,1], res$B_MRT[1:1000,2])
-plot(res$B_MRT_sharp[1:1000,1], res$B_MRT_sharp[1:1000,2])
-plot(res$B_ERT[1:1000,1], res$B_ERT[1:1000,2])
-plot(res$B_ERT_sharp[1:1000,1], res$B_ERT_sharp[1:1000,2])
+#plot(res$B_ELT[1:1000,1], res$B_ELT[1:1000,2])
+#plot(res$B_ELT_sharp[1:1000,1], res$B_ELT_sharp[1:1000,2])
+#plot(res$B_MLT[1:1000,1], res$B_MLT[1:1000,2])
+#plot(res$B_MLT_sharp[1:1000,1], res$B_MLT_sharp[1:1000,2])
+#plot(res$B_sym[1:1000,1], res$B_sym[1:1000,2])
+#plot(res$B_sym_sharp[1:1000,1], res$B_sym_sharp[1:1000,2])
+#plot(res$B_MRT[1:1000,1], res$B_MRT[1:1000,2])
+#plot(res$B_MRT_sharp[1:1000,1], res$B_MRT_sharp[1:1000,2])
+#plot(res$B_ERT[1:1000,1], res$B_ERT[1:1000,2])
+#plot(res$B_ERT_sharp[1:1000,1], res$B_ERT_sharp[1:1000,2])
 
 
 
