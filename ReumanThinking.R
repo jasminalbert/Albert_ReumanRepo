@@ -1,5 +1,5 @@
 rm(list=ls())
-
+library(MASS)
 #***Function
 
 source("ExtremeTailDep.R")
@@ -116,7 +116,8 @@ points(mn[1],mn[2],col="red")
 #***Now look at the special case of identically distributed B1 and B2 mentioned by Ellner
 
 mn<-c(.5,.5)
-sdev<-c(1.8,1.8)
+sdev<-c(0.8,0.8)
+#sdev<-c(1.8,1.8)
 res<-get_noise(mn=mn,sdev=sdev,n=10^7)
 B_ELT<-exp(res$B_ELT)
 B_ELT_sharp<-exp(res$B_ELT_sharp)
@@ -125,6 +126,7 @@ B_sym_sharp<-exp(res$B_sym_sharp)
 B_ERT<-exp(res$B_ERT)
 B_ERT_sharp<-exp(res$B_ERT_sharp)
 delta<-.25
+
 r1_ELT<-log(1-delta+delta*B_ELT[,1]/B_ELT[,2])
 r1_sym<-log(1-delta+delta*B_sym[,1]/B_sym[,2])
 r1_ERT<-log(1-delta+delta*B_ERT[,1]/B_ERT[,2])
@@ -134,9 +136,18 @@ mean(r1_ERT)
 var(r1_ELT)
 var(r1_sym)
 var(r1_ERT)
-hist(r1_ELT)
-hist(r1_sym)
-hist(r1_ERT)
+
+
+op<-par(mfrow=c(2,2))
+xlm<-range(r1_ELT,r1_sym,r1_ERT)
+hist(r1_ELT,xlim=c(xlm[1],xlm[2]),breaks=50)
+hist(r1_sym,xlim=c(xlm[1],xlm[2]),breaks=50)
+hist(r1_ERT,xlim=c(xlm[1],xlm[2]),breaks=50)
+par(op)
+
+#z<-table(r1_ELT)
+#z<-as.data.frame(z) #z[which.max(z$Freq),] it's 0 most of the time
+
 #So one thing I notice is the distributions are wildly different, even if their means are
 #very similar
 
