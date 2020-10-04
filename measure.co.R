@@ -13,7 +13,7 @@ source("./pop.sim_function.R")
 # N1 = invader initial abundance
 # dom = dominance threshold 
 
-measure.co <- function(time, d, sigma, mu1, mu2, N, N1, dom, hist=FALSE){
+measure.co <- function(time, d, sigma, mu1, mu2, N, N1, dom, popsim=FALSE,hist=FALSE){
 	
 	#make noise
 	noise <-get_noise(mn=c(mu1,mu2),sdev=c(sigma,sigma),n=time,check = F)
@@ -21,6 +21,9 @@ measure.co <- function(time, d, sigma, mu1, mu2, N, N1, dom, hist=FALSE){
 	#population simulation
 	noise <- noise[-c(2,4,6)]#remove sharps first
 	pop<-lapply(noise, function(X){pop.sim(b=X, N=N, N1=N1, d=d, time=time)})
+	
+	#simulate population
+	lapply(pop, function(X){plot(X[,1],type = 'l', main = paste("population of sp1 using",names(X)), ylab = "N1", xlab = "time", sub=paste("delta=",d," sigma=", sigma," mu1=", mu1," mu2=",mu2),)})
 	
 	#coexistence period
 	coexist <- lapply(pop, function(X){X[,1] < dom*N & X[,1] > (1-dom)*N})
@@ -36,7 +39,10 @@ measure.co <- function(time, d, sigma, mu1, mu2, N, N1, dom, hist=FALSE){
 	}
 	
 	#fraction of time where coexistence was possible
-	return(lapply(co_periods, function(X){sum(X)/time}))
+	fraction<-(lapply(co_periods, function(X){sum(X)/time}))
+	mean<-(lapply(co_periods,mean))
+	
+	return(data.frame(co.ratio=unlist(fraction), co.mean=unlist(mean)))
 }
 
 #test

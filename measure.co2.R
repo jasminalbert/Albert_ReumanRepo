@@ -12,7 +12,7 @@ source("./pop.sim_function.R")
 # dom = dominance threshold 
 
 
-measure.co2 <- function(time, d, sigma, mu1, mu2, N, N1, dom, hist=FALSE){
+measure.co2 <- function(time, d, sigma, mu1, mu2, N, N1, dom, popsim = FALSE, hist=FALSE){
 	
 	#make noise
 	rho <- 0.8
@@ -23,11 +23,22 @@ measure.co2 <- function(time, d, sigma, mu1, mu2, N, N1, dom, hist=FALSE){
 	#population simulation
 	pop <- pop.sim(b= B_sym, N=N, N1=N1, d=d, time = time)
 	
+	#plot pop sim?
+	if (popsim)
+	{
+		plot(pop[,1], type = 'l', main = "population of sp1", xlab = "N1", ylab = "time", sub=paste("delta=",d," sigma=", sigma," mu1=", mu1," mu2=",mu2))
+	}
+	
 	#coexistence period
 	coexist <- pop[,1] < dom*N & pop[,1] > (1-dom)*N
 	RLE <- rle(coexist)
 	co_periods <- RLE$lengths[RLE$values == TRUE]
 	
+	#histogram
+	if (hist)
+	{
+		hist(co_periods, breaks = 10, xlim = c(0,10000), sub = paste("fraction time in co=", sum(co_periods)/time, "delta=", d))
+	}
 	
 	#fraction of time where coexistence was possible
 	return(sum(co_periods)/time)
@@ -48,9 +59,11 @@ delta <- seq (0,1,0.1)
 deltaList <- as.list(delta) 
 names(deltaList) <- delta
 
-lapply(deltaList, function(X){measure.co2(time=time, d=X, sigma=sigma, mu1=mu1, mu2=mu2, N=N, N1=N1, dom=dom)})
+pdf("popsim_coperiods.pdf")
 
+coFracSymList <- lapply(deltaList, function(X){measure.co2(time=time, d=X, sigma=sigma, mu1=mu1, mu2=mu2, N=N, N1=N1, dom=dom, popsim=T, hist=T)})
 
+dev.off()
 
 
 
