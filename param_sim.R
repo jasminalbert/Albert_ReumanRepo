@@ -96,51 +96,25 @@ for (i in 1:length(dflist)){
 names(dflist) <- names #naming list with vector we just created
 
 
-
+#apply mean function across each noise matrix to find avg
 ELT_mean <- apply(ELT, MARGIN =1, mean)
 ERT_mean <- apply(ERT, MARGIN =1, mean)
 sym_mean <- apply(sym, MARGIN =1, mean)
 
+#plug these averages into a new data.frame simular to data.frames in list but shows average of x runs
 mean_df <- data.frame(sdev=sdev_sims, mn1=mn1_sims, mn2=mn2_sims, delta=delta_sims,ELT = ELT_mean, sym = sym_mean, ERT = ERT_mean)
 
+#also save this data.frame as csv
 write.csv(mean_df, "sim_mean")
 
-#-------------------------------------------------------
-z <- sample(1:dim(simdf)[1], 1)
+#-------------------------testing-----------------------
+z <- sample(1:dim(simdfx)[1], 1)
 z
 noise_SE(mean_df$mn1[z], mean_df$mn2[z], mean_df$sdev[z], n, mean_df$delta[z])
 mean_df[z,]
 #-------------------------------------------------------
 
 
-
-
-
-Ldif <- mean_df$sym - mean_df$ELT
-
-mean_df$Rdif<- Rdif
-mean_df$Ldif<- Ldif
-
-Rmax <- mean_df[order(-Rdif),]
-Lmax <- mean_df[order(-Ldif),]
-
-head(Lmax,50)
-head(Rmax)
-
-Symmax <- mean_df[order(-mean_df$sym),]
-head(Symmax)
-
-
-plot(Rmax$Rdif, Rmax$sdev)
-plot(Rmax$Rdif, Rmax$mn1, col = "red", cex = .5)
-plot(Rmax$Rdif, Rmax$mn2, col = "blue", cex = .5)
-plot(Rmax$Rdif, Rmax$mn2 - Rmax$mn1, cex = .5, col = "lavender")
-plot(Rmax$Rdif, Rmax$mn1 - Rmax$mn2, cex = .5, col = "pink")
-
-plot(Rmax$Rdif, Rmax$delta)
-
-plot(Rmax$delta)
-Rmax[Rmax$delta == 0,]
 
 
 
