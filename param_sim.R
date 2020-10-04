@@ -44,26 +44,34 @@ dflist <- vector(mode = 'list', length = x)
 simdfx <- data.frame(sdev=sdev_sims, mn1=mn1_sims, mn2=mn2_sims, delta=delta_sims, ELT=NA, sym=NA, ERT=NA)
 #data.frame with columns specifying the parameter values and columns to be filled with storage effect for ELT, sym, ERT
 
-#fill dflist with x number fo simdfx
+#fill dflist with x number of simdfx
 
 for (m in 1:length(dflist)){
 	for (i in 1:dim(simdfx)[1]) {
 		resx <- noise_SE(simdfx$mn1[i], simdfx$mn2[i], simdfx$sdev[i], n, simdfx$delta[i])
-		simdfx$ELT[i] <- resx[1,4]
-		simdfx$sym[i] <- resx[2,4]
-		simdfx$ERT[i] <- resx[3,4]
+		#this function outputs matrix of rbar, rbarsharps, and deltaIb1 (storage effect) for each noise
+		#we only want the last
+		
+		simdfx$ELT[i] <- resx["ELT","deltaIb1"]
+		simdfx$sym[i] <- resx["sym","deltaIb1"]
+		simdfx$ERT[i] <- resx["ERT","deltaIb1"]
 	
 		if (i%%400 == 0) {
-		print(i)
+			print(i) #for keeping track of run 
 		}
-	}
+	} 
+	#after filling one matrix for all unique params do again x-1 more times
+	
 	dflist[[m]] <- simdfx
 
 }
 
+#next loop is for:
+	#saving elements of dflist
+	#naming elements of dflist
+	#mean across list elements
 
-
-
+#initializing empty vector and matrices to be filled in loop
 names <- NA
 ELT <- matrix(NA, ncol = length(dflist), nrow = nrow(simdfx))
 ERT <- matrix(NA, ncol = length(dflist), nrow = nrow(simdfx))
@@ -71,16 +79,21 @@ sym <- matrix(NA, ncol = length(dflist), nrow = nrow(simdfx))
 
 for (i in 1:length(dflist)){
 	
+	#store each element of list (a d.f) as its own csv
 	write.csv(dflist[[i]], paste("sim_df", i, sep =""))
 	
+	#filling vector for naming dflist 
 	names[i] <- paste("sim_df", i, sep ="")
 	
+	#separating storage effect value by noise type 
+	#into sep matrices
+	#to be used to find means across x number of runs
 	ELT[,i] <- dflist[[i]]$ELT	
 	sym[,i] <- dflist[[i]]$sym	
 	ERT[,i] <- dflist[[i]]$ERT	
 
 }
-names(dflist) <- names
+names(dflist) <- names #naming list with vector we just created
 
 
 
