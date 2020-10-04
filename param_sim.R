@@ -1,4 +1,6 @@
 source("./NoiseAndSE.R")
+#This is code for running through the storage effect calculations for various sets of parameters as set below 
+#Parameters include delta (death rate), mn1 and mn2 (mean birth rate of sp1 and sp2) and sdev (standard deviation of birth rate; equal for both species)
 
 delta <- seq(0,1,0.1)
 mn1 <- seq(.1,.9,.1)
@@ -69,6 +71,8 @@ sym_mean <- apply(sym, MARGIN =1, mean)
 
 mean_df <- data.frame(sdev=sdev_sims, mn1=mn1_sims, mn2=mn2_sims, delta=delta_sims,ELT = ELT_mean, sym = sym_mean, ERT = ERT_mean)
 
+write.csv(mean_df, "sim_mean")
+
 #-------------------------------------------------------
 z <- sample(1:dim(simdf)[1], 1)
 z
@@ -77,7 +81,9 @@ mean_df[z,]
 #-------------------------------------------------------
 
 
-Rdif <- mean_df$sym - mean_df$ERT
+
+
+
 Ldif <- mean_df$sym - mean_df$ELT
 
 mean_df$Rdif<- Rdif
