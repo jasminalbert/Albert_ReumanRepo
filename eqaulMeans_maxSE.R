@@ -34,13 +34,13 @@ deltaABC <- cbind(index, unlist(deltaA), unlist(deltaB), unlist(deltaC))
 colnames(deltaABC) <- c("mn","sdev", "sym", "elt","ert")
 
 #jitter plot for at what delta is SEdif max at diff sdev
-plot(0, ylim = c(0,6.4), xlim =c(0.3,1),type = 'n', ylab = "SDEV", xlab = "maximal DELTA", main = "DELTA at maximal SE when mn1=mn2", yaxt = "n", xaxt = "n")
+plot(0, xlim = c(0,6.4), ylim =c(0.3,1),type = 'n', xlab = "SDEV", ylab = "maximal DELTA", main = "DELTA at maximal SEdif when mn1=mn2", yaxt = "n", xaxt = "n")
 
-axis(2, at = sdev, labels =sdev, cex.axis = .81)
-axis(1, at = delta[4:11], cex.axis = .81)
+axis(1, at = sdev, labels =sdev, cex.axis = .81)
+axis(2, at = delta[4:11], cex.axis = .81)
 
-points(jitter(deltaABC[,"elt"],1.2), deltaABC[,"sdev"], col = "red")
-points(jitter(deltaABC[,"ert"],1.2), deltaABC[,"sdev"], col = "blue")
+points(y=jitter(deltaABC[,"elt"],1.2), x=deltaABC[,"sdev"], col = "red")
+points(y=jitter(deltaABC[,"ert"],1.2), x=deltaABC[,"sdev"], col = "blue")
 
 
 deltaABC <- data.frame(deltaABC)

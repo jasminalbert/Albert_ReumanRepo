@@ -76,16 +76,16 @@ par(bg="gray20", col.axis="lavender", col.lab="lightyellow", col.main="azure", b
 
 plot(0, ylim = c(.2,.8), xlim =range(deltaMdifD$mdif),type = 'n', ylab = "DELTA", xlab = "MDIF", main = "DELTA at max SE vs Mdif", yaxt = "n", xaxt = "n")
 
-axis(1, at=seq(-.8,.8,.1), col="lavender")
-axis(2, at=delta, col="lavender")
+axis(1, at=seq(-.8,.8,.1))
+axis(2, at=delta)
 
-for (i in 1:5){
+for (i in 5:1){
 	
-	points(jitter(deltaMdifD[deltaMdifD$sdev==sdev[i], "mdif"]), jitter(deltaMdifD[deltaMdifD$sdev==sdev[i], "delta"]), col = bcol[i], pch=c(21,25,24))
+	points(jitter(deltaMdifD[deltaMdifD$sdev==sdev[i], "mdif"]), jitter(deltaMdifD[deltaMdifD$sdev==sdev[i], "delta"]), col = bcol[i], pch=c(21,23,23))
 }
 
 legend("bottom",legend=sdev,fill=bcol, title="sdev", cex=1.7, horiz=T)
-legend("center",legend=c("left","right","symmetric"), pch = c(25,24,21), col="lavender",title="noise type",cex=1.8)
+legend("center",legend=c("asymmetric","symmetric"), pch = c(23,21),title="noise type",cex=1.8)
 
 #should convert into boxplots?
 boxplot()
@@ -97,12 +97,12 @@ par(bg="gray20", col.axis="lavender", col.lab="lightyellow", col.main="azure", b
 
 plot(0, ylim = c(.2,.8), xlim =range(deltaMdifE$mdif),type = 'n', ylab = "DELTA", xlab = "MDIF", main = "DELTA at max SEdif vs Mdif", yaxt = "n", xaxt = "n")
 
-for (i in 1:5){
+for (i in 5:1){
 	
 	
-	axis(1, at=seq(-.8,.8,.1), col="lavender")
-	axis(2, at=delta, col="lavender")
-	points(jitter(deltaMdifE[deltaMdifE$sdev==sdev[i], "mdif"]), jitter(deltaMdifE[deltaMdifE$sdev==sdev[i], "delta"]), col = bcol[i], pch=c(25,24))
+	axis(1, at=seq(-.8,.8,.1))
+	axis(2, at=delta)
+	points(jitter(deltaMdifE[deltaMdifE$sdev==sdev[i], "mdif"]), jitter(deltaMdifE[deltaMdifE$sdev==sdev[i], "delta"]), col = bcol[i], pch=c(23))
 }
 
 
