@@ -1,4 +1,4 @@
-#how increases and decreases in mdif increase and shift the delta value for max SE
+D#how increases and decreases in mdif increase and shift the delta value for max SE
 
 #make column for mean diffrence
 mean_df$mdif <- mean_df$mn1-mean_df$mn2
@@ -72,38 +72,19 @@ bcol <- brewer.pal(n=5, "Paired")
 #use jitter to see all points(general SE)
 #correlation btwn mdif and delta
 
-par(bg="gray20", col.axis="lavender", col.lab="lightyellow", col.main="azure", bty="n")
+#par(bg="gray20", col.axis="lavender", col.lab="lightyellow", col.main="azure", bty="n")
 
-plot(0, ylim = c(.2,.8), xlim =range(deltaMdifD$mdif),type = 'n', ylab = "DELTA", xlab = "MDIF", main = "DELTA at max SE vs Mdif", yaxt = "n", xaxt = "n")
-
-axis(1, at=seq(-.8,.8,.1))
-axis(2, at=delta)
-
-for (i in 5:1){
-	
-	points(jitter(deltaMdifD[deltaMdifD$sdev==sdev[i], "mdif"]), jitter(deltaMdifD[deltaMdifD$sdev==sdev[i], "delta"]), col = bcol[i], pch=c(21,23,23))
-}
-
-legend("bottom",legend=sdev,fill=bcol, title="sdev", cex=1.7, horiz=T)
-legend("center",legend=c("asymmetric","symmetric"), pch = c(23,21),title="noise type",cex=1.8)
+#SEE /FIGURES.R for plots (figure 5-line 83)
 
 #should convert into boxplots?
-boxplot()
+#boxplot()
 
 
 #jitter plot for noise difference
-par(bg="gray20", col.axis="lavender", col.lab="lightyellow", col.main="azure", bty="n", mfrow=c(3,2))
+#par(bg="gray20", col.axis="lavender", col.lab="lightyellow", col.main="azure", bty="n", mfrow=c(3,2))
 
 
-plot(0, ylim = c(.2,.8), xlim =range(deltaMdifE$mdif),type = 'n', ylab = "DELTA", xlab = "MDIF", main = "DELTA at max SEdif vs Mdif", yaxt = "n", xaxt = "n")
-
-for (i in 5:1){
-	
-	
-	axis(1, at=seq(-.8,.8,.1))
-	axis(2, at=delta)
-	points(jitter(deltaMdifE[deltaMdifE$sdev==sdev[i], "mdif"]), jitter(deltaMdifE[deltaMdifE$sdev==sdev[i], "delta"]), col = bcol[i], pch=c(23))
-}
+#see FIGURE 5.2 (line 105) in /FIGURES.R
 
 
 
@@ -112,29 +93,30 @@ for (i in 5:1){
 
 
 #look at most extreme cases: 0.8 and -0.8
-deltaMdifD[deltaMdifD$mdif == 0.8,]
-for (i in -seq(0.3,0.8,.1)){
-	plot(deltaMdifD[deltaMdifD$mdif == i,"sdev"], deltaMdifD[deltaMdifD$mdif == i,"sym"], col = 'green', type = 'l', main = paste("SE vs. sdev, mdif =",i), ylab="SE value", xlab="sdev")
-	lines(deltaMdifD[deltaMdif$mdif == i,"sdev"], deltaMdif[deltaMdif$mdif == i,"ELT"], col = 'blue')
-	lines(deltaMdifD[deltaMdif$mdif == i,"sdev"], deltaMdif[deltaMdif$mdif == i,"ERT"], col = 'red')
-}
+
+#deltaMdifD[deltaMdifD$mdif == 0.8,]
+#for (i in -seq(0.3,0.8,.1)){
+	#plot(deltaMdifD[deltaMdifD$mdif == i,"sdev"], deltaMdifD[deltaMdifD$mdif == i,"sym"], col = 'green', type = 'l', main = paste("SE vs. sdev, mdif =",i), ylab="SE value", xlab="sdev")
+	#lines(deltaMdifD[deltaMdif$mdif == i,"sdev"], deltaMdif[deltaMdif$mdif == i,"ELT"], col = 'blue')
+	#lines(deltaMdifD[deltaMdif$mdif == i,"sdev"], deltaMdif[deltaMdif$mdif == i,"ERT"], col = 'red')
+#}
 
 
 #histogram
 
-col2rgb(c("tomato1", "goldenrod1", "lightgoldenrod1", "forestgreen", "dodgerblue1"))
+#col2rgb(c("tomato1", "goldenrod1", "lightgoldenrod1", "forestgreen", "dodgerblue1"))
 
-mycols <- c(rgb(255,99,71,100,names=NULL,255), rgb(255,193,37,100,names=NULL,255), rgb(225,236,139,100,names=NULL,255), rgb(34,139,34,100,names=NULL,255), rgb(30,144,255,100,names=NULL,255))
-
-
-
-maxDeltas <- sort(unique(deltaMdif$delta))
+#mycols <- c(rgb(255,99,71,100,names=NULL,255), rgb(255,193,37,100,names=NULL,255), rgb(225,236,139,100,names=NULL,255), rgb(34,139,34,100,names=NULL,255), rgb(30,144,255,100,names=NULL,255))
 
 
-hist(deltaMdif[deltaMdif$delta == maxDeltas[1], "mdif"], breaks=seq(-1,1,.1), ylim = c(0,8), col = mycols[1])
-for (i in 2:length(maxDeltas)){
-	hist(deltaMdif[deltaMdif$delta == maxDeltas[i], "mdif"], add=T, breaks=seq(-1,1,.1),col = mycols[i])
-}
+
+#maxDeltas <- sort(unique(deltaMdif$delta))
+
+
+#hist(deltaMdif[deltaMdif$delta == maxDeltas[1], "mdif"], breaks=seq(-1,1,.1), ylim = c(0,8), col = mycols[1])
+#for (i in 2:length(maxDeltas)){
+	#hist(deltaMdif[deltaMdif$delta == maxDeltas[i], "mdif"], add=T, #breaks=seq(-1,1,.1),col = mycols[i])
+#}
 #more negative mean differences are associated with max SE value at a lower delta
 
 
