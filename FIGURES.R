@@ -175,13 +175,15 @@ mtext(expression(paste(sigma, "=",6.4,", ", mu,"1=",0.5,", ", mu,"2=", 0.5)), 1,
 dev.off()
 
 #FIGURE 8 - using most extreme difference between asym & sym SE
-source("/pop.sim_function.R")
+source("./pop.sim_function.R")
+source("./generate_noise.R")
+
 #(6.4,0.9,0.9,0.5)
 mu1<-0.9
 mu2<-0.9
 sigma<-6.4
 d<-0.5
-n<-10
+n<-2
 N<- 50
 N<-25
 time<-10000
