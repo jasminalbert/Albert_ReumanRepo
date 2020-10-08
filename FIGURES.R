@@ -174,7 +174,7 @@ mtext(expression(paste(sigma, "=",6.4,", ", mu,"1=",0.5,", ", mu,"2=", 0.5)), 1,
 
 dev.off()
 
-#FIGURE 8 - using most extreme difference between asym & sym SE
+#FIGURE 8.1 - using most extreme difference between asym & sym SE
 source("./pop.sim_function.R")
 source("./generate_noise.R")
 
@@ -335,8 +335,20 @@ plot.new()
 
 dev.off()
 
+#FIGURE 8.2
+source("./plot_paramDelta.R")
+#(6.4,0.9,0.9,0.5)
 
+pdf("figure8.2.pdf")
+par(mfrow = c(1,1),mar=c(5,4.5,4,2), oma=c(1,0,0,0))
 
+plot_paramDelta(sdev=6.4, mn1=0.9, mn2=0.9, list=dflist, mean_df=mean_df, range = c(-0.05,1.0), main = expression(paste("SE vs. ",delta)), ylab = "SE",cex.lab=1.5)
+legend("topright", legend = c("extreme left tail", "symmetric", "extreme right tail"), fill = c("red", "green", "blue"), box.lty =0)
+mtext(expression(paste(sigma, "=",6.4,", ", mu,"1=",0.9,", ", mu,"2=", 0.9)), 1, outer = T, line =-0.55, cex = 1.25)
+
+abline(v=0.5, lty = 3)
+
+dev.off()
 
 
 
