@@ -75,7 +75,7 @@ pdf("figure3.3.2.pdf")
 par(mfrow = c(1,1),mar=c(5,4.5,4,2), oma=c(1,0,0,0))
 
 plot_paramDelta2(sdev=6.4, mn1=0.1, mn2=0.9, list=dflist, mean_df=mean_df, range = c(-0.23,.051), cex.lab=1.5)
-mtext(expression(paste(sigma, "=",0.4,", ", mu,"1=",0.1,", ", mu,"2=", 0.9)), 1, outer = T, line =-0.55, cex = 1.25)
+mtext(expression(paste(sigma, "=",6.4,", ", mu,"1=",0.1,", ", mu,"2=", 0.9)), 1, outer = T, line =-0.55, cex = 1.25)
 
 
 dev.off()
