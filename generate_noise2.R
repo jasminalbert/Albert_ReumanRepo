@@ -49,7 +49,7 @@ get_noise2<-function(A)
   
   
     #check these are all about the same
-    print(allcors) 
+    #print(allcors) 
     
   
   #***get the symmetric tail association noise
@@ -62,11 +62,11 @@ get_noise2<-function(A)
   
   return(list(B_ELT=B_ELT,B_ELT_sharp=B_ELT_sharp,
               B_sym=B_sym,B_sym_sharp=B_sym_sharp,
-              B_ERT=B_ERT,B_ERT_sharp=B_ERT_sharp, cors = allcors))  
+              B_ERT=B_ERT,B_ERT_sharp=B_ERT_sharp))  
 }
 
-A <- c(0.1,0.9,1.6,10000)
-res<-get_noise2(A)
+#A <- c(0.1,0.9,1.6,10000)
+#res<-get_noise2(A)
 
 #res<-get_noise(mn=c(.1,.9),sdev=c(1.6,1.6),n=10^6,check = T)
 
