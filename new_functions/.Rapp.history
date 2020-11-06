@@ -1,0 +1,705 @@
+plot(B1[1:100,], B2[1:100,], type = 'p')
+plot(B1[1:100], B2[1:100], type = 'p')
+plot(B1[1:200], B2[1:200], type = 'p')
+plot(B1[1:300], B2[1:300], type = 'p')
+10 + 105+18
+133 + 475
+3097 - 608
+21 + 20+12+506
+3117 -559
+set.seed(107)#
+ncop<-normalCopula(.5,2) #this is a normal copula object with an arbitrary parameter value#
+ncopparm<-iRho(ncop,.915) #this computes the parameter to use to get a rho (Spearman) value of 0.915#
+ncop<-normalCopula(ncopparm,2) #this make a revised normal copula, this time with the right parameters#
+nc<-rCopula(500,ncop) #generate data from the revosed normal copula#
+cor(d[,1],d[,2],method="spearman") #A Spearman of 0.915, up to sampling variation
+head(nc)
+nc<-rCopula(200,ncop) #generate data from the revosed normal copula
+par( mfrow = c(1,3), oma = c(7,1,7,1), mar = c(5,3,2,1), mgp = c(2,1,0) )#
+plot(d[,1], d[,2], type = "p", main = 'A) left-tail association', ylab = "v", xlab = "u", bty = "c", col = 'darkblue')#
+plot(nc[,1], nc[,2], type = "p", main = 'B) symmetric association', ylab = "v", xlab = "u", bty = "c", col = 'darkblue')#
+plot(dright[,1], dright[,2], type = "p", main = 'B) right-tail association',ylab = "v", xlab = "u", bty = "c", col = 'darkblue')
+par( mfrow = c(1,3), oma = c(7,1,7,1), mar = c(5,3,2,1), mgp = c(2,1,0) )#
+plot(d[,1], d[,2], type = "p", main = 'A) left-tail association', ylab = "v", xlab = "u", bty = "c", col = 'darkblue', main.cex = 0.7)#
+plot(nc[,1], nc[,2], type = "p", main = 'B) symmetric association', ylab = "v", xlab = "u", bty = "c", col = 'darkblue', main.cex = 0.7)#
+plot(dright[,1], dright[,2], type = "p", main = 'B) right-tail association',ylab = "v", xlab = "u", bty = "c", col = 'darkblue', main.cex = 0.7)
+par( mfrow = c(1,3), oma = c(7,1,7,1), mar = c(5,3,2,1), mgp = c(2,1,0) )#
+plot(d[,1], d[,2], type = "p", main = 'A) left-tail association', ylab = "v", xlab = "u", bty = "c", col = 'darkblue', cex.main = 0.7)#
+plot(nc[,1], nc[,2], type = "p", main = 'B) symmetric association', ylab = "v", xlab = "u", bty = "c", col = 'darkblue', cex.main = 0.7)#
+plot(dright[,1], dright[,2], type = "p", main = 'B) right-tail association',ylab = "v", xlab = "u", bty = "c", col = 'darkblue', cex.main = 0.7)
+par( mfrow = c(1,3), oma = c(7,1,7,1), mar = c(5,3,2,1), mgp = c(2,1,0) )#
+plot(d[,1], d[,2], type = "p", main = 'A) left-tail association', ylab = "v", xlab = "u", bty = "c", col = 'darkblue', cex.main = 0.8)#
+plot(nc[,1], nc[,2], type = "p", main = 'B) symmetric association', ylab = "v", xlab = "u", bty = "c", col = 'darkblue', cex.main = 0.8)#
+plot(dright[,1], dright[,2], type = "p", main = 'B) right-tail association',ylab = "v", xlab = "u", bty = "c", col = 'darkblue', cex.main = 0.8)
+par( mfrow = c(1,3), oma = c(7,1,7,1), mar = c(5,3,2,1), mgp = c(2,1,0) )#
+plot(d[,1], d[,2], type = "p", main = 'A) left-tail association', ylab = "v", xlab = "u", bty = "c", col = 'darkblue', cex.main = 1)#
+plot(nc[,1], nc[,2], type = "p", main = 'B) symmetric association', ylab = "v", xlab = "u", bty = "c", col = 'darkblue', cex.main = 1)#
+plot(dright[,1], dright[,2], type = "p", main = 'B) right-tail association',ylab = "v", xlab = "u", bty = "c", col = 'darkblue', cex.main = 1)
+nc<-rCopula(500,ncop) #generate data from the revosed normal copula
+d<- rCopula(500,h) #generate data
+dright <- (-(d-1))
+par( mfrow = c(1,3), oma = c(7,1,7,1), mar = c(5,3,2,1), mgp = c(2,1,0) )#
+plot(d[,1], d[,2], type = "p", main = 'A) left-tail association', ylab = "v", xlab = "u", bty = "c", col = 'darkblue', cex.main = 1)#
+plot(nc[,1], nc[,2], type = "p", main = 'B) symmetric association', ylab = "v", xlab = "u", bty = "c", col = 'darkblue', cex.main = 1)#
+plot(dright[,1], dright[,2], type = "p", main = 'C) right-tail association',ylab = "v", xlab = "u", bty = "c", col = 'darkblue', cex.main = 1)
+pdf("UGRAfig1")#
+par( mfrow = c(1,3), oma = c(7,1,7,1), mar = c(5,3,2,1), mgp = c(2,1,0) )#
+plot(d[,1], d[,2], type = "p", main = 'A) left-tail association', ylab = "v", xlab = "u", bty = "c", col = 'darkblue', cex.main = 1)#
+plot(nc[,1], nc[,2], type = "p", main = 'B) symmetric association', ylab = "v", xlab = "u", bty = "c", col = 'darkblue', cex.main = 1)#
+plot(dright[,1], dright[,2], type = "p", main = 'C) right-tail association',ylab = "v", xlab = "u", bty = "c", col = 'darkblue', cex.main = 1)#
+dev.off()
+getwd()
+pdf("UGRAfig1")#
+par( mfrow = c(1,3), oma = c(12,1,7,1), mar = c(5,3,2,1), mgp = c(2,1,0) )#
+plot(d[,1], d[,2], type = "p", main = 'A) left-tail association', ylab = "v", xlab = "u", bty = "c", col = 'darkblue', cex.main = 1)#
+plot(nc[,1], nc[,2], type = "p", main = 'B) symmetric association', ylab = "v", xlab = "u", bty = "c", col = 'darkblue', cex.main = 1)#
+plot(dright[,1], dright[,2], type = "p", main = 'C) right-tail association',ylab = "v", xlab = "u", bty = "c", col = 'darkblue', cex.main = 1)#
+dev.off()
+? corr
+? cor
+s.n2<-c(4,2,3,4,4,4,3,1,3,3,3,2)
+BA2<-c(1080.7079, 13486.0719  3406.2718#
+ [4]  1961.1392   138.2301   157.0796#
+ [7]   398.1969  1226.0065  1507.9645#
+[10]  1351.6702  4915.0217  3516.2276#
+)
+BA2<-c(1080.7079, 13486.0719  ,3406.2718,#
+  1961.1392,   138.2301,   157.0796,#
+    398.1969,  1226.0065,  1507.9645,#
+ 1351.6702,  4915.0217,  3516.2276#
+)
+BA1 <- c(4498,#
+6139,#
+5490,#
+6550,#
+5426,#
+4209,#
+4639,#
+1820,#
+6022,#
+4639,#
+5898,#
+7150,#
+6630,#
+4603,#
+3996,#
+6711,#
+5185,#
+4299,#
+4884)
+s.n1<-c(4,#
+4,#
+5,#
+5,#
+4,#
+3,#
+9,#
+7,#
+7,#
+5,#
+4,#
+5,#
+4,#
+7,#
+7,#
+2,#
+7,#
+6,#
+5)
+boxplot(s.n2,s.n1)
+? boxplot
+boxplot(s.n2,s.n1, names="50m^2","200m^2")
+boxplot(s.n2,s.n1, names=c("50m^2","200m^2")))
+boxplot(s.n2,s.n1, names=c("50m^2","200m^2"))
+boxplot(s.n2,s.n1, names=c("50m^2","200m^2"),main="species richness")
+pdf('seciesrich.pdf')
+boxplot(BA2,BA1, names=c("50m^2","200m^2"),main="basal area")
+dev.off()
+getwd()
+pdf("FECOlab4.pdf")
+boxplot(s.n2,s.n1, names=c("50m^2","200m^2"),main="species richness")
+boxplot(BA2,BA1, names=c("50m^2","200m^2"),main="basal area")
+dev.off()
+pnorm(0.3662,0,1)
+1-pnorm(0.3662,0,1)
+rnorm
+?rnorm
+qnorm(0.6378)
+? RLE
+? rle
+pdf("figure5_legend.pdf")#
+plot.new()#
+legend(0.45,0.5,legend=sdev,fill=bcol, title=expression(paste(sigma)), cex=.9, horiz=T)#
+legend(-0.0,0.5,legend=c("asymmetric","symmetric"), pch = c(24,21),title="noise type",cex=.9, horiz=T)#
+dev.off()
+load(".RData")
+pdf("figure5_legend.pdf")#
+plot.new()#
+legend(0.45,0.5,legend=sdev,fill=bcol, title=expression(paste(sigma)), cex=.9, horiz=T)#
+legend(-0.0,0.5,legend=c("asymmetric","symmetric"), pch = c(24,21),title="noise type",cex=.9, horiz=T)#
+dev.off()
+? pnorm
+x<-seq(6,14,0.1)
+dnorm(x,10,1)
+y<-dnorm(x,10,1)
+plot(x,y,typw='l')
+plot(x,y,type='l')
+x<-x+seq(-9,9,0.1)
+x<-c(x,seq(-9,9,0.1))
+y<-c(dnorm(x,10,1),dorm(x,0,8.4))
+y<-c(dnorm(x,10,1),dnorm(x,0,8.4))
+plot(x,y,type='l')
+x1<-seq(6,14,0.1)
+y1<-dnorm(x,10,0)
+x2<-seq(-9,9,0.1)
+y2<-dnorm(x2,0,8.4)
+y1<-dnorm(x1,10,0)
+plot(x1,y1,type='l')
+y1<-dnorm(x1,10,1)
+plot(x1,y1,type='l')
+plot(x2,y2,type='l')
+y<-y1+y2
+y<-c(y1,y2)
+plot(y)
+plot(y,type='l')
+mean(y)
+x1<-(1000,10,1)
+x1<-rnorm(1000,10,1)
+x2<-rnorm(1000,0,8.4)
+mean(x1)
+mean(x2)
+x1<-rnorm(10000,10,1)
+x2<-rnorm(10000,0,8.4)
+mean(x1)
+mean(x2)
+mean(c(x1,x2))
+x<-rnorm(10000,10,1)+rnorm(10000,0,8.4)
+mean(x)
+hist(c(x1,x2))
+hist(x)
+median(x)
+x<-0.4*rnorm(10000,10,1)+0.6*rnorm(10000,0,8.4)
+mean(x)
+0.4*2
+library(lpSolve)
+#7.6
+f.obj <- c(-5, -3)#
+f.con <- matrix(c(2,2,2,-4,-2,1,0,-1,0,1), nrow=5, byrow=T)#
+f.dir <- rep("<=", 5)#
+f.rhs <- c(33,8,5,-1,8)#
+lp ("min", f.obj, f.con, f.dir, f.rhs)$solution
+#7.7
+library(quadprog)
+Dmat <- matrix(c(2,1,1,4), nrow = 2, byrow=T)#
+dvec <- c(5,3)#
+Amat <- matrix(c(1,0,-1,0,0,1,0,-1), nrow=4, byrow=T)#
+Amat <- t(Amat)#
+bvec <- c(1,1,1,1)*-1#
+#
+solve.QP(Dmat, dvec, Amat, bvec=bvec)$solution
+(2:24)/2
+pulse <- c(54,63,58,72,49,92,70,73,69,104,48,66,80,64,77)
+mean(pulse)
+sd(pulse)
+qt(0.025, 23)
+qt(0.025, 23, lower.tail=FALSE)
+qt(0.025, 14, lower.tail=FALSE)
+water <- c(340,356,332,362,318,344,386,402,322,360,362,354,340,372,338,375,364,355,324,370)
+length(water)
+sum(water)
+7076/20 == mean(water)
+mean(water)
+var(water)
+sd(water)
+21.84^2
+var(water)*19
+9069.2/19
+sq(477.3263)
+sqrt(477.3263)
+qt(0.05, 19, lower.tail=T)
+qt(0.05, 19, lower.tail=F)
+visco_1 <- c(10.62, 10.58, 10.33, 10.72, 10.44, 10.74)
+visco_2 <- c(10.5, 10.52, 10.58, 10.62, 10.55, 10.51, 10.53)
+cbind(visco_1, visco_2)
+visco_1
+sum(visco_1)
+length(visco_1)
+mean(visco_1)
+sum(visco_2)
+mean(visco_2)
+var(visco_1)
+*5
+var(visco_1))*5
+var(visco_1)*5
+var(visco_2)
+var(visco_2)*6
+var(visco_1)*5 + var(visco_2)*6
+6+7-2
+var(visco_1)*5 + var(visco_2)*6
+0.1394548/11
+mean(visco_1)-mean(visco_2)
+qt(0.025, 11, lower.tail=F)
+qt(0.025, 11, lower.tail=T)
+age <- c(18,22,19,26,30,21,21,20,22,19,25,20,21,18,22,22,20,23)
+length(age)
+sum)age
+sum(age)
+mean(age)
+var(age)*17
+var(age)
+sd(age)
+21.61-24
+2.99/(sqrt(18))
+-2.39/0.7047
+qt(0.05, 17)
+temp <- rep(0, times = 3)
+results <- data.frame(rbar1 = temp, rbar1_sharp = temp, rbar2_sharp = temp, Delta_B1 = temp)
+results
+? data.frame
+results <- data.frame(rbar1 = temp, rbar1_sharp = temp, rbar2_sharp = temp, Delta_B1 = temp, row.names = c("ELT","sym","ERT"))
+results
+#function for computing storage effects in lottery model#
+#ARGS#
+#B 		a dataframe/matrix of noise for different noise regimes - very specific format***#
+#delta	death rate, between 0:1#
+#q12		scaling factor, default 1#
+#
+SE_lottery <- function(B, delta, q12=1){#
+	temp <- rep(0, times = 3)#
+	results <- data.frame(rbar1 = temp, rbar1_sharp = temp, rbar2_sharp = temp, Delta_B1 = temp, row.names = c("ELT","sym","ERT"))#
+	for (i in 0:2){#
+		B1 <- B[,1+i*4] #***#
+		B2 <- B[,2+i*4]#
+		B1_sharp <- B[,3+i*4]#
+		B2_sharp <- B[,4+i*4]#
+		C <- B2/delta #C = C1 = C2#
+		r1 <- log(1 - delta + B1/C)#
+		results$rbar1[i+1] <- mean(r1)#
+		r1_sharp <- log(1 - delta + B1_sharp/C)#
+		results$rbar1_sharp[i+1] <- mean(r1_sharp)#
+		r2_sharp <- log(1 - delta + B2_sharp/C)#
+		results$rbar2_sharp[i+1] <- mean(r2_sharp)#
+		results$Delta_B1[i+1] <- results$rbar1[i+1] - results$rbar1_sharp[i+1] + q12*rbar_sharp[i+1]#
+	}#
+	return(results)#
+}#
+#
+#test
+? rnorm
+testnoise <- matrix(rnorm(1200), ncol=12)
+testnoise
+SE_lottery(testnoise, delta=0.5)
+#function for computing storage effects in lottery model#
+#ARGS#
+#B 		a dataframe/matrix of noise for different noise regimes - very specific format***#
+#delta	death rate, between 0:1#
+#q12		scaling factor, default 1#
+#
+SE_lottery <- function(B, delta, q12=1){#
+	temp <- rep(0, times = 3)#
+	results <- data.frame(rbar1 = temp, rbar1_sharp = temp, rbar2_sharp = temp, Delta_B1 = temp, row.names = c("ELT","sym","ERT"))#
+	for (i in 0:2){#
+		B1 <- B[,1+i*4] #***#
+		B2 <- B[,2+i*4]#
+		B1_sharp <- B[,3+i*4]#
+		B2_sharp <- B[,4+i*4]#
+		C <- B2/delta #C = C1 = C2#
+		r1 <- log(1 - delta + B1/C)#
+		results$rbar1[i+1] <- mean(r1)#
+		r1_sharp <- log(1 - delta + B1_sharp/C)#
+		results$rbar1_sharp[i+1] <- mean(r1_sharp)#
+		r2_sharp <- log(1 - delta + B2_sharp/C)#
+		results$rbar2_sharp[i+1] <- mean(r2_sharp)#
+		results$Delta_B1[i+1] <- results$rbar1[i+1] - results$rbar1_sharp[i+1] + q12*rbar2_sharp[i+1]#
+	}#
+	return(results)#
+}#
+#
+#test#
+#
+testnoise <- matrix(abs(rnorm(1200)), ncol=12)#
+#
+SE_lottery(testnoise, delta=0.5)
+#function for computing storage effects in lottery model#
+#ARGS#
+#B 		a dataframe/matrix of noise for different noise regimes - very specific format***#
+#delta	death rate, between 0:1#
+#q12		scaling factor, default 1#
+#
+SE_lottery <- function(B, delta, q12=1){#
+	temp <- rep(0, times = 3)#
+	results <- data.frame(rbar1 = temp, rbar1_sharp = temp, rbar2_sharp = temp, Delta_B1 = temp, row.names = c("ELT","sym","ERT"))#
+	for (i in 0:2){#
+		B1 <- B[,1+i*4] #***#
+		B2 <- B[,2+i*4]#
+		B1_sharp <- B[,3+i*4]#
+		B2_sharp <- B[,4+i*4]#
+		C <- B2/delta #C = C1 = C2#
+		r1 <- log(1 - delta + B1/C)#
+		results$rbar1[i+1] <- mean(r1)#
+		r1_sharp <- log(1 - delta + B1_sharp/C)#
+		results$rbar1_sharp[i+1] <- mean(r1_sharp)#
+		r2_sharp <- log(1 - delta + B2_sharp/C)#
+		results$rbar2_sharp[i+1] <- mean(r2_sharp)#
+		results$Delta_B1[i+1] <- results$rbar1[i+1] - results$rbar1_sharp[i+1] + q12*results$rbar2_sharp[i+1]#
+	}#
+	return(results)#
+}#
+#
+#test#
+#
+testnoise <- matrix(abs(rnorm(1200)), ncol=12)#
+#
+SE_lottery(testnoise, delta=0.5)
+testnoise <- matrix(rnorm(1200), ncol=12)#
+#
+SE_lottery(exp(testnoise), delta=0.5)
+B <- exp(testnoise)
+temp <- rep(0, times = ncol(B))
+result <- data.frame(N1_ELT = temp, N2_ELT = temp, N1_sym = temp, N2_sym = temp, N1_ERT = temp, N2_ERT = temp)
+result
+temp <- rep(0, times = nrow(B))
+result <- data.frame(N1_ELT = temp, N2_ELT = temp, N1_sym = temp, N2_sym = temp, N1_ERT = temp, N2_ERT = temp)
+result
+T <- nrow(B)
+temp <- rep(0, times = T)
+#function: popsim#
+#
+popsim <- function(B, N, N1){#
+	N <- N#
+	N1 <- N1#
+	N2 <- N-N1#
+	T <- nrow(B)#
+	temp <- rep(0, times = T)#
+	pop.df <- data.frame(N1_ELT = temp, N2_ELT = temp, N1_sym = temp, N2_sym = temp, N1_ERT = temp, N2_ERT = temp)#
+	for (i in 0:1){#
+		B1 <- B[,1+i*4] #***#
+		B2 <- B[,2+i*4]#
+		for (t in 1:T){#
+		tot_new_juvs <- ((B1[t]*N1[t]) + (B2[t]*N2[t]))#
+		pop.df[t+1, 1+i*2] <- (1-delta)*N1[t] + delta*N*((B1[t]*N1[t])/tot_new_juvs)	#
+		pop.df[t+1, 2+i*2] <- (1-delta)*N1[t] + delta*N*((B1[t]*N1[t])/tot_new_juvs)	#
+		}#
+	}#
+	return(result)#
+}
+popsim(exp(testnoise), 50, 25)
+#function: popsim#
+#
+popsim <- function(B, N, N1, delta){#
+	N <- N#
+	N1 <- N1#
+	N2 <- N-N1#
+	T <- nrow(B)#
+	temp <- rep(0, times = T)#
+	pop.df <- data.frame(N1_ELT = temp, N2_ELT = temp, N1_sym = temp, N2_sym = temp, N1_ERT = temp, N2_ERT = temp)#
+	for (i in 0:1){#
+		B1 <- B[,1+i*4] #***#
+		B2 <- B[,2+i*4]#
+		for (t in 1:T){#
+		tot_new_juvs <- ((B1[t]*N1[t]) + (B2[t]*N2[t]))#
+		pop.df[t+1, 1+i*2] <- (1-delta)*N1[t] + delta*N*((B1[t]*N1[t])/tot_new_juvs)	#
+		pop.df[t+1, 2+i*2] <- (1-delta)*N1[t] + delta*N*((B1[t]*N1[t])/tot_new_juvs)	#
+		}#
+	}#
+	return(result)#
+}#
+#
+#test #
+#
+testnoise <- matrix(rnorm(1200), ncol=12)#
+#
+popsim(exp(testnoise), 50, 25, 0.5)
+#function: popsim#
+#
+popsim <- function(B, N, N1, delta){#
+	N <- N#
+	N1 <- N1#
+	N2 <- N-N1#
+	T <- nrow(B)#
+	temp <- rep(0, times = T)#
+	pop.df <- data.frame(N1_ELT = temp, N2_ELT = temp, N1_sym = temp, N2_sym = temp, N1_ERT = temp, N2_ERT = temp)#
+	for (i in 0:1){#
+		B1 <- B[,1+i*4] #***#
+		B2 <- B[,2+i*4]#
+		for (t in 1:T){#
+		tot_new_juvs <- ((B1[t]*N1[t]) + (B2[t]*N2[t]))#
+		pop.df[t+1, 1+i*2] <- (1-delta)*pop.df[t, 1+i*2] + delta*N*((B1[t]*pop.df[t, 1+i*2])/tot_new_juvs)	#
+		pop.df[t+1, 2+i*2] <- (1-delta)*pop.df[t, 2+i*2] + delta*N*((B2[t]*pop.df[t, 1+i*2])/tot_new_juvs)	#
+		}#
+	}#
+	return(result)#
+}#
+#
+#test #
+#
+testnoise <- matrix(rnorm(1200), ncol=12)#
+#
+popsim(exp(testnoise), 50, 25, 0.5)
+#function: popsim#
+#
+popsim <- function(B, N, N1, delta){#
+	N <- N#
+	N1 <- N1#
+	N2 <- N-N1#
+	T <- nrow(B)#
+	temp <- rep(0, times = T)#
+	pop.df <- data.frame(N1_ELT = temp, N2_ELT = temp, N1_sym = temp, N2_sym = temp, N1_ERT = temp, N2_ERT = temp)#
+	pop.df[1,] <- c(N1, N2)#
+	for (i in 0:1){#
+		B1 <- B[,1+i*4] #***#
+		B2 <- B[,2+i*4]#
+		for (t in 1:T){#
+		tot_new_juvs <- ((B1[t]*N1[t]) + (B2[t]*N2[t]))#
+		pop.df[t+1, 1+i*2] <- (1-delta)*pop.df[t, 1+i*2] + delta*N*((B1[t]*pop.df[t, 1+i*2])/tot_new_juvs)	#
+		pop.df[t+1, 2+i*2] <- (1-delta)*pop.df[t, 2+i*2] + delta*N*((B2[t]*pop.df[t, 1+i*2])/tot_new_juvs)	#
+		}#
+	}#
+	return(result)#
+}#
+#
+#test #
+#
+testnoise <- matrix(rnorm(1200), ncol=12)#
+#
+popsim(exp(testnoise), 50, 25, 0.5)
+B
+B <- exp(testnoise)
+N <- 50
+N1 <- 25
+T <- nrow(B)
+T
+temp <- rep(0, times = T)
+pop.df <- data.frame(N1_ELT = temp, N2_ELT = temp, N1_sym = temp, N2_sym = temp, N1_ERT = temp, N2_ERT = temp)
+pop.df
+pop.df[1,] <- c(N1, N2)
+N2 <- N-N1
+pop.df[1,] <- c(N1, N2)
+pop.df
+N1 <- 30
+N2 <- N-N1
+pop.df[1,] <- c(N1, N2)
+pop.df
+B1 <- B[,1+i*4] #***#
+		B2 <- B[,2+i*4]
+i <- 0
+B1 <- B[,1+i*4] #***#
+		B2 <- B[,2+i*4]
+t <- 1
+pop.df[t, 1+i*2]
+pop.df[t, 2+i*2]
+tot_new_juvs <- ((B1[t]*N1[t]) + (B2[t]*N2[t]))
+tot_new_juvs
+pop.df[t+1, 1+i*2] <- (1-delta)*pop.df[t, 1+i*2] + delta*N*((B1[t]*pop.df[t, 1+i*2])/tot_new_juvs)
+delta <- 0.5
+pop.df[t+1, 1+i*2] <- (1-delta)*pop.df[t, 1+i*2] + delta*N*((B1[t]*pop.df[t, 1+i*2])/tot_new_juvs)
+pop.df
+pop.df[t+1, 2+i*2] <- (1-delta)*pop.df[t, 2+i*2] + delta*N*((B2[t]*pop.df[t, 1+i*2])/tot_new_juvs)
+pop.df
+i <- 1
+tot_new_juvs <- ((B1[t]*N1[t]) + (B2[t]*N2[t]))#
+		pop.df[t+1, 1+i*2] <- (1-delta)*pop.df[t, 1+i*2] + delta*N*((B1[t]*pop.df[t, 1+i*2])/tot_new_juvs)	#
+		pop.df[t+1, 2+i*2] <- (1-delta)*pop.df[t, 2+i*2] + delta*N*((B2[t]*pop.df[t, 1+i*2])/tot_new_juvs)
+pop.df
+B1 <- B[,1+i*4] #***#
+		B2 <- B[,2+i*4]
+tot_new_juvs <- ((B1[t]*N1[t]) + (B2[t]*N2[t]))#
+		pop.df[t+1, 1+i*2] <- (1-delta)*pop.df[t, 1+i*2] + delta*N*((B1[t]*pop.df[t, 1+i*2])/tot_new_juvs)	#
+		pop.df[t+1, 2+i*2] <- (1-delta)*pop.df[t, 2+i*2] + delta*N*((B2[t]*pop.df[t, 1+i*2])/tot_new_juvs)
+pop.df
+#function: popsim#
+#
+popsim <- function(B, N, N1, delta){#
+	N <- N#
+	N1 <- N1#
+	N2 <- N-N1#
+	T <- nrow(B)#
+	temp <- rep(0, times = T)#
+	pop.df <- data.frame(N1_ELT = temp, N2_ELT = temp, N1_sym = temp, N2_sym = temp, N1_ERT = temp, N2_ERT = temp)#
+	pop.df[1,] <- c(N1, N2)#
+	for (i in 0:1){#
+		B1 <- B[,1+i*4] #***#
+		B2 <- B[,2+i*4]#
+		for (t in 1:T){#
+		tot_new_juvs <- ((B1[t]*N1[t]) + (B2[t]*N2[t]))#
+		pop.df[t+1, 1+i*2] <- (1-delta)*pop.df[t, 1+i*2] + delta*N*((B1[t]*pop.df[t, 1+i*2])/tot_new_juvs)	#
+		pop.df[t+1, 2+i*2] <- (1-delta)*pop.df[t, 2+i*2] + delta*N*((B2[t]*pop.df[t, 1+i*2])/tot_new_juvs)	#
+		}#
+	}#
+	return(result)#
+}#
+#
+#test #
+#
+testnoise <- matrix(rnorm(1200), ncol=12)#
+#
+popsim(exp(testnoise), 50, 25, 0.5)
+i
+for (t in 1:T){#
+		tot_new_juvs <- ((B1[t]*N1[t]) + (B2[t]*N2[t]))#
+		pop.df[t+1, 1+i*2] <- (1-delta)*pop.df[t, 1+i*2] + delta*N*((B1[t]*pop.df[t, 1+i*2])/tot_new_juvs)	#
+		pop.df[t+1, 2+i*2] <- (1-delta)*pop.df[t, 2+i*2] + delta*N*((B2[t]*pop.df[t, 1+i*2])/tot_new_juvs)	#
+		}
+pop.df
+pop.df <- data.frame(N1_ELT = temp, N2_ELT = temp, N1_sym = temp, N2_sym = temp, N1_ERT = temp, N2_ERT = temp)
+pop.df[1,] <- c(N1, N2)
+for (t in 1:T){#
+		tot_new_juvs <- ((B1[t]*N1[t]) + (B2[t]*N2[t]))#
+		pop.df[t+1, 1+i*2] <- (1-delta)*pop.df[t, 1+i*2] + delta*N*((B1[t]*pop.df[t, 1+i*2])/tot_new_juvs)	#
+		pop.df[t+1, 2+i*2] <- (1-delta)*pop.df[t, 2+i*2] + delta*N*((B2[t]*pop.df[t, 1+i*2])/tot_new_juvs)	#
+		}
+pop.df
+T
+t
+t <- 2
+tot_new_juvs <- ((B1[t]*N1[t]) + (B2[t]*N2[t]))
+tot_new_juvs
+B1
+N1
+#function: popsim#
+#
+popsim <- function(B, N, N1, delta){#
+	N <- N#
+	N1 <- N1#
+	N2 <- N-N1#
+	T <- nrow(B)#
+	temp <- rep(0, times = T)#
+	pop.df <- data.frame(N1_ELT = temp, N2_ELT = temp, N1_sym = temp, N2_sym = temp, N1_ERT = temp, N2_ERT = temp)#
+	pop.df[1,] <- c(N1, N2)#
+	for (i in 0:1){#
+		B1 <- B[,1+i*4] #***#
+		B2 <- B[,2+i*4]#
+		for (t in 1:T){#
+		tot_new_juvs <- ((B1[t]*pop.df[t, 1+i*2]) + (B2[t]*pop.df[t, 2+i*2]))#
+		pop.df[t+1, 1+i*2] <- (1-delta)*pop.df[t, 1+i*2] + delta*N*((B1[t]*pop.df[t, 1+i*2])/tot_new_juvs)	#
+		pop.df[t+1, 2+i*2] <- (1-delta)*pop.df[t, 2+i*2] + delta*N*((B2[t]*pop.df[t, 1+i*2])/tot_new_juvs)	#
+		}#
+	}#
+	return(result)#
+}#
+#
+#test #
+#
+testnoise <- matrix(rnorm(1200), ncol=12)#
+#
+popsim(exp(testnoise), 50, 25, 0.5)
+t <- 2
+tot_new_juvs <- ((B1[t]*pop.df[t, 1+i*2]) + (B2[t]*pop.df[t, 2+i*2]))
+tot_new_juvs
+(1-delta)*pop.df[t, 1+i*2] + delta*N*((B1[t]*pop.df[t, 1+i*2])/tot_new_juvs)
+for (t in 1:T){#
+		tot_new_juvs <- ((B1[t]*pop.df[t, 1+i*2]) + (B2[t]*pop.df[t, 2+i*2]))#
+		pop.df[t+1, 1+i*2] <- (1-delta)*pop.df[t, 1+i*2] + delta*N*((B1[t]*pop.df[t, 1+i*2])/tot_new_juvs)	#
+		pop.df[t+1, 2+i*2] <- (1-delta)*pop.df[t, 2+i*2] + delta*N*((B2[t]*pop.df[t, 1+i*2])/tot_new_juvs)	#
+		}
+pop.df
+#function: popsim#
+#
+popsim <- function(B, N, N1, delta){#
+	N <- N#
+	N1 <- N1#
+	N2 <- N-N1#
+	T <- nrow(B)#
+	temp <- rep(0, times = T)#
+	pop.df <- data.frame(N1_ELT = temp, N2_ELT = temp, N1_sym = temp, N2_sym = temp, N1_ERT = temp, N2_ERT = temp)#
+	pop.df[1,] <- c(N1, N2)#
+	for (i in 0:1){#
+		B1 <- B[,1+i*4] #***#
+		B2 <- B[,2+i*4]#
+		for (t in 1:T){#
+		tot_new_juvs <- ((B1[t]*pop.df[t, 1+i*2]) + (B2[t]*pop.df[t, 2+i*2]))#
+		pop.df[t+1, 1+i*2] <- (1-delta)*pop.df[t, 1+i*2] + delta*N*((B1[t]*pop.df[t, 1+i*2])/tot_new_juvs)	#
+		pop.df[t+1, 2+i*2] <- (1-delta)*pop.df[t, 2+i*2] + delta*N*((B2[t]*pop.df[t, 1+i*2])/tot_new_juvs)	#
+		}#
+	}#
+	return(pop.df)#
+}#
+#
+#test #
+#
+testnoise <- matrix(rnorm(1200), ncol=12)#
+#
+popsim(exp(testnoise), 50, 25, 0.5)
+#function: popsim#
+#
+popsim <- function(B, N, N1, delta){#
+	N <- N#
+	N1 <- N1#
+	N2 <- N-N1#
+	T <- nrow(B)#
+	temp <- rep(0, times = T)#
+	pop.df <- data.frame(N1_ELT = temp, N2_ELT = temp, N1_sym = temp, N2_sym = temp, N1_ERT = temp, N2_ERT = temp)#
+	pop.df[1,] <- c(N1, N2)#
+	for (i in 0:2){#
+		B1 <- B[,1+i*4] #***#
+		B2 <- B[,2+i*4]#
+		N1 <- pop.df[, 1+i*2]#
+		N2 <- pop.df[, 2+i*2]#
+		for (t in 1:T){#
+		tot_new_juvs <- ((B1[t]*N1[t]) + (B2[t]*N2[t]))#
+		pop.df[t+1, 1+i*2] <- (1-delta)*N1[t] + delta*N*((B1[t]*N1[t])/tot_new_juvs)	#
+		pop.df[t+1, 2+i*2] <- (1-delta)*N2[t] + delta*N*((B2[t]*N2[t])/tot_new_juvs)	#
+		}#
+	}#
+	return(pop.df)#
+}#
+#
+#test #
+#
+testnoise <- matrix(rnorm(1200), ncol=12)#
+#
+popsim(exp(testnoise), 50, 25, 0.5)
+#function: popsim#
+#
+popsim <- function(B, N, N1, delta){#
+	N <- N#
+	N1 <- N1#
+	N2 <- N-N1#
+	T <- nrow(B)#
+	temp <- rep(0, times = T)#
+	pop.df <- data.frame(N1_ELT = temp, N2_ELT = temp, N1_sym = temp, N2_sym = temp, N1_ERT = temp, N2_ERT = temp)#
+	pop.df[1,] <- c(N1, N2)#
+	for (i in 0:2){#
+		B1 <- B[,1+i*4] #***#
+		B2 <- B[,2+i*4]#
+		for (t in 1:T){#
+		tot_new_juvs <- ((B1[t]*N1[t]) + (B2[t]*N2[t]))#
+		pop.df[t+1, 1+i*2] <- (1-delta)*pop.df[t, 1+i*2] + delta*N*((B1[t]*pop.df[t, 1+i*2])/tot_new_juvs)	#
+		pop.df[t+1, 2+i*2] <- (1-delta)*pop.df[t, 2+i*2] + delta*N*((B2[t]*pop.df[t, 2+i*2])/tot_new_juvs)	#
+		}#
+	}#
+	return(pop.df)#
+}#
+#
+#test #
+#
+testnoise <- matrix(rnorm(1200), ncol=12)#
+#
+popsim(exp(testnoise), 50, 25, 0.5)
+#function: popsim#
+#
+popsim <- function(B, N, N1, delta){#
+	N <- N#
+	N1 <- N1#
+	N2 <- N-N1#
+	T <- nrow(B)#
+	temp <- rep(0, times = T)#
+	pop <- data.frame(N1_ELT = temp, N2_ELT = temp, N1_sym = temp, N2_sym = temp, N1_ERT = temp, N2_ERT = temp)#
+	pop[1,] <- c(N1, N2)#
+	for (i in 0:2){#
+		B1 <- B[,1+i*4] #***#
+		B2 <- B[,2+i*4]#
+		for (t in 1:T){#
+		tot_new_juvs <- ((B1[t]*pop[t, 1+i*2]) + (B2[t]*pop[t, 2+i*2]))#
+		pop[t+1, 1+i*2] <- (1-delta)*pop[t, 1+i*2] + delta*N*((B1[t]*pop[t, 1+i*2])/tot_new_juvs)	#
+		pop[t+1, 2+i*2] <- (1-delta)*pop[t, 2+i*2] + delta*N*((B2[t]*pop[t, 2+i*2])/tot_new_juvs)	#
+		}#
+	}#
+	return(pop)#
+}#
+#
+#test #
+#
+testnoise <- matrix(rnorm(1200), ncol=12)#
+#
+popsim(exp(testnoise), 50, 25, 0.5)
