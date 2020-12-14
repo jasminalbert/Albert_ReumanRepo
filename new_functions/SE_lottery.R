@@ -1,10 +1,10 @@
 #function for computing storage effects in lottery model
 #ARGS
-#B 		a dataframe/matrix of noise for different noise regimes - very specific format***
+#B 		a dataframe/matrix of exp noise for different noise regimes - very specific format***
 #delta	death rate, between 0:1
 #q12		scaling factor, default 1
 
-SE_lottery <- function(B, delta, q12=1){
+SE_lottery <- function(B, B_sharp,delta, q12=1){
 	
 	temp <- rep(0, times = 3)
 	
@@ -12,10 +12,10 @@ SE_lottery <- function(B, delta, q12=1){
 	
 	for (i in 0:2){
 		
-		B1 <- B[,1+i*4] #***
-		B2 <- B[,2+i*4]
-		B1_sharp <- B[,3+i*4]
-		B2_sharp <- B[,4+i*4]
+		B1 <- B[,1+i*2] #***
+		B2 <- B[,2+i*2]
+		B1_sharp <- B_sharp[,1+i*2]
+		B2_sharp <- B_sharp[,2+i*2]
 		
 		C <- B2/delta #C = C1 = C2
 		
