@@ -8,7 +8,7 @@ SE_lottery <- function(B, B_sharp,delta, q12=1){
 	
 	temp <- rep(0, times = 3)
 	
-	results <- data.frame(rbar1 = temp, rbar1_sharp = temp, rbar2_sharp = temp, Delta_B1 = temp, row.names = c("ELT","sym","ERT"))
+	results <- data.frame(noise =c("ELT","sym","ERT"),rbar1 = temp, rbar1_sharp = temp, rbar2_sharp = temp, Delta_B1 = temp,  row.names = c("ELT","sym","ERT"))
 	
 	for (i in 0:2){
 		
