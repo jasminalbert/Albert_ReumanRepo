@@ -25,6 +25,8 @@
 \DeclareMathOperator{\mean}{mean}
 \DeclareMathOperator{\se}{se}
 \DeclareMathOperator{\sd}{sd}
+\DeclareMathOperator{\Prob}{P}
+
 
 %new commands and so on
 
@@ -239,7 +241,57 @@ First, for a large ?artigen? $M$, carry out the following steps once:
 \noindent For large enough $M$, standard error should be very small. Since random variables are generated once only, computation of these quantitaties for a large number of parameter sets should be fast. 
 
 
-\section{Additional quantities influencing invasion success} \label{sect: addquant}
+\section{Additional quantities influencing invasion success} \label{sect:addquant}
+
+Not only does the expected value $\bar r_1$ influence the capacity for species 1 to invade where rare, but so do other aspectf of the distribution of
+\begin{equation}
+r_1 = \ln[1-\delta+\delta \exp(b_1-b_2)]. \label{r1_distribution}
+\end{equation}
+
+We here elaborate how some other aspects of the distribution of $r_1$ were quantified, for our three tail association cases and for any of our parameters $\delta, \mu_1, \mu_2, \sigma$. 
+
+First, we considered $\sd(r_1)$, the standard deviation. If this is large enough, then $r_1$ can occasionally be positive even if $\bar r_1$ is strongly negative, and this invasion can occur under the right environmental circumstances.
+
+We also considered the probability $\Prob[r_1 >0]$, which is, explicitly, the probability that environmental variables that permit invasion. We have
+\begin{align}
+\Prob[r_1>0] &= \Prob [1-\delta+\delta \exp(b_1-b_2)] > 1] \\
+&= \Prob[\exp (b_1-b_2)>1] \\
+&= \Prob[b_1>b_2],
+\end{align}
+?? should the above have $\ln$?
+\noindent so this was computed for each considered parameter set of $\delta, \mu_1, \mu_2, \sigma$, and for each of our three tail association cases. 
+
+We also consider the mean value of the possible part of the distribution of $r_1$, $\EX(r_1|r_1>0)$. This characterizes how quickly invasion may happen, when it happens, with larger values corresponding to faster invasion. If it takes several time steps for the population of the invader to rise from negligible level at which species 1 is a noticeable presence in the community, then environmental conditions must be suitable for invasion for several sequential time steps. Thus large values of $\EX(r_1|r_1>0)$ should also correspond to a greater probability of invasion because they should correspond to faster invasions and therefore to reduced need for sequential periods of suitable environmental conditions. 
+
+Finally, for a ?low? of species of? parameters $\delta, \mu_1, \mu_2, \sigma$, we displayed the whole distribution of $r_1$, values for each of our tail association cases, to make visual comparisons. 
+
+\section{Symmetries and parameter reduction}
+
+The quantities we consider to address invasion prospects for the weaker competitor, species 1 (see sections \ref{sect:IGR} and \ref{sect:addquant}) depend only on $\mu_1-\mu_2$ and not, independtly, on $\mu_1$ and $\mu_2$, and also are the same for our left- and right-tailed association cases. We prove these statements in this section.
+
+Equations \ref{sym_rbar1} - \ref{sym_rbar2sharp} obviously depend only on $\mu_1-\mu_2$, and not independently on $\mu_1$ and $\mu_2$, ?some? only $\mu_1-\mu_2$ appears in these expressions if $\mu_1$ or $\mu_2$ appear at all. Equation \ref{sym_rbar1} is $\bar r_1$ in the asymmetric? tail association cases. But letting $\beta_1 = b_1 + \eta$ and $\beta_2 = b_2 + \eta$ and substituting into \ref{sym_rbar1}, we get 
+
+\begin{align}
+\bar r_1 &= \EX(\ln[1-\delta+\delta \exp(\beta_1-\eta-(\beta_2-\eta))])\\
+&= \EX(\ln[1-\delta+\delta \exp(\beta_1-\beta_2)]).
+\end{align}
+\noindent And so altering the mean of both $b_1$ and $b_2$ distributions by the same amount has no affect of $\bar r_1$ in the asymmetric tail associations. Also ? depends only on $\mu_1 - \mu_2$ and not independtly on $\mu_1$ or $\mu_2$.
+
+In section \ref{sect:addquant}, we introduce several other metrics. These are all based on the distribution 
+\begin{equation}
+r_1=\ln[1-\delta+\delta \exp(b_1-b_2)] \label{r1distribution}
+\end{equation}
+
+\noindent But, again making the substitutions $\beta_1 = b_1 + \eta$ and $\beta_2 = b_2 + \eta$, we can see via the same resoning as above that the whole distribution $r_1$ depends only on $\mu_1 - \mu_2$, and not on $\mu_1$ and $\mu_2$ independently, for all three of our tail association cases.
+
+To see that our various metrics are the same for out left- and right-tail associated noise ?parameters?, let $(b_1,b_2)$ denote our left-tail associated random variable with parameters $\mu_1,\mu_2,\sigma$. Then define $\beta_1 = -b_2 + \mu_1 +\mu_2$, $\beta_2=-b_1+\mu_1+\mu_2$. It is easy to see that $\EX(\beta_1)=\mu_1$, $\EX(\beta_2)=\mu_2$, $\sd(\beta_1)=\sd(\beta_2)=\sigma$, so $\beta_1$ and $\beta_2$ are normally distributed. From there it is easy to see that $\beta_1$ and $beta_2$ are distributed in the same wat as our right-tail associated noise with parameter $\mu_1,\mu_2$, and $\sigma$. Making the substitutions $b_2 = -\beta_1 + \mu_1 + \mu_2$ and $b_1 = -\beta_2 + \mu_1+\mu_2$ in ref{r1distribution}, we get
+
+\begin{align}
+r_1 &= \ln[1-\delta+\delta \exp(-\beta_2+\mu_1+\mu_2-(\beta_1+\mu_1+\mu_2))]\\
+&= \ln[1-\delta+\delta \exp(\beta_1-\beta_2)].
+\end{align}
+
+\noindent And since $(\beta_1, \beta_2)$ is distributed in the same way as our right-tail associated noise, this proves all metrics based on the distribution of $r_1$ \ref{r1distribution} are the same for left- and right-tail associated noise.
 
 
 
