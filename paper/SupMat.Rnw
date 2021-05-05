@@ -66,7 +66,7 @@ We used the lottery model, previously studied, for instance, by REFS. Model equa
 N_i(t+1)=(1-\delta)N(t)+\delta N \frac{B_i(t)N_i(t)}{B_1(t)N_1(t)+B_2(t)N_2(t)}  \label{model_eq}
 \end{equation}
 
-\noindent for species $i=1,2$. Here, $N_i(t)$ is the population density of species $i$ at time $t$, and $N = N_1(t)+N_2(t)$ is fixed through time. The parameter, $\delta$ is a mortality rate, and $B_i(t)$ is the fecundiity of specise $i$ at time $t$. The model postulates that individuals die at rate $\delta$ at each time step, and are replaced by juveniles in population to the reproductive output of the two species that year. We take, for each $i$, $B_i(t)$ to be $iid$ through time. We let $B_i = exp(b_i)$, where $(b_1, b_2)$ is some distribution such that $b_i \sim N(\mu_i, \sigma^2)$ and such that $cov(b_1, b_2) = \rho$, a fixed quantity we will specify later. However, $(b_1, b_2)$ is not necessarily a bivariate normal distribution. We will consider various distributions of $(b_1, b_2)$ with these properties, corresponding to our symmetric and asymmetric tail associations cases defined in the main text and elaborated below. We assume without loss of generality that $\mu_1 \leq \mu_2$, so that species 1 is the weaker competitor. 
+\noindent for species $i=1,2$. Here, $N_i(t)$ is the population density of species $i$ at time $t$, and $N = N_1(t)+N_2(t)$ is fixed through time. The parameter, $\delta$ is a mortality rate, and $B_i(t)$ is the fecundiity of specise $i$ at time $t$. The model postulates that individuals die at rate $\delta$ at each time step, and are replaced by juveniles in population to the reproductive output of the two species that year. We take, for each $i$, $B_i(t)$ to be $iid$ through time. We let $B_i = \exp(b_i)$, where $(b_1, b_2)$ is some distribution such that $b_i \sim N(\mu_i, \sigma^2)$ and such that $cov(b_1, b_2) = \rho$, a fixed quantity we will specify later. However, $(b_1, b_2)$ is not necessarily a bivariate normal distribution. We will consider various distributions of $(b_1, b_2)$ with these properties, corresponding to our symmetric and asymmetric tail associations cases defined in the main text and elaborated below. We assume without loss of generality that $\mu_1 \leq \mu_2$, so that species 1 is the weaker competitor. 
 
 \section{Noise} \label{sect:noise}
 
@@ -89,7 +89,7 @@ We consider the invasion growth rate of species 1, $\bar r_1=\EX(\ln (\frac{N_1(
 \noindent but setting $N_1=0$ and $N_2=N$ here gives the result that
 
 \begin{equation}
-\bar r_1=\EX(\ln [(1-\delta)+\delta exp(b_1-b_2)]).  \label{rbar1_E}
+\bar r_1=\EX(\ln [(1-\delta)+\delta \exp(b_1-b_2)]).  \label{rbar1_E}
 \end{equation}
 
 \noindent We considered the various cases for the joint distribution $(b_1,b_2)$, specified in the main text and in the previous section. 
@@ -97,7 +97,7 @@ We consider the invasion growth rate of species 1, $\bar r_1=\EX(\ln (\frac{N_1(
 To study storage effect for the model, we also consider the contribution of EC covariance to the difference between the invader's and the resident's mean growth rates, to be denoted $\Delta I$. Following REF, we define 
 
 \begin{equation}
-\bar r_1^\#=\EX(\ln [(1-\delta)+\delta exp(b_1^\#-b_2)]),  \label{rbar1sharp_E}
+\bar r_1^\#=\EX(\ln [(1-\delta)+\delta \exp(b_1^\#-b_2)]),  \label{rbar1sharp_E}
 \end{equation}
 
 \noindent where $b_1^\#$ is distributed in the same way as $b_1$, but is independent of it and $b_2$. Then $\bar r_1 - \bar r_1^\#$ is the contribution of EC covariance to the mean growth rate species 1, the invader. We know, a priori, that the mean growth rate of the resident, species 2, must be 0, $\bar r_2 =0$, but equation (\ref{model_eq}) also implies that
@@ -121,7 +121,7 @@ r_2=(\ln (\frac{N_2(t+1)}{N_2(t)}))=0, \label{r2_is_zero}
 \noindent as expected. Again, following REF, we also define
 
 \begin{equation}
-\bar r_2^\#=\EX(\ln [(1-\delta)+\delta exp(b_2^\#-b_2)]),  \label{rbar2sharp_E}
+\bar r_2^\#=\EX(\ln [(1-\delta)+\delta \exp(b_2^\#-b_2)]),  \label{rbar2sharp_E}
 \end{equation}
 
 \noindent where $b_2^\#$ is distributed in the same way as $b_2$, but is independent of it and of $b_1$. Thus $\bar r_2- \bar r_2^\# = -\bar r_2^\#$ is the contribution of EC covariance to the mean growth rate of species 2, the resident. And so
@@ -153,19 +153,19 @@ Having already specified that $b_1$ (and therefore also $b_1^\#$) is distributed
 \noindent Thus the difference $b_1^\#-b_2$ that occurs in the expression for $\bar r_1^\#$ (\ref{rbar1sharp_E}) is a normally distributed random variable with mean $\mu_1-\mu_2$ and variance $2\sigma^2$. Thus
 
 \begin{equation}
-\bar r_1^\#=\EX(\ln [(1-\delta)+\delta exp(u)]),  \label{rbar1sharp_E_usub}
+\bar r_1^\#=\EX(\ln [(1-\delta)+\delta \exp(u)]),  \label{rbar1sharp_E_usub}
 \end{equation}
 
 \noindent where $u \sim N(\mu_1-\mu_2,2\sigma^2)$. Likewise, the difference $b_2^\#-b_2$ in (\ref{rbar2sharp_E}) is a normally distributed random variable with mean $\mu_2-\mu_2=0$ and variance $2\sigma^2$, so
 
 \begin{equation}
-\bar r_2^\#=\EX(\ln [(1-\delta)+\delta exp(u)]),  \label{rbar2sharp_E_usub}
+\bar r_2^\#=\EX(\ln [(1-\delta)+\delta \exp(u)]),  \label{rbar2sharp_E_usub}
 \end{equation}
 
 \noindent where now $u \sim N(0,2\sigma^2)$. The expression (\ref{rbar1_E}) for $\bar r_1$ can also be further simplified, in a similar way, when we are in the symmetric tail association case considered in section \ref{sect:noise}. In that case,
 
 \begin{equation}
-(b_1,b_2) \sim  N(\begin{pmatrix} \mu_2\\\mu_2\end{pmatrix}, \Sigma) \label{b1b2_distribution_sym}
+(b_1,b_2) \sim  N(\begin{pmatrix} \mu_1\\\mu_2\end{pmatrix}, \Sigma) \label{b1b2_distribution_sym}
 \end{equation}
 
 \noindent where now
@@ -269,7 +269,7 @@ Finally, for a few choices of parameters $\delta, \mu_1, \mu_2, \sigma$, we disp
 
 The quantities we consider to address invasion prospects for the weaker competitor, species 1 (see sections \ref{sect:IGR} and \ref{sect:addquant}) depend only on $\mu_1-\mu_2$ and not, independtly, on $\mu_1$ and $\mu_2$, and also are the same for our left- and right-tailed association cases. We prove these statements in this section.
 
-Equations \ref{sym_rbar1} - \ref{sym_rbar2sharp} obviously depend only on $\mu_1-\mu_2$, and not independently on $\mu_1$ and $\mu_2$, since only $\mu_1-\mu_2$ appears in these expressions if $\mu_1$ or $\mu_2$ appear at all. Equation \ref{sym_rbar1} is $\bar r_1$ in the asymmetric? tail association cases. But letting $\beta_1 = b_1 + \eta$ and $\beta_2 = b_2 + \eta$ and substituting into \ref{sym_rbar1}, we get 
+Equations \ref{sym_rbar1} - \ref{sym_rbar2sharp} obviously depend only on $\mu_1-\mu_2$, and not independently on $\mu_1$ and $\mu_2$, since only $\mu_1-\mu_2$ appears in these expressions if $\mu_1$ or $\mu_2$ appear at all. Equation \ref{sym_rbar1} is $\bar r_1$ in the asymmetric? tail association cases. But letting $\beta_1 = b_1 + \eta$ and $\beta_2 = b_2 + \eta$ and substituting into \ref{rbar1_E}, we get 
 
 \begin{align}
 \bar r_1 &= \EX(\ln[1-\delta+\delta \exp(\beta_1-\eta-(\beta_2-\eta))])\\
