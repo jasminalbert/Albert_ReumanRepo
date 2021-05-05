@@ -1,32 +1,12 @@
 # loop through parameters
 
+load("./params.RData")
 
+load("./noise_etc.RData")
 
-delta <- seq(0.1,1,0.1)
-mu1 <- seq(.1,.9,.1) 
-mu2 <- mu1 
-sigma <- c(1.6, 3.2,6.4)
-
-#mu1>mu2 
-mu <- c(NA,NA)
-for (i in 1:length(mu1)){
-  for (j in 1:length(mu2)){
-    if(mu1[i]<=mu2[j]){
-      mu <- rbind(mu, cbind(mu1[i],mu2[j]))
-    }
-  }
-}
-mu <- mu[-1,]
-#print(mu) #45x2
-
-M <- 100000
-b_tilde <- makenoise(M)
-rho <- cor(b_tilde$l)[1,2];rho
-u_tilde <- rnorm(M)
-
-rbar <- c(NA,NA,NA,NA,NA)
+rbar <- rep(NA, 5)
 se_rbar <- rbar
-DeltaI <- c(NA,NA,NA)
+DeltaI <- rep(NA,3)
 se_DeltaI <- DeltaI
 params <- rep(NA, 4)
 
@@ -83,7 +63,7 @@ for (s in 1:length(sigma)){
       DeltaIhat_s <- rbar1hat_s - rbar1sharphat + rbar2sharphat
       se_DeltaIhat_s <- se_rbar1hat_s + se_rbar1sharphat + se_rbar2sharphat
       
-      #saving
+      #save in matrix
       rbar <- rbind(rbar, cbind(rbar1hat_l,rbar1hat_r,rbar1hat_s,rbar1sharphat,rbar2sharphat))
       se_rbar <- rbind(se_rbar, cbind(se_rbar1hat_l,se_rbar1hat_r,se_rbar1hat_s,se_rbar1sharphat,se_rbar2sharphat))
       DeltaI <- rbind(DeltaI, cbind(DeltaIhat_l, DeltaIhat_r, DeltaIhat_s))
@@ -94,3 +74,13 @@ for (s in 1:length(sigma)){
 }
 res <- list(params=params[-1,], rbar=rbar[-1,], se_rbar=se_rbar[-1,], DeltaI=DeltaI[-1,], se_DeltaI=se_DeltaI[-1,])
 lapply(res,head,10)
+
+#save
+
+if (dir.exists("./results_numeric")==FALSE){
+  dir.create("./results_numeric")
+}
+
+resloc <- "./results_numeric/"
+
+saveRDS(res, paste(resloc,"rbar_DeltaI.RDS"))
