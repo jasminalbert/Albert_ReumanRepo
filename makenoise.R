@@ -34,7 +34,7 @@ makenoise <- function(M){
   b_s <- mvrnorm(M, mu_norm, Sigma_sym)
   #plot(b_s[,1],b_s[,2])
   
-  return(list(b_l=b_l,b_r=b_r,b_s=b_s))
+  return(list(l=b_l,r=b_r,s=b_s))
 }
 
 #makenoise(100)
