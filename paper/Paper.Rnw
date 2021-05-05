@@ -43,7 +43,7 @@
 
 %The following is where you load in the numeric results that will be embedded in the text
 <<eval=T,echo=F,message=F,warning=F>>=
-#system(paste("biber", sub("\\.Rnw$", "", current_input())))
+system(paste("biber", sub("\\.Rnw$", "", current_input())))
 
 #place R code here for loading in necessary variables from Results
 #ordinarily this would be a readRDS command, but I'm just defining a variable here for now
