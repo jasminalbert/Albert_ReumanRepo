@@ -292,7 +292,10 @@ We also considered the probability $\Prob[r_1 >0]$, which is, explicitly, the pr
 
 \noindent so this was computed for each considered parameter set of $\delta, \mu_1, \mu_2, \sigma$, and for each of our three tail association cases. 
 
-We also consider the mean value of the possible part of the distribution of $r_1$, $\EX(r_1|r_1>0)$. This characterizes how quickly invasion may happen, when it happens, with larger values corresponding to faster invasion. If it takes several time steps for the population of the invader to rise from negligible level at which species 1 is a noticeable presence in the community, then environmental conditions must be suitable for invasion for several sequential time steps. Thus large values of $\EX(r_1|r_1>0)$ should also correspond to a greater probability of invasion because they should correspond to faster invasions and therefore to reduced need for sequential periods of suitable environmental conditions. 
+We also consider the mean value of the possible part of the distribution of $r_1$, $\EX(r_1|r_1>0)$. 
+This characterizes how quickly invasion may happen, when it happens, with larger values corresponding to faster invasion. 
+If it takes several time steps for the population of the invader to rise from negligible level at which species 1 is a noticeable presence in the community, then environmental conditions must be suitable for invasion for several sequential time steps. 
+Thus large values of $\EX(r_1|r_1>0)$ should also correspond to a greater probability of invasion because they should correspond to faster invasions and therefore to reduced need for sequential periods of suitable environmental conditions. 
 
 Finally, for a few choices of parameters $\delta, \mu_1, \mu_2, \sigma$, we displayed the whole distribution of $r_1$, values for each of our tail association cases, to make visual comparisons. 
 
@@ -300,7 +303,9 @@ Finally, for a few choices of parameters $\delta, \mu_1, \mu_2, \sigma$, we disp
 
 The quantities we consider to address invasion prospects for the weaker competitor, species 1 (see sections \ref{sect:IGR} and \ref{sect:addquant}) depend only on $\mu_1-\mu_2$ and not, independtly, on $\mu_1$ and $\mu_2$, and also are the same for our left- and right-tailed association cases. We prove these statements in this section.
 
-Equations \ref{sym_rbar1} - \ref{sym_rbar2sharp} obviously depend only on $\mu_1-\mu_2$, and not independently on $\mu_1$ and $\mu_2$, since only $\mu_1-\mu_2$ appears in these expressions if $\mu_1$ or $\mu_2$ appear at all. Equation \ref{rbar1_E} is $\bar r_1$ in the asymmetric tail association cases. But letting $\beta_1 = b_1 + \eta$ and $\beta_2 = b_2 + \eta$ and substituting into \ref{rbar1_E}, we get 
+Equations \ref{sym_rbar1} - \ref{sym_rbar2sharp} obviously depend only on $\mu_1-\mu_2$, and not independently on $\mu_1$ and $\mu_2$, since only $\mu_1-\mu_2$ appears in these expressions if $\mu_1$ or $\mu_2$ appear at all. 
+Equation \ref{rbar1_E} is $\bar r_1$ in the asymmetric tail association cases.
+But letting $\beta_1 = b_1 + \eta$ and $\beta_2 = b_2 + \eta$ and substituting into \ref{rbar1_E}, we get 
 
 \begin{align}
 \bar r_1 &= \EX(\ln[1-\delta+\delta \exp(\beta_1-\eta-(\beta_2-\eta))])\\
@@ -310,12 +315,16 @@ Equations \ref{sym_rbar1} - \ref{sym_rbar2sharp} obviously depend only on $\mu_1
 
 In section \ref{sect:addquant}, we introduce several other metrics. These are all based on the distribution 
 \begin{equation}
-r_1=\ln[1-\delta+\delta \exp(b_1-b_2)] \label{r1distribution}
+r_1=\ln[1-\delta+\delta \exp(b_1-b_2)]. \label{r1distribution}
 \end{equation}
 
 \noindent But, again making the substitutions $\beta_1 = b_1 + \eta$ and $\beta_2 = b_2 + \eta$, we can see via the same resoning as above that the whole distribution $r_1$ depends only on $\mu_1 - \mu_2$, and not on $\mu_1$ and $\mu_2$ independently, for all three of our tail association cases.
 
-To see that our various metrics are the same for out left- and right-tail associated noise processes, let $(b_1,b_2)$ denote our left-tail associated random variable with parameters $\mu_1,\mu_2,\sigma$. Then define $\beta_1 = -b_2 + \mu_1 +\mu_2$, $\beta_2=-b_1+\mu_1+\mu_2$. It is easy to see that $\EX(\beta_1)=\mu_1$, $\EX(\beta_2)=\mu_2$, $\sd(\beta_1)=\sd(\beta_2)=\sigma$, so $\beta_1$ and $\beta_2$ are normally distributed. From there it is easy to see that $\beta_1$ and $beta_2$ are distributed in the same wat as our right-tail associated noise with parameter $\mu_1,\mu_2$, and $\sigma$. Making the substitutions $b_2 = -\beta_1 + \mu_1 + \mu_2$ and $b_1 = -\beta_2 + \mu_1+\mu_2$ in \ref{r1distribution}, we get
+To see that our various metrics are the same for out left- and right-tail associated noise processes, let $(b_1,b_2)$ denote our left-tail associated random variable with parameters $\mu_1,\mu_2,\sigma$. 
+Then define $\beta_1 = -b_2 + \mu_1 +\mu_2$, $\beta_2=-b_1+\mu_1+\mu_2$. 
+It is easy to see that $\EX(\beta_1)=\mu_1$, $\EX(\beta_2)=\mu_2$, $\sd(\beta_1)=\sd(\beta_2)=\sigma$, so $\beta_1$ and $\beta_2$ are normally distributed.
+From there it is easy to see that $\beta_1$ and $beta_2$ are distributed in the same wat as our right-tail associated noise with parameter $\mu_1,\mu_2$, and $\sigma$. 
+Making the substitutions $b_2 = -\beta_1 + \mu_1 + \mu_2$ and $b_1 = -\beta_2 + \mu_1+\mu_2$ in \ref{r1distribution}, we get
 
 \begin{align}
 r_1 &= \ln[1-\delta+\delta \exp(-\beta_2+\mu_1+\mu_2-(\beta_1+\mu_1+\mu_2))]\\
@@ -326,11 +335,66 @@ r_1 &= \ln[1-\delta+\delta \exp(-\beta_2+\mu_1+\mu_2-(\beta_1+\mu_1+\mu_2))]\\
 
 
 
+\section{New Stuff}
 
+Fixed number, base growth rate
 
+\begin{equation}
+\epsilon_i^0=\ln(1-\delta + \delta \frac{\bar B_i}{\bar B_j}) \label{null_i}
+\end{equation}
 
+\begin{equation}
+\epsilon_i^E=\ln(1-\delta + \delta \frac{B_i}{\bar B_j}) -  \epsilon_i^0 \label{Evar}
+\end{equation}
 
+contribution of variance in E
 
+\begin{equation}
+\bar \epsilon_i^E=\EX(\epsilon_i^E) \label{Evar_mean}
+\end{equation}
+
+\begin{equation}
+\epsilon_i^C=\ln(1-\delta + \delta \frac{\bar B_i}{B_j}) -  \epsilon_i^0 \label{Cvar}
+\end{equation}
+
+contribution of variance in C
+
+\begin{equation}
+\bar \epsilon_i^C=\EX(\epsilon_i^C) \label{Cvar_mean}
+\end{equation}
+
+\begin{equation}
+\epsilon_i^{EC}=\ln(1-\delta + \delta \frac{B_i}{B_j}) -  [\epsilon_i^0 + \epsilon_i^E + \epsilon_i^C] \label{ECvar}
+\end{equation}
+
+interaction effect of both E and C varying
+
+\begin{equation}
+\bar \epsilon_i^{EC}=\EX(\ln(1-\delta + \delta \frac{B_i}{B_j})) -[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C] \label{ECvar_mean}
+\end{equation}
+
+\begin{equation}
+\bar r_i=\EX(\ln(1-\delta + \delta \frac{B_i}{B_j}))\label{rbari}
+\end{equation}
+
+\begin{equation}
+\bar r_i=\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C + \bar \epsilon_i^{EC} \label{rbari_decomp}
+\end{equation}
+
+But some of $\bar \epsilon_i^{EC}$ comes from covariance between E and C and some comes from both varying.
+
+\begin{equation}
+\bar \epsilon_i^{(E\#C)}=\EX(\ln(1-\delta + \delta \frac{B_i}{B_j^{\#}})) -[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C] \label{ECvar_sharp}
+\end{equation}
+
+\begin{align}
+\bar \epsilon_i^{(EC)}&=\bar \epsilon_i^{EC}-\bar \epsilon_i^{(E\#C)}\\
+&= \EX(\ln(1-\delta + \delta \frac{B_i}{B_j}))-[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C]\\
+&- \EX(\ln(1-\delta + \delta \frac{B_i}{B_j^{\#}})) +[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C]
+\label{r_iSE}
+\end{align}
+
+checks out
 
 
 
