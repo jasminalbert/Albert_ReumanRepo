@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.12)  13 MAY 2021 23:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.12)  14 MAY 2021 09:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -397,15 +397,70 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/home/jasmin/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [
 4] [5] [6]
-(./SupMat.aux) ) 
+Runaway argument?
+ \Delta _1^{(EC)} &= \bar \epsilon _1^{(EC)} - \bar \epsilon _2^{(EC)\ETC.
+! Paragraph ended before \align was complete.
+<to be read again> 
+                   \par 
+l.438 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.438 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.438 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.438 
+      
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: \begin{align} on input line 430 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.442 \end{document}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[7] (./SupMat.aux) )
+(\end occurred inside a group at level 1)
+
+### semi simple group (level 1) entered at line 430 (\begingroup)
+### bottom level 
 Here is how much of TeX's memory you used:
- 5772 strings out of 480806
- 89112 string characters out of 5904893
+ 5773 strings out of 480806
+ 89118 string characters out of 5904893
  404106 words of memory out of 5000000
- 23031 multiletter control sequences out of 15000+600000
+ 23032 multiletter control sequences out of 15000+600000
  424945 words of font info for 82 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 69i,9n,79p,480b,215s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,10n,79p,480b,215s stack positions out of 5000i,500n,10000p,200000b,80000s
 </home/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmb10.pfb></home/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 ex10.pfb></home/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi1
@@ -419,10 +474,10 @@ nyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/jasmin/.TinyTeX
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/jasmin/.TinyTeX/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/jasmin/.TinyTeX/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on SupMat.pdf (6 pages, 159614 bytes).
+Output written on SupMat.pdf (7 pages, 161366 bytes).
 PDF statistics:
- 76 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
+ 81 PDF objects out of 1000 (max. 8388607)
+ 57 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  5 words of extra memory for PDF output out of 10000 (max. 10000000)
 

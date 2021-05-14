@@ -396,7 +396,47 @@ But some of $\bar \epsilon_i^{EC}$ comes from covariance between E and C and som
 
 checks out
 
+Need to find $\Delta_1^0, \Delta_1^E, \Delta_1^C, \Delta_1^{(EC)}, \Delta_1^{(E\#C)}$ (where species 1 is the invader and species 2 is the resident)
 
+\begin{equation}
+\bar r_1-\bar r_2 = \Delta_1^0+\Delta_1^E+\Delta_1^C+\Delta_1^{(EC)}+\Delta_1^{(E\#C)} 
+\end{equation}
+
+\begin{align}
+\Delta_1^0 &= \epsilon_1^0 - \epsilon_2^0\\
+&=\ln(1-\delta + \delta \frac{\bar B_1}{\bar B_2}) - \ln(1-\delta + \delta \frac{\bar B_2}{\bar B_2})\\
+&=\ln(1-\delta + \delta \frac{\bar B_1}{\bar B_2}) - 0 \\
+%&=\ln(1-\delta + \delta \exp(\bar b_1-\bar b_2)
+\end{align}
+
+\begin{align}
+\Delta_1^E &= \bar \epsilon_1^E - \bar \epsilon_2^E\\
+&=\EX (\ln[1-\delta + \delta \frac{B_1}{\bar B_2}]) - \epsilon_1^0 - [\EX(\ln[1-\delta + \delta \frac{ B_2}{\bar B_2}]) - \epsilon_2^0]\\
+&=\EX (\ln[1-\delta + \delta \frac{B_1}{\bar B_2}]) - \epsilon_1^0 - \EX(\ln[1-\delta + \delta \frac{ B_2}{\bar B_2}]) \\
+%&=\EX (\ln[1-\delta + \delta \exp(b_1-\bar b_2)]) - \EX (\ln[1-\delta + \delta \exp( b_2-\bar b_2)]) - \ln(1-\delta + \delta \exp(\bar b_1-\bar b_2)
+\end{align}
+
+\begin{align}
+\Delta_1^C &= \bar \epsilon_1^C - \bar \epsilon_2^C\\
+&=\EX (\ln[1-\delta + \delta \frac{\bar B_1}{B_2}]) - \epsilon_1^0 - [\EX(\ln[1-\delta + \delta \frac{\bar B_2}{B_2}]) - \epsilon_2^0]\\
+&=\EX (\ln[1-\delta + \delta \frac{\bar B_1}{B_2}]) - \epsilon_1^0 - \EX(\ln[1-\delta + \delta \frac{\bar B_2}{B_2}]) \\
+%&=\EX (\ln[1-\delta + \delta \exp(\bar b_1-b_2)]) - \EX (\ln[1-\delta + \delta \exp(\bar b_2-b_2)]) - \ln(1-\delta + \delta \exp(\bar b_1-\bar b_2)
+\end{align}
+
+\begin{align}
+\Delta_1^{(E\#C)} &= \bar \epsilon_1^{(E\#C)} - \bar \epsilon_2^{(E\#C)}\\
+&=\EX(\ln[1-\delta + \delta \frac{B_1}{B_2^{\#}}]) -[\epsilon_1^0 +\bar \epsilon_1^E + \bar \epsilon_1^C] - [\EX(\ln[1-\delta + \delta \frac{B_2}{B_2^{\#}}]) -[\epsilon_2^0 +\bar \epsilon_2^E + \bar \epsilon_2^C]]\\
+%&=\EX (\ln[1-\delta + \delta \exp(\bar b_1-b_2^{\#})])-[\epsilon_1^0 +\bar \epsilon_1^E + \bar \epsilon_1^C] - [\EX (\ln[1-\delta + \delta \exp(\bar b_2-b_2^{\#})])-[\bar \epsilon_2^E + \bar \epsilon_2^C]]
+\end{align}
+
+\begin{align}
+\Delta_1^{(EC)} &= \bar \epsilon_1^{(EC)} - \bar \epsilon_2^{(EC)}\\
+&=[\EX(\ln[1-\delta + \delta \frac{B_1}{B_2^]) -\EX(\ln[1-\delta + \delta \frac{B_1}{B_2^{\#}])] - [\EX(\ln[1-\delta + \delta \frac{B_2}{B_2^]) -\EX(\ln[1-\delta + \delta \frac{B_2}{B_2^{\#}])]\\
+&=\EX(\ln[1-\delta + \delta \frac{B_1}{B_2^]) -\EX(\ln[1-\delta + \delta \frac{B_1}{B_2^{\#}]) + \EX(\ln[1-\delta + \delta \frac{B_2}{B_2^{\#}])\\
+%&=\EX (\ln[1-\delta + \delta \exp(\bar b_1-b_2)]) - \EX (\ln[1-\delta + \delta \exp(\bar b_1-b_2^{\#})]) + \EX (\ln[1-\delta + \delta \exp(b_2-b_2^{\#})])\\
+&= \bar r_1 - \bar r_1^{\#} - \bar r_2^{\#} \\
+&= \DeltaI_1 \\
+\end{align}
 
 
 
