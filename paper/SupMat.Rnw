@@ -322,7 +322,7 @@ r_1 &= \ln[1-\delta+\delta \exp(-\beta_2+\mu_1+\mu_2-(\beta_1+\mu_1+\mu_2))]\\
 &= \ln[1-\delta+\delta \exp(\beta_1-\beta_2)].
 \end{align}
 
-\noindent And since $(\beta_1, \beta_2)$ is distributed in the same way as our right-tail associated noise, this proves all metrics based on the distribution of $r_1$ \ref{r1distribution} are the same for left- and right-tail associated noise.
+\noindent And since $(\beta_1, \beta_2)$ is distributed in the same way as our right-tail associated noise, this proves all metrics based on the distribution of $r_1$ (\ref{r1distribution}) are the same for left- and right-tail associated noise.
 
 
 
