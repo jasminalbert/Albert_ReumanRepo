@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.12)  12 MAY 2021 22:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.12)  13 MAY 2021 22:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -405,7 +405,7 @@ Here is how much of TeX's memory you used:
  23020 multiletter control sequences out of 15000+600000
  424945 words of font info for 82 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 69i,9n,79p,1474b,215s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,9n,79p,755b,215s stack positions out of 5000i,500n,10000p,200000b,80000s
 </home/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmb10.pfb></home/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 ex10.pfb></home/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi1
@@ -419,7 +419,7 @@ nyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/jasmin/.TinyTeX
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/jasmin/.TinyTeX/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/jasmin/.TinyTeX/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on SupMat.pdf (5 pages, 155797 bytes).
+Output written on SupMat.pdf (5 pages, 156760 bytes).
 PDF statistics:
  73 PDF objects out of 1000 (max. 8388607)
  51 compressed objects within 1 object stream
