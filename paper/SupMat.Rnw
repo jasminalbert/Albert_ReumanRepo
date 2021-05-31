@@ -335,7 +335,65 @@ r_1 &= \ln[1-\delta+\delta \exp(-\beta_2+\mu_1+\mu_2-(\beta_1+\mu_1+\mu_2))]\\
 
 
 
-\section{New Stuff}
+\section{Decomposition}
+
+To quantify the contribution of different drivers to the difference in growth rate between the invader and the resident, the amount variance due to that driver is considered. We consider the contributions of the null growth rate, $\epsilon^0$, the contribution of variance in E (environment), $\bar \epsilon^E$, the contribution of the variance in C (competitive pressure), $\bar \epsilon^C$, the contrubition of E and C co-varying $\bar \epsilon^{(EC)}$, and the the contribtion of E and C varying, but independently, $\bar \epsilon^{(E\#C)}$, for the invader and the resident. The difference between invader and resident is computed term by term to get a full decomposition as follows,
+
+\begin{equation}
+\bar r_1-\bar r_2 = \Delta^0+\Delta^E+\Delta^C+\Delta^{(EC)}+\Delta^{(E\#C)}, \label(IGR)
+\end{equation}
+
+\noindent where each $\Delta$ denotes a drivers contribution the the invader growth rate subtracted by the drivers contribution to the resident's groeth rate.
+
+The null growth rate is computed as the growrth rate when both drivers (E and C) are set at their mean. Recalling the growth rate eqaution from equation \ref{rbar1_E},
+
+\begin{align}
+\Delta^0 &= \epsilon_1^0 - \epsilon_2^0\\
+&=\ln(1-\delta + \delta \frac{\bar B_1}{\bar B_2}) - \ln(1-\delta + \delta \frac{\bar B_2}{\bar B_2})\\
+&=\ln(1-\delta + \delta \frac{\bar B_1}{\bar B_2}) - 0. \\
+%&=\ln(1-\delta + \delta \exp(\bar b_1-\bar b_2)
+\end{align}
+
+The contribution of variance in E to a species growth rate is computed by letting E vary and setting C to its mean, subtracted by the null. The contribution of variance in C to a species' growth rate is computed in an analogous way, but reverse.
+
+\begin{align}
+\Delta^E &= \bar \epsilon_1^E - \bar \epsilon_2^E\\
+&=[\EX (\ln[1-\delta + \delta \frac{B_1}{\bar B_2}]) - \epsilon_1^0] - [\EX(\ln[1-\delta + \delta \frac{ B_2}{\bar B_2}]) - \epsilon_2^0]\\
+&=[\EX (\ln[1-\delta + \delta \frac{B_1}{\bar B_2}]) - \epsilon_1^0] - \EX(\ln[1-\delta + \delta \frac{ B_2}{\bar B_2}]) \\
+\end{align}
+
+\begin{align}
+\Delta^C &= \bar \epsilon_1^C - \bar \epsilon_2^C\\
+&=[\EX (\ln[1-\delta + \delta \frac{\bar B_1}{B_2}]) - \epsilon_1^0] - [\EX(\ln[1-\delta + \delta \frac{\bar B_2}{B_2}]) - \epsilon_2^0]\\
+&=[\EX (\ln[1-\delta + \delta \frac{\bar B_1}{B_2}]) - \epsilon_1^0] - \EX(\ln[1-\delta + \delta \frac{\bar B_2}{B_2}]) \\
+\end{align}
+
+
+The contribution of E and C both varying but not together is computed by letting both terms vary but decoupling any association by substituting in a new independent varibable for one of the varibales. Here we use C. The term is subtracted by the previous contributions.
+
+\begin{align}
+\Delta_1^{(E\#C)} &= \bar \epsilon_1^{(E\#C)} - \bar \epsilon_2^{(E\#C)}\\
+&=[\EX(\ln[1-\delta + \delta \frac{B_1}{B_2^{\#}}]) -[\epsilon_1^0 +\bar \epsilon_1^E + \bar \epsilon_1^C]] - [\EX(\ln[1-\delta + \delta \frac{B_2}{B_2^{\#}}]) -[\epsilon_2^0 +\bar \epsilon_2^E + \bar \epsilon_2^C]]\\
+\end{align}
+
+The contribution of E and C co-varying is the storage effect. Computed by, 
+
+\begin{equation}
+\Delta^{(EC)} = \bar \epsilon_1^{(EC)} - \bar \epsilon_2^{(EC)}.
+\end{equation}
+
+\noindent Where,
+
+\begin{align}
+\bar \epsilon_i^{(EC)}&=\bar \epsilon_i^{EC}-\bar \epsilon_i^{(E\#C)}\\
+&= \EX(\ln(1-\delta + \delta \frac{B_i}{B_j}))-[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C]\\
+&- \EX(\ln(1-\delta + \delta \frac{B_i}{B_j^{\#}})) +[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C].
+\end{align}
+
+By substituting these expansions into \ref(IGR), we get, 
+
+Recall from main text that the goal of this research is to investigate the implications of extreme events and thus asymmetric tail associations on coexistence. Hence, we compare IGR and mechanism values for each noise type. Because only association structure and not means and standard deviation is differ across noise types, different noise types will not result in differences in any of the decomposition terms outside of the storage effect term. All other terms do not consider the associative relationship between the two variables. The null growth grate is a constant that depends on the mean of both variables, the contribution of variance in one variable only depends on that one variable scaled by the mean of the other, and the varying but independent term while it does consider both variable they are set to be completely uncorrelated. These four terms will not differ across noise types. 
+
 
 Fixed number, base growth rate
 
@@ -398,45 +456,11 @@ checks out
 
 Need to find $\Delta_1^0, \Delta_1^E, \Delta_1^C, \Delta_1^{(EC)}, \Delta_1^{(E\#C)}$ (where species 1 is the invader and species 2 is the resident)
 
-\begin{equation}
-\bar r_1-\bar r_2 = \Delta_1^0+\Delta_1^E+\Delta_1^C+\Delta_1^{(EC)}+\Delta_1^{(E\#C)} 
-\end{equation}
 
-\begin{align}
-\Delta_1^0 &= \epsilon_1^0 - \epsilon_2^0\\
-&=\ln(1-\delta + \delta \frac{\bar B_1}{\bar B_2}) - \ln(1-\delta + \delta \frac{\bar B_2}{\bar B_2})\\
-&=\ln(1-\delta + \delta \frac{\bar B_1}{\bar B_2}) - 0 \\
-%&=\ln(1-\delta + \delta \exp(\bar b_1-\bar b_2)
-\end{align}
 
-\begin{align}
-\Delta_1^E &= \bar \epsilon_1^E - \bar \epsilon_2^E\\
-&=\EX (\ln[1-\delta + \delta \frac{B_1}{\bar B_2}]) - \epsilon_1^0 - [\EX(\ln[1-\delta + \delta \frac{ B_2}{\bar B_2}]) - \epsilon_2^0]\\
-&=\EX (\ln[1-\delta + \delta \frac{B_1}{\bar B_2}]) - \epsilon_1^0 - \EX(\ln[1-\delta + \delta \frac{ B_2}{\bar B_2}]) \\
-%&=\EX (\ln[1-\delta + \delta \exp(b_1-\bar b_2)]) - \EX (\ln[1-\delta + \delta \exp( b_2-\bar b_2)]) - \ln(1-\delta + \delta \exp(\bar b_1-\bar b_2)
-\end{align}
 
-\begin{align}
-\Delta_1^C &= \bar \epsilon_1^C - \bar \epsilon_2^C\\
-&=\EX (\ln[1-\delta + \delta \frac{\bar B_1}{B_2}]) - \epsilon_1^0 - [\EX(\ln[1-\delta + \delta \frac{\bar B_2}{B_2}]) - \epsilon_2^0]\\
-&=\EX (\ln[1-\delta + \delta \frac{\bar B_1}{B_2}]) - \epsilon_1^0 - \EX(\ln[1-\delta + \delta \frac{\bar B_2}{B_2}]) \\
-%&=\EX (\ln[1-\delta + \delta \exp(\bar b_1-b_2)]) - \EX (\ln[1-\delta + \delta \exp(\bar b_2-b_2)]) - \ln(1-\delta + \delta \exp(\bar b_1-\bar b_2)
-\end{align}
 
-\begin{align}
-\Delta_1^{(E\#C)} &= \bar \epsilon_1^{(E\#C)} - \bar \epsilon_2^{(E\#C)}\\
-&=\EX(\ln[1-\delta + \delta \frac{B_1}{B_2^{\#}}]) -[\epsilon_1^0 +\bar \epsilon_1^E + \bar \epsilon_1^C] - [\EX(\ln[1-\delta + \delta \frac{B_2}{B_2^{\#}}]) -[\epsilon_2^0 +\bar \epsilon_2^E + \bar \epsilon_2^C]]\\
-%&=\EX (\ln[1-\delta + \delta \exp(\bar b_1-b_2^{\#})])-[\epsilon_1^0 +\bar \epsilon_1^E + \bar \epsilon_1^C] - [\EX (\ln[1-\delta + \delta \exp(\bar b_2-b_2^{\#})])-[\bar \epsilon_2^E + \bar \epsilon_2^C]]
-\end{align}
 
-\begin{align}
-\Delta_1^{(EC)} &= \bar \epsilon_1^{(EC)} - \bar \epsilon_2^{(EC)}\\
-&=[\EX(\ln[1-\delta + \delta \frac{B_1}{B_2^]) -\EX(\ln[1-\delta + \delta \frac{B_1}{B_2^{\#}])] - [\EX(\ln[1-\delta + \delta \frac{B_2}{B_2^]) -\EX(\ln[1-\delta + \delta \frac{B_2}{B_2^{\#}])]\\
-&=\EX(\ln[1-\delta + \delta \frac{B_1}{B_2^]) -\EX(\ln[1-\delta + \delta \frac{B_1}{B_2^{\#}]) + \EX(\ln[1-\delta + \delta \frac{B_2}{B_2^{\#}])\\
-%&=\EX (\ln[1-\delta + \delta \exp(\bar b_1-b_2)]) - \EX (\ln[1-\delta + \delta \exp(\bar b_1-b_2^{\#})]) + \EX (\ln[1-\delta + \delta \exp(b_2-b_2^{\#})])\\
-&= \bar r_1 - \bar r_1^{\#} - \bar r_2^{\#} \\
-&= \DeltaI_1 \\
-\end{align}
 
 
 
