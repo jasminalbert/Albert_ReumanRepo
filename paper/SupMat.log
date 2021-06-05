@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.12)  30 MAY 2021 23:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.12)  5 JUN 2021 13:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -275,7 +275,7 @@ Package: ae 2001/02/12 1.3 Almost European Computer Modern
 (/home/jasmin/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 )))
-LaTeX Font Info:    Trying to load font information for T1+aer on input line 50
+LaTeX Font Info:    Trying to load font information for T1+aer on input line 46
 .
 
 (/home/jasmin/.TinyTeX/texmf-dist/tex/latex/ae/t1aer.fd
@@ -289,20 +289,20 @@ File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
 (./SupMat.aux)
 \openout1 = `SupMat.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
 
 (/home/jasmin/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -382,13 +382,13 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 (./SupMat-concordance.tex)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 51.
 
 
 (/home/jasmin/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 51.
 
 
 (/home/jasmin/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -397,32 +397,32 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/home/jasmin/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [
 4] [5] [6]
-[7] [8] (./SupMat.aux) ) 
+[7] [8] [9] (./SupMat.aux) ) 
 Here is how much of TeX's memory you used:
- 5772 strings out of 480806
- 89112 string characters out of 5904893
- 404106 words of memory out of 5000000
- 23031 multiletter control sequences out of 15000+600000
+ 5768 strings out of 480806
+ 89078 string characters out of 5904893
+ 406073 words of memory out of 5000000
+ 23027 multiletter control sequences out of 15000+600000
  424945 words of font info for 82 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 69i,10n,79p,700b,215s stack positions out of 5000i,500n,10000p,200000b,80000s
-</home/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmb10.pfb></home/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmex10.pfb></home/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi10.pfb></home/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi12.pfb></home/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
-i6.pfb></home/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.p
-fb></home/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
-/home/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></hom
-e/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></home/ja
-smin/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/jasmin/
-.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/jasmin/.Tiny
-TeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/jasmin/.TinyTeX
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on SupMat.pdf (8 pages, 163986 bytes).
+ 69i,10n,79p,913b,215s stack positions out of 5000i,500n,10000p,200000b,80000s
+</home/jasmin/.TinyTeX/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmb10.pfb></home/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmex10.pfb></home/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi10.pfb></home/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi12.pfb></home/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi6.pfb></home/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i8.pfb></home/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
+fb></home/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
+/home/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></hom
+e/jasmin/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/jas
+min/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/jasmin/.
+TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/jasmin/.Tin
+yTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on SupMat.pdf (9 pages, 169783 bytes).
 PDF statistics:
- 84 PDF objects out of 1000 (max. 8388607)
- 59 compressed objects within 1 object stream
+ 87 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  5 words of extra memory for PDF output out of 10000 (max. 10000000)
 
