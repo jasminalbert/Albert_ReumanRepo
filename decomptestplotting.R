@@ -38,3 +38,16 @@ for (i in 1:10){
   points(1:3, list[[i]]$Dnull, col=rainbow(10)[i])
 }
 
+plot(b_l1, b_l2)
+plot(Bl[,1], Bl[,2])
+plot(Bl[,1], Bl[,2]/delta)
+hist(b_l1)
+hist(b_l2)
+hist(Bl[,1], breaks=100)
+hist(Bl[,2], breaks=100)
+hist(Bl[,2]/delta, breaks=100)
+hist(log(Bl[,1]))
+hist(log(Bl[,2]/delta))
+plot(log(Bl[,1]), log(Bl[,2])/delta)
+plot(b_l1[1:500], b_l2[1:500])
+points(b_l1[1:500], b_l2[1:500]/delta, col='red')
