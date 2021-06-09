@@ -63,6 +63,16 @@ for (s in 1:length(sigma)){
       DeltaIhat_s <- rbar1hat_s - rbar1sharphat + rbar2sharphat
       se_DeltaIhat_s <- se_rbar1hat_s + se_rbar1sharphat + se_rbar2sharphat
       
+      #Contribution of asymmetry (7)
+      #left
+      epECdot_l <- DeltaIhat_l - DeltaIhat_s
+      
+      #right
+      epECdot_r <- DeltaIhat_r - DeltaIhat_s
+      
+      #symmetric
+      epECdot_s <- DeltaIhat_s - DeltaIhat_s
+      
       #save in matrix
       rbar <- rbind(rbar, cbind(rbar1hat_l,rbar1hat_r,rbar1hat_s,rbar1sharphat,rbar2sharphat))
       se_rbar <- rbind(se_rbar, cbind(se_rbar1hat_l,se_rbar1hat_r,se_rbar1hat_s,se_rbar1sharphat,se_rbar2sharphat))
