@@ -6,8 +6,7 @@
 #sigma - common sd of bivariate noise sets
 #mu - vector length 2 for bivariate noise
 
-transform <- function
-.(b_tilde, u_tilde, rho, sigma, mu){
+transform <- function(b_tilde, u_tilde, rho, sigma, mu){
   b_l1 <- sigma*b_tilde$l[,1] + mu[1]
   b_l2 <- sigma*b_tilde$l[,2] + mu[2]
   
