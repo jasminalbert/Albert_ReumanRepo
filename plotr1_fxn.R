@@ -38,20 +38,20 @@ plot_r1 <- function(sigma, mu, delta, plottype){
   
   if (plottype==1){
     
-    plot(l[1:100], type='l', ylab='r1(L)',xlab=NULL, col='blue')
-    abline(h=mean(l), lty=3, col='red')
+    plot(l$r[1:100], type='l', ylab='r1(L)',xlab=NULL, col='blue')
+    abline(h=mean(l$r), lty=3, col='red')
     points(n$b_l1[1:100]-n$b_l2[1:100], cex=0.75)
-    mtext(paste("sd=", round(sd(l),4), "mean=", round(mean(l),4)), 1, cex=0.5, line=-1)
+    mtext(paste("sd=", round(sd(l$r),4), "mean=", round(mean(l$r),4)), 1, cex=0.5, line=-1)
     
-    plot(r[1:100], type='l', ylab='r1(R)',xlab=NULL, col='blue')
-    abline(h=mean(r), lty=3, col='red')
+    plot(r$r[1:100], type='l', ylab='r1(R)',xlab=NULL, col='blue')
+    abline(h=mean(r$r), lty=3, col='red')
     points(n$b_r1[1:100]-n$b_r2[1:100], cex=0.75)
-    mtext(paste("sd=", round(sd(r),4), "mean=", round(mean(r),4)), 1, cex=0.5, line=-1)
+    mtext(paste("sd=", round(sd(r$r),4), "mean=", round(mean(r$r),4)), 1, cex=0.5, line=-1)
     
-    plot(s[1:100], type='l', ylab='r1(S)',xlab=NULL, col='blue')
-    abline(h=mean(s), lty=3, col='red')
+    plot(s$r[1:100], type='l', ylab='r1(S)',xlab=NULL, col='blue')
+    abline(h=mean(s$r), lty=3, col='red')
     points(b_s1[1:100]-b_s2[1:100], cex=0.75)
-    mtext(paste("sd=", round(sd(s),4), "mean=", round(mean(s),4)), 1, cex=0.5,line=-1)
+    mtext(paste("sd=", round(sd(s$r),4), "mean=", round(mean(s$r),4)), 1, cex=0.5,line=-1)
     
     mtext("timestep",1,outer=T, cex=.75)
   }
@@ -59,13 +59,13 @@ plot_r1 <- function(sigma, mu, delta, plottype){
 
   if (plottype==2){
     
-    plotdis(n$b_l1[1:750],n$b_l2[1:750], main="left tail asymmetry")
+    plotdis(n$b_l1[1:750],n$b_l2[1:750])
     mtext(paste("(L)  P[r1>0]=", round(invPrb[1],3), "E(r1|r1>0)=", round(invE[1],3)), 1, cex=0.5, line=-1)
     
-    plotdis(n$b_r1[1:750],n$b_r2[1:750], main="right tail asymmetry")
+    plotdis(n$b_r1[1:750],n$b_r2[1:750])
     mtext(paste("(R)  P[r1>0]=", round(invPrb[2],3), "E(r1|r1>0)=", round(invE[2],3)), 1, cex=0.5, line=-1)
     
-    plotdis(b_s1[1:750],b_s2[1:750], main="symmetric")
+    plotdis(b_s1[1:750],b_s2[1:750])
     mtext(paste("(S)  P[r1>0]=", round(invPrb[3],3), "E(r1|r1>0)=", round(invE[3],3)), 1, cex=0.5, line=-1)
     
   }
@@ -75,3 +75,6 @@ plot_r1 <- function(sigma, mu, delta, plottype){
   
   #dev.off()
 }
+
+#plot_r1(3.2, c(0.1,0.9), 0.5, plottype=2)
+#plot_r1(3.2, c(0.1,0.9), 0.5, plottype=1)
