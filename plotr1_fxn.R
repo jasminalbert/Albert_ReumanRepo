@@ -1,3 +1,4 @@
+
 plotdis <- function(b1,b2,...){
   plot(b2, b1, ylab='b1', xlab="b2", pch=16, col="grey",...)
   rangeb1 <- round(range(b1))
@@ -11,9 +12,7 @@ plotdis <- function(b1,b2,...){
 plot_r1 <- function(sigma, mu, delta, plottype){
   load("./noise_etc.RData")
   
-  n <- transform(b_tilde, u_tilde, rho, sigma, mu)
-  b_s1 <- sigma*b_tilde$s[,1] + mu[1]
-  b_s2 <- sigma*b_tilde$s[,2] + mu[2]
+  n <- transform(b_tilde, u_tilde, rho, sigma, mu, b_s=T)
   
   l <- r_mets(n$b_l1-n$b_l2, delta, M)
   r <- r_mets(n$b_r1-n$b_r2, delta, M)
@@ -34,24 +33,24 @@ plot_r1 <- function(sigma, mu, delta, plottype){
             mean(s$r[s$r>0]))
   
   #pdf("r1.pdf")
-  par(oma=c(2,1,1,1), mfrow=c(3,1), mar=c(2,3,2,1))
+  par(oma=c(2,1,1,1), mfrow=c(3,1), mar=c(2,4,2,1))
   
   if (plottype==1){
     
     plot(l$r[1:100], type='l', ylab='r1(L)',xlab=NULL, col='blue')
     abline(h=mean(l$r), lty=3, col='red')
     points(n$b_l1[1:100]-n$b_l2[1:100], cex=0.75)
-    mtext(paste("sd=", round(sd(l$r),4), "mean=", round(mean(l$r),4)), 1, cex=0.5, line=-1)
+    mtext(paste("sd=", round(sd(l$r),4), "mean=", round(mean(l$r),4)), 3, cex=0.5, line=-1)
     
     plot(r$r[1:100], type='l', ylab='r1(R)',xlab=NULL, col='blue')
     abline(h=mean(r$r), lty=3, col='red')
     points(n$b_r1[1:100]-n$b_r2[1:100], cex=0.75)
-    mtext(paste("sd=", round(sd(r$r),4), "mean=", round(mean(r$r),4)), 1, cex=0.5, line=-1)
+    mtext(paste("sd=", round(sd(r$r),4), "mean=", round(mean(r$r),4)), 3, cex=0.5, line=-1)
     
     plot(s$r[1:100], type='l', ylab='r1(S)',xlab=NULL, col='blue')
     abline(h=mean(s$r), lty=3, col='red')
     points(b_s1[1:100]-b_s2[1:100], cex=0.75)
-    mtext(paste("sd=", round(sd(s$r),4), "mean=", round(mean(s$r),4)), 1, cex=0.5,line=-1)
+    mtext(paste("sd=", round(sd(s$r),4), "mean=", round(mean(s$r),4)), 3, cex=0.5,line=-1)
     
     mtext("timestep",1,outer=T, cex=.75)
   }
@@ -68,6 +67,19 @@ plot_r1 <- function(sigma, mu, delta, plottype){
     plotdis(b_s1[1:750],b_s2[1:750])
     mtext(paste("(S)  P[r1>0]=", round(invPrb[3],3), "E(r1|r1>0)=", round(invE[3],3)), 1, cex=0.5, line=-1)
     
+  }
+  
+  if (plottype==3){
+    source("./pop_sim.R")
+    popl<- popsim(b_l1, b_l2, 1000, 1, delta, M)
+    popr<- popsim(b_r1, b_r2, 1000, 1, delta, M)
+    pops<- popsim(b_s1, b_s2, 1000, 1, delta, M)
+    
+    plot(popl$N1[1:100], type='l', ylab="N_1 (L)", xlab="")
+    plot(popr$N1[1:100], type='l', ylab="N_1 (R)", xlab='')
+    plot(pops$N1[1:100], type='l', ylab="N_1 (S)", xlab='')
+    
+    mtext("timestep",1,outer=T, cex=.75)
   }
   
   
