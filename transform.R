@@ -25,7 +25,7 @@ transform <- function(b_tilde, u_tilde, rho, sigma, mu, b_s=FALSE){
     b_s2 <- sigma*b_tilde$s[,2] + mu[2]
     
     return(list(b_l1=b_l1, b_l2=b_l2, b_r1=b_r1, b_r2=b_r2, 
-                b_s1=b_s1, b_s1=b_s2, u_s=u_s, u_1=u_1, u_2=u_2))
+                b_s1=b_s1, b_s2=b_s2, u_s=u_s, u_1=u_1, u_2=u_2))
   }
   
 
