@@ -4,16 +4,16 @@
   \def\url#1{\texttt{#1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
 
-\bibitem[{Aban \emph{et~al.}(2006)Aban, Meerschaert \& Panorska}]{Abanetal2006}
-Aban, I., Meerschaert, M. \& Panorska, A. (2006).
-\newblock Parameter estimation for the truncated pareto distribution.
-\newblock \emph{Journal of the American Statistical Association}, 101,
-  270--277.
+\bibitem[{Ellner \emph{et~al.}(2016)Ellner, Snyder \& Adler}]{Ellner_2016}
+Ellner, S., Snyder, R. \& Adler, P. (2016).
+\newblock How to quantify the temporal storage effect using simulations instead
+  of math.
+\newblock \emph{Ecology Letters}, 19, 1333--1342.
 
-\bibitem[{Burnham \& Anderson(2002)}]{BurnhamAnderson2002}
-Burnham, K. \& Anderson, D. (2002).
-\newblock \emph{Model Selection and Multimodel Inference: A Practical
-  Information-Theoretic Approach, 2nd Edn.}
-\newblock Springer Science and Business Media, New York.
+\bibitem[{Ellner \emph{et~al.}(2019)Ellner, Snyder, Adler \&
+  Hooker}]{Ellner_2019}
+Ellner, S., Snyder, R., Adler, P. \& Hooker, G. (2019).
+\newblock An expanded modern coexistence theory for empirical applications.
+\newblock \emph{Ecology Letters}, 22, 3--18.
 
 \end{thebibliography}
