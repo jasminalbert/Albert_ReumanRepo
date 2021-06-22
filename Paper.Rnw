@@ -27,8 +27,11 @@
 \externaldocument[SM-]{SupMat}
  
 %header material for paper
-\title{Place title here}
+\title{Relationships in the extremes and their influence on competition and coexistence}
 \date{}
+
+%Put other possible titles below, commented, and we will select the best one at the end
+%Relationships between extreme events and their influence on competition and coexistence
 
 \author[a]{Jasmin Albert}
 \author[a,b]{Daniel C. Reuman}
@@ -60,6 +63,10 @@ Place abstract here
 \keywords{kw1, kw2,kw3}
 
 \section{Introduction}\label{section:introduction}
+
+
+\section{Theory}\label{section:theory}
+
 
 
 \section{Methods}\label{section:methods}
