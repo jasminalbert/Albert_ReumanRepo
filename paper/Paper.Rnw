@@ -13,8 +13,13 @@
 \usepackage{lineno}
 \usepackage{natbib}
 \usepackage{amsmath}
-\usepackage{xr}
 \usepackage{authblk}
+\usepackage{xr}
+\usepackage{relsize}
+\usepackage{tikz}
+
+%external documents
+\externaldocument[SI-]{SupMat}
 
 %new commands and so on
 \providecommand{\keywords}[1]
@@ -23,17 +28,61 @@
   \textbf{\textit{Keywords---}} #1
 }
 
-\DeclareMathOperator{\EX}{E}% expected value
-\DeclareMathOperator{\VarX}{var}
-\DeclareMathOperator{\CovX}{cov}
+\DeclareMathOperator{\E}{E}% expected value
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\cor}{cor}
 \DeclareMathOperator{\mean}{mean}
 \DeclareMathOperator{\se}{se}
 \DeclareMathOperator{\sd}{sd}
-\DeclareMathOperator{\Prob}{P}
+\DeclareMathOperator{\prob}{P}
 
-%external documents
-\externaldocument[SM-]{SupMat}
- 
+%attempt 1 at nat and sharp
+%\newcommand{\nat}{\mathlarger{\natural}}
+%\newcommand{\shp}{\mathlarger{\sharp}}
+
+%attempt 2 at nat and sharp
+%\newcommand{\nat}{\raisebox{1pt}{\mathsmaller{\mathsmaller{/\hspace{-2pt}/}}}}
+%\newcommand{\shp}{\#}
+
+%attempt 3 at nat and sharp
+\newcommand{\nat}{%
+\text{\hspace{-1.5pt}
+\begin{tikzpicture}[scale=1.8]%
+\draw (.333ex,.333ex) -- (.666ex,.333ex);%
+\draw (.333ex,.666ex) -- (.666ex,.666ex);%
+\draw (.333ex,.333ex) -- (.333ex,1ex);%
+\draw (.66ex,0) -- (.66ex,.66ex);
+\end{tikzpicture}%
+}}
+\newcommand{\shp}{%
+\text{\hspace{-1.5pt}
+\begin{tikzpicture}[scale=1.8]%
+\draw (0,.333ex) -- (1ex,.333ex);%
+\draw (0,.666ex) -- (1ex,.666ex);%
+\draw (.333ex,0) -- (.333ex,1ex);%
+\draw (.666ex,0) -- (.666ex,1ex);
+\end{tikzpicture}%
+}}
+\newcommand{\test}{%
+\text{
+\begin{tikzpicture}[scale=1.8]%
+\draw (0,0) -- (1ex,0ex);
+\draw (0,0) -- (0ex,1ex);
+\draw (0,1ex) -- (1ex,1ex);
+\draw (1ex,0) -- (1ex,1ex);
+\draw (0,.333ex) -- (2ex,.333ex);%
+\draw (0,.666ex) -- (1ex,.666ex);%
+\draw (.333ex,0) -- (.333ex,1ex);%
+\draw (.666ex,0) -- (.666ex,1ex);
+\end{tikzpicture}%
+}}
+
+\newcommand{\olr}{\overline{r}}
+\newcommand{\olrs}{\overline{r}^{\shp}}
+\newcommand{\olrn}{\overline{r}^{\nat}}
+\newcommand{\bs}{\backslash}
+
 %header material for paper
 \title{Relationships in the extremes and their influence on competition and coexistence}
 \date{}
@@ -43,6 +92,17 @@
 
 \author[a]{Jasmin Albert}
 \author[a,b]{Daniel C. Reuman}
+%***DAN: Jasmin, you should choose one way your name will appear, exactly, on all your publications,
+%so everyone knows its you. For instance, I always appear as Daniel C. Reuman, not Daniel Reuman, not
+%Dan Reuman, etc. This makes it possible to find all my papers by searching. So please decide what
+%name to use, Jasmin Albert or Pimsupa Albert or P. Jasmin Albert or whatever. Also keep in mind
+%that because "Albert" is a common name you might want something less common for the rest of it 
+%so that your papers are not confused with anyone elses, though of course I emphasize that how you
+%are going to be known it totally up to you, I'm just recommending you think it through now so you
+%can be consistent. I recognize that this all may be moot if you one day change your name and want to
+%be known by the new name on papers after that point, but anyway in case you don't ever change your 
+%name you might as well be consistent now, at least. So please change your name above to whatever
+%you want to be officially known as on scientific papers. Same change in the sup mat, please.
 
 \affil[a]{Department of Ecology and Evolutionary Biology and Kansas Biological Survey, University of Kansas}
 \affil[b]{Laboratory of Populations, Rockefeller University}
@@ -75,8 +135,8 @@ Place abstract here
 
 \section{Theory}\label{section:theory}
 
-For pedgogical clarity, we develop each step of the theory both for a simple classical model, 
-the lottery model, and in general. The model is as follows. 
+For pedgogical clarity, we develop each step of the theory both for a simple classical model 
+(the lottery model), and in general. The lottery model is as follows. 
 %***DAN: Note the inclusion of the model here means we will have to edit the "Model" section of sup mat, since we don't need to intro the model twice. Do later.
 Letting $N_i(t)$ denote the population density of species $i=1,2$ at time $t$, and defining $N = N_1(t)+N_2(t)$,
 model equations are
@@ -87,33 +147,107 @@ for $i=1,2$. Here, $\delta$ is a mortality rate, and $B_i(t)$ is the fecundiity 
 The model postulates that individuals die at rate $\delta$ at each time step, and are replaced by juveniles 
 in proportion to the reproductive outputs of the two species that year.
 For each $i$, we assume the random variables $B_i(t)$ are independent and identically distributed (iid) through
-time. We let $B_i = \exp(b_i)$, where $\left(b_1, b_2\right)$ is some bivariate random variable with the properties 
+time. We let $B_i = \exp(b_i)$, where $\left(b_1, b_2\right)$ is some bivariate random variable with the property 
 that $b_i$ is normally distributed with mean $\mu_i$ and variance $\sigma^2$. 
-We denote $\CovX(b_1, b_2)$ by $\rho$. However, we do \emph{not} assume that $\left(b_1, b_2\right)$ is a 
+We denote $\cor(b_1, b_2)$ by $\rho$. However, we do \emph{not} assume that $\left(b_1, b_2\right)$ is a 
 bivariate normal distribution. We will consider various distributions of $\left(b_1, b_2\right)$ with the above 
-properties, corresponding to symmetric and asymmetric tail association cases.
-We assume without loss of generality that $\mu_1 \leq \mu_2$, so that species 1 is the weaker competitor.
-Note that $N$ is constant through time.
+properties, corresponding to various tail association cases. Note that $N$ is constant through time.
 
 Modern coexistence theory \citep{Chesson_2000} and its recent computational extensions \citep{Ellner_2016,Ellner_2019} 
 %***DAN: Search for REF and replace all with appropriate citations
 quantify the contributions of 
-different mechanisms to species coexistence. But we show in Sup Mat section X
-%***DAN: Make this reference to the sup mat an autolink, and write the section
+different mechanisms to species coexistence. But we show below
 that, for purely temporal variation, only one mechanism relates to tail associations: storage effects. 
-We here define storage effects abstractly and then for the lottery model, using an approach and notation
-that follows elements of the presentations in \cite{Ellner_2016} and \cite{Ellner_2019} closely (and see
-those papers for additional details and explanation). We 
-return briefly to other mechanisms of coexistence in the Discussion.
-%***DAN: Don't forget to do this. Basically want to say intuitively why tail associations don't influence those,
-%though might be worth mentioning that events are getting more extreme. We have studied how *relationships*
+We now define storage effects for a general two species model, and specifically 
+for the lottery model, using an approach and notation
+similar to those of \cite{Ellner_2016} and \cite{Ellner_2019}; see those papers for additional details. 
+%***DAN: Don't forget to return to the other mechanisms of coexistence below. Basically want to say intuitively 
+%why tail associations don't influence those,
+%though might be worth mentioning in the Discussion that events are getting more extreme. We have studied how *relationships*
 %in the extremes influence coexistence, but probably worth studying (or cite papers if it's been done) how changes
 %in the commonness and extremeness of extreme events themselves influence coexistence, and for that you'd have
-%to also look at the other mechanisms. 
-It is assumed that the growth rate $r_i(t)$ of species $i$ can be written as an increasing function of
-an environment-dependent factor $E_i(t)$ and as a decreasing function of a competitive pressure, $C_i(t)$.
+%to also look at the other mechanisms. May still need a sup mat laying out all the math.
+
+For a general model, it is assumed that the growth rate $r_i(t)=\ln(N_i(t+1)/N_i(t))$ 
+of species $i$ can be written as an increasing function of
+an environment-dependent factor $E_i(t)$ and as a decreasing function of a quantity representing
+competitive pressure on species $i$, $C_i(t)$. For simplicity, we here assume 
+the $E_i(t)$ are iid through time, and likewise for the
+$C_i(t)$. Though this assumption can be circumvented, we make the assumption because it simplifies the
+presentation without obscuring main ideas. 
 For the lottery model, we take $E_i(t)=B_i(t)$, henceforth assuming that fecundity depends strictly on
-the environment. Competition $C_i(t)$ is taken to be 
+the environment. Competition, $C_i(t)$, in the lottery model is the number of new offspring
+divided by the number of open sites, $C_i(t)=( B_1(t)N_1(t)+B_2(t)N_2(t) )/\delta N$, which
+does not depend on $i$. Competition in the lottery model occurs at the stage of juveniles occupying open sites. 
+Species growth rates for the lottery model can then be written 
+$r_i(t)=\ln[1-\delta+E_i(t)/C_i(t)]=\ln[1-\delta+\delta N B_i(t)/(B_1(t)N_1(t)+B_2(t)N_2(t))]$.
+
+In general, the storage effect for species $i$ is the contribution of covariation between $E_i(t)$ and 
+$C_i(t)$ to a difference between invader and resident mean growth rates, when $i$ is the invader.
+Specifically, storage effects for species $i$ are 
+\begin{equation}
+\Delta I_i = (\olr_{i\bs i} - q_{ij} \olr_{j \bs i})-(\olrs_{i \bs i}-q_{ij} \olrs_{j \bs i}),\label{eq:storage_effects_gen}
+\end{equation}
+where: $\olr_{i \bs i}$ refers to the mean ``invasion growth rate'' of species $i$, that is, the growth rate of 
+species $i$ when it is at negligible abundance and species $j$ (the other species) is at stochastic steady state;
+$\olr_{j \bs i}$ refers to the mean steady-state 
+growth rate of species $j$ when species $i$ is absent (this is $0$, \emph{a priori});
+and $\olrs_{i \bs i}$ and $\olrs_{j \bs i}$ are analogous quantities, but for an alternative model scenario, identical except that
+the bivariate random variable $(E_i,C_i)$ has been replaced by a random variable $(E_i^\shp,C_i^\shp)$ 
+with the same marginal distributions but independent components. The so-called \emph{scaling factor}
+$q_{ij}$ measures the relative sensitivities to competition of the two species, see \cite{Chesson_1994},
+\cite{Ellner_2016} and SI section \ref{SI-SIsect:scaling_factors} for the definition of $q_{ij}$, here 
+omitted for brevity. 
+
+For the lottery model, it is straightforward to show that $\olr_{i \bs i}=\E[\ln(1-\delta+\delta B_i(t)/B_j(t))]$,
+$\olrs_{i \bs i} = \E[\ln(1-\delta+\delta B_i^\shp(t)/B_j(t))]$, and $\olrs_{j \bs i} = \E[\ln(1-\delta+\delta B_j^\shp(t)/B_j(t))]$, where $\E(\cdot)$ is expected value.
+Here, $B_i^\shp$ is a random variable distributed in the same way as $B_i$, but independent of it; and
+$B_j^\shp$ is distributed the same as $B_j$, but is independent of it. We show in SI section \ref{SI-SIsect:scaling_factors}
+that $q_{ij}=\overline{B}_i/((1-\delta)\overline{B}_j+\delta \overline{B}_i)$, where, as above, the overbar 
+denotes expected value. 
+%***DAN: Note this might be wrong. Some of the language in Ellner et al (2016) indicates q_{ij} here should be 1,
+%even if \mu_1 and \mu_2 are distinct, as long as we use the same \delta for both species (which we do).
+%But when I try to follow the definitions of the same paper to compute q_{ij} I get the quantity listed above,
+%which is not 1. I'll need to get to the bottom of this, possibly by speaking to Ellner, and then put the right 
+%value here, and also write the corresponding sup mat section accordingly (though you may not need that section, 
+%it may be enough to just cite Ellner and Chesson if you go with q_ij=1.
+Since we use log-normally distributed $B_i$, 
+$\overline{B}_i=\exp(\mu_i+\sigma^2/2)$, so $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$.
+%***DAN: This statement also needs adjusting if you go with q_ij=1
+So $\Delta I_i$ for the lottery model can be computed by using simulations \citep{Ellner_2016}
+to compute arbitrarily good approximations for $\olr_{i \bs i}$, $\olrs_{i \bs i}$,
+and $\olrs_{j \bs i}$, and then plugging them and the value for $q_{ij}$ into (\ref{eq:storage_effects_gen}).
+
+Having just reviewed storage effects, we now specify how to decompose storage effects into
+contrbutions due to asymmetric tail associations and contributions due
+to $EC$ covariance \emph{per se}. The storage effect for species $i$ was computed by comparing
+a difference between invader and resident mean growth rates for the original model to the same quantity calculated for a 
+modified model for which $E_i$ and $C_i$ were rendered independent (see (\ref{eq:storage_effects_gen})). 
+Because $E_i$ and $C_i$ were rendered 
+completely independent in the modified model, storage effects quantify the contribution of the 
+whole relationship between $E_i$ and $C_i$, in all its aspects, to the invader/resident growth rate
+difference. However, we can instead consider a distribution $(E_i^\nat,C_i^\nat)$ with the same
+marginal distributions as $(E_i,C_i)$ and with some but not all aspects of the relationship 
+between the components modified relative to $(E_i,C_i)$; specifically, tail associations are rendered symmetric
+(see below for how this is done). We then define 
+$\olrn_{i \bs i}$ and $\olrn_{j \bs i}$ based on a modified model using  $(E_i^\nat,C_i^\nat)$,
+and we consider the decomposition 
+\begin{align}
+\Delta I_i &= [(\olr_{i\bs i} - q_{ij} \olr_{j \bs i})-(\olrn_{i \bs i}-q_{ij} \olrn_{j \bs i})]+
+[(\olrn_{i \bs i}-q_{ij} \olrn_{j \bs i})-(\olrs_{i \bs i}-q_{ij} \olrs_{j \bs i})] \\
+&= I_i^{(\text{ata})} + I_i^{(\text{cps})}.\label{eq:storage_effects_further}
+\end{align}
+The superscript ``ata" stands for ``asymmetric tail associations'' because this component of storage effects is due to 
+asymmetric tail associations between $E_i$ and $C_i$. The superscript ``cps" stands for ``covariance
+\emph{per se}'' because this component of storage effects is due to $EC$ covariance \emph{per se}.
+
+
+
+
+
+
+
+
 
 
 \section{Methods}\label{section:methods}
