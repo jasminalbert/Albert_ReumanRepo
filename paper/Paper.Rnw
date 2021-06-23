@@ -49,10 +49,8 @@
 \newcommand{\nat}{%
 \text{\hspace{-1.5pt}
 \begin{tikzpicture}[scale=1.8]%
-\draw (.333ex,.333ex) -- (.666ex,.333ex);%
-\draw (.333ex,.666ex) -- (.666ex,.666ex);%
-\draw (.333ex,.333ex) -- (.333ex,1ex);%
-\draw (.66ex,0) -- (.66ex,.66ex);
+\draw (.333ex,0) -- (.333ex,1ex);%
+\draw (.666ex,0) -- (.666ex,1ex);
 \end{tikzpicture}%
 }}
 \newcommand{\shp}{%
@@ -149,7 +147,7 @@ in proportion to the reproductive outputs of the two species that year.
 For each $i$, we assume the random variables $B_i(t)$ are independent and identically distributed (iid) through
 time. We let $B_i = \exp(b_i)$, where $\left(b_1, b_2\right)$ is some bivariate random variable with the property 
 that $b_i$ is normally distributed with mean $\mu_i$ and variance $\sigma^2$. 
-We denote $\cor(b_1, b_2)$ by $\rho$. However, we do \emph{not} assume that $\left(b_1, b_2\right)$ is a 
+However, we do \emph{not} assume that $\left(b_1, b_2\right)$ is a 
 bivariate normal distribution. We will consider various distributions of $\left(b_1, b_2\right)$ with the above 
 properties, corresponding to various tail association cases. Note that $N$ is constant through time.
 
@@ -220,7 +218,7 @@ and $\olrs_{j \bs i}$, and then plugging them and the value for $q_{ij}$ into (\
 
 Having just reviewed storage effects, we now specify how to decompose storage effects into
 contrbutions due to asymmetric tail associations and contributions due
-to $EC$ covariance \emph{per se}. The storage effect for species $i$ was computed by comparing
+to $EC$ correlation \emph{per se}. The storage effect for species $i$ was computed by comparing
 a difference between invader and resident mean growth rates for the original model to the same quantity calculated for a 
 modified model for which $E_i$ and $C_i$ were rendered independent (see (\ref{eq:storage_effects_gen})). 
 Because $E_i$ and $C_i$ were rendered 
@@ -228,7 +226,7 @@ completely independent in the modified model, storage effects quantify the contr
 whole relationship between $E_i$ and $C_i$, in all its aspects, to the invader/resident growth rate
 difference. However, we can instead consider a distribution $(E_i^\nat,C_i^\nat)$ with the same
 marginal distributions as $(E_i,C_i)$ and with some but not all aspects of the relationship 
-between the components modified relative to $(E_i,C_i)$; specifically, tail associations are rendered symmetric
+between the components modified relative to $(E_i,C_i)$; specifically, asymmetries of tail association are removed
 (see below for how this is done). We then define 
 $\olrn_{i \bs i}$ and $\olrn_{j \bs i}$ based on a modified model using  $(E_i^\nat,C_i^\nat)$,
 and we consider the decomposition 
@@ -238,8 +236,35 @@ and we consider the decomposition
 &= I_i^{(\text{ata})} + I_i^{(\text{cps})}.\label{eq:storage_effects_further}
 \end{align}
 The superscript ``ata" stands for ``asymmetric tail associations'' because this component of storage effects is due to 
-asymmetric tail associations between $E_i$ and $C_i$. The superscript ``cps" stands for ``covariance
-\emph{per se}'' because this component of storage effects is due to $EC$ covariance \emph{per se}.
+asymmetries of tail associations between $E_i$ and $C_i$. The superscript ``cps" stands for ``correlation
+\emph{per se}'' because this component of storage effects is due to $EC$ correlation \emph{per se}.
+The notation $\nat$ was chosen because the new symbol comprises part of the symbol $\shp$ (i.e., two of its four lines), 
+corresponding to the fact that part of the relationship between $E$ and $C$ components is removed. 
+
+How are asymmetries of tail association removed while leaving $E$ and $C$ marginal distributions and overall 
+correlation unchanged? We assume that the cummulative distribution functions (cdfs) of $E_i$ and 
+$C_i$, which we denote $F_{E_i}$ and $F_{C_i}$, respectively, are strictly monotonic and continuous. 
+Letting $\varphi$ be the cdf of a standard normal distribution, we consider the random variables
+$\varphi^{-1} \circ F_{E_i} (E_i)$ and $\varphi^{-1} \circ F_{C_i}(C_i)$, which are standard normally
+distributed, although they are not necessarily jointly bivariate normal.  Letting $\rho_i$ be the covariance of
+these random variables, we then define a bivariate normal random variable $(e_i,c_i)$ such that
+$\var(e_i)=\var(c_i)=1$ and such that $\cov(e_i,c_i)=\tilde{\rho}_i$. We define $E_i^\nat = F_{E_i}^{-1} \circ \varphi(e_i)$
+and $C_i^\nat=F_{C_i}^{-1} \circ \varphi(c_i)$. The value of $\tilde{\rho}_i$ is selected in one of 
+four alternative ways: $\tilde{\rho}_i = \rho_i$; or so that the Pearson, Spearman or Kendall correlation of 
+$E_i^\nat$ and $C_i^\nat$ matches that of $E_i$ and $C_i$. The choice of bivariate normal 
+$(e_i,c_i)$ ensures that $E_i^\nat$ and $C_i^\nat$ are symmetrically tail associated in the sense
+described in the Introduction.
+%***DAN: This means you have to introduce this well, and explain why the way we define tail assoc is
+%the *right* way
+For those familar with the language of copula statistics (see, e.g., \citealp{Ghosh_2020_AER} and \citealp{Genest_2007}), 
+we have replaced the copula of $(E_i,C_i)$ with a normal copula to form $(E_i^\nat,C_i^\nat)$.
+The choice of $\tilde{\rho}_i$ ensures that $E_i^\nat$ and $C_i^\nat$ are correlated to the same extent as 
+$E_i$ and $C_i$, according to whichever way of defining correlation is preferable to the researcher. Thus $E_i^\nat$ and 
+$C_i^\nat$ have had their tail association rendered symmetric while retaining their correlation \emph{per se},
+as desired. 
+
+
+%***DAN: next step - work it all out for the lottery model now
 
 
 
