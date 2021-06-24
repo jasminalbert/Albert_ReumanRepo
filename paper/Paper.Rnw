@@ -172,13 +172,13 @@ an environment-dependent factor $E_i(t)$ and as a decreasing function of a quant
 competitive pressure on species $i$, $C_i(t)$. For simplicity, we here assume 
 the $E_i(t)$ are iid through time, and likewise for the
 $C_i(t)$. Though this assumption can be circumvented, we make the assumption because it simplifies the
-presentation without obscuring main ideas. 
+presentation without obscuring ideas. 
 For the lottery model, we take $E_i(t)=B_i(t)$, henceforth assuming that fecundity depends strictly on
 the environment. Competition, $C_i(t)$, in the lottery model is the number of new offspring
 divided by the number of open sites, $C_i(t)=( B_1(t)N_1(t)+B_2(t)N_2(t) )/\delta N$, which
 does not depend on $i$. Competition in the lottery model occurs at the stage of juveniles occupying open sites. 
 Species growth rates for the lottery model can then be written 
-$r_i(t)=\ln[1-\delta+E_i(t)/C_i(t)]=\ln[1-\delta+\delta N B_i(t)/(B_1(t)N_1(t)+B_2(t)N_2(t))]$.
+$r_i(t)=\ln[1-\delta+\delta N B_i(t)/(B_1(t)N_1(t)+B_2(t)N_2(t))]=\ln[1-\delta+E_i(t)/C_i(t)]$.
 
 In general, the storage effect for species $i$ is the contribution of covariation between $E_i(t)$ and 
 $C_i(t)$ to a difference between invader and resident mean growth rates, when $i$ is the invader.
@@ -191,8 +191,8 @@ species $i$ when it is at negligible abundance and species $j$ (the other specie
 $\olr_{j \bs i}$ refers to the mean steady-state 
 growth rate of species $j$ when species $i$ is absent (this is $0$, \emph{a priori});
 and $\olrs_{i \bs i}$ and $\olrs_{j \bs i}$ are analogous quantities, but for an alternative model scenario, identical except that
-the bivariate random variable $(E_i,C_i)$ has been replaced by a random variable $(E_i^\shp,C_i^\shp)$ 
-with the same marginal distributions but independent components. The so-called \emph{scaling factor}
+the influences of environment and competition in the invader and resident scenarios have been rendered independent.  
+The so-called \emph{scaling factor}
 $q_{ij}$ measures the relative sensitivities to competition of the two species, see \cite{Chesson_1994},
 \cite{Ellner_2016} and SI section \ref{SI-SIsect:scaling_factors} for the definition of $q_{ij}$, here 
 omitted for brevity. 
