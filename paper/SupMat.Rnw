@@ -14,9 +14,11 @@
 \usepackage{natbib}
 \usepackage{amsmath}
 \usepackage{xr}
-%\usepackage{authblk}
-%\usepackage{accents}
+\usepackage{authblk}
+\usepackage{mathrsfs}
+\usepackage{accents}
 
+%new commands and so on
 \DeclareRobustCommand{\bbone}{\text{\usefont{U}{bbold}{m}{n}1}}
 
 \DeclareMathOperator{\EX}{E}% expected value
@@ -27,32 +29,106 @@
 \DeclareMathOperator{\sd}{sd}
 \DeclareMathOperator{\Prob}{P}
 
-
-%new commands and so on
-
+\newcommand{\sC}{\mathscr{C}} %for a script C like Ellner et al (2016), Ecol Lett
+\newcommand{\bs}{\backslash}
 
 %external documents
 \externaldocument[MT-]{Paper}
 
 %header material for paper
-\title{Drivers of spatial synchrony in giant kelp populations}
+\title{Relationships in the extremes and their influence on competition and coexistence: Supporting information}
 \date{}
 
-%***Tentative author order
-\author{Lawrence W. Sheppard}
-\author{Daniel C. Reuman}
+\author[a]{Jasmin Albert}
+\author[a,b]{Daniel C. Reuman}
+%***DAN: Jasmin, you should choose one way your name will appear, exactly, on all your publications,
+%so everyone knows its you. For instance, I always appear as Daniel C. Reuman, not Daniel Reuman, not
+%Dan Reuman, etc. This makes it possible to find all my papers by searching. So please decide what
+%name to use, Jasmin Albert or Pimsupa Albert or P. Jasmin Albert or whatever. Also keep in mind
+%that because "Albert" is a common name you might want something less common for the rest of it 
+%so that your papers are not confused with anyone elses, though of course I emphasize that how you
+%are going to be known it totally up to you, I'm just recommending you think it through now so you
+%can be consistent. I recognize that this all may be moot if you one day change your name and want to
+%be known by the new name on papers after that point, but anyway in case you don't ever change your 
+%name you might as well be consistent now, at least. So please change your name above to whatever
+%you want to be officially known as on scientific papers. Same change in main text, please.
+
+\affil[a]{Department of Ecology and Evolutionary Biology and Kansas Biological Survey, University of Kansas}
+\affil[b]{Laboratory of Populations, Rockefeller University}
+
+%***Need to indicate corresponding authors
 
 \begin{document}
 \SweaveOpts{concordance=TRUE}
+%\SweaveOpts{concordance=TRUE}
 
 %The following is where you load in the numeric results that will be embedded in the text
 <<eval=T,echo=F,message=F,warning=F>>=
+system(paste("biber", sub("\\.Rnw$", "", current_input())))
+
 #place R code here for loading in necessary variables from Results
+#ordinarily this would be a readRDS command, but I'm just defining a variable here for now
+allregres<-matrix(rnorm(10),2,5)
 @
 
 \maketitle
 
 %probably want table of contents, figure and table lists
+
+
+\section{Scaling factors}\label{SIsect:scaling_factors}
+%***DAN: I am not completely sure about anything in this section and need to get Ellner to look at it. I 
+%did give it a reasonable shot though.
+
+Following \cite{Ellner_2016}, we define
+\begin{equation}
+\sC_j = -r_j(\overline{E}_j,C_j),
+\end{equation}
+and 
+\begin{equation}
+\sC_{j \bs i} = -r_j(\overline{E}_j,C_{j \bs i}),
+\end{equation}
+i.e., $\sC_{j \bs i}$ is the negative of the growth rate of species $j$ when $E_j$ is at its mean value
+and when $i$ is at negligible abundance. Then $q_{ij}$ is defined by computing
+\begin{equation}
+\frac{\partial \sC_{i \bs i}}{\partial \sC_{j \bs i}},
+\end{equation}
+and evaluating it at $\sC_{j \bs i}=0$ [see \cite{Chesson_1994} and \cite{Ellner_2016} for background
+on this definition]. To make sense of this definition, it must be possible to write $\sC_{i \bs i}$, explicitly 
+or implicitly, uniquely as a function of $\sC_{j \bs i}$ \citep{Ellner_2016}.
+
+For the lottery model, for $i \neq j$, we have
+\begin{align}
+\sC_j &= -\ln \left[ 1-\delta+\delta N \frac{\overline{B}_j}{B_1(t) N_1 (t) + B_2(t) N_2(t)}  \right]  \\
+\sC_{j \bs i} &= -\ln \left[ 1-\delta+\delta  \frac{\overline{B}_j}{B_j(t)} \right] \\
+\sC_{i \bs i} &= -\ln \left[ 1-\delta+\delta  \frac{\overline{B}_i}{B_j(t)} \right].
+\end{align}
+Both $\sC_{i \bs i}$ and $\sC_{j \bs i}$ are strictly monotonic functions of $B_j$, so the function
+$B_j \mapsto \sC_{j \bs i}$ is invertible, and using its inverse provides an expression of $\sC_{i \bs i}$ 
+in terms of $\sC_{j \bs i}$. One could write this expression explicitly and then differentiate it calculate $q_{ij}$,
+but we instead compute $q_{ij}$ through implicit differentiation:
+\begin{align}
+\frac{\partial \sC_{i \bs i}}{\partial \sC_{j \bs i}} &= \left. \frac{\partial \sC_{i \bs i}}{\partial B_j} \middle/ \frac{\partial \sC_{j \bs i}}{\partial B_j} \right. \\
+&= \left( \frac{1-\delta +\delta \frac{\overline{B}_j}{B_j}}{1-\delta+\delta \frac{\overline{B}_i}{B_j}} \right) \left( \frac{\overline{B}_i}{\overline{B}_j}  \right).
+\end{align}
+Solving $\sC_{j \bs i}=0$ gives $B_j=\overline{B}_j$, so 
+\begin{align}
+q_{ij} &= \left( \frac{1-\delta +\delta \frac{\overline{B}_j}{\overline{B}_j}}{1-\delta+\delta \frac{\overline{B}_i}{\overline{B}_j}} \right) \left( \frac{\overline{B}_i}{\overline{B}_j}  \right) \\
+&= \frac{\overline{B}_i}{\overline{B}_j (1-\delta) +\overline{B}_i \delta},
+\end{align}
+as stated in the main text. 
+
+\cite{Chesson_1994} and \cite{Ellner_2016} use $q_{ij}=1$ for this same model. Why the discrepancy? 
+DAN: You need to explain this discrepancy here after talking to Ellner.
+%***DAN: Add some text explaining the discrepancy
+
+\section{Tail association is not relevant to other mechanisms of coexistence for purely temporal variation}\label{SIsect:other_mechanisms}
+
+
+
+
+%***DAN: Sections below this point are from the earlier reasoning and may have to be edited and placed in other
+%locations. This comment written 2021 06 22
 
 \section{The Model}
 
@@ -498,7 +574,16 @@ The descrition of $\bar \epsilon^{(\ddot {EC})}$ is given in section 3 and equat
 
 In generalized terms, this further decomposition could be applied to test for contributions of asymmetry between any two variables. Here we tested the asymmetry between $b_1$ and $b_2$. Why did we not look at E and C? Do they have to be normally distrubuted?
 
+<<<<<<< HEAD
 This break down would only work if the variables are normally distributed. Thus one can convert their distribution to normal to impliment this decomposition.
+=======
+\clearpage
+\newpage
+
+%you store your bibliographic info in refs.bib, see that file
+\bibliographystyle{ecology_letters2}
+\bibliography{refs}
+>>>>>>> 51e4f36ebb5b377c5e7fa08d351b081369763124
 
 
 
