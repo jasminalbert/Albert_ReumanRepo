@@ -88,7 +88,7 @@
 %Put other possible titles below, commented, and we will select the best one at the end
 %Relationships between extreme events and their influence on competition and coexistence
 
-\author[a]{Jasmin Albert}
+\author[a]{Pimsupa Jasmin Albert}
 \author[a,b]{Daniel C. Reuman}
 %***DAN: Jasmin, you should choose one way your name will appear, exactly, on all your publications,
 %so everyone knows its you. For instance, I always appear as Daniel C. Reuman, not Daniel Reuman, not

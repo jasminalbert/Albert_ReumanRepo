@@ -39,7 +39,7 @@
 \title{Relationships in the extremes and their influence on competition and coexistence: Supporting information}
 \date{}
 
-\author[a]{Jasmin Albert}
+\author[a]{Pimsupa Jasmin Albert}
 \author[a,b]{Daniel C. Reuman}
 %***DAN: Jasmin, you should choose one way your name will appear, exactly, on all your publications,
 %so everyone knows its you. For instance, I always appear as Daniel C. Reuman, not Daniel Reuman, not
