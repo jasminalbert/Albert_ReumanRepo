@@ -180,29 +180,42 @@ does not depend on $i$. Competition in the lottery model occurs at the stage of 
 Species growth rates for the lottery model can then be written 
 $r_i(t)=\ln[1-\delta+\delta N B_i(t)/(B_1(t)N_1(t)+B_2(t)N_2(t))]=\ln[1-\delta+E_i(t)/C_i(t)]$.
 
-In general, the storage effect for species $i$ is the contribution of covariation between $E_i(t)$ and 
-$C_i(t)$ to a difference between invader and resident mean growth rates, when $i$ is the invader.
+In general, the storage effect for species $i$ is the contribution of covariation between $E$ and 
+$C$ to a difference between invader and resident mean growth rates, when $i$ is the invader.
 Specifically, storage effects for species $i$ are 
 \begin{equation}
 \Delta I_i = (\olr_{i\bs i} - q_{ij} \olr_{j \bs i})-(\olrs_{i \bs i}-q_{ij} \olrs_{j \bs i}),\label{eq:storage_effects_gen}
 \end{equation}
-where: $\olr_{i \bs i}$ refers to the mean ``invasion growth rate'' of species $i$, that is, the growth rate of 
+where: $\olr_{i \bs i}$ refers to the mean ``invasion growth rate'' of species $i$, that is, the mean growth rate of 
 species $i$ when it is at negligible abundance and species $j$ (the other species) is at stochastic steady state;
 $\olr_{j \bs i}$ refers to the mean steady-state 
-growth rate of species $j$ when species $i$ is absent (this is $0$, \emph{a priori});
+growth rate of species $j$ when species $i$ is absent or at negligible abundance (this is $0$, \emph{a priori});
 and $\olrs_{i \bs i}$ and $\olrs_{j \bs i}$ are analogous quantities, but for an alternative model scenario, identical except that
-the influences of environment and competition in the invader and resident scenarios have been rendered independent.  
-The so-called \emph{scaling factor}
+influences of environment and competition on the invader or resident have been rendered independent.  
+A subscript 
+$i \bs i$ always indicates a quantity computed for species $i$ when that species is at negligible abundance, and 
+a subscript $j \bs i$ indicates a quantity computed for $j$ when $i$ is absent.
+The \emph{scaling factor}
 $q_{ij}$ measures the relative sensitivities to competition of the two species, see \cite{Chesson_1994},
-\cite{Ellner_2016} and SI section \ref{SI-SIsect:scaling_factors} for the definition of $q_{ij}$, here 
-omitted for brevity. 
+\cite{Ellner_2016} and SI section \ref{SI-SIsect:scaling_factors} for the definition of $q_{ij}$. 
 
-For the lottery model, it is straightforward to show that $\olr_{i \bs i}=\E[\ln(1-\delta+\delta B_i(t)/B_j(t))]$,
-$\olrs_{i \bs i} = \E[\ln(1-\delta+\delta B_i^\shp(t)/B_j(t))]$, and $\olrs_{j \bs i} = \E[\ln(1-\delta+\delta B_j^\shp(t)/B_j(t))]$, where $\E(\cdot)$ is expected value.
-Here, $B_i^\shp$ is a random variable distributed in the same way as $B_i$, but independent of it; and
-$B_j^\shp$ is distributed the same as $B_j$, but is independent of it. We show in SI section \ref{SI-SIsect:scaling_factors}
-that $q_{ij}=\overline{B}_i/((1-\delta)\overline{B}_j+\delta \overline{B}_i)$, where, as above, the overbar 
-denotes expected value. 
+For the lottery model, when $i$ is an invader, the competition experienced by either 
+species is obtained from the expression for $C_i=C_j$ by setting $N_i=0$ and $N_j=N$; and likewise to get
+$\olr_{i \bs i}$ from the expression for $r_i$ for the model. Thus 
+$C_{i \bs i}(t)=C_{j \bs i}(t)=B_j(t)/\delta=E_j(t)/\delta$, and 
+$\olr_{i \bs i} = \E[\ln(1-\delta+\delta B_i/B_j)]=\E[\ln(1-\delta+E_i /C_{i \bs i})]$. 
+Here $\E(\cdot)$ denotes expected value just as does an overbar, but we use $\E$ for longer expressions for which
+an overbar would be cumbersome. Likewise, 
+$\olr_{j \bs i} = \E[\ln(1-\delta+\delta B_j/B_j)]=\E[\ln(1-\delta+E_j/C_{j \bs i})]$,
+though we already knew this equals $0$. An expression for $\olrs_{i \bs i}$ is then obtained from the 
+above expression for $\olr_{i \bs i}$ by replacing the bivariate random variable $(E_i,C_{i \bs i})=(B_i,B_j/\delta)$
+by a random variable with the same marginals, but independent components, $(B_i^\shp,B_j^\shp /\delta)$.
+Thus $\olrs_{i \bs i} = \E[\ln(1-\delta+\delta B_i^\shp/B_j^\shp)]$. Likewise, a formula for 
+$\olrs_{j \bs i}$ is available by replacing $(E_j,C_{j \bs i})$ in an analogous way. We use 
+$(E_j^\shp,C_{j \bs i}^\shp)=(B_j^\shp, B_j /\delta)$, so 
+$\olrs_{j \bs i}=\E[\ln(1-\delta+\delta B_j^\shp / B_j)]$.
+We show in SI section \ref{SI-SIsect:scaling_factors}
+that $q_{ij}=\overline{B}_i/((1-\delta)\overline{B}_j+\delta \overline{B}_i)$. 
 %***DAN: Note this might be wrong. Some of the language in Ellner et al (2016) indicates q_{ij} here should be 1,
 %even if \mu_1 and \mu_2 are distinct, as long as we use the same \delta for both species (which we do).
 %But when I try to follow the definitions of the same paper to compute q_{ij} I get the quantity listed above,
@@ -213,70 +226,98 @@ Since we use log-normally distributed $B_i$,
 $\overline{B}_i=\exp(\mu_i+\sigma^2/2)$, so $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$.
 %***DAN: This statement also needs adjusting if you go with q_ij=1
 So $\Delta I_i$ for the lottery model can be computed by using simulations \citep{Ellner_2016}
-to compute arbitrarily good approximations for $\olr_{i \bs i}$, $\olrs_{i \bs i}$,
-and $\olrs_{j \bs i}$, and then plugging them and the value for $q_{ij}$ into (\ref{eq:storage_effects_gen}).
+to very accurately approximate $\olr_{i \bs i}$, $\olrs_{i \bs i}$,
+and $\olrs_{j \bs i}$, and then plugging them and $q_{ij}$ into (\ref{eq:storage_effects_gen}).
 
 Having just reviewed storage effects, we now specify how to decompose storage effects into
-contrbutions due to asymmetric tail associations and contributions due
-to $EC$ correlation \emph{per se}. The storage effect for species $i$ was computed by comparing
-a difference between invader and resident mean growth rates for the original model to the same quantity calculated for a 
-modified model for which $E_i$ and $C_i$ were rendered independent (see (\ref{eq:storage_effects_gen})). 
-Because $E_i$ and $C_i$ were rendered 
+contributions due to asymmetric tail associations and due
+to $EC$ correlation \emph{per se}. 
+Storage effects for species $i$ were computed by comparing
+differences between invader and resident mean growth rates for the original model and for a 
+modified model for which the components of $(E_i,C_{i \bs i})$ and those of $(E_j,C_{j \bs i})$
+were rendered independent of each other [see (\ref{eq:storage_effects_gen})]. 
+Because these components were rendered 
 completely independent in the modified model, storage effects quantify the contribution of the 
-whole relationship between $E_i$ and $C_i$, in all its aspects, to the invader/resident growth rate
-difference. However, we can instead consider a distribution $(E_i^\nat,C_i^\nat)$ with the same
-marginal distributions as $(E_i,C_i)$ and with some but not all aspects of the relationship 
-between the components modified relative to $(E_i,C_i)$; specifically, asymmetries of tail association are removed
-(see below for how this is done). We then define 
-$\olrn_{i \bs i}$ and $\olrn_{j \bs i}$ based on a modified model using  $(E_i^\nat,C_i^\nat)$,
-and we consider the decomposition 
+whole $EC$ relationship, in all its aspects, to the invader/resident growth rate
+difference. But we can instead consider distributions $(E_i^\nat,C_{i \bs i}^\nat)$ and 
+$(E_j^\nat,C_{j \bs i}^\nat)$ with the same
+marginal distributions, respectively, as $(E_i,C_{i \bs i})$ and $(E_j,C_{j \bs i})$,
+and with some but not all aspects of the relationship 
+between the components altered relative to the original distributions. Specifically, asymmetries of tail association are removed -- see below for how this is done. We then define 
+$\olrn_{i \bs i}$ and $\olrn_{j \bs i}$ based on a modified model using  $(E_i^\nat,C_{i \bs i}^\nat)$
+and $(E_j^\nat,C_{j \bs i}^\nat)$, and we consider the decomposition 
 \begin{align}
 \Delta I_i &= [(\olr_{i\bs i} - q_{ij} \olr_{j \bs i})-(\olrn_{i \bs i}-q_{ij} \olrn_{j \bs i})]+
 [(\olrn_{i \bs i}-q_{ij} \olrn_{j \bs i})-(\olrs_{i \bs i}-q_{ij} \olrs_{j \bs i})] \\
 &= I_i^{(\text{ata})} + I_i^{(\text{cps})}.\label{eq:storage_effects_further}
 \end{align}
 The superscript ``ata" stands for ``asymmetric tail associations'' because this component of storage effects is due to 
-asymmetries of tail associations between $E_i$ and $C_i$. The superscript ``cps" stands for ``correlation
-\emph{per se}'' because this component of storage effects is due to $EC$ correlation \emph{per se}.
-The notation $\nat$ was chosen because the new symbol comprises part of the symbol $\shp$ (i.e., two of its four lines), 
-corresponding to the fact that part of the relationship between $E$ and $C$ components is removed. 
+asymmetries of tail association between $E_i$ and $C_{i \bs i}$, and between $E_j$ and $C_{j \bs i}$. 
+The superscript ``cps" stands for ``correlation
+\emph{per se}'' because this component is due to $EC$ correlation \emph{per se}, after 
+removing the effects of asymmetric tail associations.
+The notation $\nat$ was chosen because this new symbol is part of the symbol $\shp$ (i.e., two of its four lines), 
+corresponding to the removal of part of the relationship between $E$ and $C$ components. 
 
 How are asymmetries of tail association removed while leaving $E$ and $C$ marginal distributions and overall 
 correlation unchanged? We assume that the cummulative distribution functions (cdfs) of $E_i$ and 
-$C_i$, which we denote $F_{E_i}$ and $F_{C_i}$, respectively, are strictly monotonic and continuous. 
+$C_{i \bs i}$, which we denote $F_{E_i}$ and $F_{C_{i \bs i}}$, respectively, are strictly monotonic and continuous. 
 Letting $\varphi$ be the cdf of a standard normal distribution, we consider the random variables
-$\varphi^{-1} \circ F_{E_i} (E_i)$ and $\varphi^{-1} \circ F_{C_i}(C_i)$, which are standard normally
-distributed, although they are not necessarily jointly bivariate normal.  Letting $\rho_i$ be the covariance of
-these random variables, we then define a bivariate normal random variable $(e_i,c_i)$ such that
-$\var(e_i)=\var(c_i)=1$ and such that $\cov(e_i,c_i)=\tilde{\rho}_i$. We define $E_i^\nat = F_{E_i}^{-1} \circ \varphi(e_i)$
-and $C_i^\nat=F_{C_i}^{-1} \circ \varphi(c_i)$. The value of $\tilde{\rho}_i$ is selected in one of 
+$\varphi^{-1} \circ F_{E_i} (E_i)$ and $\varphi^{-1} \circ F_{C_{i \bs i}}(C_{i \bs i})$, which are standard normally
+distributed, although they are not necessarily jointly bivariate normal.  Let $\rho_i$ be the covariance of
+these random variables. We then define a bivariate normal random variable $(e_i,c_{i \bs i})$ such that
+$\var(e_i)=\var(c_{i \bs i})=1$, and denote $\cov(e_i,c_{i \bs i})$ by $\tilde{\rho}_i$. We define 
+$E_i^\nat = F_{E_i}^{-1} \circ \varphi(e_i)$
+and $C_{i \bs i}^\nat=F_{C_{i \bs i}}^{-1} \circ \varphi(c_{i \bs i})$. The value of $\tilde{\rho}_i$ is then determined 
+in one of 
 four alternative ways: $\tilde{\rho}_i = \rho_i$; or so that the Pearson, Spearman or Kendall correlation of 
-$E_i^\nat$ and $C_i^\nat$ matches that of $E_i$ and $C_i$. The choice of bivariate normal 
-$(e_i,c_i)$ ensures that $E_i^\nat$ and $C_i^\nat$ are symmetrically tail associated in the sense
+$E_i^\nat$ and $C_{i \bs i}^\nat$ matches that of $E_i$ and $C_{i \bs i}$. The choice of bivariate normal 
+$(e_i,c_{i \bs i})$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are symmetrically tail associated in the sense
 described in the Introduction.
 %***DAN: This means you have to introduce this well, and explain why the way we define tail assoc is
 %the *right* way
 For those familar with the language of copula statistics (see, e.g., \citealp{Ghosh_2020_AER} and \citealp{Genest_2007}), 
-we have replaced the copula of $(E_i,C_i)$ with a normal copula to form $(E_i^\nat,C_i^\nat)$.
-The choice of $\tilde{\rho}_i$ ensures that $E_i^\nat$ and $C_i^\nat$ are correlated to the same extent as 
-$E_i$ and $C_i$, according to whichever way of defining correlation is preferable to the researcher. Thus $E_i^\nat$ and 
-$C_i^\nat$ have had their tail association rendered symmetric while retaining their correlation \emph{per se},
-as desired. 
+we replaced the copula of $(E_i,C_{i \bs i})$ with a normal copula to form $(E_i^\nat,C_{i \bs i}^\nat)$.
+The choice of $\tilde{\rho}_i$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are correlated to the same extent as 
+$E_i$ and $C_{i \bs i}$, according to whichever definition of correlation is considered preferable. Thus $E_i^\nat$ and 
+$C_{i \bs i}^\nat$ have had their tail association rendered symmetric while retaining their correlation \emph{per se},
+as desired. The random variable $(E_j^\nat, C_{j \bs i}^\nat)$ is created in an analogous way.  
 
+For the lottery model, recall that $E_i=B_i$ and $C_{i \bs i} = B_j/\delta$. So 
+$\varphi^{-1} \circ F_{E_i}(E_i) = \frac{b_i-\mu_i}{\sigma}$ and 
+$\varphi^{-1} \circ F_{C_{i \bs i}}(C_{i \bs i})=\frac{b_j - \mu_j}{\sigma}$.  
+Also, $\rho_i = \cov(\frac{b_i-\mu_i}{\sigma},\frac{b_j-\mu_j}{\sigma})$, which equals the 
+Pearson correlation of $b_i$ and $b_j$. For the lottery model, it seems natural to make the choice
+$\tilde{\rho}_i=\rho_i$, which straightforwardly implies that $(E_i^\nat,C_{i \bs i}^\nat)$
+can be written as $(\exp(\tilde{b}_i),\exp(\tilde{b}_j))$, where $(\tilde{b}_i,\tilde{b}_j)$
+is bivariate normally distributed with mean $(\mu_i,\mu_j)$, $\var(\tilde{b}_i)=\var(\tilde{b}_j)=\sigma$,
+and $\cov(\tilde{b}_i,\tilde{b}_j)=\cov(b_i,b_j)$. So $(\tilde{b}_i,\tilde{b}_j)$ has the same
+marginal distributions and covariance matrix as $(b_i,b_j)$, but it is bivariate normal, whereas
+$(b_i,b_j)$ itself need not be. Given these definitions, it is straightforward to compute the 
+components of (\ref{eq:storage_effects_further}) for the lottery model using the simulation 
+approach of \cite{Ellner_2016,Ellner_2019}, though in the next section we describe some tricks
+that make these computations efficient. 
 
-%***DAN: next step - work it all out for the lottery model now
-
-
-
-
-
-
-
-
-
+The other mechanism in modern coexistence theory that apply in our modelling context (i.e., purely temporal variation)
+make no reference to covariation between quantities, whereas asymmetries of tail associations are 
+defined in a covariation context. Therefore, storage effects are the only mechanism of coexistence
+for which asymmetries of tail association are relevant. Details are given in SI section 
+\ref{SIsect:other_mechanisms}, and we return briefly to related ideas in the Discussion.
+%***DAN: In the Discussion, I intend to talk about how possible changes in tail association 
+%patterns of env vars in nature may influence coexistence of species. It won't influence the 
+%other mechanisms, though changes in the extreme values of environmental variables, known
+%to be occurring, might. 
 
 \section{Methods}\label{section:methods}
 
+%***DAN: Next steps:
+%Write to Ellner asking question about scaling factors
+%Decide what we ought to be computing 
+%Write Methods correspondingly
+%Talk to Jasmin about it - did I miss anything that we already computed?
+%Then work with Jasmin to get the code edited to compute that stuff
+%Write results
+%Once results have solidified, make a code suite version that is clean
 
 \section{Results}\label{section:results}
 
