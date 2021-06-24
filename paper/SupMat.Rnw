@@ -476,15 +476,29 @@ Recall from main text that the goal of this research is to investigate the impli
 A new decomposition term was proposed to quantify the effect of asymmetric associations to coexistence. Since asymmetry only differs in the storage effect term, $\bar \epsilon^{(EC)}$, the contribution of asymmetry associations between the species will be a further decomposition. 
 
 \begin{equation}
-\bar \epsilon^{(\dot {EC})} = \bar \epsilon^{(EC)} - \bar \epsilon^{(\ddot {EC})}
+\bar \epsilon^{(\dot {EC})} = \bar \epsilon^{(EC)} - \bar \epsilon^{( {EC_0})}
 \end{equation}
 
 The contribution of asymmetry to the storage effect is the observed storage effect subtracted by a null storage effect if the association between species was completely symmetrical. 
 The descrition of $\bar \epsilon^{(\ddot {EC})}$ is given in section 3 and equations 9 and 21-23. 
 
+\begin{equation}
+\bar \epsilon^{( {EC_0})} = \bar r_1 - \bar r_1^{\#} + \bar r_2^{\#},
+\end{equation}
 
+\noindent where $ \bar r_1, \bar r_1^{\#}$ and $\bar r_2^{\#}$ are in the symmetric case. In our model,
 
+\begin{equation}
+\bar \epsilon^{( {EC_0})} = \EX(\ln[1-\delta+\delta \exp(u_1)]) - \EX(\ln[1-\delta+\delta \exp(u_1^{\#})]) + \EX(\ln[1-\delta+\delta \exp(u_2^{\#})]),
+\end{equation}
 
+\noindent where $u_1 \sim N(\mu_1-\mu_2, 2\sigma^2-2\rho)$, $u_1^{\#} \sim N(\mu_1-\mu_2, 2\sigma^2)$, and $u_2^{\#} \sim N(0, 2\sigma^2)$
+
+\noindent *Note that the contribution of asymmetry to storage effects is not the same as the storage effect that we computed above for asymmetriv cases. 
+
+In generalized terms, this further decomposition could be applied to test for contributions of asymmetry between any two variables. Here we tested the asymmetry between $b_1$ and $b_2$. Why did we not look at E and C? Do they have to be normally distrubuted?
+
+This break down would only work if the variables are normally distributed. Thus one can convert their distribution to normal to impliment this decomposition.
 
 
 
