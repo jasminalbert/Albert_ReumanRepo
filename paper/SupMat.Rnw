@@ -124,13 +124,17 @@ DAN: You need to explain this discrepancy here after talking to Ellner.
 
 \section{Tail association is not relevant to other mechanisms of coexistence for purely temporal variation}\label{SIsect:other_mechanisms}
 
+%***DAN: Fill this section in. Should be a brief-as-possible definition of the other mechanisms and 
+%proof that asymmetries of tail associations won't make a difference. See \ref{Decomposition} for some relevant material.
 
 
 
-%***DAN: Sections below this point are from the earlier reasoning and may have to be edited and placed in other
+%***DAN: Sections below this point are from the earlier version/reasoning and may have to be edited and placed in other
 %locations. This comment written 2021 06 22
 
 \section{The Model}
+
+%***DAN: Probably delete this section, since the model is now elaborated in the main text
 
 We used the lottery model, previously studied, for instance, by REFS. Model equations are
 
@@ -167,6 +171,12 @@ Thus, overall, our model was completely specified by specifying $\delta$, $\mu_1
 
 
 \section{Invasion growth rate of species 1, and storage effects} \label{sect:IGR}
+
+%***DAN: This and probably all or most of the following sections will have to be edited, not least to make the
+%notation consistent with the notation now used in the Theory section of the main text
+%***DAN: At the end of Theory, I mention that in methods the tricks for computational efficiency are
+%elaborated, but actually most of those will be in a sup mat section, the material for which will be 
+%an edited version of a lot of what is in this section.
 
 We consider the invasion growth rate of species 1, $\bar r_1=\EX(\ln (\frac{N_1(t+1)}{N_1(t)}))$, when $N_1$ is close to 0 and $N_2$ is close to $N$.
 Hence $\EX(\cdot)$ represents expected value.
@@ -488,7 +498,7 @@ But some of $\bar \epsilon_i^{EC}$ comes from covariance between E and C and som
 \end{align}
 
 
-\section{Decomposition}
+\section{Decomposition}\label{Decomposition}
 
 To quantify the contribution of different drivers to the difference in growth rate between the invader and the resident, the amount variance due to that driver is considered. We consider the contributions of the null growth rate, $\epsilon^0$, the contribution of variance in E (environment), $\bar \epsilon^E$, the contribution of the variance in C (competitive pressure), $\bar \epsilon^C$, the contrubition of E and C co-varying $\bar \epsilon^{(EC)}$, and the the contribtion of E and C varying, but independently, $\bar \epsilon^{(E\#C)}$, for the invader and the resident. The difference between invader and resident is computed term by term to get a full decomposition as follows,
 
