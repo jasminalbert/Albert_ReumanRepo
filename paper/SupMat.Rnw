@@ -16,14 +16,18 @@
 \usepackage{xr}
 \usepackage{authblk}
 \usepackage{mathrsfs}
-%\usepackage{accents}
+\usepackage{relsize}
+\usepackage{tikz}
 
 %new commands and so on
 \DeclareRobustCommand{\bbone}{\text{\usefont{U}{bbold}{m}{n}1}}
 
 \DeclareMathOperator{\EX}{E}% expected value
+\DeclareMathOperator{\E}{E}
 \DeclareMathOperator{\VarX}{var}
+\DeclareMathOperator{\var}{var}
 \DeclareMathOperator{\CovX}{cov}
+\DeclareMathOperator{\cov}{cov}
 \DeclareMathOperator{\mean}{mean}
 \DeclareMathOperator{\se}{se}
 \DeclareMathOperator{\sd}{sd}
@@ -31,6 +35,42 @@
 
 \newcommand{\sC}{\mathscr{C}} %for a script C like Ellner et al (2016), Ecol Lett
 \newcommand{\bs}{\backslash}
+
+%attempt 3 at nat and sharp (see Paper.Rnw for attempts 1 and 2, which I decide not to use)
+\newcommand{\nat}{%
+\text{\hspace{-1.5pt}
+\begin{tikzpicture}[scale=1.8]%
+\draw (.333ex,0) -- (.333ex,1ex);%
+\draw (.666ex,0) -- (.666ex,1ex);
+\end{tikzpicture}%
+}}
+\newcommand{\shp}{%
+\text{\hspace{-1.5pt}
+\begin{tikzpicture}[scale=1.8]%
+\draw (0,.333ex) -- (1ex,.333ex);%
+\draw (0,.666ex) -- (1ex,.666ex);%
+\draw (.333ex,0) -- (.333ex,1ex);%
+\draw (.666ex,0) -- (.666ex,1ex);
+\end{tikzpicture}%
+}}
+\newcommand{\test}{%
+\text{
+\begin{tikzpicture}[scale=1.8]%
+\draw (0,0) -- (1ex,0ex);
+\draw (0,0) -- (0ex,1ex);
+\draw (0,1ex) -- (1ex,1ex);
+\draw (1ex,0) -- (1ex,1ex);
+\draw (0,.333ex) -- (2ex,.333ex);%
+\draw (0,.666ex) -- (1ex,.666ex);%
+\draw (.333ex,0) -- (.333ex,1ex);%
+\draw (.666ex,0) -- (.666ex,1ex);
+\end{tikzpicture}%
+}}
+
+\newcommand{\olr}{\overline{r}}
+\newcommand{\olrs}{\overline{r}^{\shp}}
+\newcommand{\olrn}{\overline{r}^{\nat}}
+\newcommand{\olep}{\overline{\epsilon}}
 
 %external documents
 \externaldocument[MT-]{Paper}
@@ -121,10 +161,186 @@ as stated in the main text.
 DAN: You need to explain this discrepancy here after talking to Ellner.
 %***DAN: Add some text explaining the discrepancy
 
-\section{Tail association is not relevant to other mechanisms of coexistence for purely temporal variation}\label{SIsect:other_mechanisms}
+\section{Mechanisms other than storage effects}\label{SIsect:other_mechanisms}
 
-%***DAN: Fill this section in. Should be a brief-as-possible definition of the other mechanisms and 
-%proof that asymmetries of tail associations won't make a difference. See \ref{Decomposition} for some relevant material.
+We review the decompositions of \cite{Ellner_2016} and \cite{Ellner_2019}, which are similar to and motivated by the 
+original decompositions of \cite{Chesson_1994}, and then we include our extension. 
+
+We begin by decomposing 
+the invasion growth rate,
+\begin{equation}
+\olr_{i \bs i}=\E[r_i(E_i,C_{\i \bs i})].
+\end{equation}
+The invasion growth rate with both $E_i$ and $C_{i \bs i}$ constant at their means is 
+\begin{align}
+\epsilon_i^0 = r_i(\overline{E}_i,\overline{C}_{i \bs i}).
+\end{align}
+The additional contribution of variation in $E_i$ to the invasion growth rate is then
+\begin{equation}
+\olep_i^E = \E[r_i(E_i,\overline{C}_{i \bs i})]-\epsilon_i^0,
+\end{equation}
+whereas the additional contribution of variation in $C_{i \bs i}$ is 
+\begin{equation}
+\olep_i^C=\E[r_i(\overline{E}_i,C_{i \bs i})]-\epsilon_i^0.
+\end{equation}
+We then define
+\begin{align}
+\olep_i^{EC} &= \E[r_i(E_i,C_{i \bs i})]-\olep_i^E-\olep_i^C-\epsilon_i^0 \\
+&= \olr_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0.
+\end{align}
+Thus we have the primary decomposition 
+\begin{equation}
+\olr_{i \bs i} = \epsilon_i^0 + \olep_i^E + \olep_i^C + \olep_i^{EC}.
+\end{equation}
+But some of $\olep_i^{EC}$ comes from the fact that $E_i$ and $C_{i \bs i}$ are
+both varying, and some comes from covariation in these two quantities. So we next separate these
+contributions in a secondary decomposition of $\olep_i^{EC}$. 
+
+Let
+\begin{equation}
+\olep_i^{(E\shp C)}=\E[r_i(E_i^\shp,C^\shp_{i \bs i})]-\olep_i^E-\olep_i^C-\epsilon_i^0
+\end{equation}
+and let
+\begin{equation}
+\olep_i^{(EC)} = \olep_i^{EC}-\olep_i^{(E\shp C)},
+\end{equation}
+so
+\begin{equation}
+\olep_i^{(EC)}=\E[r_i(E_i,C_{i \bs i})]-\E[r_i(E_i^\shp,C_{i \bs i}^\shp)].
+\end{equation}
+The parentheses in the superscripts of $\olep_i^{(EC)}$ and $\olep_i^{(E\shp C)}$
+indicate that we are talking about a term in the secondary decomposition, i.e., in the decomposition of 
+$\olep_i^{EC}$. We now have
+\begin{align}
+\olr_{i \bs i} &= \epsilon_i^0 + \olep_i^E + \olep_i^C + \olep_i^{EC} \\
+\olep_i^{EC} &= \olep_i^{(E\shp C)}+\olep_i^{(EC)},
+\end{align}
+i.e.,
+\begin{equation}
+\olr_{i \bs i} = \epsilon_i^0 + \olep_i^E + \olep_i^C +\olep_i^{(E\shp C)}+\olep_i^{(EC)}. 
+\end{equation}
+The term $\olep_i^{(EC)}$ is due to covariation between $E_i$ and $C_{i \bs i}$, whereas the term 
+$\olep_i^{(E\shp C)}$ is due to variation \emph{per se} in both $E_i$ and $C_{i \bs i}$, after the effects of 
+covariation itself are removed. 
+The term $\olep_i^{(EC)}$ relates to storage effects, as we will see. 
+
+As in the main text, we can now define the tertiary decomposition
+\begin{align}
+\olep_i^{(EC)} &= \E[r_i(E_i,C_{i \bs i})]-\E[r_i(E_i^\shp,C_{i \bs i}^\shp)] \\
+&= \left[ \E[r_i(E_i,C_{i \bs i})]-\E[r_i(E_i^\nat,C_{i \bs i}^\nat)] \right]+\left[ \E[r_i(E_i^\nat,C_{i \bs i}^\nat)]-\E[r_i(E_i^\shp,C_{i \bs i}^\shp)] \right] \\
+&= \olep_i^{[EC]}+\olep_i^{[E \nat C]}.
+\end{align}
+The brackets in the superscripts of $\olep_i^{[EC]}$ and $\olep_i^{[E \nat C]}$ indicate that we are talking about a term in the
+tertiary decomposition, i.e., in the decomposition of $\olep_i^{(EC)}$. 
+The term $\olep_i^{[E \nat C]}$ quantifies the influence of asymmetric tail associations of $E_i$ and $C_{i \bs i}$ on the invasion growth rate,
+and the the term $\olep_i^{[EC]}$ corresponds to $EC$ correlations \emph{per se}, after the removal of asymmetries of tail association.
+The symbol $\nat$ denotes the removal of asymmetries of tail association. We therefore have 
+\begin{equation}
+\olr_{i \bs i} = \epsilon_i^0 + \olep_i^E + \olep_i^C + \olep_i^{(E\shp C)}+\olep_i^{[EC]}+\olep_i^{[E \nat C]},
+\end{equation}
+our overall decompsition of $r_{i \bs i}$.
+The derivation also applies to provide 
+\begin{equation}
+\olr_{j \bs i} = \epsilon_j^0 + \olep_j^E + \olep_j^C + \olep_j^{(E\shp C)}+\olep_j^{[EC]}+\olep_j^{[E \nat C]},
+\end{equation}
+an analogous decomposition of $\olr_{j \bs i}$.
+
+Combining the decompositions of $\olr_{i \bs i}$ and $\olr_{j \bs i}$ and assuming without loss of generality that $\mu_i \leq \mu_j$ so that
+species i is the weaker competitor, we have
+\begin{equation}
+\olr_{i \bs i}-q_{ij}\olr_{j \bs i}=\Delta_i^0+\Delta_i^E+\Delta_i^C+\Delta_i^{(E\shp C)}+\Delta_i^{[EC]}+\Delta_i^{[E\nat C]},
+\end{equation}
+where $\Delta_i^0=\epsilon_i^0- q_{ij} \epsilon_j^0$;
+$\Delta_i^E=\olep_i^E -q_{ij}\olep_j^E$ is the contribution to coexistence of environmental variation;
+$\Delta_i^C=\olep_i^C -q_{ij}\olep_j^C$ is the contribution to coexistence of variation in competitive pressure;
+$\Delta_i^{(E\shp C)}=\olep_i^{(E\shp C)} - q_{ij}\olep_j^{(E\shp C)}$ is the contribution to coexistence of 
+variation \emph{per se} in both environment and competition, not including the effects of covariation of these quantities;
+$\Delta_i^{[EC]}=\olep_i^{[EC]} - q_{ij} \olep_j^{[EC]}$ is the contribution to coexistence of $EC$ covariation \emph{per se},
+not including the effects of asymmetric tail associations between environment and competition;
+and $\Delta_i^{[E\nat C]}=\olep_i^{[E \nat C]}-q_{ij} \olep_j^{[E \nat C]}$ is the contribution to coexistence of 
+asymmetric tail assocations. The subscript $i$ on all these newly defined quantities $\Delta_i$ refers to species $i$.
+The notation $\Delta I_i$ from the main text equals $\Delta_i^{(EC)}=\Delta_i^{[EC]}+\Delta_i^{[E\nat C]}$,
+and $\Delta I_i^{(\text{ata})}$ from the main text is the same as $\Delta_i^{[E\nat C]}$ and $\Delta I_i^{(\text{cps})}$ 
+from the main text is $\Delta_i^{[EC]}$ (see (\ref{MT-eq:storage_effects_further1}) and (\ref{MT-eq:storage_effects_further}) from the main text).
+
+%***DAN: Next go through everything for the lottery model
+%***DAN: Then argue that everything depends only on mu1-mu2
+
+
+
+\vspace{2in}
+
+\noindent By substituting the definitions,
+
+\begin{align}
+\bar r_i &=\EX(\ln(1-\delta + \frac{B_i}{B_2/ \delta})) \\
+&= \EX(\ln(1-\delta +\delta \frac{B_i}{B_2})) 
+\end{align}
+
+The null growth rate of species $i$ is computed by setting both E and C at their means. 
+
+\begin{align}
+\epsilon_i^0 &=\ln(1-\delta + \frac{\bar E_i}{\bar C_i}) \\
+&=\ln(1-\delta + \delta \frac{\bar B_i}{\bar B_2}) 
+\end{align}
+
+The contribution of variance E in to the IGR is computed by setting C to its mean and letting E vary subtracted by the null. 
+
+\begin{align}
+\epsilon_i^E &=\ln(1-\delta + \frac{E_i}{\bar C_i}) -  \epsilon_i^0 \\
+&=\ln(1-\delta + \delta \frac{B_i}{\bar B_2}) -  \epsilon_i^0 
+\end{align}
+
+\begin{equation}
+\bar \epsilon_i^E=\EX(\epsilon_i^E) \label{Evar_mean}
+\end{equation}
+
+Similarly, the contribution of variance C in to the IGR is computed by setting E to its mean and letting C vary subtracted by the null. 
+
+\begin{align}
+\epsilon_i^C &=\ln(1-\delta + \frac{\bar E_i}{C_i}) -  \epsilon_i^0 \\
+ &=\ln(1-\delta + \delta \frac{\bar B_i}{ B_2}) -  \epsilon_i^0 
+\end{align}
+
+\begin{equation}
+\bar \epsilon_i^C=\EX(\epsilon_i^C) \label{Cvar_mean}
+\end{equation}
+
+The contribution of both E and C varying to the IGR is computed by letting both variables vary subtracted by the null and the contributions of only one variable varying.
+
+\begin{equation}
+\epsilon_i^{EC}=\ln(1-\delta + \delta \frac{B_i}{B_j}) -  [\epsilon_i^0 + \epsilon_i^E + \epsilon_i^C] \label{ECvar}
+\end{equation}
+
+\begin{equation}
+\bar \epsilon_i^{EC}=\EX(\ln(1-\delta + \delta \frac{B_i}{B_j})) -[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C] \label{ECvar_mean}
+\end{equation}
+
+So,
+
+\begin{equation}
+\bar r_i=\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C + \bar \epsilon_i^{EC}. \label{rbari_decomp}
+\end{equation}
+
+But some of $\bar \epsilon_i^{EC}$ comes from covariance between E and C and some comes from both varying independently.
+
+\begin{align}
+\bar \epsilon_i^{(E\#C)} &=\EX(\ln(1-\delta + \frac{E_i}{C_i^{\#}})) -[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C] \\
+ &=\EX(\ln(1-\delta + \delta \frac{B_i}{B_2^{\#}})) -[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C] 
+\end{align}
+
+\begin{align}
+\bar \epsilon_i^{(EC)} &=\bar \epsilon_i^{EC}-\bar \epsilon_i^{(E\#C)}\\
+&= \EX(\ln(1-\delta + \frac{E_i}{C_i}))-[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C]\\
+&- [\EX(\ln(1-\delta + \frac{E_i}{C_i^{\#}})) -[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C]] \\
+&= \EX(\ln(1-\delta + \delta \frac{B_i}{B_2}))-\epsilon_i^0 -\bar \epsilon_i^E - \bar \epsilon_i^C\\
+&- \EX(\ln(1-\delta + \delta \frac{B_i}{B_2^{\#}})) +\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C \\
+&= \EX(\ln(1-\delta + \delta \frac{B_i}{B_2}))-\EX(\ln(1-\delta + \delta \frac{B_i}{B_2^{\#}}))\\
+\end{align}
+
+
+
+
 
 
 
@@ -414,87 +630,7 @@ r_1 &= \ln[1-\delta+\delta \exp(-\beta_2+\mu_1+\mu_2-(\beta_1+\mu_1+\mu_2))]\\
 
 \noindent And since $(\beta_1, \beta_2)$ is distributed in the same way as our right-tail associated noise, this proves all metrics based on the distribution of $r_1$ (\ref{r1distribution}) are the same for left- and right-tail associated noise.
 
-\section{E and C definitions}
 
-The lottery model is given by
-
-\begin{equation}
-N_i(t+1)=(1-\delta)N(t)+\delta N \frac{B_i(t)N_i(t)}{B_1(t)N_1(t)+B_2(t)N_2(t)}.  
-\end{equation}
-
-REF also defines $E_i = B_i$ and $C_1=C_2=\frac{B_1 N_1 + B_2 N_2}{\delta N}$. Then in the invader-resident scenario which defines the invader to be essentially zero and $N_2 = N$, $C_1 = C_2 = \frac{B_2}{\delta}$. The growth rate equation relates the two variables of $E$ and $C$ by
-
-\begin{equation}
-\bar r_i=\EX(\ln(1-\delta + \frac{E_i}{C_i})).\label{rbarEC}
-\end{equation}
-
-\noindent By substituting the definitions,
-
-\begin{align}
-\bar r_i &=\EX(\ln(1-\delta + \frac{B_i}{B_2/ \delta})) \\
-&= \EX(\ln(1-\delta +\delta \frac{B_i}{B_2})) 
-\end{align}
-
-The null growth rate of species $i$ is computed by setting both E and C at their means. 
-
-\begin{align}
-\epsilon_i^0 &=\ln(1-\delta + \frac{\bar E_i}{\bar C_i}) \\
-&=\ln(1-\delta + \delta \frac{\bar B_i}{\bar B_2}) 
-\end{align}
-
-The contribution of variance E in to the IGR is computed by setting C to its mean and letting E vary subtracted by the null. 
-
-\begin{align}
-\epsilon_i^E &=\ln(1-\delta + \frac{E_i}{\bar C_i}) -  \epsilon_i^0 \\
-&=\ln(1-\delta + \delta \frac{B_i}{\bar B_2}) -  \epsilon_i^0 
-\end{align}
-
-\begin{equation}
-\bar \epsilon_i^E=\EX(\epsilon_i^E) \label{Evar_mean}
-\end{equation}
-
-Similarly, the contribution of variance C in to the IGR is computed by setting E to its mean and letting C vary subtracted by the null. 
-
-\begin{align}
-\epsilon_i^C &=\ln(1-\delta + \frac{\bar E_i}{C_i}) -  \epsilon_i^0 \\
- &=\ln(1-\delta + \delta \frac{\bar B_i}{ B_2}) -  \epsilon_i^0 
-\end{align}
-
-\begin{equation}
-\bar \epsilon_i^C=\EX(\epsilon_i^C) \label{Cvar_mean}
-\end{equation}
-
-The contribution of both E and C varying to the IGR is computed by letting both variables vary subtracted by the null and the contributions of only one variable varying.
-
-\begin{equation}
-\epsilon_i^{EC}=\ln(1-\delta + \delta \frac{B_i}{B_j}) -  [\epsilon_i^0 + \epsilon_i^E + \epsilon_i^C] \label{ECvar}
-\end{equation}
-
-\begin{equation}
-\bar \epsilon_i^{EC}=\EX(\ln(1-\delta + \delta \frac{B_i}{B_j})) -[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C] \label{ECvar_mean}
-\end{equation}
-
-So,
-
-\begin{equation}
-\bar r_i=\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C + \bar \epsilon_i^{EC}. \label{rbari_decomp}
-\end{equation}
-
-But some of $\bar \epsilon_i^{EC}$ comes from covariance between E and C and some comes from both varying independently.
-
-\begin{align}
-\bar \epsilon_i^{(E\#C)} &=\EX(\ln(1-\delta + \frac{E_i}{C_i^{\#}})) -[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C] \\
- &=\EX(\ln(1-\delta + \delta \frac{B_i}{B_2^{\#}})) -[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C] 
-\end{align}
-
-\begin{align}
-\bar \epsilon_i^{(EC)} &=\bar \epsilon_i^{EC}-\bar \epsilon_i^{(E\#C)}\\
-&= \EX(\ln(1-\delta + \frac{E_i}{C_i}))-[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C]\\
-&- [\EX(\ln(1-\delta + \frac{E_i}{C_i^{\#}})) -[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C]] \\
-&= \EX(\ln(1-\delta + \delta \frac{B_i}{B_2}))-\epsilon_i^0 -\bar \epsilon_i^E - \bar \epsilon_i^C\\
-&- \EX(\ln(1-\delta + \delta \frac{B_i}{B_2^{\#}})) +\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C \\
-&= \EX(\ln(1-\delta + \delta \frac{B_i}{B_2}))-\EX(\ln(1-\delta + \delta \frac{B_i}{B_2^{\#}}))\\
-\end{align}
 
 
 \section{Decomposition}\label{Decomposition}
