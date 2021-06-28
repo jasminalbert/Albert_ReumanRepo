@@ -87,8 +87,14 @@
 
 %Put other possible titles below, commented, and we will select the best one at the end
 %Relationships between extreme events and their influence on competition and coexistence
+%Coexistence and consequences of extreme environmental relationships
+%Coexistence and consequences of environmental relationships in their extremes
+%Coexistence and implications of asymmetric environmental relationships
+%Extreme [climatic] events and their implications for biodiversity
+%Deductions to coexistence, extreme events, and asymmetric relationships
+%Extreme relationships (relationships in their extremes) and their deductions ([negative] contributions) to coexistence
 
-\author[a]{Jasmin Albert}
+\author[a]{Pimsupa Jasmin Albert}
 \author[a,b]{Daniel C. Reuman}
 %***DAN: Jasmin, you should choose one way your name will appear, exactly, on all your publications,
 %so everyone knows its you. For instance, I always appear as Daniel C. Reuman, not Daniel Reuman, not
