@@ -96,3 +96,93 @@ Want proofs, maybe in Methods or maybe in sup mat referenced by methods, that, f
 cases it does not matter which, and also that only mu_1 - mu_2 matters, not mu_1 and mu_2 independently.
 Might need a couple paragraphs?
 
+
+\begin{equation}
+
+\end{equation}
+
+\begin{equation}
+
+\end{equation}
+
+\begin{equation}
+
+\end{equation}
+
+\begin{equation}
+
+\end{equation}
+
+
+
+Some cut text I may still need below:
+
+\vspace{2in}
+
+\noindent By substituting the definitions,
+
+\begin{align}
+\bar r_i &=\EX(\ln(1-\delta + \frac{B_i}{B_2/ \delta})) \\
+&= \EX(\ln(1-\delta +\delta \frac{B_i}{B_2})) 
+\end{align}
+
+The null growth rate of species $i$ is computed by setting both E and C at their means. 
+
+\begin{align}
+\epsilon_i^0 &=\ln(1-\delta + \frac{\bar E_i}{\bar C_i}) \\
+&=\ln(1-\delta + \delta \frac{\bar B_i}{\bar B_2}) 
+\end{align}
+
+The contribution of variance E in to the IGR is computed by setting C to its mean and letting E vary subtracted by the null. 
+
+\begin{align}
+\epsilon_i^E &=\ln(1-\delta + \frac{E_i}{\bar C_i}) -  \epsilon_i^0 \\
+&=\ln(1-\delta + \delta \frac{B_i}{\bar B_2}) -  \epsilon_i^0 
+\end{align}
+
+\begin{equation}
+\bar \epsilon_i^E=\EX(\epsilon_i^E) \label{Evar_mean}
+\end{equation}
+
+Similarly, the contribution of variance C in to the IGR is computed by setting E to its mean and letting C vary subtracted by the null. 
+
+\begin{align}
+\epsilon_i^C &=\ln(1-\delta + \frac{\bar E_i}{C_i}) -  \epsilon_i^0 \\
+ &=\ln(1-\delta + \delta \frac{\bar B_i}{ B_2}) -  \epsilon_i^0 
+\end{align}
+
+\begin{equation}
+\bar \epsilon_i^C=\EX(\epsilon_i^C) \label{Cvar_mean}
+\end{equation}
+
+The contribution of both E and C varying to the IGR is computed by letting both variables vary subtracted by the null and the contributions of only one variable varying.
+
+\begin{equation}
+\epsilon_i^{EC}=\ln(1-\delta + \delta \frac{B_i}{B_j}) -  [\epsilon_i^0 + \epsilon_i^E + \epsilon_i^C] \label{ECvar}
+\end{equation}
+
+\begin{equation}
+\bar \epsilon_i^{EC}=\EX(\ln(1-\delta + \delta \frac{B_i}{B_j})) -[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C] \label{ECvar_mean}
+\end{equation}
+
+So,
+
+\begin{equation}
+\bar r_i=\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C + \bar \epsilon_i^{EC}. \label{rbari_decomp}
+\end{equation}
+
+But some of $\bar \epsilon_i^{EC}$ comes from covariance between E and C and some comes from both varying independently.
+
+\begin{align}
+\bar \epsilon_i^{(E\#C)} &=\EX(\ln(1-\delta + \frac{E_i}{C_i^{\#}})) -[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C] \\
+ &=\EX(\ln(1-\delta + \delta \frac{B_i}{B_2^{\#}})) -[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C] 
+\end{align}
+
+\begin{align}
+\bar \epsilon_i^{(EC)} &=\bar \epsilon_i^{EC}-\bar \epsilon_i^{(E\#C)}\\
+&= \EX(\ln(1-\delta + \frac{E_i}{C_i}))-[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C]\\
+&- [\EX(\ln(1-\delta + \frac{E_i}{C_i^{\#}})) -[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C]] \\
+&= \EX(\ln(1-\delta + \delta \frac{B_i}{B_2}))-\epsilon_i^0 -\bar \epsilon_i^E - \bar \epsilon_i^C\\
+&- \EX(\ln(1-\delta + \delta \frac{B_i}{B_2^{\#}})) +\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C \\
+&= \EX(\ln(1-\delta + \delta \frac{B_i}{B_2}))-\EX(\ln(1-\delta + \delta \frac{B_i}{B_2^{\#}}))\\
+\end{align}

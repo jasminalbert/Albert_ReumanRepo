@@ -96,17 +96,6 @@
 
 \author[a]{Pimsupa Jasmin Albert}
 \author[a,b]{Daniel C. Reuman}
-%***DAN: Jasmin, you should choose one way your name will appear, exactly, on all your publications,
-%so everyone knows its you. For instance, I always appear as Daniel C. Reuman, not Daniel Reuman, not
-%Dan Reuman, etc. This makes it possible to find all my papers by searching. So please decide what
-%name to use, Jasmin Albert or Pimsupa Albert or P. Jasmin Albert or whatever. Also keep in mind
-%that because "Albert" is a common name you might want something less common for the rest of it 
-%so that your papers are not confused with anyone elses, though of course I emphasize that how you
-%are going to be known it totally up to you, I'm just recommending you think it through now so you
-%can be consistent. I recognize that this all may be moot if you one day change your name and want to
-%be known by the new name on papers after that point, but anyway in case you don't ever change your 
-%name you might as well be consistent now, at least. So please change your name above to whatever
-%you want to be officially known as on scientific papers. Same change in the sup mat, please.
 
 \affil[a]{Department of Ecology and Evolutionary Biology and Kansas Biological Survey, University of Kansas}
 \affil[b]{Laboratory of Populations, Rockefeller University}
@@ -137,23 +126,22 @@ Place abstract here
 \section{Introduction}\label{section:introduction}
 
 
-Jasmin, I think the below makes a pretty good start at tryinbg to nail down a good way to express our goals
-in the last para of the Intro, so please incorporate these into your last para. If you have a better way
-to phrase these, please put both so we can compare at some point when we meet.
+%Jasmin, I think the below makes a pretty good start at tryinbg to nail down a good way to express our goals
+%in the last para of the Intro, so please incorporate these into your last para. If you have a better way
+%to phrase these, please put both so we can compare at some point when we meet.
 G1) To augment the modern theory of coexistence (MTC) to show how asymmetric tail association (ATA)
 plays a role. The MTC decomposes a measure of coexistence into components due to each of several mechanisms. 
 We address how ATA contributes to these components. We here examine mechanisms of coexistence that apply in 
 models exhibiting solely temporal variation; spatial variation can be considered in future work.
-G2) To explore using a simple model the relative magnitude of the contributions of coexistence that come
+G2) To explore using a simple model the relative magnitudes of the contributions to coexistence that come
 from ATA compared to other mechanisms.
 
 \section{Theory}\label{section:theory}
 
-In this section we pursue goal G1 from the Introduction: to augment the MTC to show how ATA
-plays a role in species coexistence.
+We here pursue goal G1 from the Introduction, to augment the MTC to show how ATA
+plays a role.
 %***DAN: make sure you define MTC and ATA once (probably in the Intro) and then use the abbreviations onle after that.
-For pedgogical clarity, we develop each step of the theory in general and for a simple classical model 
-(the lottery model), as an example. 
+For pedgogical clarity, we develop each step of the theory in general and for a simple example model, the lottery model. 
 
 The lottery model is as follows. 
 %***DAN: Note the inclusion of the model here means we will have to edit the "Model" section of sup mat, since we don't need to intro the model twice. Do later.
@@ -162,7 +150,7 @@ model equations are
 \begin{equation}
 N_i(t+1)=(1-\delta)N_i(t)+\delta N \frac{B_i(t)N_i(t)}{B_1(t)N_1(t)+B_2(t)N_2(t)}  \label{model_eq}
 \end{equation}
-for $i=1,2$. Here, $\delta$ is a mortality rate, and $B_i(t)$ is the fecundiity of species $i$ at time $t$. 
+for $i=1,2$. Here, $\delta$ is a mortality rate, and $B_i(t)$ is the fecundity of species $i$ at time $t$. 
 The model postulates that individuals die at rate $\delta$ at each time step, and are replaced by juveniles 
 in proportion to the reproductive outputs of the two species that year.
 For each $i$, we assume the random variables $B_i(t)$ are independent and identically distributed (iid) through
@@ -179,7 +167,7 @@ different mechanisms to species coexistence. But we show below
 that, for purely temporal variation, only one mechanism relates to tail associations: storage effects. 
 We now define storage effects for a general two species model, and specifically 
 for the lottery model, using an approach and notation
-similar to those of \cite{Ellner_2016} and \cite{Ellner_2019}; see those papers for additional details. 
+similar to those of \cite{Ellner_2016} and \cite{Ellner_2019}; see those papers for additional details.  
 
 For a general model, it is assumed that the growth rate $r_i(t)=\ln(N_i(t+1)/N_i(t))$ 
 of species $i$ can be written as an increasing function of
@@ -191,7 +179,7 @@ presentation of new ideas.
 
 For the lottery model, we take $E_i(t)=B_i(t)$, henceforth assuming that fecundity depends strictly on
 the environment. Competition, $C_i(t)$, in the lottery model is the number of new offspring
-divided by the number of open sites, $C_i(t)=( B_1(t)N_1(t)+B_2(t)N_2(t) )/\delta N$, which
+divided by the number of open sites, $C_i(t)=( B_1(t)N_1(t)+B_2(t)N_2(t) )/(\delta N$), which
 does not depend on $i$. Competition in the lottery model occurs at the stage of juveniles occupying open sites. 
 Species growth rates for the lottery model can then be written 
 $r_i(t)=\ln[1-\delta+\delta N B_i(t)/(B_1(t)N_1(t)+B_2(t)N_2(t))]=\ln[1-\delta+E_i(t)/C_i(t)]$.
@@ -247,7 +235,7 @@ that $q_{ij}=\overline{B}_i/((1-\delta)\overline{B}_j+\delta \overline{B}_i)$.
 Since we assumed log-normally distributed $B_i$, 
 $\overline{B}_i=\exp(\mu_i+\sigma^2/2)$, so $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$.
 %***DAN: This statement also needs adjusting if you go with q_ij=1
-So $\Delta_i^{(EC)}$ for the lottery model can be computed by using simulations \citep{Ellner_2016}
+Thus $\Delta_i^{(EC)}$ for the lottery model can be computed by using simulations \citep{Ellner_2016}
 to very accurately approximate $\olr_{i \bs i}$, $\olrs_{i \bs i}$,
 and $\olrs_{j \bs i}$, and then plugging them and $q_{ij}$ into (\ref{eq:storage_effects_gen}).
 
@@ -276,26 +264,29 @@ and $(E_j^\nat,C_{j \bs i}^\nat)$, and we consider the decomposition
 The term $\Delta_i^{[E \nat C]}$ is the component of storage effects due to 
 asymmetries of tail association between $E_i$ and $C_{i \bs i}$, and between $E_j$ and $C_{j \bs i}$.
 The notation $\nat$ was chosen because this new symbol is part of the symbol $\shp$ (i.e., two of its four lines), 
-corresponding to the removal of part of the relationship between $E$ and $C$ components.
-The term $\Delta_i^{[EC]}$ is the component due to $EC$ correlation \emph{per se}, after 
-removing the effects of asymmetric tail associations. 
+corresponding to the removal of part of the relationship between $E$ and $C$ components (namely, ATA).
+The term $\Delta_i^{[EC]}$ is the component of storage effects due to $EC$ correlation \emph{per se}, remaining after 
+having removed the effects of asymmetric tail associations.
+%The brackets in the superscripts of $\Delta_i^{[E \nat C]}$ and $\Delta_i^{[EC]}$ are intended to indicate that 
+%this is a decompostion of storage effects, which were denoted by \cite{Ellner_2019} using a superscript $(EC)$,
+%i.e., $\Delta_i^{(EC)}$, to indicate that storage effects are, in turn, part of a decomposition of a difference between invader and
+%resident growth rates (see below).  
 The brackets in the superscripts of $\Delta_i^{[E \nat C]}$ and $\Delta_i^{[EC]}$ are intended to indicate that 
-this is a decompostion of storage effects, which were denoted by \cite{Ellner_2019} using a superscript $(EC)$,
-i.e., $\Delta_i^{(EC)}$, to indicate that storage effects are, in turn, part of a decomposition of a difference between invader and
-resident growth rates (see below).  
+(\ref{eq:storage_effects_further}) is a decompostion within a decomposition, i.e., (\ref{eq:storage_effects_further}) is a decomposition
+of storage effects, which are themselves a term within the decomposition provided by the MTC \citep{Ellner_2019} -- see below for details.
 
 How are asymmetries of tail association removed while leaving $E$ and $C$ marginal distributions and overall 
-correlation unchanged? We assume that the cummulative distribution functions (cdfs) of $E_i$ and 
+correlation unchanged? We assume, for simplicity, that the cummulative distribution functions (CDFs) of $E_i$ and 
 $C_{i \bs i}$, which we denote $F_{E_i}$ and $F_{C_{i \bs i}}$, respectively, are strictly monotonic and continuous. 
-Letting $\varphi$ be the cdf of a standard normal distribution, we consider the random variables
+Letting $\varphi$ be the CDF of a standard normal distribution, we consider the random variables
 $\varphi^{-1} \circ F_{E_i} (E_i)$ and $\varphi^{-1} \circ F_{C_{i \bs i}}(C_{i \bs i})$, which are standard normally
 distributed, although they are not necessarily jointly bivariate normal.  Let $\rho_i$ be the covariance of
 these random variables. We then define a bivariate normal random variable $(e_i,c_{i \bs i})$ such that
-$\var(e_i)=\var(c_{i \bs i})=1$, and we denote $\cov(e_i,c_{i \bs i})$ by $\tilde{\rho}_i$. We define 
+$\var(e_i)=\var(c_{i \bs i})=1$, and we denote $\cov(e_i,c_{i \bs i})$ by $\ddot{\rho}_i$. We define 
 $E_i^\nat = F_{E_i}^{-1} \circ \varphi(e_i)$
-and $C_{i \bs i}^\nat=F_{C_{i \bs i}}^{-1} \circ \varphi(c_{i \bs i})$. The value of $\tilde{\rho}_i$ is then determined 
+and $C_{i \bs i}^\nat=F_{C_{i \bs i}}^{-1} \circ \varphi(c_{i \bs i})$. The value of $\ddot{\rho}_i$ is then determined 
 in one of 
-four alternative ways: $\tilde{\rho}_i = \rho_i$; or so that the Pearson, Spearman or Kendall correlation of 
+four alternative ways: $\ddot{\rho}_i = \rho_i$; or so that the Pearson, Spearman or Kendall correlation of 
 $E_i^\nat$ and $C_{i \bs i}^\nat$ matches that of $E_i$ and $C_{i \bs i}$. The choice of bivariate normal 
 $(e_i,c_{i \bs i})$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are symmetrically tail associated in the sense
 described in the Introduction.
@@ -303,7 +294,7 @@ described in the Introduction.
 %the *right* way
 For those familar with the language of copula statistics (see, e.g., \citealp{Ghosh_2020_AER} and \citealp{Genest_2007}), 
 we replaced the copula of $(E_i,C_{i \bs i})$ with a normal copula to form $(E_i^\nat,C_{i \bs i}^\nat)$.
-The choice of $\tilde{\rho}_i$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are correlated to the same extent as 
+The choice of $\ddot{\rho}_i$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are correlated to the same extent as 
 $E_i$ and $C_{i \bs i}$, according to whichever definition of correlation is considered preferable. Thus $E_i^\nat$ and 
 $C_{i \bs i}^\nat$ have had their tail association rendered symmetric while retaining their correlation \emph{per se},
 as desired. The random variable $(E_j^\nat, C_{j \bs i}^\nat)$ is created in an analogous way.  
@@ -313,37 +304,40 @@ $\varphi^{-1} \circ F_{E_i}(E_i) = \frac{b_i-\mu_i}{\sigma}$ and
 $\varphi^{-1} \circ F_{C_{i \bs i}}(C_{i \bs i})=\frac{b_j - \mu_j}{\sigma}$.  
 Also, $\rho_i = \cov(\frac{b_i-\mu_i}{\sigma},\frac{b_j-\mu_j}{\sigma})$, which equals the 
 Pearson correlation of $b_i$ and $b_j$. For the lottery model, it seems natural to make the choice
-$\tilde{\rho}_i=\rho_i$, which straightforwardly implies that $(E_i^\nat,C_{i \bs i}^\nat)$
-can be written as $(\exp(\tilde{b}_i),\exp(\tilde{b}_j))$, where $(\tilde{b}_i,\tilde{b}_j)$
-is bivariate-normally distributed with mean $(\mu_i,\mu_j)$, $\var(\tilde{b}_i)=\var(\tilde{b}_j)=\sigma$,
-and $\cov(\tilde{b}_i,\tilde{b}_j)=\cov(b_i,b_j)$. So $(\tilde{b}_i,\tilde{b}_j)$ has the same
+$\ddot{\rho}_i=\rho_i$, which straightforwardly implies that $(E_i^\nat,C_{i \bs i}^\nat)$
+can be written as $(\exp(\ddot{b}_i),\exp(\ddot{b}_j))$, where $(\ddot{b}_i,\ddot{b}_j)$
+is bivariate-normally distributed with mean $(\mu_i,\mu_j)$, $\var(\ddot{b}_i)=\var(\ddot{b}_j)=\sigma$,
+and $\cov(\ddot{b}_i,\ddot{b}_j)=\cov(b_i,b_j)$. So $(\ddot{b}_i,\ddot{b}_j)$ has the same
 marginal distributions and covariance matrix as $(b_i,b_j)$, but it is bivariate normal, whereas
 $(b_i,b_j)$ itself need not be. Given these definitions, it is straightforward to compute the 
-component $\olrn_{i \bs i}$ of (\ref{eq:storage_effects_further}) for the lottery model using the simulation 
+component $\olrn_{i \bs i}$ of (\ref{eq:storage_effects_further1}) for the lottery model using the simulation 
 approach of \cite{Ellner_2016,Ellner_2019}. Note that $E_j$ and $C_{j \bs i}$ are linearly related for the lottery model,
-so $E_j^\nat=E_j$ and $C_{j \bs i}^\nat = C_{j \bs i}$. Thus $\olr_{j \bs i}=\olrn_{j \bs i}$.
+so $E_j^\nat=E_j$, $C_{j \bs i}^\nat = C_{j \bs i}$, and $\olrn_{j \bs i}=\olr_{j \bs i}$.
 
-The other mechanisms in modern coexistence theory that apply in our modelling context (of purely temporal variation)
+The other mechanisms in modern coexistence theory that apply in our modelling context of purely temporal variation
 make no reference to covariation between quantities, whereas asymmetries of tail associations are 
 defined in a covariation context. Therefore, storage effects are the only mechanism of coexistence
-for which asymmetries of tail association are relevant. Mathematical details are given in SI section 
+for which asymmetries of tail association are relevant. Mathematical details supporting this claim are in SI section 
 \ref{SI-SIsect:other_mechanisms}, but we here provide a conceptual understanding. \cite{Ellner_2016} and
-\cite{Ellner_2019} provide a decomposition of $\olr_{i \bs i} -q_{ij}\olr_{i \bs i}$ which is similar to and motivated by the 
+\cite{Ellner_2019} provide a decomposition of the coexistence metric $\olr_{i \bs i} -q_{ij}\olr_{i \bs i}$ which is similar to and motivated by the 
 original decomposition of \cite{Chesson_1994}, and which we use; the decomposition is how the mechanisms of 
 coexistence opperating in a given case are illuminated. The decomposition is 
 \begin{equation}
 \olr_{i \bs i} -q_{ij}\olr_{i \bs i}=\Delta_i^0+\Delta_i^E+\Delta_i^C+\Delta_i^{(E\shp C)}+\Delta_i^{(EC)},\label{eq:previous_decomp}
 \end{equation}
 where: $\Delta_i^0$ is a baseline;
-$\Delta_i^E$ is a contribution of environmental variation;
-$\Delta_i^C$ is a contribution of variation in competition;
-$\Delta_i^{(E\shp C)}$ is a contribution of having simultaneous variation in both environment and competition, but not including the effects 
+$\Delta_i^E$ is a contribution to coexistence of environmental variation;
+$\Delta_i^C$ is a contribution to coexistence of variation in competition;
+$\Delta_i^{(E\shp C)}$ is a contribution to coexistence of having simultaneous variation in both environment and competition, but not including the effects 
 of covariation in these quantities; and
-$\Delta_i^{(EC)}$ is a contribution of $EC$ covariation -- storage effects. 
+$\Delta_i^{(EC)}$ is a contribution to coexistence of $EC$ covariation itself -- storage effects. 
 Only storage effects involve $EC$ covariation,
-so the only mechanism of coexistence influenced by ATA is storage effects. Pairing our decomposition 
-(\ref{eq:storage_effects_further1})-(\ref{eq:storage_effects_further}) with the 
-previous MTC decomposition (\ref{eq:previous_decomp}) gives the extension of the MTC which was goal G1 of the Introduction. 
+so the only mechanism of coexistence influenced by ATA is storage effects. Combining our decomposition 
+(\ref{eq:storage_effects_further}) with the decomposition (\ref{eq:previous_decomp}) of \cite{Ellner_2019} gives 
+\begin{equation}
+\olr_{i \bs i} -q_{ij}\olr_{i \bs i}=\Delta_i^0+\Delta_i^E+\Delta_i^C+\Delta_i^{(E\shp C)}+\Delta_i^{[E \nat C]} + \Delta_i^{[EC]},\label{eq:full_decomp}
+\end{equation}
+which is the extension of the MTC which was goal G1 of the Introduction.
 
 \section{Methods}\label{section:methods}
 
@@ -352,7 +346,7 @@ previous MTC decomposition (\ref{eq:previous_decomp}) gives the extension of the
 %plays a role. The MTC decomposes a measure of coexistence into components due to each of several mechanisms. 
 %We address how ATA contributes to these components. We here examine mechanisms of coexistence that apply in 
 %models exhibiting solely temporal variation; spatial variation can be considered in future work.
-%G2) To explore using a simple model the relative magnitude of the contributions of coexistence that come
+%G2) To explore using a simple model the relative magnitudes of the contributions to coexistence that come
 %from ATA compared to other mechanisms.
 
 %Figs, for reference:
@@ -364,6 +358,32 @@ previous MTC decomposition (\ref{eq:previous_decomp}) gives the extension of the
 %delta and a few of mu1-mu1. Plotted is all the components of coexistence, for comparison.
 %4) Theoretical fig exploring why ATA matters to r_1\1 for the lottery model and hopefully more gernerally - try to get
 %at the intuition here. See if you can edge to more generality here, or not?
+
+Left- or right-tail associated noise $(b_1,b_2)$, with $b_i$ normally distributed with mean $\mu_i$ and standard deviation 
+$\sigma$, was generated as pictured in Fig. \ref{fig:noise}, with details in SI section \ref{SI-sect:noise}.
+To achieve goal G2 from the Introduction, i.e., to explore using a simple model the relative magnitudes of the contributions 
+to coexistence that come from ATA versus other mechanisms, we plotted the terms $\Delta_i^0$, $\Delta_i^E$, $\Delta_i^C$, 
+$\Delta_i^{(E\shp C)}$, $\Delta_i^{[E \nat C]}$ and $\Delta_i^{[EC]}$ [see (\ref{eq:full_decomp})] for the lottery model
+against the independent parameters of the model, $\mu_1$, $\mu_2$, $\sigma$ and $\delta$; and then we compared their
+values on the plots. Some mathematical shortcuts, summarized here, greatly simplified this plotting. First, we showed that, for the 
+lottery model, none of the components in (\ref{eq:full_decomp}) depends independently on $\mu_1$ and $\mu_2$,
+instead they all depend only on the difference $\mu_1-\mu_2$ (SI section \ref{SI-sect:math_simplifications}); so we only plotted 
+against $\mu_1 - \mu_2$. Second, we showed that the values of all components in (\ref{eq:full_decomp}) were the same 
+for both our left- and right-tail associated noises (SI section \ref{SI-sect:math_simplifications}); so we only generated plots 
+for left-tail associated noise. For each combination of $\delta=W, X, Y, Z$
+%***DAN: Jasmin, please select 4 sensible values, including \delta=1, and put the ones you select here
+and $\mu_1-\mu_2=A,B,C,D$,
+%***DAN: Jasmin, please select 3-4 sensible values and put the ones you select here
+we plotted all the components of (\ref{eq:full_decomp}) against $\sigma$. Relative importance of contributions was judged from the 
+plots to assess whether and to what extent ATA effects on coexistence were meaningfully large for the lottery model.
+%***DAN: Jasmin, if you select 4 values for mu1-mu2 and 4 for delta, then Fig. 3 is going to have 16 panels arranged in a 
+%4 by 4 grid, each of which will plot all the components against sigma. You'll need to use different colors and/or line
+%types for the components and have a legend.
+The simulation methods of \cite{Ellner_2019} were used to compute the components of (\ref{eq:full_decomp}).
+Computationally efficient means of carrying out these simulations, for the lottery model, are elaborated in 
+SI section X.
+%***DAN: Dan to add the reference to the right sup mat section once things get sufficiently organized in sup mat to know what section.
+
 
 
 \section{Results}\label{section:results}
@@ -409,6 +429,24 @@ to be occurring, might. Should also mention this second point in the Discussion 
 \bibliographystyle{ecology_letters2}
 \bibliography{refs}
 
+\clearpage
+\newpage
+
+\begin{figure}
+\caption{Pedagogical figure somehow displaying the different outcomes of competition in ATA and symmetric cases for an example.
+This will be cited from the Intro, so needs to be understandable to someone who does not know any of the ideas we introduce yet.
+So in particular you cannot use IGR as your metric of coexistence, you need to use something more intuitive. You will pick
+model parameter values and do two sims, one with ATA noise and one with symmtric noise, and show different outcomes. We should
+discuss and possibly take several iterations to get this figure right since it's a pedagogically important figure - if the reader
+is not convinced in the Intro that we are studying something that makes a difference, they are not going to slog through
+the Theory section, which is inevitably going to be tough going for many readers.\label{fig:pedagog}}
+\end{figure}
+
+\begin{figure}
+\caption{Figure displaying the noise. Three panels, left-, symmetric, and right-tail assoc noise. Use standard normal marginals.
+Explain in caption that alternatives for $(b_1,b_2)$ are obtained by multipling by $\sigma$ and then adding $(\mu_1,\mu_2)$.
+Jasmin to make and insert the figure here using the includegraphics command, and then draft a caption along the lines described here.\label{fig:noise}}
+\end{figure}
 
 
 \end{document}

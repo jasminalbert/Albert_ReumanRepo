@@ -82,17 +82,6 @@
 
 \author[a]{Pimsupa Jasmin Albert}
 \author[a,b]{Daniel C. Reuman}
-%***DAN: Jasmin, you should choose one way your name will appear, exactly, on all your publications,
-%so everyone knows its you. For instance, I always appear as Daniel C. Reuman, not Daniel Reuman, not
-%Dan Reuman, etc. This makes it possible to find all my papers by searching. So please decide what
-%name to use, Jasmin Albert or Pimsupa Albert or P. Jasmin Albert or whatever. Also keep in mind
-%that because "Albert" is a common name you might want something less common for the rest of it 
-%so that your papers are not confused with anyone elses, though of course I emphasize that how you
-%are going to be known it totally up to you, I'm just recommending you think it through now so you
-%can be consistent. I recognize that this all may be moot if you one day change your name and want to
-%be known by the new name on papers after that point, but anyway in case you don't ever change your 
-%name you might as well be consistent now, at least. So please change your name above to whatever
-%you want to be officially known as on scientific papers. Same change in main text, please.
 
 \affil[a]{Department of Ecology and Evolutionary Biology and Kansas Biological Survey, University of Kansas}
 \affil[b]{Laboratory of Populations, Rockefeller University}
@@ -164,8 +153,8 @@ DAN: You need to explain this discrepancy here after talking to Ellner.
 
 \section{Mechanisms other than storage effects}\label{SIsect:other_mechanisms}
 
-We review the decompositions of \cite{Ellner_2016} and \cite{Ellner_2019}, which are similar to and motivated by the 
-original decompositions of \cite{Chesson_1994}, and then we include our extension. 
+We first review the decompositions of \cite{Ellner_2016} and \cite{Ellner_2019}, which are similar to and motivated by the 
+original decompositions of \cite{Chesson_1994}; and then we include our extensions of the decomposition. 
 
 We begin by decomposing 
 the invasion growth rate,
@@ -229,7 +218,7 @@ As in the main text, we can now define the tertiary decomposition
 \begin{align}
 \olep_i^{(EC)} &= \E[r_i(E_i,C_{i \bs i})]-\E[r_i(E_i^\shp,C_{i \bs i}^\shp)] \\
 &= \left[ \E[r_i(E_i,C_{i \bs i})]-\E[r_i(E_i^\nat,C_{i \bs i}^\nat)] \right]+\left[ \E[r_i(E_i^\nat,C_{i \bs i}^\nat)]-\E[r_i(E_i^\shp,C_{i \bs i}^\shp)] \right] \\
-&= \olep_i^{[EC]}+\olep_i^{[E \nat C]}.
+&= \olep_i^{[E \nat C]}+\olep_i^{[EC]}.
 \end{align}
 The brackets in the superscripts of $\olep_i^{[EC]}$ and $\olep_i^{[E \nat C]}$ indicate that we are talking about a term in the
 tertiary decomposition, i.e., in the decomposition of $\olep_i^{(EC)}$. 
@@ -237,17 +226,17 @@ The term $\olep_i^{[E \nat C]}$ quantifies the influence of asymmetric tail asso
 and the the term $\olep_i^{[EC]}$ corresponds to $EC$ correlations \emph{per se}, after the removal of asymmetries of tail association.
 The symbol $\nat$ denotes the removal of asymmetries of tail association. We therefore have 
 \begin{equation}
-\olr_{i \bs i} = \epsilon_i^0 + \olep_i^E + \olep_i^C + \olep_i^{(E\shp C)}+\olep_i^{[EC]}+\olep_i^{[E \nat C]},
+\olr_{i \bs i} = \epsilon_i^0 + \olep_i^E + \olep_i^C + \olep_i^{(E\shp C)}+\olep_i^{[EC]}+\olep_i^{[E \nat C]},\label{eq:decomp_overall_IGR}
 \end{equation}
 our overall decompsition of $r_{i \bs i}$.
-The derivation also applies to provide 
+The same derivation also applies to provide 
 \begin{equation}
 \olr_{j \bs i} = \epsilon_j^0 + \olep_j^E + \olep_j^C + \olep_j^{(E\shp C)}+\olep_j^{[EC]}+\olep_j^{[E \nat C]},
 \end{equation}
 an analogous decomposition of $\olr_{j \bs i}$.
 
 Combining the decompositions of $\olr_{i \bs i}$ and $\olr_{j \bs i}$ and assuming without loss of generality that $\mu_i \leq \mu_j$ so that
-species i is the weaker competitor, we have
+species $i$ is the weaker competitor and $\olr_{i \bs i}-q_{ij}\olr_{j \bs i}$ can be regarded as a coexistence metric, we have
 \begin{equation}
 \olr_{i \bs i}-q_{ij}\olr_{j \bs i}=\Delta_i^0+\Delta_i^E+\Delta_i^C+\Delta_i^{(E\shp C)}+\Delta_i^{[EC]}+\Delta_i^{[E\nat C]},
 \end{equation}
@@ -260,131 +249,115 @@ $\Delta_i^{[EC]}=\olep_i^{[EC]} - q_{ij} \olep_j^{[EC]}$ is the contribution to 
 not including the effects of asymmetric tail associations between environment and competition;
 and $\Delta_i^{[E\nat C]}=\olep_i^{[E \nat C]}-q_{ij} \olep_j^{[E \nat C]}$ is the contribution to coexistence of 
 asymmetric tail assocations. The subscript $i$ on all these newly defined quantities $\Delta_i$ refers to species $i$.
-The notation $\Delta I_i$ from the main text equals $\Delta_i^{(EC)}=\Delta_i^{[EC]}+\Delta_i^{[E\nat C]}$,
-and $\Delta I_i^{(\text{ata})}$ from the main text is the same as $\Delta_i^{[E\nat C]}$ and $\Delta I_i^{(\text{cps})}$ 
-from the main text is $\Delta_i^{[EC]}$ (see (\ref{MT-eq:storage_effects_further1}) and (\ref{MT-eq:storage_effects_further}) from the main text).
-
-%***DAN: Next go through everything for the lottery model
-%***DAN: Then argue that everything depends only on mu1-mu2
-
-
-
-\vspace{2in}
-
-\noindent By substituting the definitions,
-
-\begin{align}
-\bar r_i &=\EX(\ln(1-\delta + \frac{B_i}{B_2/ \delta})) \\
-&= \EX(\ln(1-\delta +\delta \frac{B_i}{B_2})) 
-\end{align}
-
-The null growth rate of species $i$ is computed by setting both E and C at their means. 
-
-\begin{align}
-\epsilon_i^0 &=\ln(1-\delta + \frac{\bar E_i}{\bar C_i}) \\
-&=\ln(1-\delta + \delta \frac{\bar B_i}{\bar B_2}) 
-\end{align}
-
-The contribution of variance E in to the IGR is computed by setting C to its mean and letting E vary subtracted by the null. 
-
-\begin{align}
-\epsilon_i^E &=\ln(1-\delta + \frac{E_i}{\bar C_i}) -  \epsilon_i^0 \\
-&=\ln(1-\delta + \delta \frac{B_i}{\bar B_2}) -  \epsilon_i^0 
-\end{align}
-
-\begin{equation}
-\bar \epsilon_i^E=\EX(\epsilon_i^E) \label{Evar_mean}
-\end{equation}
-
-Similarly, the contribution of variance C in to the IGR is computed by setting E to its mean and letting C vary subtracted by the null. 
-
-\begin{align}
-\epsilon_i^C &=\ln(1-\delta + \frac{\bar E_i}{C_i}) -  \epsilon_i^0 \\
- &=\ln(1-\delta + \delta \frac{\bar B_i}{ B_2}) -  \epsilon_i^0 
-\end{align}
-
-\begin{equation}
-\bar \epsilon_i^C=\EX(\epsilon_i^C) \label{Cvar_mean}
-\end{equation}
-
-The contribution of both E and C varying to the IGR is computed by letting both variables vary subtracted by the null and the contributions of only one variable varying.
-
-\begin{equation}
-\epsilon_i^{EC}=\ln(1-\delta + \delta \frac{B_i}{B_j}) -  [\epsilon_i^0 + \epsilon_i^E + \epsilon_i^C] \label{ECvar}
-\end{equation}
-
-\begin{equation}
-\bar \epsilon_i^{EC}=\EX(\ln(1-\delta + \delta \frac{B_i}{B_j})) -[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C] \label{ECvar_mean}
-\end{equation}
-
-So,
-
-\begin{equation}
-\bar r_i=\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C + \bar \epsilon_i^{EC}. \label{rbari_decomp}
-\end{equation}
-
-But some of $\bar \epsilon_i^{EC}$ comes from covariance between E and C and some comes from both varying independently.
-
-\begin{align}
-\bar \epsilon_i^{(E\#C)} &=\EX(\ln(1-\delta + \frac{E_i}{C_i^{\#}})) -[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C] \\
- &=\EX(\ln(1-\delta + \delta \frac{B_i}{B_2^{\#}})) -[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C] 
-\end{align}
-
-\begin{align}
-\bar \epsilon_i^{(EC)} &=\bar \epsilon_i^{EC}-\bar \epsilon_i^{(E\#C)}\\
-&= \EX(\ln(1-\delta + \frac{E_i}{C_i}))-[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C]\\
-&- [\EX(\ln(1-\delta + \frac{E_i}{C_i^{\#}})) -[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C]] \\
-&= \EX(\ln(1-\delta + \delta \frac{B_i}{B_2}))-\epsilon_i^0 -\bar \epsilon_i^E - \bar \epsilon_i^C\\
-&- \EX(\ln(1-\delta + \delta \frac{B_i}{B_2^{\#}})) +\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C \\
-&= \EX(\ln(1-\delta + \delta \frac{B_i}{B_2}))-\EX(\ln(1-\delta + \delta \frac{B_i}{B_2^{\#}}))\\
-\end{align}
-
-
-
-
-
-
-
-%***DAN: Sections below this point are from the earlier version/reasoning and may have to be edited and placed in other
-%locations. This comment written 2021 06 22
-
-\section{The Model}
-
-%***DAN: Probably delete this section, since the model is now elaborated in the main text
-
-We used the lottery model, previously studied, for instance, by REFS. Model equations are
-
-\begin{equation}
-N_i(t+1)=(1-\delta)N(t)+\delta N \frac{B_i(t)N_i(t)}{B_1(t)N_1(t)+B_2(t)N_2(t)}  \label{model_eq}
-\end{equation}
-
-\noindent for species $i=1,2$. 
-Here, $N_i(t)$ is the population density of species $i$ at time $t$, and $N = N_1(t)+N_2(t)$ is fixed through time. 
-The parameter, $\delta$ is a mortality rate, and $B_i(t)$ is the fecundiity of specise $i$ at time $t$. 
-The model postulates that individuals die at rate $\delta$ at each time step, and are replaced by juveniles in population to the reproductive output of the two species that year.
-We take, for each $i$, $B_i(t)$ to be $iid$ through time. 
-We let $B_i = \exp(b_i)$, where $\left(b_1, b_2\right)$ is some distribution such that $b_i \sim N\left(\mu_i, \sigma^2\right)$ and such that $\CovX(b_1, b_2) = \rho$, a fixed quantity we will specify later.
-However, $\left(b_1, b_2\right)$ is not necessarily a bivariate normal distribution.
-We will consider various distributions of $\left(b_1, b_2\right)$ with these properties, corresponding to our symmetric and asymmetric tail associations cases defined in the main text and elaborated below.
-We assume without loss of generality that $\mu_1 \leq \mu_2$, so that species 1 is the weaker competitor. 
 
 \section{Noise} \label{sect:noise}
 
-We created three cases for $(b_1,b_2)$, the case of symmetric tail association and the cases of asymmetrical left- and right-tail association. 
+We created two cases for $(b_1,b_2)$, left- and right-tail association. 
 To generate $M$ points $\left(b_1^{(i)}, b_2^{(i)}\right)$, $i=1,..,M$, for the left tail association case, we first generated M points $(a_1^{(i)},a_2^{(i)})$, $i=1,...,M$, from a bivariate normal distribution $N\left( \vec{0}, \Sigma \right)$, where here $\Sigma = \begin{pmatrix} 1&0\\0&1\end{pmatrix}$. 
-Then, for each index $i$, we randomly, with 50\% probability, either (A) let $\tilde b_1^{(i)} = -|a_1^{(i)}|$ and $\tilde b_2^{(i)} = -a|_1^{(i)}|$, or (B) let $\tilde b_1^{(i)} = |a_1^{(i)}|$ and $\tilde b_2^{(i)} = |a_2^{(i)}|$. 
+Then, for each index $i$, we randomly, with 50\% probability, either (A) let $\tilde b_1^{(i)} = -|a_1^{(i)}|$ and $\tilde b_2^{(i)} = -|a_1^{(i)}|$, or (B) let $\tilde b_1^{(i)} = |a_1^{(i)}|$ and $\tilde b_2^{(i)} = |a_2^{(i)}|$. 
 We then let $b_1^{(i)} = \sigma \tilde b_1^{(i)} + \mu_1$ and $b_2^{(i)} = \sigma \tilde b_2^{(i)} + \mu_2$. 
 Perfect association in the left tails of the resulting distribution $\left(b_1,b_2\right)$ results from the fact that, in case (A) above, both $\tilde b_1^{(i)}$ and $\tilde b_2^{(i)}$ were assigned to the same value. 
-For speed of computation, when samples $(\tilde b_1^{(i)},\tilde b_2^{(i)})$, $i=1,...,M$ were needed for every distinct set of values of the parameters $\mu_1$, $\mu_2$, and $\sigma^2$, we used the same $\left(\tilde b_1^{(i)},\tilde b_2^{(i)}\right)$, $i=1,...,M$, simply transforming these values differently (using the different valus of $\mu_1$, $\mu_2$, $\sigma$) for each set of parameter values. Right-tail associated noise was generated in an analogous way. 
+For speed of computation, when samples $(b_1^{(i)},b_2^{(i)})$, $i=1,...,M$ were needed for distinct sets of values of the parameters $\mu_1$, $\mu_2$, and $\sigma$, we used the same $\left(\tilde b_1^{(i)},\tilde b_2^{(i)}\right)$, $i=1,...,M$, simply transforming these values differently (using the different valus of $\mu_1$, $\mu_2$, $\sigma$) for each set of parameter values. Right-tail associated noise was generated in an analogous way. 
+Overall, our version of the lottery model was completely specified by specifying $\delta$, $\mu_1$, $\mu_2$, $\sigma$ and whether 
+noise was generated from the left- or right-tail association cases. 
 
-Noise with symmetric tail association was generated by taking a very large sample (100000) of left-tail associated noise, as described above, and then calculating the Pearson correaltion coefficient, rho.
-The value obtained was ... . 
-The symmetric noise was then generated once from $N\left(\vec{0}, \Sigma \right)$ where $\Sigma = \begin{pmatrix} 1&\rho \\ \rho&1\end{pmatrix}$, denoting the points so generated by $\left(\tilde b_1^{(i)},\tilde b_2^{(i)}\right)$ for $i=1,...,M$. 
-We then set $b_1^{(i)} = \sigma \tilde b_1^{(i)} + \mu_1$ and $b_2^{(i)} = \sigma \tilde b_2^{(i)}+ \mu_2$.
+When needed, noise with symmetric tail association was generated by taking a very large sample (100000) of left-tail associated noise generated as 
+described above, and then calculating the Pearson correaltion coefficient, $\rho$, of the sample.
+Symmetric noise $\left(\tilde b_1^{(i)},\tilde b_2^{(i)}\right)$ for $i=1,...,M$ was then generated 
+from the bivariate normal distribution $N\left(\vec{0}, \Sigma \right)$, where $\Sigma = \begin{pmatrix} 1&\rho \\ \rho&1\end{pmatrix}$, 
+and then we set $b_1^{(i)} = \sigma \tilde b_1^{(i)} + \mu_1$ and $b_2^{(i)} = \sigma \tilde b_2^{(i)}+ \mu_2$.
 
-Thus, overall, our model was completely specified by specifying $\delta$, $\mu_1$, $\mu_2$, $\sigma$ and whether noise was generated from the left-tailed association, right-tailed association or symmetric tail association cases specified above. 
+\section{Mathematical simplifications for plotting}\label{sect:math_simplifications}
 
+For the lottery model, we can straightforwardly show from the formulas of SI section \ref{SIsect:other_mechanisms} that:
+\begin{equation}
+E_i=B_i=\exp(b_i)
+\end{equation}
+\begin{equation}
+C_i=\frac{B_1 N_1 + B_2 N_2}{\delta N}
+\end{equation}
+\begin{equation}
+C_{i \bs i} = B_j/\delta=\exp(b_j)/\delta
+\end{equation}
+\begin{equation}
+r_i=\ln(1-\delta+E_i/C_i)
+\end{equation}
+%IGR
+\begin{align}
+\olr_{i \bs i} &= \E[\ln(1-\delta+E_i/C_{i \bs i})] \\
+&= \E[\ln(1-\delta+\delta B_i/B_j)] \\
+&= \E[\ln(1-\delta+\delta\exp(b_i-b_j))]
+\end{align}
+\begin{equation}
+\overline{E}_i = \exp(\mu_i + \sigma^2/2)
+\end{equation}
+\begin{equation}
+\overline{C}_{i \bs i}=\exp(\mu_j+\sigma^2/2)/\delta
+\end{equation}
+%baseline
+\begin{equation}
+\epsilon_i^0 = \ln(1-\delta+\delta \exp(\mu_i - \mu_j))\label{eq:decomp:baseline}
+\end{equation}
+%contrib of variation in E
+\begin{align}
+\olep_i^E &= \E[\ln(1-\delta+\delta\exp(b_i)/\exp(\mu_j + \sigma^2/2))]-\epsilon_i^0 \\
+&= \E[\ln(1-\delta+\delta\exp(\sigma \tilde{b}_i+\mu_i)/\exp(\mu_j+\sigma^2/2))]-\epsilon_i^0 \\
+&= \E[\ln(1-\delta+\delta\exp(\sigma \tilde{b}_i + \mu_i - \mu_j - \sigma^2/2))]-\epsilon_i^0, \label{eq:decomp:contrib_of_var_E}
+\end{align}
+where $\tilde{b}_i$ is standard normally distributed (see SI section \ref{sect:noise}). Continuing,
+%contrib of variation in C
+\begin{align}
+\olep_i^C &= \E[\ln(1-\delta + \delta \exp(\mu_i+\sigma^2/2)/\exp(b_j))]-\epsilon_i^0 \\
+&= \E[\ln(1-\delta + \delta \exp(\mu_i+\sigma^2/2)/\exp(\sigma \tilde{b}_j +\mu_j))]-\epsilon_i^0 \\
+&= \E[\ln(1-\delta + \delta \exp(-\sigma \tilde{b}_j +\mu_i -\mu_j+\sigma^2/2))]-\epsilon_i^0, \label{eq:decomp:contrib_of_var_C} 
+\end{align}
+where $\tilde{b}_j$ is standard normally distributed (see SI section \ref{sect:noise}). Continuing,
+%last term of primary decomp, later splits into storage effects and effect of variation in E and C, per se  
+\begin{align}
+\olep_i^{EC} &= \E[\ln(1-\delta+\delta\exp(b_i)/\exp(b_j))]-\olep_i^E-\olep_i^C-\epsilon_i^0 \\
+&= \E[\ln(1-\delta+\delta\exp(\sigma \tilde{b}_i +\mu_i)/\exp(\sigma \tilde{b}_j +\mu_j))]-\olep_i^E-\olep_i^C-\epsilon_i^0 \\
+&= \E[\ln(1-\delta+\delta\exp(\sigma (\tilde{b}_i - \tilde{b}_j)+\mu_i-\mu_j))]-\olep_i^E-\olep_i^C-\epsilon_i^0, \label{eq:decomp:last_term_primary}
+\end{align}
+where $(\tilde{b}_i, \tilde{b}_j)$ is distributed as in SI section \ref{sect:noise}, i.e., 
+$(\tilde{b}_i,\tilde{b}_j)=\left(\frac{b_i-\mu_i}{\sigma},\frac{b_j-\mu_j}{\sigma} \right)$. Continuing,
+%contrib of variation in E and C, per se  
+\begin{align}
+\olep_i^{(E\shp C)} &= \E[\ln(1-\delta+\delta\exp(b_i^\shp)/\exp(b_j^\shp))]-\olep_i^E-\olep_i^C-\epsilon_i^0 \\
+&= \E[\ln(1-\delta+\delta\exp(\sigma \tilde{b}_i^\shp +\mu_i)/\exp(\sigma \tilde{b}_j^\shp + \mu_j))]-\olep_i^E-\olep_i^C-\epsilon_i^0 \\
+&= \E[\ln(1-\delta+\delta\exp(\sigma(\tilde{b}_i^\shp - \tilde{b}_j^\shp)+\mu_i-\mu_j))]-\olep_i^E-\olep_i^C-\epsilon_i^0, \label{eq:decomp:contrib_of_EC_var_per_se}
+\end{align}
+where $\tilde{b}_i^\shp$ and $\tilde{b}_j^\shp$ are standard normally distributed and independent. Continuing,
+%storage effects
+\begin{equation}
+\olep_i^{(EC)} = \E[\ln(1-\delta+\delta\exp(\sigma (\tilde{b}_i - \tilde{b}_j)+\mu_i-\mu_j))]-
+\E[\ln(1-\delta+\delta\exp(\sigma (\tilde{b}_i^\shp - \tilde{b}_j^\shp)+\mu_i-\mu_j))],\label{eq:decomp:storage_effects}
+\end{equation}
+where $(\tilde{b}_i,\tilde{b}_j)$ is distributed as in SI section \ref{sect:noise}, i.e., 
+$(\tilde{b}_i,\tilde{b}_j)=\left(\frac{b_i-\mu_i}{\sigma},\frac{b_j-\mu_j}{\sigma} \right)$, and 
+$\tilde{b}_i^\shp$ and $\tilde{b}_j^\shp$ are standard normal and independent. Continuing,
+%contrib of ATA
+\begin{equation}
+\olep_i^{[E \nat C]} = \E[\ln(1-\delta+\delta\exp(b_i-b_j))]-\E[\ln(1-\delta+\delta\exp(\ddot{b}_i-\ddot{b}_j))],\label{eq:decomp:contrib_ATA_1}
+\end{equation}
+where $(\ddot{b}_i,\ddot{b}_j)$ have the same (normal) marginals and covariance as $(b_i,b_j)$ but are 
+bivariate normal. Thus
+\begin{equation}
+\olep_i^{[E \nat C]} = \E[\ln(1-\delta+\delta\exp(\sigma(\tilde{b}_i-\tilde{b}_j)+\mu_i-\mu_j))]-
+\E[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i-\tilde{\ddot{b}}_j)+\mu_i-\mu_j))], \label{eq:decomp:contrib_ATA_2}
+\end{equation}
+where $(\tilde{b}_i,\tilde{b}_j)=\left( \frac{b_i-\mu_i}{\sigma},\frac{b_j-\mu_j}{\sigma} \right)$ and 
+$(\tilde{\ddot{b}}_i,\tilde{\ddot{b}}_j)=\left( \frac{\ddot{b}_i-\mu_i}{\sigma},\frac{\ddot{b}_j-\mu_j}{\sigma} \right)$.
+Continuing, $\olep_i^{[EC]}=\olep_i^{(EC)}-\olep_i^{[E \nat C]}$ is available by subtracting expression (\ref{eq:decomp:contrib_ATA_2})
+from expression (\ref{eq:decomp:storage_effects}), i.e., 
+\begin{equation}
+\olep_i^{[EC]} = \E[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i-\tilde{\ddot{b}}_j)+\mu_i-\mu_j))] - 
+\E[\ln(1-\delta+\delta\exp(\sigma (\tilde{b}_i^\shp - \tilde{b}_j^\shp)+\mu_i-\mu_j))].
+\end{equation}
+This completes the calculation of all the terms of the decomposition (\ref{eq:decomp_overall_IGR})  of $\olr_{i \bs i}$ for the lottery model.
 
+%***DAN: Next think it all through for j\i and determine what needs to be said for that case before combining the two cases 
+%(and also scaling factors) to get the delta terms in extended MTC decomp
+%Once you do those things you can observe that all these terms depend only on mui-muj and not independently on mui or muj.
 
 \section{Invasion growth rate of species 1, and storage effects} \label{sect:IGR}
 
