@@ -100,7 +100,6 @@
 %***Need to indicate corresponding authors
 
 \begin{document}
-\SweaveOpts{concordance=TRUE}
 %\SweaveOpts{concordance=TRUE}
 
 %The following is where you load in the numeric results that will be embedded in the text
@@ -171,7 +170,7 @@ original decompositions of \cite{Chesson_1994}, and then we include our extensio
 We begin by decomposing 
 the invasion growth rate,
 \begin{equation}
-\olr_{i \bs i}=\E[r_i(E_i,C_{\i \bs i})].
+\olr_{i \bs i}=\E[r_i(E_i,C_{i \bs i})].
 \end{equation}
 The invasion growth rate with both $E_i$ and $C_{i \bs i}$ constant at their means is 
 \begin{align}
@@ -554,17 +553,17 @@ First, for a large integer $M$, carry out the following steps once:
 
 \begin{enumerate}
 
-\item Estimate $\bar r_1$ for the left-tail associated case as $\hat \bar r_1 = \mean_i (\ln [1-\delta+\delta\exp(b_{l1}^{(i)}-b_{l2}^{(i)})])$ where $b_{l1}^{(i)} = \sigma \tilde b_{l1}^{(i)} + \mu_1$ and $b_{l2}^{(i)} = \sigma \tilde b_{l2}^{(i)} + \mu_2$. The standard error of this estimate is $\se (\hat \bar r_1) =\frac{\sd _i (\ln[1-\delta +\delta \exp(b_{l1}^{(i)}-b_{l2}^{(i)})])}{\sqrt M}$, where $\sd _i(\cdot)$ is standard deviation. 
+\item Estimate $\bar r_1$ for the left-tail associated case as $\hat{\bar r_1} = \mean_i (\ln [1-\delta+\delta\exp(b_{l1}^{(i)}-b_{l2}^{(i)})])$ where $b_{l1}^{(i)} = \sigma \tilde b_{l1}^{(i)} + \mu_1$ and $b_{l2}^{(i)} = \sigma \tilde b_{l2}^{(i)} + \mu_2$. The standard error of this estimate is $\se (\hat{\bar r_1}) =\frac{\sd _i (\ln[1-\delta +\delta \exp(b_{l1}^{(i)}-b_{l2}^{(i)})])}{\sqrt M}$, where $\sd _i(\cdot)$ is standard deviation. 
 
-\item Estiate $\bar r_1$ for the left-tail associated case as $\hat \bar r_1 = \mean_i (\ln [1-\delta+\delta\exp(b_{r1}^{(i)}-b_{r2}^{(i)})])$ where $b_{r1}^{(i)} = \sigma \tilde b_{r1}^{(i)} + \mu_1$ and $b_{r2}^{(i)} = \sigma \tilde b_{r2}^{(i)} + \mu_2$. The standard error of this estimate is $\se (\hat \bar r_1) =\frac{\sd _i (\ln[1-\delta +\delta \exp(b_{r1}^{(i)}-b_{r2}^{(i)})])}{\sqrt M}$. 
+\item Estiate $\bar r_1$ for the left-tail associated case as $\hat{\bar r_1} = \mean_i (\ln [1-\delta+\delta\exp(b_{r1}^{(i)}-b_{r2}^{(i)})])$ where $b_{r1}^{(i)} = \sigma \tilde b_{r1}^{(i)} + \mu_1$ and $b_{r2}^{(i)} = \sigma \tilde b_{r2}^{(i)} + \mu_2$. The standard error of this estimate is $\se (\hat{\bar r_1}) =\frac{\sd _i (\ln[1-\delta +\delta \exp(b_{r1}^{(i)}-b_{r2}^{(i)})])}{\sqrt M}$. 
 
-\item Estimate $\bar r_1$ in the symmetric tail association case as $\hat \bar r_1=\mean_i(\ln[1-\delta+\delta \exp(u_i)])$, where $u_i = \sqrt{(2\sigma^2-2\rho)}\tilde u_i + \mu_1 - \mu_2$. The standard error of this estimation is $\se(\hat \bar r_1) = \frac {\sd_i(\ln[1-\delta+\delta \exp(u_i)])}{\sqrt M}$. 
+\item Estimate $\bar r_1$ in the symmetric tail association case as $\hat{\bar r_1}=\mean_i(\ln[1-\delta+\delta \exp(u_i)])$, where $u_i = \sqrt{(2\sigma^2-2\rho)}\tilde u_i + \mu_1 - \mu_2$. The standard error of this estimation is $\se(\hat{\bar r_1}) = \frac {\sd_i(\ln[1-\delta+\delta \exp(u_i)])}{\sqrt M}$. 
 
-\item Estimate $\bar r_1^{\#}$ (for all three tail-assocaition cases) as $\hat \bar r_1^{\#} = \mean_i(\ln[1-\delta+\delta \exp(u_i)])$, where $u_i = \sqrt{2\sigma^2}\tilde u_i + \mu_1 - \mu_2$. The standard error is $\se(\hat \bar r_1^{\#}) = \sd_i \frac{ln[1-\delta+\delta \exp(u_i)]}{\sqrt M}$.    
+\item Estimate $\bar r_1^{\#}$ (for all three tail-assocaition cases) as $\hat{\bar r_1^{\#}} = \mean_i(\ln[1-\delta+\delta \exp(u_i)])$, where $u_i = \sqrt{2\sigma^2}\tilde u_i + \mu_1 - \mu_2$. The standard error is $\se(\hat{\bar r_1^{\#}}) = \sd_i \frac{ln[1-\delta+\delta \exp(u_i)]}{\sqrt M}$.    
 
-\item Estimate $\bar r_2^{\#}$ (for all three tail-assocaition cases) as $\hat \bar r_2^{\#} = \mean_i(\ln[1-\delta+\delta \exp(u_i)])$, where $u_i = \sqrt{2\sigma^2}\tilde u_i$. The standard error is $\se(\hat \bar r_2^{\#}) = \sd_i \frac{ln[1-\delta+\delta \exp(u_i)]}{\sqrt M}$.    
+\item Estimate $\bar r_2^{\#}$ (for all three tail-assocaition cases) as $\hat{\bar r_2^{\#}} = \mean_i(\ln[1-\delta+\delta \exp(u_i)])$, where $u_i = \sqrt{2\sigma^2}\tilde u_i$. The standard error is $\se(\hat{\bar r_2^{\#}}) = \sd_i \frac{ln[1-\delta+\delta \exp(u_i)]}{\sqrt M}$.    
 
-\item $\hat {\Delta I} = \hat \bar r_1 - \hat \bar r_1^{\#} + \hat \bar r_2^{\#}$, estimated separately for the left-tail associated, right-tail associated and symmetric noise cases. We obtained conservative standard error estimates by adding the standard error of the estimates of $\hat \bar r_1, \hat \bar r_1^{\#}$, and $\hat \bar r_2^{\#}$.
+\item $\hat {\Delta I} = \hat{\bar r_1} - \hat{\bar r_1^{\#}} + \hat{\bar r_2^{\#}}$, estimated separately for the left-tail associated, right-tail associated and symmetric noise cases. We obtained conservative standard error estimates by adding the standard error of the estimates of $\hat{\bar r_1}, \hat{\bar r_1^{\#}}$, and $\hat{\bar r_2^{\#}}$.
 
 \end{enumerate}
 
