@@ -133,7 +133,7 @@ G1) To augment the modern theory of coexistence (MTC) to show how asymmetric tai
 plays a role. The MTC decomposes a measure of coexistence into components due to each of several mechanisms. 
 We address how ATA contributes to these components. We here examine mechanisms of coexistence that apply in 
 models exhibiting solely temporal variation; spatial variation can be considered in future work.
-G2) To explore using a simple model the relative magnitudes of the contributions to coexistence that come
+G2) To explore, using a simple model, the relative magnitudes of the contributions to coexistence that come
 from ATA compared to other mechanisms.
 
 \section{Theory}\label{section:theory}
@@ -226,15 +226,11 @@ $(E_j^\shp,C_{j \bs i}^\shp)=(B_j^\shp, B_j /\delta)$, so
 $\olrs_{j \bs i}=\E[\ln(1-\delta+\delta B_j^\shp / B_j)]$.
 We show in SI section \ref{SI-SIsect:scaling_factors}
 that $q_{ij}=\overline{B}_i/((1-\delta)\overline{B}_j+\delta \overline{B}_i)$. 
-%***DAN: Note this might be wrong. Some of the language in Ellner et al (2016) indicates q_{ij} here should be 1,
-%even if \mu_1 and \mu_2 are distinct, as long as we use the same \delta for both species (which we do).
-%But when I try to follow the definitions of the same paper to compute q_{ij} I get the quantity listed above,
-%which is not 1. I'll need to get to the bottom of this, possibly by speaking to Ellner, and then put the right 
-%value here, and also write the corresponding sup mat section accordingly (though you may not need that section, 
-%it may be enough to just cite Ellner and Chesson if you go with q_ij=1.
 Since we assumed log-normally distributed $B_i$, 
 $\overline{B}_i=\exp(\mu_i+\sigma^2/2)$, so $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$.
-%***DAN: This statement also needs adjusting if you go with q_ij=1
+We alternatively also consider $q_{ij}=1$, for reasons explained in SI section \ref{SI-SIsect:scaling_factors}.
+%Say this here if it turns out to be true, or say something like it:
+%These alternatives turn out to make very little difference to our results. 
 Thus $\Delta_i^{(EC)}$ for the lottery model can be computed by using simulations \citep{Ellner_2016}
 to very accurately approximate $\olr_{i \bs i}$, $\olrs_{i \bs i}$,
 and $\olrs_{j \bs i}$, and then plugging them and $q_{ij}$ into (\ref{eq:storage_effects_gen}).
@@ -265,6 +261,7 @@ The term $\Delta_i^{[E \nat C]}$ is the component of storage effects due to
 asymmetries of tail association between $E_i$ and $C_{i \bs i}$, and between $E_j$ and $C_{j \bs i}$.
 The notation $\nat$ was chosen because this new symbol is part of the symbol $\shp$ (i.e., two of its four lines), 
 corresponding to the removal of part of the relationship between $E$ and $C$ components (namely, ATA).
+The new symbol should correspondingly be pronounced ``partial sharp''.
 The term $\Delta_i^{[EC]}$ is the component of storage effects due to $EC$ correlation \emph{per se}, remaining after 
 having removed the effects of asymmetric tail associations.
 %The brackets in the superscripts of $\Delta_i^{[E \nat C]}$ and $\Delta_i^{[EC]}$ are intended to indicate that 
@@ -346,7 +343,7 @@ which is the extension of the MTC which was goal G1 of the Introduction.
 %plays a role. The MTC decomposes a measure of coexistence into components due to each of several mechanisms. 
 %We address how ATA contributes to these components. We here examine mechanisms of coexistence that apply in 
 %models exhibiting solely temporal variation; spatial variation can be considered in future work.
-%G2) To explore using a simple model the relative magnitudes of the contributions to coexistence that come
+%G2) To explore, using a simple model, the relative magnitudes of the contributions to coexistence that come
 %from ATA compared to other mechanisms.
 
 %Figs, for reference:
@@ -366,23 +363,24 @@ to coexistence that come from ATA versus other mechanisms, we plotted the terms 
 $\Delta_i^{(E\shp C)}$, $\Delta_i^{[E \nat C]}$ and $\Delta_i^{[EC]}$ [see (\ref{eq:full_decomp})] for the lottery model
 against the independent parameters of the model, $\mu_1$, $\mu_2$, $\sigma$ and $\delta$; and then we compared their
 values on the plots. Some mathematical shortcuts, summarized here, greatly simplified this plotting. First, we showed that, for the 
-lottery model, none of the components in (\ref{eq:full_decomp}) depends independently on $\mu_1$ and $\mu_2$,
-instead they all depend only on the difference $\mu_1-\mu_2$ (SI section \ref{SI-sect:math_simplifications}); so we only plotted 
+lottery model, none of the components in (\ref{eq:full_decomp}) depends independently on $\mu_1$ and $\mu_2$;
+instead they all depend only on the difference $\mu_1-\mu_2$ (SI section \ref{SI-sect:math_simplifications}). So we only plotted 
 against $\mu_1 - \mu_2$. Second, we showed that the values of all components in (\ref{eq:full_decomp}) were the same 
-for both our left- and right-tail associated noises (SI section \ref{SI-sect:math_simplifications}); so we only generated plots 
+for both our left- and right-tail associated noises (SI section \ref{SI-sect:math_simplifications}). So we only generated plots 
 for left-tail associated noise. For each combination of $\delta=W, X, Y, Z$
 %***DAN: Jasmin, please select 4 sensible values, including \delta=1, and put the ones you select here
 and $\mu_1-\mu_2=A,B,C,D$,
 %***DAN: Jasmin, please select 3-4 sensible values and put the ones you select here
 we plotted all the components of (\ref{eq:full_decomp}) against $\sigma$. Relative importance of contributions was judged from the 
-plots to assess whether and to what extent ATA effects on coexistence were meaningfully large for the lottery model.
+plots to assess whether and to what extent ATA effects on coexistence were meaningfully large for the lottery model, compared to 
+the contributions of other mechanisms.
 %***DAN: Jasmin, if you select 4 values for mu1-mu2 and 4 for delta, then Fig. 3 is going to have 16 panels arranged in a 
 %4 by 4 grid, each of which will plot all the components against sigma. You'll need to use different colors and/or line
 %types for the components and have a legend.
 The simulation methods of \cite{Ellner_2019} were used to compute the components of (\ref{eq:full_decomp}).
 Computationally efficient means of carrying out these simulations, for the lottery model, are elaborated in 
-SI section X.
-%***DAN: Dan to add the reference to the right sup mat section once things get sufficiently organized in sup mat to know what section.
+SI section \ref{SI-sect:efficient_computation}.
+%***DAN: Dan, you still need to write that sup mat section
 
 
 

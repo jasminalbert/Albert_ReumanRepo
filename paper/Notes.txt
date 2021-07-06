@@ -113,6 +113,13 @@ Might need a couple paragraphs?
 
 \end{equation}
 
+eq:decomp_overall_IGR
+eq:decomp_overall_rjbsi
+eq:decomp_overall_delta
+
+
+
+
 
 
 Some cut text I may still need below:
