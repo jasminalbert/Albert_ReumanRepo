@@ -92,7 +92,7 @@
 %Coexistence and implications of asymmetric environmental relationships
 %Extreme [climatic] events and their implications for biodiversity
 %Deductions to coexistence, extreme events, and asymmetric relationships
-%Extreme relationships (relationships in their extremes) and their deductions ([negative] contributions) to coexistence
+%Extreme relationships (relationships in their extremes) and their deductions ([negative] contributions) to coexistence           
 
 \author[a]{Pimsupa Jasmin Albert}
 \author[a,b]{Daniel C. Reuman}
@@ -114,15 +114,16 @@
 %***Need to indicate corresponding authors
 
 \begin{document}
-%\SweaveOpts{concordance=TRUE}
+\SweaveOpts{concordance=TRUE}
+\SweaveOpts{concordance=TRUE}
 
 %The following is where you load in the numeric results that will be embedded in the text
-<<eval=T,echo=F,message=F,warning=F>>=
-system(paste("biber", sub("\\.Rnw$", "", current_input())))
+%<<eval=T,echo=F,message=F,warning=F>>=
+%system(paste("biber", sub("\\.Rnw$", "", current_input())))
 
-#place R code here for loading in necessary variables from Results
-#ordinarily this would be a readRDS command, but I'm just defining a variable here for now
-allregres<-matrix(rnorm(10),2,5)
+%#place R code here for loading in necessary variables from Results
+%#ordinarily this would be a readRDS command, but I'm just defining a variable here for now
+%allregres<-matrix(rnorm(10),2,5)
 @
 
 \maketitle
