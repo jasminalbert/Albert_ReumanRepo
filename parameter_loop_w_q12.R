@@ -9,9 +9,13 @@ source("./transform.R")
 
 source("./growth_rate_metrics.R")
 
+noisename <- c("left","right","sym")
+
 rbar <- rep(NA, 5)
+names(rbar) <- c(noisename, "sharp1","sharp2")
 se_rbar <- rbar
 DeltaI <- rep(NA,3)
+names(DeltaI) <- noisename
 se_DeltaI <- DeltaI
 sd_r <- DeltaI
 epECdot <- DeltaI
@@ -19,6 +23,7 @@ invPrb <- DeltaI
 invE <- DeltaI
 q12 <- DeltaI
 params <- rep(NA, 4)
+names(params) <- c("sigma","mu1","mu2","delta")
 
 for (g in 1:length(sigma)){
   for (m in 1:nrow(mu)){
