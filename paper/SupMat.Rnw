@@ -451,13 +451,13 @@ $\tilde{b}_j^\shp$ are standard normally distributed and independent. Continuing
 \begin{align}
 \olep_j^{[E \nat C]} &= \E[r_j(E_j,C_{j \bs i})] - \E[r_j(E_j^\nat , C_{j \bs i}^\nat)] \\
 &= \olr_{j \bs i} - \olr_{j \bs i}^\nat \\
-&= 0
+&= 0 \label{eq:decomp:j:EnatC}
 \end{align}
 because we showed in the Theory section of the main text that $\olr_{j \bs i}^\nat = \olr_{j \bs i}$ due to the fact that
 $E_j$ and $C_{j \bs i}$ are perfectly linearly related to each other. Continuing,
 \begin{align}
 \olep_j^{[EC]} &= \olep_j^{(EC)} - \olep_j^{[E \nat C]} \\
-&= - \E[\ln(1-\delta+\delta \exp(\sigma(\tilde{b}_j^\shp - \tilde{b}_j)))],
+&= - \E[\ln(1-\delta+\delta \exp(\sigma(\tilde{b}_j^\shp - \tilde{b}_j)))],\label{eq:decomp:j:EChard}
 \end{align}
 where again $\tilde{b}_j$ and $\tilde{b}_j^\shp$ are standard normally distributed and independent of each other.
 This completes the calculation of all the terms of the decomposition of $\olr_{j \bs i}$ for the lottery model.
@@ -470,7 +470,7 @@ values for the scaling factors, $q_{ij}$, namely $q_{ij}=1$ and
 \begin{align}
 q_{ij} &= \frac{\exp(\mu_i)}{(1-\delta) \exp(\mu_j)+\delta \exp(\mu_i)} \\
 &= \frac{\exp(-\mu_i)\exp(\mu_i)}{\exp(-\mu_i)[(1-\delta) \exp(\mu_j)+\delta \exp(\mu_i)]} \\
-&= \frac{1}{(1-\delta)\exp(-(\mu_i-\mu_j))+\delta}.
+&= \frac{1}{(1-\delta)\exp(-(\mu_i-\mu_j))+\delta}.\label{eq:decomp:qnot1}
 \end{align}
 These also either do not depend on $\mu_i$ or $\mu_j$ at all or they depend on the difference 
 $\mu_i-\mu_j$. Thus each of the terms of the decomposition (\ref{MT-eq:full_decomp}) from the main text
@@ -595,21 +595,65 @@ $\widehat{\olep_j^{(E \shp C)}} = \mean_k [\ln(1-\delta+\delta\exp(\sigma\sqrt{2
 The standard error of this expression is $\se \left(  \widehat{\olep_j^{(E \shp C)}} \right) = 
 \sd_k[\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}))-\ln(1-\delta+\delta\exp(u^{(k)}-\sigma^2/2))-
 \ln(1-\delta+\delta\exp(-\sigma u^{(k)}+\sigma^2/2))]/\sqrt{M}$.
-\item Estimate
-%***DAN: DAN, proceed from here
+\item Estimate $\olep_j^{[EC]}$, following (\ref{eq:decomp:j:EChard}), as $\widehat{\olep_j^{[EC]}}=\mean_k [-\ln(1-\delta+\delta \exp(\sigma \sqrt{2} u^{(k)}))],$ which has $\se \left( \widehat{\olep_j^{[EC]}} \right) = \sd_k[-\ln(1-\delta+\delta \exp(\sigma \sqrt{2} u^{(k)}))]/\sqrt{M}$.
+\item Use $\olep_j^{[E \nat C]}=0$, following (\ref{eq:decomp:j:EnatC}). This is exact.
+\item Finally, use $\olr_{j \bs i} = 0$, again exact. 
 \end{enumerate}
+As for (\ref{eq:decomp_overall_IGR}), it is again easy to see that (\ref{eq:decomp_overall_rjbsi}) applies for the 
+estimates as well as for the quantities being estimated. 
+
+Next, $q_{ij}$ can be taken (see SI section \ref{SIsect:scaling_factors}) to be, alternatively, $1$ or 
+the quantity displayed in (\ref{eq:decomp:qnot1}). Hence the terms of the decomposition 
+(\ref{eq:decomp_overall_delta}) can straightforwardly be etimated using our estimates elaborated 
+above, as follows. There are two alternative versions of the estiamtors for this decomposition, corresponding 
+to the alternative values for $q_{ij}$.
+\begin{enumerate}
+\item Compute $\Delta_i^0 = \epsilon_i^0 - q_{ij} \epsilon_j^0$, which is computed exactly, since 
+the quantities described above for the components $\epsilon_i^0$, $\epsilon_j^0$ and $q_{ij}$ are exact, as opposed to being
+estimates. Simplifying, since $\epsilon_j^0=0$, we have $\Delta_i^0 = \epsilon_i^0$.
+\item Estimate $\Delta_i^E$ as $\widehat{\Delta_i^E}=\widehat{\olep_i^E}-q_{ij}\widehat{\olep_j^E}=
+\mean_k[\ln(1-\delta+\delta\exp(\sigma u^{(k)}+\mu_i-\mu_j-\sigma^2/2))]-\epsilon_i^0-
+q_{ij} \mean_k[\ln(1-\delta+\delta\exp(\sigma u^{(k)}-\sigma^2/2))],$ which has standard error 
+$\se\left( \widehat{\Delta_i^E} \right)=\sd_k[\ln(1-\delta+\delta\exp(\sigma u^{(k)}+\mu_i-\mu_j-\sigma^2/2))-
+q_{ij} \ln(1-\delta+\delta\exp(\sigma u^{(k)}-\sigma^2/2))]/\sqrt{M}.$
+\item Estimate $\Delta_i^C$ as $\widehat{\Delta_i^C}=\widehat{\olep_i^C}-q_{ij}\widehat{\olep_j^C}=
+\mean_k[\ln(1-\delta+\delta\exp(-\sigma u^{(k)}+\mu_i-\mu_j+\sigma^2/2))]-
+\epsilon_i^0-q_{ij}\mean_k[\ln(1-\delta+\delta\exp(-\sigma u^{(k)}+\sigma^2/2))],$ which has standard error
+$\se \left( \widehat{\Delta_i^C} \right)=\sd_k[\ln(1-\delta+\delta\exp(-\sigma u^{(k)}+\mu_i-\mu_j+\sigma^2/2))-
+q_{ij}\ln(1-\delta+\delta\exp(-\sigma u^{(k)}+\sigma^2/2))]/\sqrt{M}$.
+\item Estimate $\Delta_i^{(E \shp C)}$ as $\widehat{\Delta_i^{(E \shp C)}} = \widehat{\olep_i^{(E \shp C)}}-q_{ij} \widehat{\olep_j^{(E \shp C)}}=
+\mean_k[\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}+\mu_i-\mu_j))]-\widehat{\olep_i^E}-\widehat{\olep_i^C}-\epsilon_i^0-
+q_{ij}[\mean_k [\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}))]-\widehat{\olep_j^E}-\widehat{\olep_j^C}-\epsilon_j^0].$
+This simplifies to $\mean_k[\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}+\mu_i-\mu_j))]-
+q_{ij}\mean_k[\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}))]-\widehat{\Delta_i^E}-\widehat{\Delta_i^C}-\Delta_i^0$, 
+which can be straightforwardly shown has standard error
+$\se \left( \widehat{\Delta_i^{(E \shp C)}} \right) = 
+\sd_k[\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}+\mu_i-\mu_j))-
+\ln(1-\delta+\delta\exp(\sigma u^{(k)}+\mu_i-\mu_j-\sigma^2/2))-
+\ln(1-\delta+\delta\exp(-\sigma u^{(k)}+\mu_i-\mu_j+\sigma^2/2))-
+q_{ij}\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}))+
+q_{ij}\ln(1-\delta+\delta\exp(\sigma u^{(k)}-\sigma^2/2))+
+q_{ij}\ln(1-\delta+\delta\exp(-\sigma u^{(k)}+\sigma^2/2))]/\sqrt{M}$.
+\item Estimate $\Delta_i^{[EC]}$ as $\widehat{\Delta_i^{[EC]}}=\widehat{\olep_i^{[EC]}}-q_{ij}\widehat{\olep_j^{[EC]}}=
+\mean_k[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i^{(k)}-\tilde{\ddot{b}}_j^{(k)})+\mu_i-\mu_j))]-
+\mean_k[\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}+\mu_i-\mu_j))]+
+q_{ij}\mean_k[\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}))],$ which one can straightforwardly show has standard error
+$\sqrt{s_1^2+s_2^2}$, where $s_1=\sd_k[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i^{(k)}-\tilde{\ddot{b}}_j^{(k)})+\mu_i-\mu_j))]/\sqrt{M}$ 
+and $s_2=\sd_k[\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}+\mu_i-\mu_j))-q_{ij}\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}))]/\sqrt{M}$.
+\item For $\Delta_i^{[E \nat C]}$, we recall that $\olep_j^{[E \nat C]}=0$, so $\Delta_i^{[E \nat C]}=\olep_i^{[E \nat C]}$. So we use
+$\widehat{\olep_i^{[E \nat C]}}$ for $\widehat{\Delta_i^{[E \nat C]}}$.
+\item Finally, we can also estimate $\olr_{i \bs i}-q_{ij}\olr_{j \bs i}$ simply as $\widehat{\olr_{i \bs i}}$
+since $\olr_{j \bs i}=0$.
+\end{enumerate}
+As for (\ref{eq:decomp_overall_IGR}) and (\ref{eq:decomp_overall_rjbsi}), it is again the case that (\ref{eq:decomp_overall_delta})
+applies for the estimators as well as for the quantities being estimated.
 
 
 
 
+%***DAN: Most but not all of the below is obsolete now, replaced and upgraded by stuff above this point
 
 \section{Invasion growth rate of species 1, and storage effects} \label{sect:IGR}
-
-%***DAN: This and probably all or most of the following sections will have to be edited, not least to make the
-%notation consistent with the notation now used in the Theory section of the main text
-%***DAN: At the end of Theory, I mention that in methods the tricks for computational efficiency are
-%elaborated, but actually most of those will be in a sup mat section, the material for which will be 
-%an edited version of a lot of what is in this section.
 
 We consider the invasion growth rate of species 1, $\bar r_1=\EX(\ln (\frac{N_1(t+1)}{N_1(t)}))$, when $N_1$ is close to 0 and $N_2$ is close to $N$.
 Hence $\EX(\cdot)$ represents expected value.

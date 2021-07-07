@@ -86,6 +86,8 @@ delta and a few of mu1-mu2. Plotted is all the components of coexistence, for co
 4) Theoretical fig exploring why ATA matters to r_1\1 for the lottery model and hopefully more gernerally - try to get
 at the intuition here. See if you can edge to more generality here, or not?
 
+Maybe add a fig in between 3 and 4 showing some of the other results?
+
 Methods, the second way:
 1) Describe noise - only a few sentences at the most, details in sup mat. Maybe just one sentence.
 2) To achieve goal G2 from the Introduction, we plotted the terms ... of the our extended MTC for the lottery model 
@@ -97,25 +99,7 @@ cases it does not matter which, and also that only mu_1 - mu_2 matters, not mu_1
 Might need a couple paragraphs?
 
 
-\begin{equation}
 
-\end{equation}
-
-\begin{equation}
-
-\end{equation}
-
-\begin{equation}
-
-\end{equation}
-
-\begin{equation}
-
-\end{equation}
-
-eq:decomp_overall_IGR
-eq:decomp_overall_rjbsi
-eq:decomp_overall_delta
 
 
 

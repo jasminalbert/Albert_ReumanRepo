@@ -368,19 +368,31 @@ instead they all depend only on the difference $\mu_1-\mu_2$ (SI section \ref{SI
 against $\mu_1 - \mu_2$. Second, we showed that the values of all components in (\ref{eq:full_decomp}) were the same 
 for both our left- and right-tail associated noises (SI section \ref{SI-sect:math_simplifications}). So we only generated plots 
 for left-tail associated noise. For each combination of $\delta=W, X, Y, Z$
-%***DAN: Jasmin, please select 4 sensible values, including \delta=1, and put the ones you select here
+%***DAN: We need to select 4 sensible values, including \delta=1, and put the ones we select here
 and $\mu_1-\mu_2=A,B,C,D$,
-%***DAN: Jasmin, please select 3-4 sensible values and put the ones you select here
+%***DAN: We need to select 3-4 sensible values and put the ones we select here
 we plotted all the components of (\ref{eq:full_decomp}) against $\sigma$. Relative importance of contributions was judged from the 
 plots to assess whether and to what extent ATA effects on coexistence were meaningfully large for the lottery model, compared to 
 the contributions of other mechanisms.
-%***DAN: Jasmin, if you select 4 values for mu1-mu2 and 4 for delta, then Fig. 3 is going to have 16 panels arranged in a 
-%4 by 4 grid, each of which will plot all the components against sigma. You'll need to use different colors and/or line
-%types for the components and have a legend.
+%***DAN: If we select 4 values for mu1-mu2 and 4 for delta, then Fig. 3 is going to have 16 panels arranged in a 
+%4 by 4 grid, each of which will plot all the components against sigma. We'll need to use different colors and/or line
+%types for the components and have a legend. Sort it all out as one big multi-panel pdf fig, after running all the sims.
 The simulation methods of \cite{Ellner_2019} were used to compute the components of (\ref{eq:full_decomp}).
 Computationally efficient means of carrying out these simulations, for the lottery model, are elaborated in 
 SI section \ref{SI-sect:efficient_computation}.
-%***DAN: Dan, you still need to write that sup mat section
+
+%What's next
+%1) Write code implementing the above and making a figure - that'll be Fig. 3
+%2) Get Jasmin to work on Fig. 1 and Fig. 2 (Fig. 2 is largely done). Fig 1 should be facilitated by the work to make Fig. 3 in the previous item.
+%3) Decide what other results we will put in the main text and write a paragraph on methods for the other results (for both the main text
+%and sup mat results), put it above.
+%4) Think about this: Theoretical fig exploring why ATA matters to r_1\1 for the lottery model and hopefully more gernerally - try to get
+%at the intuition here. See if you can edge to more generality here, or not?
+
+%Ideas while driving to pick up Max:
+%1) I think in every case for the lottery model, making tail associations asymmetric reduced the potential for coexistence - I think that's what Jasmin told me, but if we present it we should make sure I'm not remembering wrong, of course. Is that generally the case, for other models? What are the features of a model, or of the growth rate of the invader, that make it so that more asymmetric tail associations means reduced coexistence? Does this have implications for climate change?
+%2) In this paper with Jasmin you need to cite the two papers you just got from the professor at University of Massachusetts, Lowell. I mean the papers about changes in the special extent of heat waves: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020GL087097 and https://iopscience.iop.org/article/10.1088/1748-9326/ab4b41
+%3) Discussion content: We should (in future) study tail associations between environmental variables, and how these might be changing. However, more than that, the variables E in the lottery model are not actual environmental variables but rather are the effects of environmental variables on the species of the model. Probably real environmental variables are actually related to vital rates in a non-linear and probably often threshold-like way. Threshold relationships can produce tail association, as we have showed elsewhere. Changes in the means of true environmental variables may change where those distributions of environmental variables are compared to thresholds, which may change the nature of tail associations between the effects of those environmental variables.
 
 
 
