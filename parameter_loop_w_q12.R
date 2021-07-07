@@ -28,7 +28,7 @@ names(params) <- c("sigma","mu1","mu2","delta")
 for (g in 1:length(sigma)){
   for (m in 1:nrow(mu)){
     
-    rv <- transform(b_tilde, u_tilde, rho, sigma[g], mu[m,]) #makes random vars defined by parameters
+    rv <- transform(b_tilde, u_tilde, rho, sigma[g], mu[m,], b_s=TRUE) #makes random vars defined by parameters
     list2env(rv, globalenv())
     
     #probability r1>0
