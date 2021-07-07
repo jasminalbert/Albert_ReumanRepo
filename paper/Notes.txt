@@ -1,0 +1,195 @@
+%***DAN: Next steps:
+%Write to Ellner asking question about scaling factors
+%Decide what we ought to be computing 
+%Write Methods correspondingly
+%Talk to Jasmin about it - did I miss anything that we already computed?
+%Then work with Jasmin to get the code edited to compute that stuff
+%Write results
+%Once results have solidified, make a code suite version that is clean
+
+%Some things we want to be doing
+%1) Want proofs, maybe in Methods or maybe in sup mat referenced by methods, that, for our two noise 
+%cases it does not matter which, and also that only mu_1 - mu_2 matters, not mu_1 and mu_2 independently.
+%2) So for various mu1-mu2 and delta, we will plot all the components against sigma, so we can compare 
+
+%Here is what you see in the sup mat stuff already written
+%1) The model (to be cut)
+%2) How to generate the noise - keep this, just mntion it in Methods
+%3) Lots of stuff on how to efficiently calculate all the parts of ordinary storage effects (which includes the 
+%invasion growth rate of species 1, which is of interest in its own right)
+%4) sd(r_1) (which is sd(r_{1 \bs 1}) in the enw notation)
+%5) P[r_1>0]
+%6) E[r_1 | r_1>0]
+%7) Whole distribution of r_1 in some special cases
+%All the above items 4-7 are all selected to help contrast overall coexistence in these different tail assoc cases
+
+Pssible way to set out goals
+1) investigate to wht extent asymmetries of tail asociation may make a difference for coexistence using the lottery model
+  could show different values and distributions of r_1 for the different cases, and related quantities
+  could look at some of the theory for this - diagrams of wht values of b_1 and b_2 give positive r_1
+  would this just basically be examples? Or would you do systematic plots?
+  the conclusion would be "it can make a difference to coexistence"
+  Is this also where you would put the sims Jasmin did that measure coexistence is another way besides r_1\1? Probably yes.
+2) invstigate what mechanisms of coexistence are influenced by tail assoc, and how? 
+  We could do this, but the problem is we're going to dispense with the first part of this pretty quickly purely theoretically, so does
+  it merit a whole goal? Well, combined with the second part it is OK. The "and how" is the second part, it's the whole decomp
+We would then want to specify even in the last para of the Intro that we make this whole decomp. And a third goal, accomplished 
+in the Discussion, indicates how the decomp can be used for other models, and for datasets (though the model part may be mainly
+accomplished in the theory.
+
+This is reasonable but it makes it hard to have a theory section ahead of a Methods and Results because goal 2 
+largely accomplished in theory and goal 1 in methods and results!
+
+What if we have a non-traditional structure, where you do G1, theory/methods, then G1 results, then G2 theory/methods then
+G2 results, the discussion? That would work but can we write a short paper that way?
+
+What would a theory/methods for G1 look like?
+The model and the noise (a quick para, details for th noise in sup mat)
+Theory showing only mu1-mu2 matters, and that right/left does not matter, and statement that we can assume mu1<mu2
+Choice to use r_1/1, derivation of the exression for r_1\1, and ref to sup mat fo rapid calculation of it
+Metrics based on r_1/1 ()
+Other metrics of coexistence based on sims
+We plot these aainst mu1-mu2 and sigma for a few different delta (one value of delta in the main text, others in sup mat)
+One figure only (two if you count the noise fig which is fig 1)
+The whole point here would just be to show a difference
+You could have a second fig show the whole disstribution of r_1\1 for a couple examples, or this could be additonal panels on the main fig
+
+What if we turned this on its head and put the theory first, and then did sims the goal of which would be
+to show that the theory is valuable by showing that the new decomp of storage effects is a meaningfully large
+thing? Is't that similar anyway, since the I^(ata) is just the effects of tail assoc. Yes! So we just need to
+argue that quantity is appreciably large compared to other mechanisms. This would be betrer since we could then
+have a Theory section that led the Method and Results and have a more traditional format.
+
+So let's try this again. Goalss:
+1) To augment the MTC to show how asymmetric tail association (ATA) plays a role (reword)
+The MTC decomposes a measure of coexistence into components due to each of several mechanisms. We address
+how ATA and correlation per se contribute to these components.
+2) To explore using a simple model the relative magnitude of the contributions to coexistence that come
+ATA compared to correlation per se.
+
+Is this is headed in a better direction?
+
+OK, then what would we plot when accomplishing goal 2? Well, we could plot each mechanism against sigma for a few mu1-mu2 on a panel, then show more such panels in the sup mat for other delta (we coud even show a few panels one with each delta, no problem)? We'd how the ATA mechanism would be meaningfully big compared to the others, at least sometimes.
+Also, doesn't this leave out the sim-based studies of the importance of ATA using other metrics of coexistence? Would we put that
+in the sup mat or what? We could. We could also put in sup mat the other plots of metrics related to r_1\1, justifying
+it all as other ways of visualizing effects of ATA on coexistence.
+We could have a theoretical fig showing why ATA matters for r_1\1 - the thing I drew on the board once for Jasmin, works
+only for the lottery model. Dan, can you dig more into that to explain it? Gneeralize it?
+
+Figs via the second way
+1) pedagog fig showing what tail assoc is, also later used for introing the noise we use, in methods
+2) pedgog fig showing a simple set of sims, somehow, the only difference being ATA, showing good things 
+happening in one panel and bad in another - cited in Intro, only serves to prove to people that ATA matters for 
+coexistence, so they keep reading
+3) Fig with a grid of panels, each panel plots against sigma, and the grid controls a few values of 
+delta and a few of mu1-mu2. Plotted is all the components of coexistence, for comparison.
+4) Theoretical fig exploring why ATA matters to r_1\1 for the lottery model and hopefully more gernerally - try to get
+at the intuition here. See if you can edge to more generality here, or not?
+
+Methods, the second way:
+1) Describe noise - only a few sentences at the most, details in sup mat. Maybe just one sentence.
+2) To achieve goal G2 from the Introduction, we plotted the terms ... of the our extended MTC for the lottery model 
+against the free parameters ..., comparing the relative magnitudes of these terms to see if and when contributions of ATA 
+to coexistence were appreciable.   
+Some analytic shortcuts, summarized here, greatly simplified this plotting. Then explain... 
+Want proofs, maybe in Methods or maybe in sup mat referenced by methods, that, for our two noise 
+cases it does not matter which, and also that only mu_1 - mu_2 matters, not mu_1 and mu_2 independently.
+Might need a couple paragraphs?
+
+
+\begin{equation}
+
+\end{equation}
+
+\begin{equation}
+
+\end{equation}
+
+\begin{equation}
+
+\end{equation}
+
+\begin{equation}
+
+\end{equation}
+
+eq:decomp_overall_IGR
+eq:decomp_overall_rjbsi
+eq:decomp_overall_delta
+
+
+
+
+
+
+Some cut text I may still need below:
+
+\vspace{2in}
+
+\noindent By substituting the definitions,
+
+\begin{align}
+\bar r_i &=\EX(\ln(1-\delta + \frac{B_i}{B_2/ \delta})) \\
+&= \EX(\ln(1-\delta +\delta \frac{B_i}{B_2})) 
+\end{align}
+
+The null growth rate of species $i$ is computed by setting both E and C at their means. 
+
+\begin{align}
+\epsilon_i^0 &=\ln(1-\delta + \frac{\bar E_i}{\bar C_i}) \\
+&=\ln(1-\delta + \delta \frac{\bar B_i}{\bar B_2}) 
+\end{align}
+
+The contribution of variance E in to the IGR is computed by setting C to its mean and letting E vary subtracted by the null. 
+
+\begin{align}
+\epsilon_i^E &=\ln(1-\delta + \frac{E_i}{\bar C_i}) -  \epsilon_i^0 \\
+&=\ln(1-\delta + \delta \frac{B_i}{\bar B_2}) -  \epsilon_i^0 
+\end{align}
+
+\begin{equation}
+\bar \epsilon_i^E=\EX(\epsilon_i^E) \label{Evar_mean}
+\end{equation}
+
+Similarly, the contribution of variance C in to the IGR is computed by setting E to its mean and letting C vary subtracted by the null. 
+
+\begin{align}
+\epsilon_i^C &=\ln(1-\delta + \frac{\bar E_i}{C_i}) -  \epsilon_i^0 \\
+ &=\ln(1-\delta + \delta \frac{\bar B_i}{ B_2}) -  \epsilon_i^0 
+\end{align}
+
+\begin{equation}
+\bar \epsilon_i^C=\EX(\epsilon_i^C) \label{Cvar_mean}
+\end{equation}
+
+The contribution of both E and C varying to the IGR is computed by letting both variables vary subtracted by the null and the contributions of only one variable varying.
+
+\begin{equation}
+\epsilon_i^{EC}=\ln(1-\delta + \delta \frac{B_i}{B_j}) -  [\epsilon_i^0 + \epsilon_i^E + \epsilon_i^C] \label{ECvar}
+\end{equation}
+
+\begin{equation}
+\bar \epsilon_i^{EC}=\EX(\ln(1-\delta + \delta \frac{B_i}{B_j})) -[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C] \label{ECvar_mean}
+\end{equation}
+
+So,
+
+\begin{equation}
+\bar r_i=\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C + \bar \epsilon_i^{EC}. \label{rbari_decomp}
+\end{equation}
+
+But some of $\bar \epsilon_i^{EC}$ comes from covariance between E and C and some comes from both varying independently.
+
+\begin{align}
+\bar \epsilon_i^{(E\#C)} &=\EX(\ln(1-\delta + \frac{E_i}{C_i^{\#}})) -[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C] \\
+ &=\EX(\ln(1-\delta + \delta \frac{B_i}{B_2^{\#}})) -[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C] 
+\end{align}
+
+\begin{align}
+\bar \epsilon_i^{(EC)} &=\bar \epsilon_i^{EC}-\bar \epsilon_i^{(E\#C)}\\
+&= \EX(\ln(1-\delta + \frac{E_i}{C_i}))-[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C]\\
+&- [\EX(\ln(1-\delta + \frac{E_i}{C_i^{\#}})) -[\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C]] \\
+&= \EX(\ln(1-\delta + \delta \frac{B_i}{B_2}))-\epsilon_i^0 -\bar \epsilon_i^E - \bar \epsilon_i^C\\
+&- \EX(\ln(1-\delta + \delta \frac{B_i}{B_2^{\#}})) +\epsilon_i^0 +\bar \epsilon_i^E + \bar \epsilon_i^C \\
+&= \EX(\ln(1-\delta + \delta \frac{B_i}{B_2}))-\EX(\ln(1-\delta + \delta \frac{B_i}{B_2^{\#}}))\\
+\end{align}
