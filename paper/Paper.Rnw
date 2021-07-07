@@ -368,9 +368,9 @@ lottery model, none of the components in (\ref{eq:full_decomp}) depends independ
 instead they all depend only on the difference $\mu_1-\mu_2$ (SI section \ref{SI-sect:math_simplifications}). So we only plotted 
 against $\mu_1 - \mu_2$. Second, we showed that the values of all components in (\ref{eq:full_decomp}) were the same 
 for both our left- and right-tail associated noises (SI section \ref{SI-sect:math_simplifications}). So we only generated plots 
-for left-tail associated noise. For each combination of $\delta=W, X, Y, Z$
+for left-tail associated noise. For each combination of $\delta=0.2, 0.5, 0.8, 1.0$
 %***DAN: Jasmin, please select 4 sensible values, including \delta=1, and put the ones you select here
-and $\mu_1-\mu_2=A,B,C,D$,
+and $\mu_1-\mu_2=0.0,-0.3,-0.6,-0.8$,
 %***DAN: Jasmin, please select 3-4 sensible values and put the ones you select here
 we plotted all the components of (\ref{eq:full_decomp}) against $\sigma$. Relative importance of contributions was judged from the 
 plots to assess whether and to what extent ATA effects on coexistence were meaningfully large for the lottery model, compared to 
@@ -440,6 +440,9 @@ discuss and possibly take several iterations to get this figure right since it's
 is not convinced in the Intro that we are studying something that makes a difference, they are not going to slog through
 the Theory section, which is inevitably going to be tough going for many readers.\label{fig:pedagog}}
 \end{figure}
+%possible examples:
+%population simulations - shows symmetric with faster fluctatuations to extremes of coexistence while asymmetric has longer periods of noticeable coexistence and dominace/exclusion; may be unclear
+
 
 \begin{figure}
 \caption{Figure displaying the noise. Three panels, left-, symmetric, and right-tail assoc noise. Use standard normal marginals.
