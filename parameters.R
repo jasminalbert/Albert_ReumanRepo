@@ -15,4 +15,9 @@ for (i in 1:length(mu1)){
 mu <- mu[-1,]
 #print(mu) #45x2
 
-save(delta, mu, sigma, file = "./params.RData")
+delta <- seq(0.2, 0.5, 0.8, 1.0)
+sigma <- seq(1.6, 3.2, 6.4)
+mudif <- seq(0.0, -0.3, -0.6, -0.8)
+
+
+save(delta, mu, mudif, sigma, file = "./params.RData")
