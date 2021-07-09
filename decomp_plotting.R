@@ -1,3 +1,5 @@
+source("./decomposition_fxn.R")
+
 x0 <- decomp(0.8, c(0.3,0.3), 0.5, M)
 x1 <- decomp(1.6, c(0.3,0.3), 0.5, M)
 x2 <- decomp(3.2, c(0.3,0.3), 0.5, M)
