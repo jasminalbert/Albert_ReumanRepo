@@ -114,9 +114,20 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   
   bi_til<-b_tilde$l[,1]
   bj_til<-b_tilde$l[,2]
+  bi_um <-b_tilde$s[,1]
+  bj_um <-b_tilde$s[,2]
+  M <- nrow(b_tilde$s)
   
-  bi_um<-b_tilde$s[,1]
-  bj_um<-b_tilde$s[,2]
+  #invader i
+  #epsilon^0_i
+  e_0i <- log(1-delta+delta*exp(mudif))
+  
+  #epsilon^E_i bar (42)
+  #hat
+  e_Ei_hat <- mean(log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2))) - e_0i
+  #SE hat
+  e_Ei_se <- sd(log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2)))/sqrt(M)
+  
   
   #epsilon^C_i bar (45)
   #hat
@@ -129,8 +140,8 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   e_ECsharpi_hat <- mean(log(1-delta+delta*exp(sigma*sqrt(2)*u + mudif))) - e_Ei_hat - e_Ci_hat - e_0i
   #SE hat
   e_ECsharpi_se <- sd( log(1-delta+delta*exp(sigma*sqrt(2)*u + mudif)) 
-                    - log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2)) 
-                    - log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2)) )/sqrt(M)  
+                       - log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2)) 
+                       - log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2)) )/sqrt(M)  
   
   #epsilon^[EC] bar (55)
   #hat
@@ -198,6 +209,7 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   DECsharp <- e_ECsharpi_hat - e_ECsharpj_hat #Deltai_(E#C)
   DEC <- e_ECi_hat - e_ECj_hat #Deltai_[EC]
   DECpip <- e_ECpipi_hat  #Deltai_[E||C]
+  Dr <- r_i_hat 
   
   #SE(Delta hats):
   DE_se <- sd( log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2)) - log(1-delta+delta*exp(sigma*u - (sigma^2)/2)) )/sqrt(M)
@@ -210,6 +222,7 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   s2 <- sd(log(1-delta+delta*exp(sigma*sqrt(2)*u+mudif)) - log(1-delta+delta*exp(sigma*sqrt(2)*u)))/sqrt(M) 
   DEC_se <- sqrt(s1^2 + s2^2)
   DECpip_se <- e_ECpipi_se 
+  Dr_se <- r_i_se
   
   
   #q=...
@@ -225,9 +238,9 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   DEq_se <- sd( log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2)) - qij*log(1-delta+delta*exp(sigma*u - (sigma^2)/2)) )/sqrt(M)
   DCq_se <- sd( log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2)) - qij*log(1-delta+delta*exp(-sigma*u + (sigma^2)/2)) )/sqrt(M)
   DECsharpq_se <- sd( log(1-delta+delta*exp(sigma*sqrt(2)*u + mudif)) - log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2))
-                     - log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2)) 
-                     - qij*log(1-delta+delta*exp(sigma*sqrt(2)*u)) + qij*log(1-delta+delta*exp(sigma*u - (sigma^2)/2))
-                     + qij*log(1-delta+delta*exp(-sigma*u + (sigma^2)/2)) )/sqrt(M)
+                      - log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2)) 
+                      - qij*log(1-delta+delta*exp(sigma*sqrt(2)*u)) + qij*log(1-delta+delta*exp(sigma*u - (sigma^2)/2))
+                      + qij*log(1-delta+delta*exp(-sigma*u + (sigma^2)/2)) )/sqrt(M)
   s1 <- sd(log(1-delta+delta*exp(sigma*(bi_um - bj_um)+mudif)))/sqrt(M) #does this need a second term w q12?
   s2 <- sd(log(1-delta+delta*exp(sigma*sqrt(2)*u+mudif)) - qij*log(1-delta+delta*exp(sigma*sqrt(2)*u)))/sqrt(M) 
   DECq_se <- sqrt(s1^2 + s2^2)
@@ -239,13 +252,16 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   ei_se <- c(0, e_Ei_se, e_Ci_se, e_ECsharpi_se, e_ECi_se, e_ECpipi_se, r_i_se)
   ej <- c(e_0j, e_Ej_hat, e_Cj_hat, e_ECsharpj_hat, e_ECj_hat, e_ECpipj, r_j)
   ej_se <- c(0, e_Ej_se, e_Cj_se, e_ECsharpj_se, e_ECj_se, 0, 0)
-  D <- c(D0, DE, DC, DECsharp, DEC, DECpip)
-  D_se <- c(0, DE_se, DC_se, DECsharp_se, DEC_se, DECpip_se)
-  D <- c(D0, DEq, DCq, DECsharpq, DECq, DECpip)
-  D_se <- c(0, DEq_se, DCq_se, DECsharpq_se, DECq_se, DECpip_se)
-
+  D <- c(D0, DE, DC, DECsharp, DEC, DECpip, Dr)
+  D_se <- c(0, DE_se, DC_se, DECsharp_se, DEC_se, DECpip_se, Dr_se)
+  Dq <- c(D0, DEq, DCq, DECsharpq, DECq, DECpip, Dr)
+  Dq_se <- c(0, DEq_se, DCq_se, DECsharpq_se, DECq_se, DECpip_se, Dr_se)
+  
   res <- data.frame(ei=ei, ei_se=ei_se, ej=ej, ej_se=ej_se, D=D, D_se=D_se, Dq=Dq, Dq_se=Dq_se)
+  row.names(res) <- c("0","E","C","(E#C)","[EC]","[E||C]","r")
   
   return(res)
 }
 
+#dec <- decompose(-0.1,1.6,0.5,b_tilde,u_tilde)
+#round(dec,3)
