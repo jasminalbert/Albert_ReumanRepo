@@ -2,7 +2,7 @@
 
 source("./decomposition_fxn.R")
 
-dePlot <- function(mudif, delta){
+dePlot <- function(mudif, delta, legend=FALSE){
   load("./noise_etc.RData")
   store <- vector(mode='list', length=7)
   sigma <- seq(0,7,1)
@@ -28,20 +28,23 @@ dePlot <- function(mudif, delta){
   }
   abline(h=0, col="gray",lwd=0.7)
   title(main=paste("mu1-mu2=",mudif,"delta=",delta), cex.main=0.7)
-  legend("topleft", 
-         legend=c(expression(Delta[0]), expression(Delta[E]),
-                  expression(Delta[C]), expression(Delta[("E#C")]),
-                  expression(Delta["[EC]"]), expression(Delta["[E||C]"])
-                  ,expression(r)), 
-         col = c("black","black","black","black","blue","red","orange"),
-         lty = c(1,2,4,3,1,1,1), bty="n", cex=0.8)
+  
+  if(legend==TRUE){
+    legend("topleft", 
+           legend=c(expression(Delta[0]), expression(Delta[E]),
+                    expression(Delta[C]), expression(Delta[("E#C")]),
+                    expression(Delta["[EC]"]), expression(Delta["[E||C]"])
+                    ,expression(r)), 
+           col = c("black","black","black","black","blue","red","orange"),
+           lty = c(1,2,4,3,1,1,1), bty="n", cex=0.8)
+  }
+  
   
   return(store)
 }
 
 
 #dePlot(-0.3,0.8)
-
 
 
 
