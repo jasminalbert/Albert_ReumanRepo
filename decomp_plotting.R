@@ -1,6 +1,7 @@
 #THIS IS A FUNCTION
 
 source("./decomposition_fxn.R")
+
 dePlot <- function(mudif, delta){
   load("./noise_etc.RData")
   store <- vector(mode='list', length=7)
@@ -34,10 +35,12 @@ dePlot <- function(mudif, delta){
                   ,expression(r)), 
          col = c("black","black","black","black","blue","red","orange"),
          lty = c(1,2,4,3,1,1,1), bty="n", cex=0.8)
+  
+  return(store)
 }
 
 
-dePlot(-0.3,0.8)
+#dePlot(-0.3,0.8)
 
 
 
