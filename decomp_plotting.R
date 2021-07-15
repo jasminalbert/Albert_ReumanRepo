@@ -27,7 +27,7 @@ dePlot <- function(mudif, delta, legend=FALSE){
     }
   }
   abline(h=0, col="gray",lwd=0.7)
-  title(main=paste("mu1-mu2=",mudif,"delta=",delta), cex.main=0.7)
+  #title(main=paste("mu1-mu2=",mudif,"delta=",delta), cex.main=0.7)
   
   if(legend==TRUE){
     legend("topleft", 
