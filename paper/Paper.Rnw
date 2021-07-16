@@ -178,21 +178,17 @@ To flesh out the idea of how ATAs in environmental response might manifest and m
 Previously, storage effects were described as the contribution of covariance between the environment and competition to coexistence (Chesson et al 2012, Ellner et al 2016, Ellner at al 2019). 
 However, the description of storage effects as the covariance between drivers is a (potentially dangerous/irresponsible?) misnomer in terminology, and we argue that storage effects, instead, should be described as the contribution of the relationship between drivers. 
 All aspects and contributing values of the relationship between environmental response and competitive pressure are not fully captured by only the covariance between them because a measure of covariance does not capture the strucutre of associativity throuhgout the distribution of the relationship and any asymmetries there may be. 
-Thus, following the decomposition presented in Ellner et al (2019), we propose storage effect can be broken down further into the contribution of ATAs [to storage effect/coexistence] and the contribution of symmetric association [to storage effect/coexistence].
+Thus, aligning with the decomposition presented in Ellner et al (2019), we propose storage effect can be broken down further into the contribution of ATA [to storage effect/coexistence] and the contribution of symmetric association [to storage effect/coexistence].
 
 
-
-final parahraph:goals
-%Jasmin, I think the below makes a pretty good start at tryinbg to nail down a good way to express our goals
-%in the last para of the Intro, so please incorporate these into your last para. If you have a better way
-%to phrase these, please put both so we can compare at some point when we meet.
-G1) To augment the modern theory of coexistence (MTC) to show how asymmetric tail association (ATA)
-plays a role. The MTC decomposes a measure of coexistence into components due to each of several mechanisms. 
-We address how ATA contributes to these components. We here examine mechanisms of coexistence that apply in 
-models exhibiting solely temporal variation; spatial variation can be considered in future work.
+This paper has the following goals. 
+G1) To augment the modern theory of coexistence (MTC) to show how ATA plays a role. 
+The MTC decomposes a measure of coexistence into components due to each of several mechanisms. 
+We address how ATA contributes to these components. 
+We here examine mechanisms of coexistence that apply in models exhibiting solely temporal variation; spatial variation can be considered in future work.
 G2) To explore, using a simple model, the relative magnitudes of the contributions to coexistence that come
 from ATAs compared to other mechanisms.
-
+Our examination and separation of the role that ATA play in contributing to coexistence is a novel approach to the study of coexistence... 
 \section{Theory}\label{section:theory}
 
 We here pursue goal G1 from the Introduction, to augment the MTC to show how ATA
