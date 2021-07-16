@@ -11,7 +11,7 @@ dePlot <- function(mudif, delta, legend=FALSE){
     store[[i]] <- decompose(mudif,sigma[i],delta,b_tilde,u_tilde)
   }
   range <- range(unlist(lapply(store, function(X){(X$D)})))
-
+  
   plot(0, xlab="", ylab="", ylim=range*1.1, xlim=c(0,7), col="white")
   
   for (i in 1:length(sigma)){
@@ -27,7 +27,7 @@ dePlot <- function(mudif, delta, legend=FALSE){
     }
   }
   abline(h=0, col="gray",lwd=0.7)
-  title(main=paste("mu1-mu2=",mudif,"delta=",delta), cex.main=0.7)
+  #title(main=paste("mu1-mu2=",mudif,"delta=",delta), cex.main=0.7)
   
   if(legend==TRUE){
     legend("topleft", 
@@ -57,7 +57,7 @@ dePlot <- function(mudif, delta, legend=FALSE){
 
 #plot(0, xlab="", ylab="", ylim=c(-0.08,0.35), xlim=c(0.8,3.2), col="white")
 #polygon(c(0.8,0.8,1.6,3.2,3.2),c(0,x0$DEC_[1],x1$DEC_[1], x2$DEC_[1],0)
-        #,col="darkred", border=NA)
+#,col="darkred", border=NA)
 #polygon(c(0.8,0.8,1.6,3.2,3.2),c(0,x0$Dnull[1],x1$Dnull[1], x2$Dnull[1],0)
         #,col="darkblue", border=NA)
 #polygon(c(0.8,0.8,1.6,3.2,3.2),c(0,x0$DE[1],x1$DE[1], x2$DE[1],0)
