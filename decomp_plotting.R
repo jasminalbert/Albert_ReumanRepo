@@ -2,7 +2,7 @@
 
 source("./decomposition_fxn.R")
 
-dePlot <- function(mudif, delta, legend=FALSE){
+dePlot <- function(mudif, delta, legend=FALSE,...){
   load("./noise_etc.RData")
   store <- vector(mode='list', length=7)
   sigma <- seq(0,7,1)
@@ -12,7 +12,7 @@ dePlot <- function(mudif, delta, legend=FALSE){
   }
   range <- range(unlist(lapply(store, function(X){(X$D)})))
   
-  plot(0, xlab="", ylab="", ylim=range*1.1, xlim=c(0,7), col="white")
+  plot(0, xlab="", ylab="", ylim=range*1.1, xlim=c(0,7), col="white",...)
   
   for (i in 1:length(sigma)){
     if(i>=2){
