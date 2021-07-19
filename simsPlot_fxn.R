@@ -1,5 +1,5 @@
 #function to plot simulations side by side to compare effect of ATA contributions
-
+source("./pop_sim.R")
 source("./transform2.R")
 
 simsPlot <- function(mudif, delta, sigma, start=1, end=500){
