@@ -103,13 +103,12 @@
 %***Need to indicate corresponding authors
 
 \begin{document}
-\SweaveOpts{concordance=TRUE}
 %\SweaveOpts{concordance=TRUE}
 
 %The following is where you load in the numeric results that will be embedded in the text
 %<<eval=T,echo=F,message=F,warning=F>>=
 %system(paste("biber", sub("\\.Rnw$", "", current_input())))
-
+%
 %#place R code here for loading in necessary variables from Results
 %#ordinarily this would be a readRDS command, but I'm just defining a variable here for now
 %allregres<-matrix(rnorm(10),2,5)
@@ -124,34 +123,112 @@ Place abstract here
 %***Add to these
 \keywords{kw1, kw2,kw3}
 
+%Here are the paragraph-level "rules" of writing, for reference: 
+%Every paragraph needs to have a clear topic sentence.
+%It needs to be one of the first three sentences.
+%If it is not the first sentence, then the sentences preceding it are for background, in order to make it possible to state the topic sentence.
+%The topic sentence is the main *result* or *claim* of the paragraph, not just a statement of what the topic is.
+%All sentences in the paragraph support and validate the claim made in the topic sentence. 
+
 \section{Introduction}\label{section:introduction}
 
-Central to ecology is the maintenance of biodiversity in competitive ecosystems. 
-Populations subject to strong competitive pressure may succumb to competitive exclusion - an idea which postulates if species within the same trophic level and similar niches exist, one will eventually outcompete the other \citep{Hardin_1960}.
-Mediation of competitive pressure and exclusion allow for species to stably coexist. 
-The criteria for coexistence and competitive exclusion can be broken down into contributing mechanisms provided by modern coexistence theory, a framework which seeks to assess and quantify mechanisms that result in coexisting species and thus the maintenance of biodiversity \citep{Chesson_1994}. 
+%Old version, prior to my edits: Central to ecology is the maintenance of biodiversity in competitive ecosystems. Populations subject to strong
+%competitive pressure may succumb to competitive exclusion - an idea which postulates if species within the same
+%trophic level and similar niches exist, one will eventually outcompete the other (Hardin, 1960). Mediation of
+%competitive pressure and exclusion allow for species to stably coexist. The criteria for coexistence and competitive
+%exclusion can be broken down into contributing mechanisms provided by modern coexistence theory, a framework
+%which seeks to assess and quantify mechanisms that result in coexisting species and thus the maintenance of
+%biodiversity (Chesson, 1994).
+%Now the new, edited version, with some additional changes requested, to be made by Jasmin, please:
+The maintenance of biodiversity in competitive ecosystems is a research topic at the absolute core of modern ecology.
+%***DAN: Jasmin, add a few classic references. See the first sentence of Ellner et al 2019, read the abstracts of those papers
+%(more than the abstracts if you want), and consider using them as references here.
+The competitive exclusion principle, covered, for instance, in most or all introductory ecology courses and texts, states 
+that two species competing for the same limiting resource cannot coexist at constant densities - one will outcompete 
+the other and drive it extinction \citep{Hardin_1960}.
+Modern coexistence theory [MCT; \cite{Chesson_1994,Chesson_2000,Barabas_2018}] is a 
+framework for understanding how stable species coexistence 
+nevertheless occurs, and biodiversity in maintained, in real ecosystems, through stabilizing mechanisms and niche 
+differentiation, in spite of the conclusions drawn for idealized scenarios by the competitive exclusion principle. 
+MCT breaks down coexistence into the contributions of various mechanisms, with name such as `relative nonlinearity
+in competition' and `storage effects' \citep{Chesson_1994} which will be familiar to many readers. The MCT has been
+applied to quite a few empirical systems, including annual plants \citep{Angert_2009}, Y and Z, 
+%***DAN: Jasmin, fill in Y and Y with names of systems, and accompanying reference(s), 
+%in a similar way to how I filled in the Angert example.
+%Please also read the abstract of the Angert reference to make sure it is appropriate to cite it in this way (and so that
+%you become aware of that reference). One place to look for more references to put in for Y and Z is the top of the 
+%right column on the first page of the Barabas review (Ecol Monogr, 2018).
+even though it is mathematically complex in the eyes
+of most ecologists (but see \cite{Ellner_2016,Ellner_2019} for efforts to make it more readily applied).
+%***DAN: Jasmin, note the differences carefully, please, between your version (commented, above) and the edits I've 
+%made. It's the same in main structure, making all the same points. It's just a bit more fleshed out. One of the purposes
+%of an Intro is to link the reader to the appropriate background lit. You need a fair number of references and a little
+%more detail than you previously gave to do that.
 
-Equally central to ecology is the study of relationships between ecological variables; however, it is almost exclusively blanketed by simple measures of associativity, i.e., correlation coefficients.
-Although two sets of variables may have equal correlation coefficients, they can show different association structures (see Figure).
-More specifically, the association within the tail ends of data and the asymmetry between the tail associations, termed asymmetric tail associations (ATAs), tell a more interesting story about the relationship between variables...and?...
-Recent work has shown that ATAs have important considerations for ecological phenomena; although, the implications of ATAs for competition and coexistence have not yet been investigated. 
-Asymmetry of tail associations within a dataset of variables describes uneven correlations between the tails of a dataset.
-For a simple example, a dataset with more association in the lower (upper) half and lesser association in the upper (lower) half is termed left (right) tail associated. 
-The application of ATAs in ecology is relatively new, and in exploration of ATAs in ecology, Gosh et al (AER) found ATAs in all eight ecological datasets they considered.
-Thus, the existence and functioning role of ATAs in nature is reasonable to assume and question. 
-In fact, ATAs can have influence on ecosystem service stability, Taylor’s law, and extinction risks via extreme climatic events. Conversely, ATA’s can be influenced by Moran Effect and Leibeig’s Law of Minimum \citep{Gosh_2020_Eco, Gosh_2020_AER}.
-Despite the frequent occurrence of ATAs in ecological data, the implications of tail associations for competition and coexistence, to our knowledge, has not yet been examined; doing so is the main goal of this paper.
+%Old version, some comments interspersed: 
+%Equally central to ecology is the study of relationships between ecological variables; however, it is almost exclusively blanketed by simple measures of associativity, i.e., correlation coefficients.
+%***DAN: "Blanketed" is a weird verb in this context. 
+%***DAN: Also, MCT is a conceptually deep theory, and ATA is a fairly simple observation that happens to have some consequences. I would not be confortable with phrasing that seems to put them on the same footing! 
+%Although two sets of variables may have equal correlation coefficients, they can show different association structures (see Figure).
+%More specifically, the association within the tail ends of data and the asymmetry between the tail associations, termed asymmetric tail associations (ATAs), tell a more interesting story about the relationship between variables...and?...
+%Recent work has shown that ATAs have important considerations for ecological phenomena; although, the implications of ATAs for competition and coexistence have not yet been investigated. 
+%Asymmetry of tail associations within a dataset of variables describes uneven correlations between the tails of a dataset.
+%For a simple example, a dataset with more association in the lower (upper) half and lesser association in the upper (lower) half is termed left (right) tail associated. 
+%The application of ATAs in ecology is relatively new, and in exploration of ATAs in ecology, Gosh et al (AER) found ATAs in all eight ecological datasets they considered.
+%Thus, the existence and functioning role of ATAs in nature is reasonable to assume and question. 
+%In fact, ATAs can have influence on ecosystem service stability, Taylor’s law, and extinction risks via extreme climatic events. Conversely, ATA’s can be influenced by Moran Effect and Leibeig’s Law of Minimum \citep{Ghosh_2020_Eco, Ghosh_2020_AER}.
+%Despite the frequent occurrence of ATAs in ecological data, the implications of tail associations for competition and coexistence, to our knowledge, has not yet been examined; doing so is the main goal of this paper.
+%New version:
+Every ecological discipline involves the study of relationships among biological and environmental variables,
+but standard methods for examining the association between variables provide only a small portion of the overall information content contained in the
+relationship \citep{Ghosh_2020_AER,Ghosh_2020_Eco,Ghosh_2020_ecolevol,Ghosh_2021}. For instance, 
+the three pairs of variables in figure \ref{fig:noise} all have the same
+Pearson correlation; and likewise have the same Spearman correlation. 
+%***DAN: Jasmin, when you make the figure, please display the Pearson and Spearman correlations on each panel, as in 
+%Fig. 1 of Ghosh et al (2020, Ecology and Evolution).
+But each panel of figure \ref{fig:noise} nevertheless
+depicts a very different type of association. Other metrics of association are used, in addition to correlations
+(e.g., various common forms of regression), but correlations are extremely common, and other common
+methods also provide only a small portion of the avaiable information \citep{Nelsen2006}.
+The variables in figure \ref{fig:noise}A,C 
+%***DAN: Jasmin, when you make the figure, put the two asymmetric cases in A and C and put the symmetric case in B, in the middle.
+exhibit what we have previously referred to as ``asymmetric tail association'' [ATA; \cite{Ghosh_2020_AER}], i.e., 
+they are more strongly related to each
+other in the left (figure \ref{fig:noise}A, termed ``left-tail association'') or right (figure \ref{fig:noise}A,
+termed `right-tail association') portions of the variables' distributions. Although ATAs and related ideas had previously been very seldom 
+considered in ecology and related areas (but see REFS), 
+%***DAN: Jasmin, please insert bib entries for the references Anderson et al., 2018; de Valpine et al., 2014; Popovic et al., 2019
+%from the Ghosh et al (2020; Adv Ecol Res) paper, and cite them here.
+our recent work has shown that, in fact, ATAs are extremely common in ecology \citep{Ghosh_2020_AER}, and can be mechanistically important for 
+many ecological phenomena, including extinction risk \citep{Ghosh_2020_Eco}, Taylor's law \citep{Ghosh_2020_AER}, 
+synchrony, and the temporal stability of ecosystem functioning \citep{Ghosh_2020_ecolevol,Ghosh_2021}.
+%***DAN: Again note the similarity between the old and new versions, the new is just a bit more fleshed out, and maybe a
+%bit more precise in some of the wordings in places.
 
+%***DAN: Please combine the following two paragraphs into one single paragraph with this topic sentence:
+Although ATAs are now known to be common and important, the implications of ATAs for competition and species coexistence 
+have, to our knowledge, not previously been considered; doing so is the overarching mission of this study. It is straightforward to see, intuitively, 
+why ATAs may influence one mechanism of coexistence, in particular: storage effects. We review, conceptually, what storage effects are and we explain 
+why ATAs may be relevant to them.
+%***DAN: I have inserted some comments below that might help.
 
-
-Asymmetries in tail associations can potentially influence competition and coexistence via one particular mechanism, namely, storage effects.
 Storage effect contributes as a stabilizing mechanism to coexistence when there is covariation between competitive pressures and environmental fluctuations.
 Because the contributive value of storage effects relies on the relationship between environment and competition \citep{Chesson_1994, Barabas_2018}, it reasonably follows to suspect the contribution of storage effectsto be altered by an association between environment and competition that is asymmetric, i.e., ATAs between environment and competition.
+%***DAN: You don't need to explain why it is reasonable to suspect something, that belabors the point too much. Just say indicate that storage effects
+%involve environment-coexistence associations, and hence there is the potential for ATAs to influence storage effects.
 Uniquely, storage effect is the only mechanism of modern coexistence theory which depends on the variance between two drivers rather than one.
 While we aimed to investigate the importance of ATAs on coexistence in general and all the mechanisms which compose the modern theory of coexistence, it was quickly revealed that ATAs are specifically important for storage effects and not for other mechanisms of coexistence.
+%***DAN: Now that you have written this, I see it belabors the point too much. It sounds defensive to explain this early on that none of the 
+%other mechanisms are influenced. I think instead it's enough to just explain, as laid out in 
+%new, proposed topic sentence above, that storage effects are influenced by ATAs. That justifies the study, and then the reader can 
+%discover later that only storage effects are influenced. If a referee complains, I think we will be able to effectively respond after the fact. 
  
 For clarification, we explain the how storage effects operate in maintaining biodiversity and the conditions that are required for it to do so.
-We emphasize that although this paper focuses on storage effects, we do consider other mechanisms of modern coexistence theory, though we quickly realize the importance of ATAs is solely for storage effects; hence, it is still a paper generally about the importance of ATAs for coexistence because. 
+%***DAN: the above sentence will be superceded by the new topic sentence, above, of the combined paragraph, so you can cut this.
+We emphasize that although this paper focuses on storage effects, we do consider other mechanisms of modern coexistence theory, though we quickly realize the importance of ATAs is solely for storage effects; hence, it is still a paper generally about the importance of ATAs for coexistence because.
+%***DAN: Protesting too much, sounds defensive. Maybe we can return to this in the Discussion, after we've made our points, but it 
+%currently seems to me even that won't be necessary. We can just point out in the first para of the Discussion something like "We have learned
+%that ATAs do meaningfully influence species coexistence, and they do so through storage effects." Less defensive. 
 Storage effects allow for species to fluctuate over time while escaping extinction. 
 In order for storage effect to be a functioning mechanism in coexistence, populations must fluctuate differently in response to environmental fluctuations, there must be a relationship between envrionmental responses and competition, and there must variation in responses at different life history stages. 
 In a simple two species system, differences in environmental response allow for one species to grow to high densities while the other is very low. 
@@ -162,9 +239,9 @@ Different responses at different life stages buffer the species against extincti
 Examples of life stages that can buffering against negative growth rates are insensitive adults or dormant seeds that persist even when environmental response amoung others in the population is low \citep{Chesson_2012}; environment and competiton do not effect the buffered life stages.  
 Thus, higher fluctuation in growth rate can lead to a higher long term mean growth rate. 
 In this paper, we investigate the consequences of having ATAs in the relationship between fluctuations environmental response and competitive pressure. More specifically, we answer: Does having higher association in a tail end of the EC relationship, while maintaining overall association, change the contribution of storage effect?     
-
+%***DAN: This explanation of storage effects is too long. See if you can cut it to approximately half its current length. 
     
-
+%***DAN: stopped here 2021 07 20
 [As we know], anthropogenic climate change threatens almost all aspects of life including via extreme climatic events, which have only become more extreme - increasing in magnitude and frequency - and have contributed to both the increase in global means as well as an increase in environmental variability (citation). 
 There are many studies on the influence of environmental extremes and variability on competition and coexistence \citep{Parepa_2013, Diez_2012}; however, the study of the influence of relationships and interactions between drivers in their extremes on competition and coexistence, is lacking in the scientific literature. 
 Interacting environmental drivers can be asymmetrically related in the extreme values (as shown in \cite{Gosh_2020_AER}). 
@@ -189,6 +266,7 @@ We here examine mechanisms of coexistence that apply in models exhibiting solely
 G2) To explore, using a simple model, the relative magnitudes of the contributions to coexistence that come
 from ATAs compared to other mechanisms.
 Our examination and separation of the role that ATA play in contributing to coexistence is a novel approach to the study of coexistence... 
+
 \section{Theory}\label{section:theory}
 
 We here pursue goal G1 from the Introduction, to augment the MTC to show how ATA
@@ -494,6 +572,12 @@ to be occurring, might. Should also mention this second point in the Discussion 
 \newpage
 
 \begin{figure}
+\caption{Figure displaying the noise. Three panels, left-, symmetric, and right-tail assoc noise. Use standard normal marginals.
+Explain in caption that alternatives for $(b_1,b_2)$ are obtained by multipling by $\sigma$ and then adding $(\mu_1,\mu_2)$.
+Jasmin to make and insert the figure here using the includegraphics command, and then draft a caption along the lines described here.\label{fig:noise}}
+\end{figure}
+
+\begin{figure}
 \caption{Pedagogical figure somehow displaying the different outcomes of competition in ATA and symmetric cases for an example.
 This will be cited from the Intro, so needs to be understandable to someone who does not know any of the ideas we introduce yet.
 So in particular you cannot use IGR as your metric of coexistence, you need to use something more intuitive. You will pick
@@ -504,13 +588,5 @@ the Theory section, which is inevitably going to be tough going for many readers
 \end{figure}
 %possible examples:
 %population simulations - shows symmetric with faster fluctatuations to extremes of coexistence while asymmetric has longer periods of noticeable coexistence and dominace/exclusion; may be unclear
-
-
-\begin{figure}
-\caption{Figure displaying the noise. Three panels, left-, symmetric, and right-tail assoc noise. Use standard normal marginals.
-Explain in caption that alternatives for $(b_1,b_2)$ are obtained by multipling by $\sigma$ and then adding $(\mu_1,\mu_2)$.
-Jasmin to make and insert the figure here using the includegraphics command, and then draft a caption along the lines described here.\label{fig:noise}}
-\end{figure}
-
 
 \end{document}
