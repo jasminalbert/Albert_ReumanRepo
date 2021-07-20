@@ -126,6 +126,13 @@ Place abstract here
 
 \section{Introduction}\label{section:introduction}
 
+%Here are the paragraph-level "rules" of writing: 
+%Every paragraph needs to have a clear topic sentence.
+%It needs to be one of the first three sentences.
+%If it is not the first sentence, then the sentences preceding it are for background, in order to make it possible to state the topic sentence.
+%The topic sentence is the main *result* or *claim* of the paragraph, not just a statement of what the topic is.
+%All sentences in the paragraph support and validate the claim made in the topic sentence. 
+
 The maintenance of biodiversity in competitive ecosystems is a central idea in ecology. Among others, the modern theory of coexistence seeks to assess and quantify the mechanisms that result in coexisting species and thus the maintenance of biodiversity. 
 Many are familiar with the principle of competitive exclusion - an idea which postulates if species within the same trophic level and similar niches exist, one will eventually outcompete the other (Hardin 1960). Modern coexistence theory provides a quantitative breakdown of contributing mechanisms as criteria for coexistence and competitive exclusion (Chesson 1994).    
 
