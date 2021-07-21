@@ -140,7 +140,7 @@ Place abstract here
 %which seeks to assess and quantify mechanisms that result in coexisting species and thus the maintenance of
 %biodiversity (Chesson, 1994).
 %Now the new, edited version, with some additional changes requested, to be made by Jasmin, please:
-The maintenance of biodiversity in competitive ecosystems is a research topic at the absolute core of modern ecology.
+The maintenance of biodiversity in competitive ecosystems is a research topic at the absolute core of modern ecology (\citep{MacArthur_1958, Hutchinson_1961, Schmida_1984}.
 %***DAN: Jasmin, add a few classic references. See the first sentence of Ellner et al 2019, read the abstracts of those papers
 %(more than the abstracts if you want), and consider using them as references here.
 The competitive exclusion principle, covered, for instance, in most or all introductory ecology courses and texts, states 
@@ -152,7 +152,7 @@ nevertheless occurs, and biodiversity in maintained, in real ecosystems, through
 differentiation, in spite of the conclusions drawn for idealized scenarios by the competitive exclusion principle. 
 MCT breaks down coexistence into the contributions of various mechanisms, with name such as `relative nonlinearity
 in competition' and `storage effects' \citep{Chesson_1994} which will be familiar to many readers. The MCT has been
-applied to quite a few empirical systems, including annual plants \citep{Angert_2009}, Y and Z, 
+applied to quite a few empirical systems, including annual plants \citep{Angert_2009, Hallett_2019}, perennial plants \citep{Adler_2010}, tropical trees \citep{Usinowicz_2012}, plankton \citep{Narawani_2013, Caceres_1997}, and corals \citep{}. 
 %***DAN: Jasmin, fill in Y and Y with names of systems, and accompanying reference(s), 
 %in a similar way to how I filled in the Angert example.
 %Please also read the abstract of the Angert reference to make sure it is appropriate to cite it in this way (and so that
@@ -196,7 +196,7 @@ exhibit what we have previously referred to as ``asymmetric tail association'' [
 they are more strongly related to each
 other in the left (figure \ref{fig:noise}A, termed ``left-tail association'') or right (figure \ref{fig:noise}A,
 termed `right-tail association') portions of the variables' distributions. Although ATAs and related ideas had previously been very seldom 
-considered in ecology and related areas (but see REFS), 
+considered in ecology and related areas (but see \citep{Anderson_2018, deValpine_2014, Popovic_2019}), 
 %***DAN: Jasmin, please insert bib entries for the references Anderson et al., 2018; de Valpine et al., 2014; Popovic et al., 2019
 %from the Ghosh et al (2020; Adv Ecol Res) paper, and cite them here.
 our recent work has shown that, in fact, ATAs are extremely common in ecology \citep{Ghosh_2020_AER}, and can be mechanistically important for 
