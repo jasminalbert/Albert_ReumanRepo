@@ -23,15 +23,16 @@ p3.df <- p2.df[order(p2.df$md, decreasing=T),]
 dat <- cbind(p3.df, df)
 
 
-cbind(p3.df[df$r <0 & df$woATA >0,],df[df$r <0 & df$woATA >0,]) #impeding
+
+dat[dat$r<0 & df$woATA >0,] #impeding
 
 #plot1<-dePlot(-0.8,0.8, legend=T)
 
-cbind(p3.df[df$r >0 & df$woATA <0,],df[df$r >0 & df$woATA <0,]) #facilitating
+dat[dat$r>0 & df$woATA <0,] #facilitating
 
-cbind(p3.df[df$r == max(df$r),],df[df$r == max(df$r),]) #max r
+dat[dat$r == max(dat$r),]  #max r
 
-#most negatice r
+S#most negatice r
 head(dat[order(dat$r),])
 
 #most negative [E||C]
