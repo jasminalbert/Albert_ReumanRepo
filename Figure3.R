@@ -35,7 +35,7 @@ for (m in 1:length(mudif)){
 res <- vector(mode='list',length=1)
 for (m in 1:length(mudif)){
   for (d in 1:length(delta)){
-    res <- append(res,dePlot(mudif[m], delta[d], xaxt="n"))
+    res <- append(res,dePlot1(mudif[m], delta[d], xaxt="n"))
     axis(1, labels=FALSE, tick=TRUE)
   }
 }
