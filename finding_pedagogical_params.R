@@ -1,4 +1,5 @@
 source("./Figure3.R")
+load("./params.RData")
 D <- lapply(res, function(X){(X$D)})
 D1 <- unlist(D)
 D2 <- matrix(D1, nrow=7)
