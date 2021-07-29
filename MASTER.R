@@ -4,6 +4,15 @@ source("./makenoise.R") #make standard noise, change M here
 
 source("./parameters.R") #set parameters sigma, mu1, mu2, delta
 
-source("./parameter_loop.R") #loop through parameters to get results #see section 4
+#FIGURE 1
+
+#FIGURE 2
+source("./Figure2.R")
+#FIGURE 3
+source("./Figure3.R")
+#FIGURE 4
+source("/Figure4.R")
+
+#source("./parameter_loop.R") #loop through parameters to get results #see section 4
 
 
