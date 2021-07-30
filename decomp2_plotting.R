@@ -20,7 +20,7 @@ dePlot2 <- function(mudif = seq(0, -0.8, -0.01), sigma, delta, legend=FALSE,...)
   
   range <- range(unlist(lapply(store, function(X){(X$D[6:8])})))
   
-  plot(0, xlab="", ylab="", ylim=range*1.2, xlim=c(max(mudif),min(mudif)), col="white",bty="l")
+  plot(0, xlab="", ylab="", ylim=range*1.2, xlim=c(max(mudif),min(mudif)), col="white",bty="l",... )
   abline(h=0, col="gray",lwd=0.7)
   
   for (i in 1:length(mudif)){
@@ -32,12 +32,12 @@ dePlot2 <- function(mudif = seq(0, -0.8, -0.01), sigma, delta, legend=FALSE,...)
       lines(c(mudif[i-1], mudif[i]), dat[8,1:2], col="navy", lty=5)
       
       if(all(dat[8,]>0) & all(dat[7,]<0) ){ #impeding
-        rect(mudif[i-1], range[1]*1.2, mudif[i], range[2]*1.2, col="lightpink", border=NA, 
-             density=30, lty=3)
+        rect(mudif[i-1], range[1]*1.2, mudif[i], range[2]*1.2, col="hotpink2", border=NA, 
+             density=40, lty=3)
       }
       if(all(dat[8,]<0) & all(dat[7,1]>0) ){ #facilitating 
-        rect(mudif[i-1], range[1]*1.2, mudif[i], range[2]*1.2, col="goldenrod", border=NA,
-             density=30, lty=3)
+        rect(mudif[i-1], range[1]*1.2, mudif[i], range[2]*1.2, col="darkgoldenrod2", border=NA,
+             density=40, lty=3)
       }
       
     }
@@ -60,22 +60,23 @@ dePlot2 <- function(mudif = seq(0, -0.8, -0.01), sigma, delta, legend=FALSE,...)
 #dePlot2(mudif, 4,0.5)
 #dePlot2(mudif, 5,0.5)
 #dePlot2(mudif, 6,0.5)
+mudif = seq(0.0, -2.5, length.out = 50)
 
-mudif_list <- list(mudif = seq(0.04, -0.01, length.out = 30),
-                   mudif = seq(-0.1, -0.2, length.out = 50),
-                   mudif = seq(-0.1, -0.5, length.out = 30),
+mudif_list <- list(mudif,
+                   mudif,
+                   mudif,
                    
-                   mudif = seq(0.04, -0.01, length.out = 30),
-                   mudif = seq(-0.1, -0.8, length.out = 30),
-                   mudif = seq(-0.8, -1.2, length.out = 30),
+                   mudif,
+                   mudif,
+                   mudif,
                    
-                   mudif = seq(0.04, -0.01, length.out = 30),
-                   mudif = seq(-0.3, -1.1, length.out = 30),
-                   mudif = seq(-1.4, -1.8, length.out = 30),
+                   mudif,
+                   mudif,
+                   mudif,
                    
-                   mudif = seq(0.04, -0.01, length.out = 30),
-                   mudif = seq(-0.6, -1.4, length.out = 30),
-                   mudif = seq(-1.8, -3, length.out = 30))
+                   mudif,
+                   mudif,
+                   mudif)
 
 
 

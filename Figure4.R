@@ -3,7 +3,7 @@ source("./decomp2_plotting.R")
 delta <- c(1, 0.8, 0.5)
 sigma <- c(2, 4 ,5,6)
 
-pdf("fig4.pdf")
+pdf("fig4_samexaxis50.pdf")
 
 par(mfrow=c(1,1), mar = c(1,2,1,1), oma=c(3,2,3,1))
 
@@ -39,7 +39,8 @@ res <- vector(mode='list',length=1)
 m <- 1
 for (s in 1:length(sigma)){
   for (d in 1:length(delta)){
-    res <- append(res,dePlot2(mudif_list[[m]],sigma[s], delta[d]))
+    res <- append(res,dePlot2(mudif_list[[m]],sigma[s], delta[d], xaxt="n"))
+    axis(1, labels=ifelse(m>1, yes=FALSE, no=TRUE), tick=TRUE)
     m <- m+1
   }
 }
