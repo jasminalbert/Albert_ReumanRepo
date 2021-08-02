@@ -210,6 +210,7 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   DEC <- e_ECi_hat - e_ECj_hat #Deltai_[EC]
   DECpip <- e_ECpipi_hat  #Deltai_[E||C]
   Dr <- r_i_hat 
+  DrwoATA <- r_i_hat - DECpip
   
   #SE(Delta hats):
   DE_se <- sd( log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2)) - log(1-delta+delta*exp(sigma*u - (sigma^2)/2)) )/sqrt(M)
@@ -248,17 +249,17 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   #return 8 columns
   #8 columns: ei, ei_se, ej, ej_se, D, D_se, Dq, Dq_se 
   # rows: 0, E, C, (E#C), [EC], [E||C], r
-  ei <- c(e_0i, e_Ei_hat, e_Ci_hat, e_ECsharpi_hat, e_ECi_hat, e_ECpipi_hat, r_i_hat)
-  ei_se <- c(0, e_Ei_se, e_Ci_se, e_ECsharpi_se, e_ECi_se, e_ECpipi_se, r_i_se)
-  ej <- c(e_0j, e_Ej_hat, e_Cj_hat, e_ECsharpj_hat, e_ECj_hat, e_ECpipj, r_j)
-  ej_se <- c(0, e_Ej_se, e_Cj_se, e_ECsharpj_se, e_ECj_se, 0, 0)
-  D <- c(D0, DE, DC, DECsharp, DEC, DECpip, Dr)
-  D_se <- c(0, DE_se, DC_se, DECsharp_se, DEC_se, DECpip_se, Dr_se)
-  Dq <- c(D0, DEq, DCq, DECsharpq, DECq, DECpip, Dr)
-  Dq_se <- c(0, DEq_se, DCq_se, DECsharpq_se, DECq_se, DECpip_se, Dr_se)
+  ei <- c(e_0i, e_Ei_hat, e_Ci_hat, e_ECsharpi_hat, e_ECi_hat, e_ECpipi_hat, r_i_hat, NA)
+  ei_se <- c(0, e_Ei_se, e_Ci_se, e_ECsharpi_se, e_ECi_se, e_ECpipi_se, r_i_se, NA)
+  ej <- c(e_0j, e_Ej_hat, e_Cj_hat, e_ECsharpj_hat, e_ECj_hat, e_ECpipj, r_j, NA)
+  ej_se <- c(0, e_Ej_se, e_Cj_se, e_ECsharpj_se, e_ECj_se, 0, 0, NA)
+  D <- c(D0, DE, DC, DECsharp, DEC, DECpip, Dr, DrwoATA)
+  D_se <- c(0, DE_se, DC_se, DECsharp_se, DEC_se, DECpip_se, Dr_se, NA)
+  Dq <- c(D0, DEq, DCq, DECsharpq, DECq, DECpip, Dr, DrwoATA)
+  Dq_se <- c(0, DEq_se, DCq_se, DECsharpq_se, DECq_se, DECpip_se, Dr_se, NA)
   
   res <- data.frame(ei=ei, ei_se=ei_se, ej=ej, ej_se=ej_se, D=D, D_se=D_se, Dq=Dq, Dq_se=Dq_se)
-  row.names(res) <- c("0","E","C","(E#C)","[EC]","[E||C]","r")
+  row.names(res) <- c("0","E","C","(E#C)","[EC]","[E||C]","r", "rwoATA")
   
   return(res)
 }
