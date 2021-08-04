@@ -570,7 +570,7 @@ and $s_2=\sd_k [\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}+\mu_i-\mu_j))]/\sq
 $\widehat{\olep_i^{[E \nat C]}} = \mean_k[\ln(1-\delta+\delta\exp(\sigma(\tilde{b}_i^{(k)}-\tilde{b}_j^{(k)})+\mu_i-\mu_j))]-
 \mean_k[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i^{(k)}-\tilde{\ddot{b}}_j^{(k)})+\mu_i-\mu_j))].$ The standard
 error of this expression is $\se \left( \widehat{\olep_i^{[E \nat C]}} \right)=\sqrt{s_3^2+s_1^2}$, where
-$s_1$ is as above, and $s_3=\sd_k[\ln(1-\delta+\delta\exp(\tilde{b}_i^{(k)}-\tilde{b}_j^{(k)}))]/\sqrt{M}.$
+$s_1$ is as above, and $s_3=\sd_k[\ln(1-\delta+\delta\exp(\sigma(\tilde{b}_i^{(k)}-\tilde{b}_j^{(k)})+\mu_i-\mu_j))]/\sqrt{M}.$
 \item Finally, estimate $\olr_{i \bs i}$, following (\ref{eq:base_IGR}), as 
 $\widehat{\olr_{i \bs i}}=\mean_k[\ln(1-\delta+\delta\exp(\sigma(\tilde{b}_i^{(k)}-\tilde{b}_j^{(k)})+\mu_i-\mu_j))],$
 which has standard error $s_3$ from above.
@@ -593,7 +593,7 @@ independent, so $\tilde{b}_j^\shp - \tilde{b}_j$ is normally distributed with me
 estimate $\olep_j^{(E \shp C)}$, following (\ref{eq:decomp:j:EshpC}), as 
 $\widehat{\olep_j^{(E \shp C)}} = \mean_k [\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}))]-\widehat{\olep_j^E}-\widehat{\olep_j^C}-\epsilon_j^0$.
 The standard error of this expression is $\se \left(  \widehat{\olep_j^{(E \shp C)}} \right) = 
-\sd_k[\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}))-\ln(1-\delta+\delta\exp(u^{(k)}-\sigma^2/2))-
+\sd_k[\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}))-\ln(1-\delta+\delta\exp(\sigma u^{(k)}-\sigma^2/2))-
 \ln(1-\delta+\delta\exp(-\sigma u^{(k)}+\sigma^2/2))]/\sqrt{M}$.
 \item Estimate $\olep_j^{[EC]}$, following (\ref{eq:decomp:j:EChard}), as $\widehat{\olep_j^{[EC]}}=\mean_k [-\ln(1-\delta+\delta \exp(\sigma \sqrt{2} u^{(k)}))],$ which has $\se \left( \widehat{\olep_j^{[EC]}} \right) = \sd_k[-\ln(1-\delta+\delta \exp(\sigma \sqrt{2} u^{(k)}))]/\sqrt{M}$.
 \item Use $\olep_j^{[E \nat C]}=0$, following (\ref{eq:decomp:j:EnatC}). This is exact.
