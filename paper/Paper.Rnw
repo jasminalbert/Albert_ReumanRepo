@@ -88,11 +88,13 @@
 %Put other possible titles below, commented, and we will select the best one at the end
 %Relationships between extreme events and their influence on competition and coexistence
 %Coexistence and consequences of extreme environmental relationships
+%Coexistence and the consequences of extreme environmental relationships
 %Coexistence and consequences of environmental relationships in their extremes
 %Coexistence and implications of asymmetric environmental relationships
 %Extreme [climatic] events and their implications for biodiversity
 %Deductions to coexistence, extreme events, and asymmetric relationships
 %Extreme relationships (relationships in their extremes) and their deductions ([negative] contributions) to coexistence
+%Coexistence and relationships between environmental variables in their extremes
 
 \author[a]{Pimsupa Jasmin Albert}
 \author[a,b]{Daniel C. Reuman}
@@ -242,6 +244,7 @@ In this paper, we investigate the consequences of having ATAs in the relationshi
 %***DAN: This explanation of storage effects is too long. See if you can cut it to approximately half its current length. 
     
 %***DAN: stopped here 2021 07 20
+%***DAN: Dan won't edit this para yet, Jasmin and I discussed and she will take another crack at it.
 [As we know], anthropogenic climate change threatens almost all aspects of life including via extreme climatic events, which have only become more extreme - increasing in magnitude and frequency - and have contributed to both the increase in global means as well as an increase in environmental variability (citation). 
 There are many studies on the influence of environmental extremes and variability on competition and coexistence \citep{Adler_2006,  Parepa_2013, Diez_2012}; however, the study of the influence of relationships and interactions between drivers in their extremes on competition and coexistence, is lacking in the scientific literature. 
 Interacting environmental drivers can be asymmetrically related in the extreme values (as shown in \cite{Gosh_2020_AER}). 
@@ -252,6 +255,7 @@ Environmental variability has been classically shown to promote coexistence via 
 
 To flesh out the idea of how ATAs in environmental response might manifest and modfiy the outcome of coexistence, we introduce an example of a two species grass-forb plant community (inspired by \cite{Chesson_2012}. The community follows the criteria required for temporal storage effects to operate. The forb dominates and has high fecundity when a sufficient threhold of rain is reached in the early season. The grass dominates and has high fecundity when there is sufficeint rain in the late season. Competition is influenced by the resource comsumption of growing juvenile plants. Dormant seeds are unaffected by competiton and unfavorable environment and can persist in the community. When rain conditions fluctuate from year to year, relative abundance and dominance of the grass-forb community also fluctuate year to year. This produces a relationship between the grass's and forb's environmental responses (fecundity) that is symmetrically associated. ATAs in environmental response can be caused by extreme climatic events. If the community is affected by frequent and long drought with some years of normalcy, the grass-forb environmental response relationship may become more correlated in the lower values or left tail associated. Conversely, if the community is effected by frequent and long floods with some years of normalcy, the grass-forb environmental relationship may become more correlated in the higher values or right-tail associated. In Figure 2 we see a possible outcome of ATAs between environmental responses. In simulating their populations,  ATAs can cause species to have longer periods of extreme dominance and lower growth rates overall.      
 
+%***DAN: I think we ought to put this in the Discussion
 Previously, storage effects were described as the contribution of covariance between the environment and competition to coexistence \citep{Chesson_2012, Ellner_2016, Ellner_2019}. 
 However, the description of storage effects as the covariance between drivers is a (potentially dangerous/irresponsible?) misnomer in terminology, and we argue that storage effects, instead, should be described as the contribution of the relationship between drivers. 
 All aspects and contributing values of the relationship between environmental response and competitive pressure are not fully captured by only the covariance between them because a measure of covariance does not capture the strucutre of associativity throuhgout the distribution of the relationship and any asymmetries there may be. 
@@ -529,6 +533,10 @@ SI section \ref{SI-sect:efficient_computation}.
 
 
 \section{Discussion}\label{section:discussion}
+
+Maybe have a paragraph about how Chesson's weak noise and other assumptions make it impossible to detect this new effect
+via that framework. It's only the less-assumption-reliant simulation approach of Ellner et al that makes it possible to 
+study this new term in the decomp. Need to study a bit to substantiate this properly, or get Steve Ellner help.
 
 Need a para about multi-species models - how would things change? One difference is there are more different
 things that might have asymmetric tail association patterns. See the section "General Theory" of Ellner et al 2019 - might
