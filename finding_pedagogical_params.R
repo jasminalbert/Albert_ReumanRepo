@@ -1,3 +1,4 @@
+source("./makenoise.R")
 source("./Figure3.R")
 D <- lapply(res, function(X){(X$D)})
 D1 <- unlist(D)

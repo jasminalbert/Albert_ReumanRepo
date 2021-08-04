@@ -581,7 +581,7 @@ at the level of the estimators, as well
 
 Next, proceed as follows to get estimates of the terms in the decomposition (\ref{eq:decomp_overall_rjbsi}). 
 \begin{enumerate}
-\item Use $\epsilon_i^0=0$, as in (\ref{eq:decomp:baseline_j}), and this is the exact value.
+\item Use $\epsilon_j^0=0$, as in (\ref{eq:decomp:baseline_j}), and this is the exact value.
 \item Estimate $\olep_j^E$, following (\ref{eq:decomp:contrib_of_var_E_j}), as
 $\widehat{\olep_j^E}=\mean_k[\ln(1-\delta+\delta\exp(\sigma u^{(k)}-\sigma^2/2))]-\epsilon_j^0$, an estimate
 with standard error $\se \left( \widehat{\olep_j^E} \right) = \sd_k [\ln(1-\delta+\delta\exp(\sigma u^{(k)}-\sigma^2/2))]/\sqrt{M}$.

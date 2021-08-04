@@ -69,7 +69,7 @@ simsPlot <- function(mudif, delta, sigma, start=1, end=500){
   text(x=end, y=20, label=paste("mean time in coexistence =", comeanA), adj=1)
   text(x=end, y=15, label=paste("mean time not in coexistence =", dommeanA), adj=1)
   
-  title(xlab="time", ylab="population size", outer=T, line=-0.5)
+  title(xlab="time", ylab="population of species 1", outer=T, line=-0.5)
   title(sub=bquote(~ mu[1] - ~ mu[2] == .(mudif) ~sigma == .(sigma) ~delta == .(delta)), outer=TRUE, line=0.75)
 
  

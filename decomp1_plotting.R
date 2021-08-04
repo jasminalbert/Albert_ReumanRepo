@@ -2,7 +2,7 @@
 
 source("./decomposition_fxn.R")
 
-dePlot <- function(mudif, delta, legend=FALSE,...){
+dePlot1 <- function(mudif, delta, legend=FALSE,...){
   load("./noise_etc.RData")
   store <- vector(mode='list', length=7)
   sigma <- seq(0,7,1)
@@ -59,12 +59,12 @@ dePlot <- function(mudif, delta, legend=FALSE,...){
 #polygon(c(0.8,0.8,1.6,3.2,3.2),c(0,x0$DEC_[1],x1$DEC_[1], x2$DEC_[1],0)
 #,col="darkred", border=NA)
 #polygon(c(0.8,0.8,1.6,3.2,3.2),c(0,x0$Dnull[1],x1$Dnull[1], x2$Dnull[1],0)
-        #,col="darkblue", border=NA)
+#,col="darkblue", border=NA)
 #polygon(c(0.8,0.8,1.6,3.2,3.2),c(0,x0$DE[1],x1$DE[1], x2$DE[1],0)
-        #,col="darkorange1", border=NA)
+#,col="darkorange1", border=NA)
 #polygon(c(0.8,0.8,1.6,3.2,3.2),c(0,x0$DC[1],x1$DC[1], x2$DC[1],0)
-        #,col="gold", border=NA)
+#,col="gold", border=NA)
 #polygon(c(0.8,0.8,1.6,3.2,3.2),c(0,x0$DECsharp[1],x1$DECsharp[1], x2$DECsharp[1],0)
-        #,col="darkgreen", border=NA)
+#,col="darkgreen", border=NA)
 #lines(c(0.8,1.6,3.2), c(sum(x0[1,]), sum(x1[1,]), sum(x2[1,])), lwd=3)
 #abline(h=0, lty=2)
