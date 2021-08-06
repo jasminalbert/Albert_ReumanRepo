@@ -1,11 +1,11 @@
-source("./decomp2_plotting.R")
+#source("./decomp2_plotting.R")
 
 delta <- c(1, 0.8, 0.5)
 sigma <- c(2, 4 ,5,6)
 
 pdf("fig4_samexaxis50.pdf")
 
-par(mfrow=c(1,1), mar = c(1,2,1,1), oma=c(3,2,3,1))
+par(mfrow=c(1,1), mar = c(1,2,1,1), oma=c(3,2,3,3))
 
 layout(matrix(c(1,2,3,4,
                 5,9,10,11,	
@@ -40,13 +40,13 @@ m <- 1
 for (s in 1:length(sigma)){
   for (d in 1:length(delta)){
     res <- append(res,dePlot2(mudif_list[[m]],sigma[s], delta[d], xaxt="n"))
-    axis(1, labels=ifelse(m>1, yes=FALSE, no=TRUE), tick=TRUE)
+    axis(1, labels=ifelse(m%%3==0, yes=TRUE, no=FALSE), tick=TRUE)
     m <- m+1
   }
 }
 
-
-title(ylab=expression(sigma), outer=TRUE, line=-2.5, font.lab=2, cex.lab=1.5)
+title(ylab="contribution to coexistence", outer=TRUE, line=-2.5, font.lab=2, cex.lab=1.5)
+title(ylab=expression(sigma), outer=TRUE, line=-30, font.lab=2, cex.lab=1.5)
 title(xlab=expression(delta), outer=TRUE, line=-48, font.lab=2, cex.lab=1.5)
 title(xlab=expression(mu[1]-mu[2]), outer=TRUE, line=1.4, cex.lab=1.3)
 
