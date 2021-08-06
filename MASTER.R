@@ -5,7 +5,7 @@ source("./makenoise.R") #make standard noise, change M here
 source("./parameters.R") #set parameters sigma, mu1, mu2, delta
 
 #FIGURE 1
-
+source("./Figure1.R")
 #FIGURE 2
 source("./Figure2.R")
 #FIGURE 3
