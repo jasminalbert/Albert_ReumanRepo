@@ -282,6 +282,7 @@ We address how ATA contributes to these components.
 We here examine mechanisms of coexistence that apply in models exhibiting solely temporal variation; spatial variation can be considered in future work.
 G2) To explore, using a simple model, the relative magnitudes of the contributions to coexistence that come
 from ATAs compared to other mechanisms.
+G3) To define the parameter space for which species can coexist in our model. 
 Our examination and separation of the role that ATA play in contributing to coexistence is a novel approach to the study of coexistence... 
 
 \section{Theory}\label{section:theory}
@@ -526,14 +527,19 @@ the contributions of other mechanisms.
 The simulation methods of \cite{Ellner_2019} were used to compute the components of (\ref{eq:full_decomp}).
 Computationally efficient means of carrying out these simulations, for the lottery model, are elaborated in 
 SI section \ref{SI-sect:efficient_computation}.
-
 %What's next
 %1) Write code implementing the above and making a figure - that'll be Fig. 3
 %2) Get Jasmin to work on Fig. 1 and Fig. 2 (Fig. 2 is largely done). Fig 1 should be facilitated by the work to make Fig. 3 in the previous item.
 %3) Decide what other results we will put in the main text and write a paragraph on methods for the other results (for both the main text
 %and sup mat results), put it above.
-%4) Think about this: Theoretical fig exploring why ATA matters to r_1\1 for the lottery model and hopefully more gernerally - try to get
+%4) Think about this: Theoretical fig exploring why , ATA matters to r_1\1 for the lottery model and hopefully more gernerally - try to get
 %at the intuition here. See if you can edge to more generality here, or not?
+
+To further explore the model and acheive G3 from the introduction i.e., exploring the parameter space for which coexistence is possible, we then plotted the invasion growth rate, $r_{i/i}-q_{12}r_{i/j}$ and the invasion growth rate [IGR] without ATA contributribution  $r_{i/i}-q_{12}r_{i/j} - \Delta_i^{[EC]}$ against the difference between species, $\mu_1-\mu_2$, 
+
+Because $\mu$ is the only unique species parameter and the difference, $\mu_1-\mu_2$, is the only difference between the two species in this model, we henceforward call thus difference the trait difference between species. Letting the trait $\mu$ vary within a one dimensional space, this space is then a trait space, and the difference, $\mu_1-\mu_2$, is then a subset of that trait space. We then define $\psi_{ATA}$ to be the subset of trait space that allows a postive IGR when ATA is included and $\psi_{~ATA}$ to be the subset of trait space that allows a postive IGR when ATA is not included. We then use symmetric difference $\psi_{ATA} \Delta \psi_{~ATA}$ to make the following conslusions. If the length of $\psi_{ATA} > the length of $\psi_{~ATA}$ the $\psi_{ATA} \Delta \psi_{~ATA}$ consitutes ATA rescue and the degree of species trait difference that allows ATA rescue to act, hence, the ATA rescue trait space. If the length of $\psi_{ATA} < the length of $\psi_{~ATA}$ the $\psi_{ATA} \Delta \psi_{~ATA}$ consitutes ATA exclusion and the degree of species trait difference that allows ATA exclusion to act, hence, the ATA exclusion trait space.
+
+In order to find the ATA rescue trait space and ATA exclusion trait space, we plotted the trait space subset $\mu_1-\mu_2$ against IGR and IGR without ATA for different values of $\sigma$ and $\delta$, the shared, non-unique species parameters. We selected $\delta=0.5, 0.8, 1.0$ and $\sigma=2.0,4.0,5.0, 6.0$. The spaces in between the lines where they intersect the x-axis at y=0, indicate either an ATA rescue trait space or an ATA exclusion trait space. If the line plotting IGR is to the left of the line plotting IGR without ATA, then this space is an ATA rescue trait space. If the line plotting IGR is to the right of the line plotting IGR without ATA, then this space is an ATA exclusion trait space. 
 
 %Ideas while driving to pick up Max:
 %1) I think in every case for the lottery model, making tail associations asymmetric reduced the potential for coexistence - I think that's what Jasmin told me, but if we present it we should make sure I'm not remembering wrong, of course. Is that generally the case, for other models? What are the features of a model, or of the growth rate of the invader, that make it so that more asymmetric tail associations means reduced coexistence? Does this have implications for climate change?
