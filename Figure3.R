@@ -53,7 +53,7 @@ legend("topright",
        legend=c(expression(Delta[0]), expression(Delta[E]),
                 expression(Delta[C]), expression(Delta[("E#C")]),
                 expression(Delta["[EC]"]), expression(Delta["[E||C]"])
-                ,expression(r)), 
+                ,expression(IGR)), 
        col = c("black","black","black","black","blue","red","orange"),
        lty = c(1,2,4,3,1,1,1), bty="n", cex=1.5, inset=c(0,0))
 
