@@ -12,7 +12,7 @@ col2rgb("darkblue")
 blue <- rgb(0,0,0.545,0.3)
 
 pdf("fig1.pdf")
-png("fig1.png", height=560, width=1600,pointsize=22)
+#png("fig1.png", height=560, width=1600,pointsize=22)
 par(mar=c(0.5,0.5,0,0), oma=c(5,5,2,2))
 layout(matrix(c(4,10,10,6,11,11,8,12,
                 1,5 ,13,2,7 ,14,3,9 ),nrow=2,byrow=T),
