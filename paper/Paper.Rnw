@@ -281,10 +281,18 @@ The MTC decomposes a measure of coexistence into components due to each of sever
 We address how ATA contributes to these components. 
 We here examine mechanisms of coexistence that apply in models exhibiting solely temporal variation; spatial variation can be considered in future work.
 G2) To explore, using a simple model, the relative magnitudes of the contributions to coexistence that come
-from ATAs compared to other mechanisms.
-G3) To identify and define the ATA rescue or ATA exlusion set of trait space range for which species will coexist or become competitively excluded in our model. 
-G4) To provide an empirical example and highlight the role that ATA plays in coexistence and its mechanistic decomposition in a real system.
-Our examination and separation of the role that ATA play in contributing to coexistence is a novel approach to the study of coexistence... 
+from ATAs compared to other mechanisms. This is to help illuminate whether ATA contributions to coexistence 
+are likely to be negligible or meaningfully large. 
+%G3) To identify and define the ATA rescue or ATA exlusion set of trait space range for which species will coexist or become competitively excluded in our model. 
+%***DAN: This is a good additional goal. We will either have to have already defined the "ATA rescue and ATA exlusion sets of trait space"
+%or else readers won't understand this as it was written, above (now commented). These are complex concepts, so it may be better to 
+%save formal definitions for later and reword this. Here's a try at rewording: 
+G3) To explore, using our simple model, the likelihood that species can coexist with
+ATAs but not without, or vice versa. This is to begin to illuminate whether ATA contributions biodiversity maintenance 
+may be negligible or meaninfully large.
+G4) To provide an empirical example of species coexistence, and to highlight the role ATAs plays in coexistence for this example.
+Overall, our study presents a new mechanism of coexistence and biodiversity maintenance which may be influenced by climatic changes, 
+and a means for beginning to understand its importance for real systems.
 
 \section{Theory}\label{section:theory}
 
@@ -317,7 +325,7 @@ different mechanisms to species coexistence. But we show below
 that, for purely temporal variation, only one mechanism relates to tail associations: storage effects. 
 We now define storage effects for a general two species model, and specifically 
 for the lottery model, using an approach and notation
-similar to those of \cite{Ellner_2016} and \cite{Ellner_2019}; see those papers for additional details.  
+similar to those of \cite{Ellner_2016;Ellner_2019}; see those papers for additional details.  
 
 For a general model, it is assumed that the growth rate $r_i(t)=\ln(N_i(t+1)/N_i(t))$ 
 of species $i$ can be written as an increasing function of
@@ -340,7 +348,7 @@ Specifically, storage effects for species $i$ are
 \begin{equation}
 \Delta_i^{(EC)} = (\olr_{i\bs i} - q_{ij} \olr_{j \bs i})-(\olrs_{i \bs i}-q_{ij} \olrs_{j \bs i}),\label{eq:storage_effects_gen}
 \end{equation}
-where: $\olr_{i \bs i}$ refers to the mean ``invasion growth rate'' of species $i$, that is, the mean growth rate of 
+where: $\olr_{i \bs i}$ refers to the mean ``invasion growth rate'' (IGR) of species $i$, that is, the mean growth rate of 
 species $i$ when it is at negligible abundance and species $j$ (the other species) is at stochastic steady state;
 $\olr_{j \bs i}$ refers to the mean steady-state 
 growth rate of species $j$ when species $i$ is absent or at negligible abundance (this is $0$, \emph{a priori});
@@ -386,7 +394,7 @@ to very accurately approximate $\olr_{i \bs i}$, $\olrs_{i \bs i}$,
 and $\olrs_{j \bs i}$, and then plugging them and $q_{ij}$ into (\ref{eq:storage_effects_gen}).
 
 We now specify how to decompose storage effects into
-contributions due to asymmetric tail associations and due
+contributions due to ATAs and due
 to $EC$ correlation \emph{per se}. 
 Storage effects for species $i$ were computed by comparing
 differences between invader and resident mean growth rates for the original model and for a 
@@ -408,16 +416,12 @@ and $(E_j^\nat,C_{j \bs i}^\nat)$, and we consider the decomposition
 &= \Delta_i^{[E \nat C]} + \Delta_i^{[EC]}.\label{eq:storage_effects_further}
 \end{align}
 The term $\Delta_i^{[E \nat C]}$ is the component of storage effects due to 
-asymmetries of tail association between $E_i$ and $C_{i \bs i}$, and between $E_j$ and $C_{j \bs i}$.
+ATAs between $E_i$ and $C_{i \bs i}$, and between $E_j$ and $C_{j \bs i}$.
 The notation $\nat$ was chosen because this new symbol is part of the symbol $\shp$ (i.e., two of its four lines), 
-corresponding to the removal of part of the relationship between $E$ and $C$ components (namely, ATA).
+corresponding to the removal of part of the relationship between $E$ and $C$ components (namely, ATAs).
 The new symbol should correspondingly be pronounced ``partial sharp''.
 The term $\Delta_i^{[EC]}$ is the component of storage effects due to $EC$ correlation \emph{per se}, remaining after 
-having removed the effects of asymmetric tail associations.
-%The brackets in the superscripts of $\Delta_i^{[E \nat C]}$ and $\Delta_i^{[EC]}$ are intended to indicate that 
-%this is a decompostion of storage effects, which were denoted by \cite{Ellner_2019} using a superscript $(EC)$,
-%i.e., $\Delta_i^{(EC)}$, to indicate that storage effects are, in turn, part of a decomposition of a difference between invader and
-%resident growth rates (see below).  
+having removed the effects of ATAs.
 The brackets in the superscripts of $\Delta_i^{[E \nat C]}$ and $\Delta_i^{[EC]}$ are intended to indicate that 
 (\ref{eq:storage_effects_further}) is a decompostion within a decomposition, i.e., (\ref{eq:storage_effects_further}) is a decomposition
 of storage effects, which are themselves a term within the decomposition provided by the MTC \citep{Ellner_2019} -- see below for details.
@@ -479,34 +483,19 @@ $\Delta_i^{(E\shp C)}$ is a contribution to coexistence of having simultaneous v
 of covariation in these quantities; and
 $\Delta_i^{(EC)}$ is a contribution to coexistence of $EC$ covariation itself -- storage effects. 
 Only storage effects involve $EC$ covariation,
-so the only mechanism of coexistence influenced by ATA is storage effects. Combining our decomposition 
+so the only mechanism of coexistence influenced by ATA between $E$ and $C$ is storage effects. Combining our decomposition 
 (\ref{eq:storage_effects_further}) with the decomposition (\ref{eq:previous_decomp}) of \cite{Ellner_2019} gives 
 \begin{equation}
 \olr_{i \bs i} -q_{ij}\olr_{j \bs i}=\Delta_i^0+\Delta_i^E+\Delta_i^C+\Delta_i^{(E\shp C)}+\Delta_i^{[E \nat C]} + \Delta_i^{[EC]},\label{eq:full_decomp}
 \end{equation}
-which is the extension of the MTC which was goal G1 of the Introduction.
+which is the extension of the MTC which was goal G1 of the Introduction. To pursue goal G2, below, will quantify
+the magnitude of the new ATA term in this expression, $\Delta_i^{[E \nat C]}$, relative to the magnitudes of the other terms. 
 
 \section{Methods}\label{section:methods}
 
-%Goals, for reference:
-%G1) To augment the modern theory of coexistence (MTC) to show how asymmetric tail association (ATA)
-%plays a role. The MTC decomposes a measure of coexistence into components due to each of several mechanisms. 
-%We address how ATA contributes to these components. We here examine mechanisms of coexistence that apply in 
-%models exhibiting solely temporal variation; spatial variation can be considered in future work.
-%G2) To explore, using a simple model, the relative magnitudes of the contributions to coexistence that come from ATAs compared to other mechanisms
-%G3) To define the ATA rescue or ATA exlusion subset of trait space for which species will coexist or become competitively excluded in our model. 
-%G4) To provide an empirical example to highlight the role that ATA plays in coexistence and its mechanistic decomposition.
-%from ATA compared to other mechanisms.
-
-%Figs, for reference:
-%1) pedagog fig showing what tail assoc is, also later used for introing the noise we use, in methods
-%2) pedgog fig showing a simple set of sims, somehow, the only difference being ATA, showing good things 
-%happening in one panel and bad in another - cited in Intro, only serves to prove to people that ATA matters for 
-%coexistence, so they keep reading
-%3) Fig with a grid of panels, each panel plots against sigma, and the grid controls a few values of 
-%delta and a few of mu1-mu1. Plotted is all the components of coexistence, for comparison.
-%4) Theoretical fig exploring why ATA matters to r_1\1 for the lottery model and hopefully more gernerally - try to get
-%at the intuition here. See if you can edge to more generality here, or not?
+%G2) To explore, using a simple model, the relative magnitudes of the contributions to coexistence that come
+%from ATAs compared to other mechanisms. This is to help illuminate whether ATA contributions to coexistence 
+%are likely to be negligible or meaningfully large. 
 
 Left- or right-tail associated noise $(b_1,b_2)$, with $b_i$ normally distributed with mean $\mu_i$ and standard deviation 
 $\sigma$, was generated as pictured in Fig. \ref{fig:noise}, with details in SI section \ref{SI-sect:noise}.
@@ -525,29 +514,55 @@ and $\mu_1-\mu_2=0.0,-0.3,-0.6,-0.8$,
 we plotted all the components of (\ref{eq:full_decomp}) against $\sigma$. Relative importance of contributions was judged from the 
 plots to assess whether and to what extent ATA effects on coexistence were meaningfully large for the lottery model, compared to 
 the contributions of other mechanisms.
-
 The simulation methods of \cite{Ellner_2019} were used to compute the components of (\ref{eq:full_decomp}).
 Computationally efficient means of carrying out these simulations, for the lottery model, are elaborated in 
 SI section \ref{SI-sect:efficient_computation}.
-%What's next
-%1) Write code implementing the above and making a figure - that'll be Fig. 3
-%2) Get Jasmin to work on Fig. 1 and Fig. 2 (Fig. 2 is largely done). Fig 1 should be facilitated by the work to make Fig. 3 in the previous item.
-%3) Decide what other results we will put in the main text and write a paragraph on methods for the other results (for both the main text
-%and sup mat results), put it above.
-%4) Think about this: Theoretical fig exploring why , ATA matters to r_1\1 for the lottery model and hopefully more gernerally - try to get
-%at the intuition here. See if you can edge to more generality here, or not?
 
-To further explore the model and acheive G3 from the introduction i.e., to identify and define the ATA rescue or ATA exlusion set of trait space range for which species will coexist or become competitively excluded in our model, we plotted the invasion growth rate [IGR], $\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$, and the IGR without ATA contributribution, $\olr_{i \bs i} -q_{ij}\olr_{j \bs i}- \Delta_i^{[E \nat C]}$, against the difference between species, $\mu_1-\mu_2$. The same mathematical simplifications described above hold, such that $\mu_1$ and $\mu_2$ are the only ways that the species differ and computations for coexistence in the lottery model only depend on the difference, $\mu_1-\mu_2$. We henceforward call this difference the species trait difference and sets of multiple $\mu_1-\mu_2$ are sets of trait space range. Letting the trait $\mu$ vary within a one dimensional space, this space is then a trait space. Letting there be two points $\mu_1$ and $\mu_2$ within that trait space, then the set of points between $\mu_1$ and $\mu_2$ is a subset of trait space, and the difference, $\mu_1-\mu_2$, is the range of the subset of trait space. We then define $\psi_{ATA}$ to be the subset of trait space bound by a $\mu_1$ and $\mu_2$ whose range defines the maximal species trait difference that allows a postive IGR when ATA is included (coexistence with ATA) and $\psi_{\sim ATA}$ to be the subset of trait space bound by a $\mu_1$ and $\mu_2$ whose range defines the maximal species trait difference that allows a postive IGR when ATA is not included (coexistence without ATA). We then consider the difference between the range of $\psi_{ATA}$ and the range of $\psi_{\sim ATA}$ to make the following conclusions. 
-If the range of $\psi_{ATA}$ > range of $\psi_{\sim ATA}$ then the continuous set of numbers in between the range of $\psi_{ATA}$ and the range of $\psi_{\sim ATA}$ defines the bounds of extensions to $\psi_{\sim ATA}$ that result coexistence with ATA but failure to coexist without ATA; hence ATA rescue. 
-If the range of $\psi_{ATA}$ < the range of $\psi_{\sim ATA}$ then the continuous set of numbers in between the range of $\psi_{ATA}$ and the range of $\psi_{\sim ATA}$ defines the bounds of extensions to $\psi_{ATA}$ that result coexistence without ATA but failure to coexist with ATA; hence ATA exclusion. 
-In other words, ATA rescue is a subset of all $\mu_1-\mu_2$ that results in coexistence with ATA but failure to coexist without ATA, and ATA exclusion is a subset of all $\mu_1-\mu_2$ that results in coexistence without ATA, but failure to coexist with ATA. We highlighted and color coded these areas in our plots. We made the plots for values of $\delta=0.5, 0.8, 1.0$ and $\sigma=2.0,4.0,5.0, 6.0$. The spaces in between the lines where they intersect the x-axis at y=0, indicate either an ATA rescue trait space or an ATA exclusion trait space. If the line plotting IGR is to the left of the line plotting IGR without ATA, then this space is an ATA rescue trait space. If the line plotting IGR is to the right of the line plotting IGR without ATA, then this space is an ATA exclusion trait space. 
+%G3) To explore, using our simple model, the likelihood that species can coexist with
+%ATAs but not without, or vice versa. This is to begin to illuminate whether ATA contributions biodiversity maintenance 
+%may be negligible or meaninfully large.
+
+To acheive goal G3 from the Introduction i.e., to explore, using the lottery model, the likelihood that species can coexist with
+ATAs but not without, or vice versa, we plotted the IGR $\olr_{i \bs i}=\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$, 
+as well as the
+IGR minus its ATA contribution, $\olr_{i \bs i} -\Delta_i^{[E \nat C]}$. 
+For fixed values of $\sigma$ and $\delta$, we were interested in the values of $\mu_1-\mu_2$ for which one of these
+quantities is positive and the other is negative; this set of value characterizes the species which can coexist
+with ATAs, but not without, or vice versa. The one dimensional space of values $\mu$ is a species trait space,
+and $\mu_1$ and $\mu_2$ can be regarded as two points in it. But we instead define the ``trait-difference space'' of values $\mu_1-\mu_2$. 
+Points of the trait-difference space characterize possible combinations of traits of the two competing species in our model. For fixed values of 
+$\delta$ and $\sigma$, we defined the subset, $\psi_{\text{ATA}}(\delta,\sigma)$, of trait-difference space to be the set of 
+values $\mu_1 - \mu_2$ for which the the IGR, $\olr_{i \bs i}$, is positive. This 
+is the subspace for which the two species in the lottery model coexist in the presence of ATAs.
+We also defined the subset, $\psi_{\lnot\text{ATA}}(\delta,\sigma)$, of trait-difference space to be the set of values
+$\mu_1 - \mu_2$ for which the metric $\olr_{i \bs i} -\Delta_i^{[E \nat C]}$ is positive.
+This is the subspace for which the two species in the lottery model coexist in the absence of 
+ATAs. The symbol $\lnot$ denotes logical negation, so $\lnot \text{ATA}$ is intended to indicate the
+absence of ATAs. We defined the ``ATA rescue space" associated with given values of $\delta$ and $\sigma$ to be the 
+set difference $\psi_{\text{ATA}}(\delta,\sigma) \setminus \psi_{\lnot\text{ATA}}(\delta,\sigma)$, i.e., the
+values $\mu_1 - \mu_2$ for which model species coexist in the presence of ATAs, but not in the absence of ATAs. 
+Similarly, we define ``ATA exclusion space'' to be the set difference 
+$\psi_{\lnot\text{ATA}}(\delta,\sigma) \setminus \psi_{\text{ATA}}(\delta,\sigma)$,
+i.e., $\mu_1 - \mu_2$ for which coexistence occurs in the absence, but not the presence, of ATAs.
+On plots of $\olr_{i \bs i}$ and $\olr_{i \bs i} -\Delta_i^{[E \nat C]}$
+against $\mu_1 - \mu_2$, we highlighted the ATA rescue and exclusion spaces. We plotted against
+$\mu_1 - \mu_2$ for all combinations of $\delta=0.5, 0.8, 1.0$ and $\sigma=2.0,4.0,5.0, 6.0$. 
+
+%***DAN: Jasmin, I edited the below to get the above. Kept the below so I could add one comment to it, and in case it is needed again in
+%the near future
+%to identify and define the ATA rescue or ATA exlusion set of trait space range for which species will coexist or become competitively excluded in our model, we plotted the invasion growth rate [IGR], 
+%***DAN: Note that this is not the IGR. The IGR is just r_{1\1}. So I abandoned this terminology and used "coexistence metric" instead
+%$\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$, and the IGR without ATA contributribution, $\olr_{i \bs i} -q_{ij}\olr_{j \bs i}- \Delta_i^{[E \nat C]}$, against the difference between species, $\mu_1-\mu_2$. The same mathematical simplifications described above hold, such that $\mu_1$ and $\mu_2$ are the only ways that the species differ and computations for coexistence in the lottery model only depend on the difference, $\mu_1-\mu_2$. We henceforward call this difference the species trait difference and sets of multiple $\mu_1-\mu_2$ are sets of trait space range. Letting the trait $\mu$ vary within a one dimensional space, this space is then a trait space. Letting there be two points $\mu_1$ and $\mu_2$ within that trait space, then the set of points between $\mu_1$ and $\mu_2$ is a subset of trait space, and the difference, $\mu_1-\mu_2$, is the range of the subset of trait space. We then define $\psi_{ATA}$ to be the subset of trait space bound by a $\mu_1$ and $\mu_2$ whose range defines the maximal species trait difference that allows a postive IGR when ATA is included (coexistence with ATA) and $\psi_{\sim ATA}$ to be the subset of trait space bound by a $\mu_1$ and $\mu_2$ whose range defines the maximal species trait difference that allows a postive IGR when ATA is not included (coexistence without ATA). We then consider the difference between the range of $\psi_{ATA}$ and the range of $\psi_{\sim ATA}$ to make the following conclusions. 
+%If the range of $\psi_{ATA}$ > range of $\psi_{\sim ATA}$ then the continuous set of numbers in between the range of $\psi_{ATA}$ and the range of $\psi_{\sim ATA}$ defines the bounds of extensions to $\psi_{\sim ATA}$ that result coexistence with ATA but failure to coexist without ATA; hence ATA rescue. 
+%If the range of $\psi_{ATA}$ < the range of $\psi_{\sim ATA}$ then the continuous set of numbers in between the range of $\psi_{ATA}$ and the range of $\psi_{\sim ATA}$ defines the bounds of extensions to $\psi_{ATA}$ that result coexistence without ATA but failure to coexist with ATA; hence ATA exclusion. 
+%In other words, ATA rescue is a subset of all $\mu_1-\mu_2$ that results in coexistence with ATA but failure to coexist without ATA, and ATA exclusion is a subset of all $\mu_1-\mu_2$ that results in coexistence without ATA, but failure to coexist with ATA. We highlighted and color coded these areas in our plots. We made the plots for values of $\delta=0.5, 0.8, 1.0$ and $\sigma=2.0,4.0,5.0, 6.0$. 
+
+%***DAN: Some version of the below text ought to go in the figure caption, do that later, Dan
+%The spaces in between the lines where they intersect the x-axis at y=0, indicate either an ATA rescue trait space or an ATA exclusion trait space. If the line plotting IGR is to the left of the line plotting IGR without ATA, then this space is an ATA rescue trait space. If the line plotting IGR is to the right of the line plotting IGR without ATA, then this space is an ATA exclusion trait space. 
 
 %Ideas while driving to pick up Max:
-%1) I think in every case for the lottery model, making tail associations asymmetric reduced the potential for coexistence - I think that's what Jasmin told me, but if we present it we should make sure I'm not remembering wrong, of course. Is that generally the case, for other models? What are the features of a model, or of the growth rate of the invader, that make it so that more asymmetric tail associations means reduced coexistence? Does this have implications for climate change?
-%2) In this paper with Jasmin you need to cite the two papers you just got from the professor at University of Massachusetts, Lowell. I mean the papers about changes in the special extent of heat waves: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020GL087097 and https://iopscience.iop.org/article/10.1088/1748-9326/ab4b41
-%3) Discussion content: We should (in future) study tail associations between environmental variables, and how these might be changing. However, more than that, the variables E in the lottery model are not actual environmental variables but rather are the effects of environmental variables on the species of the model. Probably real environmental variables are actually related to vital rates in a non-linear and probably often threshold-like way. Threshold relationships can produce tail association, as we have showed elsewhere. Changes in the means of true environmental variables may change where those distributions of environmental variables are compared to thresholds, which may change the nature of tail associations between the effects of those environmental variables.
-
-
+%1) In this paper with Jasmin you need to cite the two papers you just got from the professor at University of Massachusetts, Lowell. I mean the papers about changes in the special extent of heat waves: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020GL087097 and https://iopscience.iop.org/article/10.1088/1748-9326/ab4b41
+%2) Discussion content: We should (in future) study tail associations between environmental variables, and how these might be changing. However, more than that, the variables E in the lottery model are not actual environmental variables but rather are the effects of environmental variables on the species of the model. Probably real environmental variables are actually related to vital rates in a non-linear and probably often threshold-like way. Threshold relationships can produce tail association, as we showed elsewhere. Changes in the means of true environmental variables may change where those distributions of environmental variables are compared to thresholds, which may change the nature of tail associations between the effects of those environmental variables.
 
 \section{Results}\label{section:results}
 %from methods : Relative importance of contributions was judged from the plots to assess whether and to what extent ATA effects on coexistence were meaningfully large for the lottery model, compared to the contributions of other mechanisms.
@@ -610,7 +625,7 @@ to be occurring, might. Should also mention this second point in the Discussion 
 \newpage
 
 \begin{figure}
-\includegraphics[width=\textwidth]{"../results_figs/fig1.png"}
+%\includegraphics[width=\textwidth]{"../results_figs/fig1.png"}
 \caption{
 %Figure displaying the noise. Three panels, left-, symmetric, and right-tail assoc noise. Use standard normal marginals.Explain in caption that alternatives for $(b_1,b_2)$ are obtained by multipling by $\sigma$ and then adding $(\mu_1,\mu_2)$.Jasmin to make and insert the figure here using the includegraphics command, and then draft a caption along the lines described here.
 Simple example of bivariate noise with standard normal marginals. A) is left-tail associated, B) is symmetric, and C) is right-tail associated. All three cases have the same Pearson correlation up to sampling variation, yet show different symmetry of tail associaton. Asymmetrically tail associated cases are perfectly correlated in the lower (A)  or upper (C) halfs of the distribution. The variables $(b_1,b_2)$ are transformed by multipling by $\sigma$ and then adding $(\mu_1,\mu_2)$.
@@ -618,22 +633,38 @@ Simple example of bivariate noise with standard normal marginals. A) is left-tai
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\textwidth]{"../results_figs/figure2.PNG"}
+%\includegraphics[width=\textwidth]{"../results_figs/figure2.PNG"}
 \caption{%Pedagogical figure somehow displaying the different outcomes of competition in ATA and symmetric cases for an example. This will be cited from the Intro, so needs to be understandable to someone who does not know any of the ideas we introduce yet. So in particular you cannot use IGR as your metric of coexistence, you need to use something more intuitive. You will pick model parameter values and do two sims, one with ATA noise and one with symmtric noise, and show different outcomes. We should discuss and possibly take several iterations to get this figure right since it's a pedagogically important figure - if the reader is not convinced in the Intro that we are studying something that makes a difference, they are not going to slog through the Theory section, which is inevitably going to be tough going for many readers.
 Populations inlfuenced by asymmetric tail association recover from low densities less often/ spend more time on average under one-species dominance. The top panel, A, is a simulation over time of a population within a two species lottery model whose environmental response and competition is influenced by symmetric bivariate noise. The bottom panel, B, is like A, but the population is influenced by bivariate noise with left-tailed asymmetric association. Both simulations were ran for total time of 100000. Noticeable population density was defined at a threshold of 0.95 of total community space. Periods of noticable coexistence are marked in grey. While the population in B had longer mean periods of coexistence, it had much longer mean periods of one-species dominace. The population in B also recovered from low densities less often and thus has a lower ability to recover when rare and thus that community has lower coexistence.     
 \label{fig:pedagog}}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\textwidth]{"../results_figs/fig3_legend.pdf"}
+%\includegraphics[width=\textwidth]{"../results_figs/fig3_legend.pdf"}
 \caption{The contribution of ATA is non-negligible. All panels show the breakdown of contributing mechanisms of coexistence in accordance to \cite{Ellner_2019} new decomposition method, against increasing $\sigma$. Each panel is defined by a unique set of parameters $\mu_1-\mu_2$ and $\delta$. In most cases, the contribution of ATA (red) is negatively; however when $\delta=1$, ATA contribution is positive. The contribution of ATA is non-negligible and in special cases result in a sign change of IGR (orange). 
 \label{fig:fig3}}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\textwidth]{"../results_figs/fig4_samexaxis50legend.pdf"}
-\caption{ATA rescue and ATA exclusion can be defined within subsets species trait difference spaces. IGR (ATA included; yellow) and IGR without ATA (violet) are plotted against species trait difference $\mu_1-\mu_2$ in order to demonstrait ATA rescue and ATA exclusion. The red line, $\Delta_i^{[E \nat C]}$, is the difference between the two IGR's. Each panel is defined by a unique set of parameters $\sigma$ and $\delta$. ATA rescue is marked by regions in the panels where IGR wihtout ATA contribution is less than IGR at zero, denoted by regions of dotted yellow. ATA exclusion is marked by regions where IGR without ATA contribution is greater than IGR at zero, denoted by regions of dotted pink. ATA rescue is only seen in cases where $\delta=1$ (left column). All other cases shown here have subsets of species trait difference space where ATA exclusion occurs. Despite panels in the top row not containing the color coded region, these cases still contain ATA exlusion spaces; however, the space is too small to appropriately denote while still maintaining consistent x-axes across all panels. For $\delta<1$, ATA exclusion space increases down rows as $\sigma$ increases. ATA exclusion space also seems to increase across columns as $\delta$ decreases; however this trend is broken in the last row, indicating a more compex relationship between ATA exclusion space, $\delta$, and $\sigma$.  
-\label{fig:fig4}}
+%\includegraphics[width=\textwidth]{"../results_figs/fig4_samexaxis50legend.pdf"}
+\caption{ATA rescue and ATA exclusion can be defined within subsets species trait difference spaces. 
+IGR (ATA included; yellow) and IGR without ATA (violet) are plotted against species trait difference 
+$\mu_1-\mu_2$ in order to demonstrate ATA rescue and ATA exclusion. The red line, $\Delta_i^{[E || C]}$, 
+%***DAN: I would normally have used \nat instead of ||, above, but \nat seems to not work in figure captions for some reason,
+%it crashes the latex on my machine at least. If we can fix this, we should, but it's not the end of the world if we can't.
+%Jasmin, could you compile on your machine when || above was \nat?
+is the difference between the two IGR's. Each panel is defined by a unique set of parameters $\sigma$ 
+and $\delta$. ATA rescue is marked by regions in the panels where IGR wihtout ATA contribution is less 
+than IGR at zero, denoted by regions of dotted yellow. ATA exclusion is marked by regions where IGR 
+without ATA contribution is greater than IGR at zero, denoted by regions of dotted pink. ATA rescue 
+is only seen in cases where $\delta=1$ (left column). All other cases shown here have subsets of 
+species trait difference space where ATA exclusion occurs. Despite panels in the top row not 
+containing the color coded region, these cases still contain ATA exlusion spaces; however, the space 
+is too small to appropriately denote while still maintaining consistent x-axes across all panels. 
+For $\delta<1$, ATA exclusion space increases down rows as $\sigma$ increases. ATA exclusion space also 
+seems to increase across columns as $\delta$ decreases; however this trend is broken in the last row, 
+indicating a more compex relationship between ATA exclusion space, $\delta$, and $\sigma$.   
+}\label{fig:fig4}
 \end{figure}
 
 
