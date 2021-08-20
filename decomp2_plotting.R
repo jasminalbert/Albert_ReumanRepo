@@ -9,7 +9,7 @@ source("./decomposition_fxn.R")
 #sigma  an integer value of sigma
 #delta  an integer value of delta
 
-dePlot2 <- function(mudif = seq(0, -0.8, -0.01), sigma, delta, legend=FALSE,...){
+dePlot2 <- function(mudif = seq(0, -0.8, -0.01), sigma, delta, qij=FALSE, legend=FALSE,...){
   load("./noise_etc.RData")
 
   store <- vector(mode='list', length=length(mudif))
@@ -26,7 +26,9 @@ dePlot2 <- function(mudif = seq(0, -0.8, -0.01), sigma, delta, legend=FALSE,...)
   for (i in 1:length(mudif)){
     if(i>=2){
       dat <- cbind(store[[i-1]]$D, store[[i]]$D)
-      
+      if(qij==TRUE){
+        dat <- cbind(store[[i-1]]$Dq, store[[i]]$Dq)
+      }
       lines(c(mudif[i-1], mudif[i]), dat[6,1:2], col="red")#[E||C]
       lines(c(mudif[i-1], mudif[i]), dat[7,1:2], col="orange",lwd=2)#r
       lines(c(mudif[i-1], mudif[i]), dat[8,1:2], col="navy", lty=5)
