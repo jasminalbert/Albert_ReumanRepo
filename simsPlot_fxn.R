@@ -61,13 +61,13 @@ simsPlot <- function(mudif, delta, sigma, start=1, end=500){
     
   co.pPlot(copS, popS, start, end)
   title(main="without ATA", line=0)   
-  text(x=end, y=20, label=paste("mean time in coexistence =", comeanS), adj=1)
-  text(x=end, y=15, label=paste("mean time not in coexistence =", dommeanS), adj=1)
+  text(x=end, y=20, label=paste("mean time in noticeable coexistence =", comeanS), adj=1)
+  text(x=end, y=15, label=paste("mean time in one species dominance =", dommeanS), adj=1)
   
   co.pPlot(copA, popA, start, end)
   title(main="with ATA", line=0)
-  text(x=end, y=20, label=paste("mean time in coexistence =", comeanA), adj=1)
-  text(x=end, y=15, label=paste("mean time not in coexistence =", dommeanA), adj=1)
+  text(x=end, y=20, label=paste("mean time in noticeable coexistence =", comeanA), adj=1)
+  text(x=end, y=15, label=paste("mean time in one species dominance =", dommeanA), adj=1)
   
   title(xlab="time", ylab="population of species 1", outer=T, line=-0.5)
   title(sub=bquote(~ mu[1] - ~ mu[2] == .(mudif) ~sigma == .(sigma) ~delta == .(delta)), outer=TRUE, line=0.75)
