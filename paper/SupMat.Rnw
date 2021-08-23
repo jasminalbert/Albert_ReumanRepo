@@ -530,7 +530,7 @@ We here elaborate how the terms in the decompositions (\ref{eq:decomp_overall_IG
 and (\ref{eq:decomp_overall_delta}) are computed rapidly, for the lottery model.
 
 First, for a large integer $M$ (we used $M=$),
-%***DAN: fill in the value, 1000000 if you can swing it
+%***DAN: Jasmin, please fill in the value, 1000000 or bigger if you can swing it
 carry out the following steps once.
 \begin{enumerate}
 \item Generate $M$ independent points $u^{(k)}$, $k=1,\ldots,M$, from a standard normal distribution.

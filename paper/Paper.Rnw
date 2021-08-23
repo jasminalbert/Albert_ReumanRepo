@@ -523,10 +523,11 @@ SI section \ref{SI-sect:efficient_computation}.
 %may be negligible or meaninfully large.
 
 To acheive goal G3 from the Introduction i.e., to explore, using the lottery model, the likelihood that species can coexist with
-ATAs but not without, or vice versa, we plotted the IGR $\olr_{i \bs i}=\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$, 
+ATAs but not without, or vice versa, we plotted the IGR, $\olr_{i \bs i}=\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$, 
 as well as the
 IGR minus its ATA contribution, $\olr_{i \bs i} -\Delta_i^{[E \nat C]}$. 
-For fixed values of $\sigma$ and $\delta$, we were interested in the values of $\mu_1-\mu_2$ for which one of these
+For fixed values of $\sigma$ and $\delta$ and for left-tail associated noise, 
+we were interested in the values of $\mu_1-\mu_2$ for which one of these
 quantities is positive and the other is negative; this set of value characterizes the species which can coexist
 with ATAs, but not without, or vice versa. The one dimensional space of values $\mu$ is a species trait space,
 and $\mu_1$ and $\mu_2$ can be regarded as two points in it. But we instead define the ``trait-difference space'' of values $\mu_1-\mu_2$. 
@@ -543,7 +544,7 @@ set difference $\psi_{\text{ATA}}(\delta,\sigma) \setminus \psi_{\lnot\text{ATA}
 values $\mu_1 - \mu_2$ for which model species coexist in the presence of ATAs, but not in the absence of ATAs. 
 Similarly, we define ``ATA exclusion space'' to be the set difference 
 $\psi_{\lnot\text{ATA}}(\delta,\sigma) \setminus \psi_{\text{ATA}}(\delta,\sigma)$,
-i.e., $\mu_1 - \mu_2$ for which coexistence occurs in the absence, but not the presence, of ATAs.
+i.e., $\mu_1 - \mu_2$ values for which coexistence occurs in the absence, but not the presence, of ATAs.
 On plots of $\olr_{i \bs i}$ and $\olr_{i \bs i} -\Delta_i^{[E \nat C]}$
 against $\mu_1 - \mu_2$, we highlighted the ATA rescue and exclusion spaces. We plotted against
 $\mu_1 - \mu_2$ for all combinations of $\delta=0.5, 0.8, 1.0$ and $\sigma=2.0,4.0,5.0, 6.0$. 
@@ -565,8 +566,35 @@ $\mu_1 - \mu_2$ for all combinations of $\delta=0.5, 0.8, 1.0$ and $\sigma=2.0,4
 %2) Discussion content: We should (in future) study tail associations between environmental variables, and how these might be changing. However, more than that, the variables E in the lottery model are not actual environmental variables but rather are the effects of environmental variables on the species of the model. Probably real environmental variables are actually related to vital rates in a non-linear and probably often threshold-like way. Threshold relationships can produce tail association, as we showed elsewhere. Changes in the means of true environmental variables may change where those distributions of environmental variables are compared to thresholds, which may change the nature of tail associations between the effects of those environmental variables.
 
 \section{Results}\label{section:results}
+
+%G2
+
+%Para on the main goal, whether the ATA contribution is meaningfully large
+%ATA effects tend to oppose "the rest" of storage effects
+
+
+%Para on how it's usually negative, whereas \Delta_[EC] is positive, so except when \delta=1, ATA effects tend to weaken storage effects
+%Note that when mu1-mu2=2, we are in the case where only storage effects allow for coexistence
+
+%Para on when delta=1 (annual species) - in this case, coexistence is only possible when mu1-mu2 is close to 0, and in that case the only
+%thing allowing for coexistence at all is storage effects. Interetingly (and this is the topic sentence), "the rest" of storage effects are
+%negative, and it's the ATA component of storage effects which are allowing the species to coexist. Suggests the possibility that for 
+%annual species whcih are close competitors, ATAs might be especially important? Jasmin ought to check on this to make sure it's accurate.
+%What I'm suspicious about is that for annual species which are close competitors (say, mu1-mu2=0), and in the symmetric case, storage
+%effects in the lotery model actually don't opperate, and there is no coexistence. That sounds weird to me. Can we get some independent
+%verification of that? Why would annual species be different in this respect? There must be some delta between 0.8 and 1 where \Delta^[EC]
+%switches from positive to negative. 
+
+
+%***DAN: Jasmin, you computed standard errors of everything, but they are not currently reported. The best way to handle this would
+%be if we could say in captions in appropriate places "standard errors were always less than xyz", where xyz is some extremely 
+%small number. Standard errors are smalled for larger 
+
 %from methods : Relative importance of contributions was judged from the plots to assess whether and to what extent ATA effects on coexistence were meaningfully large for the lottery model, compared to the contributions of other mechanisms.
 To explore the relative magnitudes of the contributions to coexistence that come from ATA versus other mechanisms in our simple two-species lottery model (G2), we plotted the decomposing mechanisms against increasing $\sigma$ for various values of $\mu_1 - \mu_2$ and $\delta$ (Figure 3). When species are the same, $\mu_1 - \mu_2=0$, only storage effect mechanisms contribute to IGR and other mechanisms (in black) stay at zero. When $\delta=1$, other mechanisms stay relatively more stable with $\Delta_i^0$ set at a negative value and other non-storage effect values being at zero or extremely close to zero. Otherwise, all mechanisms tend to increase in magnitude as $\sigma$ increases. The contribution of ATA captured by $\Delta_i^{[E \nat C]}$ (red) is not small. In almost all cases, aside from when $\delta=1$, ATA contributes negatively to coexistence while symmetric associations, $\Delta_i^{[EC]}$ (blue) contribute postively, and the former decreases with $\sigma$ while the latter increases with $\sigma$. We see the opposite when $\delta=1$, where the contribution of ATA are positve and the contribution of symmetric association are negative and the trends are reversed. 
+
+
+%G3
 
 While the contribution of ATA is definitively not absent, in most cases it does not make a difference for coexistence or comepetitive exclusion. In most panels of Figure 3, the magnitude of negative contribution from ATA does not effect the sign of the IGR. The absense of ATA contribution will increase IGR in those cases, but the outcome of coexistence would likely not be different. %maybe move or expand more on this point in discussion 
 %cite sources that say the sign of IGR matter more than the magnitude 
