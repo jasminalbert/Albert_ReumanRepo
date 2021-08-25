@@ -99,7 +99,7 @@ mtext(expression(mu[1]-mu[2]), outer=TRUE, side=1, line=0.5, cex.lab=1.3, at=0.4
 
 plot.new() #21
 legend("topright", 
-       legend=c(expression(IGR),expression(IGR-Delta["[E||C]"]), expression(Delta["[E||C]"])),
+       legend=c(expression(IGR),expression(IGR-Delta^"[E||C]"), expression(Delta^"[E||C]")),
        col = c("orange","navy", "red"),
        lty = c(1,1,5), bty="n", cex=1.2, inset=c(0,0))
 
