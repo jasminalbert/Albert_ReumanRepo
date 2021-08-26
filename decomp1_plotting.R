@@ -13,6 +13,7 @@ dePlot1 <- function(mudif, delta, qij=FALSE, legend=FALSE,...){
   range <- range(unlist(lapply(store, function(X){(X$D)})))
   
   plot(0, xlab="", ylab="", ylim=range*1.1, xlim=c(0,7), col="white",...)
+  lines(0:7, rep(0,8), col="gray",lwd=0.7)
   
   for (i in 1:length(sigma)){
     if(i>=2){
@@ -29,7 +30,6 @@ dePlot1 <- function(mudif, delta, qij=FALSE, legend=FALSE,...){
       lines(c(sigma[i-1], sigma[i]), dat[7,1:2], col="orange",lwd=2)#r
     }
   }
-  lines(0:7, rep(0,8), col="gray",lwd=0.7)
   
   if(legend==TRUE){
     legend("topleft", 
