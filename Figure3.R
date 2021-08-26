@@ -124,3 +124,7 @@ mtext(expression(delta), side=3, outer=TRUE, line=-2, font=2, cex=1.5, at=midx)
 mtext(expression(sigma), outer=TRUE, side=1, line=1, cex.lab=1.3, at=midx)
 
 dev.off()
+fig3qijmaxse <- max(unlist(lapply(res, function(X){X$Dq_se})), na.rm = TRUE)
+cat("maximum standard error in figure three (qij) is", fig3maxse, "\n(M=", M, ")\n")
+save(fig3qijmaxse, file="results_numeric/fig3maxse.rda")
+
