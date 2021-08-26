@@ -1,106 +1,115 @@
+load("./params.RData")
+load("./noise_etc.RData")
 source("./decomp2_plotting.R")
+#FIGURE 4# 
+#plotting IGR and IGR-ATA to find ATA exclusion and ATA rescue in trait space (plot against mudif)
+#for different sigma and delta
 
-delta <- c(1, 0.8, 0.5)
-sigma <- c(2, 4 ,5,6)
+nd <- length(delta) 
+ns <- length(sigma)
+ph <- 3 #panel height
+pw <- 2.5 #panel widht
+ht <- c(1,rep(ph, nm)) #vector of panel heights
+wd <- c(rep(pw, nd),2) #vector of panel widths
+midx <- (pw*(nd/2))/sum(wd) #middle of figure panels; horizontal
+midy <- (ph*(nm/2))/sum(ht) #middle of figure panels; vertical 
 
-pdf("results_figs/fig4_legend.pdf")
+#########################################################################################
+pdf("results_figs/fig4.pdf")
 
 par(mgp=c(3,0.5,0), mar = c(1,1,1,1), oma=c(3,5,3,2), xpd=TRUE)
 
-layout(matrix(c(2,3,4,1,21,
-                9,10,11,5,21,	
-                12,13,14,6,21,
-                15,16,17,7,21,
-                18,19,20,8,21), ncol=5, byrow=TRUE), 
-       heights=c(1,3,3,3,3), widths=c(2.5,2.5,2.5,1,2))
-
+layout(matrix(c(2,3,4,5,1,
+                6,7,8,9,1,	
+                10,11,12,13,1,
+                14,15,16,17,1,
+                18,19,20,21,1), ncol=5, byrow=TRUE), 
+       heights=ht, widths=wd)
 
 plot.new() #1
-
-
-#2-4
-for (d in 1:length(delta)){
-  plot.new()
-  text(0.5,0.3,labels=paste(delta[d]),font=2)
-}
-
-#5-8
-for (s in 1:length(sigma)){
-  plot.new()
-  text(0.3,0.5,labels=paste(sigma[s]), font=2)
-}
-
-#9-20
-res <- vector(mode='list',length=1)
-m <- 1
-for (s in 1:length(sigma)){
-  for (d in 1:length(delta)){
-    res <- append(res,dePlot2(mudif_list[[m]],sigma[s], delta[d], xaxt="n"))
-    axis(1, labels=ifelse(m>9, yes=TRUE, no=FALSE), tick=TRUE)
-    m <- m+1
-  }
-}
-
-mtext("contribution to coexistence", side=2, outer=TRUE, line=1.5, font=2, cex=1, at=0.46)
-mtext(expression(sigma), side=4, outer=TRUE, line=-8, font=2, cex=1.5, at=0.46)
-mtext(expression(delta), side=3, outer=TRUE, line=-0.5, font=2, cex=1.5, at=0.476)
-mtext(expression(mu[1]-mu[2]), outer=TRUE, side=1, line=0.5, cex.lab=1.3, at=0.476)
-
-plot.new() #21
 legend("topright", 
        legend=c(expression(IGR),expression(IGR-Delta["[E||C]"]), expression(Delta["[E||C]"])),
        col = c("orange","navy", "red"),
-       lty = c(1,1,5), bty="n", cex=1.2, inset=c(0,0))
-
-dev.off()
-
-pdf("fig4_qij_legend.pdf")
-
-par(mgp=c(3,0.5,0), mar = c(1,1,1,1), oma=c(3,5,3,2), xpd=TRUE)
-
-layout(matrix(c(2,3,4,1,21,
-                9,10,11,5,21,	
-                12,13,14,6,21,
-                15,16,17,7,21,
-                18,19,20,8,21), ncol=5, byrow=TRUE), 
-       heights=c(1,3,3,3,3), widths=c(2.5,2.5,2.5,1,2))
-
-
-plot.new() #1
-
-
-#2-4
-for (d in 1:length(delta)){
+       lty = c(1,1,1), bty="n", cex=1.5, inset=c(-0.25,-0.042),
+       y.intersp = 1.25, x.intersp = 0.1, seg.len=1)
+#2-5
+for (d in 1:nd){
   plot.new()
-  text(0.5,0.3,labels=paste(delta[d]),font=2)
 }
 
-#5-8
-for (s in 1:length(sigma)){
-  plot.new()
-  text(0.3,0.5,labels=paste(sigma[s]), font=2)
-}
-
-#9-20
+#6-21
 res <- vector(mode='list',length=1)
 m <- 1
-for (s in 1:length(sigma)){
-  for (d in 1:length(delta)){
-    res <- append(res,dePlot2(mudif_list[[m]],sigma[s], delta[d], xaxt="n"))
-    axis(1, labels=ifelse(m>9, yes=TRUE, no=FALSE), tick=TRUE)
+for (s in 1:ns){
+  for (d in 1:nd){
+    res <- append(res,dePlot2(mudif,sigma[s], delta[d], xaxt="n"))
+    axis(1, labels=ifelse(m>12, yes=TRUE, no=FALSE), tick=TRUE)
+    mtext(LETTERS[m], side=3, line=-1.45, at=-2.5, adj=1)
+    
+    if(m<5){
+      mtext(paste(delta[d]), side=3, line=0.75, font=2, cex=0.8)
+    }
+    if(m%%4==0){
+      mtext(paste(sigma[s]), side=4, line=0.75, font=2, cex=0.8)
+    }
     m <- m+1
   }
 }
 
-mtext("contribution to coexistence", side=2, outer=TRUE, line=1.5, font=2, cex=1, at=0.46)
-mtext(expression(sigma), side=4, outer=TRUE, line=-8, font=2, cex=1.5, at=0.46)
-mtext(expression(delta), side=3, outer=TRUE, line=-0.5, font=2, cex=1.5, at=0.476)
-mtext(expression(mu[1]-mu[2]), outer=TRUE, side=1, line=0.5, cex.lab=1.3, at=0.476)
+mtext("contribution to coexistence", side=2, outer=TRUE, line=1.5, font=2, cex=1, at=midy)
+mtext(expression(sigma), side=4, outer=TRUE, line=-5, font=2, cex=1.5, at=midy)
+mtext(expression(delta), side=3, outer=TRUE, line=-2, font=2, cex=1.5, at=midx)
+mtext(expression(mu[1]-mu[2]), outer=TRUE, side=1, line=1, cex.lab=1.3, at=midx)
 
-plot.new() #21
+dev.off()
+fig4maxse <- max(unlist(lapply(res, function(X){X$D_se})), na.rm = TRUE)
+cat("maximum standard error in figure four is", fig4maxse, "\n(M=", M, ")\n")
+#########################################################################################
+
+pdf("results_figs/fig4_qij.pdf")
+
+par(mgp=c(3,0.5,0), mar = c(1,1,1,1), oma=c(3,5,3,2), xpd=TRUE)
+
+layout(matrix(c(2,3,4,5,1,
+                6,7,8,9,1,	
+                10,11,12,13,1,
+                14,15,16,17,1,
+                18,19,20,21,1), ncol=5, byrow=TRUE), 
+       heights=ht, widths=wd)
+
+plot.new() #1
 legend("topright", 
-       legend=c(expression(IGR),expression(IGR-Delta^"[E||C]"), expression(Delta^"[E||C]")),
+       legend=c(expression(IGR),expression(IGR-Delta["[E||C]"]), expression(Delta["[E||C]"])),
        col = c("orange","navy", "red"),
-       lty = c(1,1,5), bty="n", cex=1.2, inset=c(0,0))
+       lty = c(1,1,1), bty="n", cex=1.5, inset=c(-0.25,-0.042),
+       y.intersp = 1.25, x.intersp = 0.1, seg.len=1)
+#2-5
+for (d in 1:nd){
+  plot.new()
+}
+
+#6-21
+res <- vector(mode='list',length=1)
+m <- 1
+for (s in 1:ns){
+  for (d in 1:nd){
+    res <- append(res,dePlot2(mudif,sigma[s], delta[d], qij=TRUE, xaxt="n"))
+    axis(1, labels=ifelse(m>12, yes=TRUE, no=FALSE), tick=TRUE)
+    mtext(LETTERS[m], side=3, line=-1.45, at=-2.5, adj=1)
+    
+    if(m<5){
+      mtext(paste(delta[d]), side=3, line=0.75, font=2, cex=0.8)
+    }
+    if(m%%4==0){
+      mtext(paste(sigma[s]), side=4, line=0.75, font=2, cex=0.8)
+    }
+    m <- m+1
+  }
+}
+
+mtext("contribution to coexistence", side=2, outer=TRUE, line=1.5, font=2, cex=1, at=midy)
+mtext(expression(sigma), side=4, outer=TRUE, line=-5, font=2, cex=1.5, at=midy)
+mtext(expression(delta), side=3, outer=TRUE, line=-2, font=2, cex=1.5, at=midx)
+mtext(expression(mu[1]-mu[2]), outer=TRUE, side=1, line=1, cex.lab=1.3, at=midx)
 
 dev.off()
