@@ -64,7 +64,7 @@ mtext(expression(mu[1]-mu[2]), outer=TRUE, side=1, line=1, cex.lab=1.3, at=midx)
 dev.off()
 fig4maxse <- max(unlist(lapply(res, function(X){X$D_se})), na.rm = TRUE)
 cat("maximum standard error in figure four is", fig4maxse, "\n(M=", M, ")\n")
-save(fig4maxse, file="fig4maxse.rda")
+save(fig4maxse, file="results_numeric/fig4maxse.rda")
 #########################################################################################
 
 pdf("results_figs/fig4_qij.pdf")
