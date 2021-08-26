@@ -21,7 +21,7 @@ dePlot2 <- function(mudif = seq(0, -0.8, -0.01), sigma, delta, qij=FALSE, legend
   range <- range(unlist(lapply(store, function(X){(X$D[6:8])})))
   
   plot(0, xlab="", ylab="", ylim=range*1.2, xlim=c(max(mudif),min(mudif)), col="white",bty="l",... )
-  abline(h=0, col="gray",lwd=0.7)
+  lines(0:7, rep(0,8), col="gray",lwd=0.7)
   
   for (i in 1:length(mudif)){
     if(i>=2){
@@ -64,21 +64,6 @@ dePlot2 <- function(mudif = seq(0, -0.8, -0.01), sigma, delta, qij=FALSE, legend
 #dePlot2(mudif, 6,0.5)
 mudif = seq(0.0, -2.5, length.out = 50)
 
-mudif_list <- list(mudif,
-                   mudif,
-                   mudif,
-                   
-                   mudif,
-                   mudif,
-                   mudif,
-                   
-                   mudif,
-                   mudif,
-                   mudif,
-                   
-                   mudif,
-                   mudif,
-                   mudif)
 
 
 
