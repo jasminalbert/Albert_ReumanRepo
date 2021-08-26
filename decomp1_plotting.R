@@ -1,6 +1,6 @@
 #THIS IS A FUNCTION
-
-source("./decomposition_fxn.R")
+source("./makenoise.R")
+#source("./decomposition_fxn.R")
 
 dePlot1 <- function(mudif, delta, qij=FALSE, legend=FALSE,...){
   load("./noise_etc.RData")
@@ -29,8 +29,7 @@ dePlot1 <- function(mudif, delta, qij=FALSE, legend=FALSE,...){
       lines(c(sigma[i-1], sigma[i]), dat[7,1:2], col="orange",lwd=2)#r
     }
   }
-  abline(h=0, col="gray",lwd=0.7)
-  #title(main=paste("mu1-mu2=",mudif,"delta=",delta), cex.main=0.7)
+  lines(0:7, rep(0,8), col="gray",lwd=0.7)
   
   if(legend==TRUE){
     legend("topleft", 
@@ -47,8 +46,7 @@ dePlot1 <- function(mudif, delta, qij=FALSE, legend=FALSE,...){
 }
 
 
-dePlot1(-0.3,0.8)
-dePlot1(-0.3,1.0)
+#dePlot1(-0.3,1.0)
 
 
 
