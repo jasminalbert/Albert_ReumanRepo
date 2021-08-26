@@ -1,9 +1,8 @@
 #THIS IS A FUNCTION
-source("./makenoise.R")
-#source("./decomposition_fxn.R")
+source("./decomposition_fxn.R")
 
 dePlot1 <- function(mudif, delta, qij=FALSE, legend=FALSE,...){
-  load("./noise_etc.RData")
+  load("results_numeric/noise_etc.RData")
   store <- vector(mode='list', length=7)
   sigma <- seq(0,7,1)
   
