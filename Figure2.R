@@ -7,10 +7,13 @@ source("./simsPlot_fxn.R")
 #( r w/o ATA is positive and r with ATA is negative - ATA causes r to become negative )
 
 # *** use this one for paper *** #
+source("./makenoise.R")
 pdf("./results_figs/figure2.pdf") 
 par(mfrow=c(2,1), mar=c(3,3,1,1), oma=c(2,1,1,1))
-simsPlot(mudif=-0.8, delta=0.8, sigma=5, end=1000) # r_woATA = 0.098, r = -0.0373, [E||C] = -0.1354
+fig2 <- simsPlot(mudif=-0.8, delta=0.8, sigma=5, end=1000) # r_woATA = 0.098, r = -0.0373, [E||C] = -0.1354
 dev.off()
+save(fig2, file="results_numeric/fig2data.rda")
+
 
 png("./results_figs/figure2.PNG", width=1000, height=600, pointsize=15) 
 par(mfrow=c(2,1), mar=c(3,3,1,1), oma=c(2,1,1,1))
