@@ -18,6 +18,7 @@ layout(matrix(c(4,10,10,6,11,11,8,12,
 plot(b_tilde$l[1:1000,1],b_tilde$l[1:1000,2], col=blue, ylab=NA, xlab=NA, xlim=c(-4,4), ylim=c(-4,4), pch=16, cex=1.5)
 #title(main='Left tail association', line=-1.2, cex.main=1.5)
 text(x=4,y=-4,labels=bquote(~ rho == .(round(P[1],5))), adj=1)
+mtext("A", side=3, line=-1, at=-4)
 
 plot(b_tilde$s[1:1000,1],b_tilde$s[1:1000,2], col=blue, xlab=NA, ylab=NA, xlim=c(-4,4), ylim=c(-4,4), pch=16, cex=1.5)
 #title(main='Symmetric association', line=-1.2, cex.main=1.5)
@@ -72,12 +73,15 @@ layout(matrix(c(4,10,
 #1-3
 plot(b_tilde$l[1:800,1],b_tilde$l[1:800,2], col=blue, ylab=NA, xlab=NA, xlim=c(-4,4), ylim=c(-4,4), pch=16, cex=1.5)
 text(x=4,y=-3.8,labels=bquote(~ rho == .(round(P[1],5))), adj=1)
+mtext("A", side=3, line=-1.5, at=-3.7)
 
 plot(b_tilde$s[1:800,1],b_tilde$s[1:800,2], col=blue, xlab=NA, ylab=NA, xlim=c(-4,4), ylim=c(-4,4), pch=16, cex=1.5)
 text(x=4,y=-3.8,labels=bquote(~ rho == .(round(P[2],5))), adj=1)
+mtext("B", side=3, line=-1.5, at=-3.7)
 
 plot(b_tilde$r[1:800,1],b_tilde$r[1:800,2], col=blue, xlab=NA, ylab=NA, xlim=c(-4,4), ylim=c(-4,4), pch=16, cex=1.5)
 text(x=4,y=-3.8,labels=bquote(~ rho == .(round(P[3],5))), adj=1)
+mtext("C", side=3, line=-1.5, at=-3.7)
 
 mtext("variable 1", outer=TRUE, side=1, line=2.5, cex.lab=1.25, at=0.43)
 mtext("variable 2", outer=TRUE, side=2, line=2.5, cex.lab=1.25, at=0.48)
