@@ -1,5 +1,5 @@
-load("./params.RData")
-load("./noise_etc.RData")
+load("results_numeric/params.RData")
+load("results_numeric/noise_etc.RData")
 source("./decomp2_plotting.R")
 #FIGURE 4# 
 #plotting IGR and IGR-ATA to find ATA exclusion and ATA rescue in trait space (plot against mudif)
@@ -9,10 +9,10 @@ nd <- length(delta)
 ns <- length(sigma)
 ph <- 3 #panel height
 pw <- 2.5 #panel widht
-ht <- c(1,rep(ph, nm)) #vector of panel heights
+ht <- c(1,rep(ph, ns)) #vector of panel heights
 wd <- c(rep(pw, nd),2) #vector of panel widths
 midx <- (pw*(nd/2))/sum(wd) #middle of figure panels; horizontal
-midy <- (ph*(nm/2))/sum(ht) #middle of figure panels; vertical 
+midy <- (ph*(ns/2))/sum(ht) #middle of figure panels; vertical 
 
 #########################################################################################
 pdf("results_figs/fig4.pdf")
@@ -64,7 +64,7 @@ mtext(expression(mu[1]-mu[2]), outer=TRUE, side=1, line=1, cex.lab=1.3, at=midx)
 dev.off()
 fig4maxse <- max(unlist(lapply(res, function(X){X$D_se})), na.rm = TRUE)
 cat("maximum standard error in figure four is", fig4maxse, "\n(M=", M, ")\n")
-save(fig4maxse, file="results_numeric/fig4maxse.rda")
+saveRDS(fig4maxse, file="results_numeric/fig4maxse.RDS")
 #########################################################################################
 
 pdf("results_figs/fig4_qij.pdf")
