@@ -1,6 +1,6 @@
 load("results_numeric/params.RData")
-
 source("./decomp1_plotting.R")
+mudif <- c(0, -0.5, -2, -4)
 #FIGURE 3#
 #plotting decomposed mechanisms contributions against sigma
 #for different deltas and mu1-mu2
@@ -15,7 +15,7 @@ midx <- (pw*(nd/2))/sum(wd) #middle of figure panels; horizontal
 midy <- (ph*(nm/2))/sum(ht) #middle of figure panels; vertical 
 
 #########################################################################################
-pdf("results_figs/fig3.pdf")
+pdf("results_figs/fig3.2.pdf")
 
 par(mgp=c(3,0.5,0), mar = c(1,1,1,1), oma=c(3,5,3,2), xpd=TRUE)
 
@@ -67,12 +67,12 @@ mtext(expression(delta), side=3, outer=TRUE, line=-2, font=2, cex=1.5, at=midx)
 mtext(expression(sigma), outer=TRUE, side=1, line=1, cex.lab=1.3, at=midx)
 
 dev.off()
-fig3maxse <- max(unlist(lapply(res, function(X){X$D_se})), na.rm = TRUE)
-cat("maximum standard error in figure three is", fig3maxse, "\n(M=", M, ")\n")
-saveRDS(fig3maxse, file="results_numeric/fig3maxse.RDS")
-###############################################################################################
-
-pdf("results_figs/fig3_qij.pdf")
+fig3.2maxse <- max(unlist(lapply(res, function(X){X$D_se})), na.rm = TRUE)
+cat("maximum standard error in figure three is", fig3.2maxse, "\n(M=", M, ")\n")
+saveRDS(fig3.2maxse, file="results_numeric/fig3.2maxse.RDS")
+#Sys.time()
+#####################################################################################
+pdf("results_figs/fig3.2_qij.pdf")
 
 par(mgp=c(3,0.5,0), mar = c(1,1,1,1), oma=c(3,5,3,2))
 
@@ -124,7 +124,7 @@ mtext(expression(delta), side=3, outer=TRUE, line=-2, font=2, cex=1.5, at=midx)
 mtext(expression(sigma), outer=TRUE, side=1, line=1, cex.lab=1.3, at=midx)
 
 dev.off()
-fig3qijmaxse <- max(unlist(lapply(res, function(X){X$Dq_se})), na.rm = TRUE)
-cat("maximum standard error in figure three (qij) is", fig3maxse, "\n(M=", M, ")\n")
-saveRDS(fig3qijmaxse, file="results_numeric/fig3qijmaxse.RDS")
-
+fig3.2qijmaxse <- max(unlist(lapply(res, function(X){X$Dq_se})), na.rm = TRUE)
+cat("maximum standard error in figure three (qij) is", fig3.2qijmaxse, "\n(M=", M, ")\n")
+saveRDS(fig3.2qijmaxse, file="results_numeric/fig3.2qijmaxse.RDS")
+#Sys.time()

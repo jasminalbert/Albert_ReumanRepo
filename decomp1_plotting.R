@@ -1,9 +1,8 @@
 #THIS IS A FUNCTION
-
 source("./decomposition_fxn.R")
 
 dePlot1 <- function(mudif, delta, qij=FALSE, legend=FALSE,...){
-  load("./noise_etc.RData")
+  load("results_numeric/noise_etc.RData")
   store <- vector(mode='list', length=7)
   sigma <- seq(0,7,1)
   
@@ -13,6 +12,7 @@ dePlot1 <- function(mudif, delta, qij=FALSE, legend=FALSE,...){
   range <- range(unlist(lapply(store, function(X){(X$D)})))
   
   plot(0, xlab="", ylab="", ylim=range*1.1, xlim=c(0,7), col="white",...)
+  lines(0:7, rep(0,8), col="gray",lwd=0.7)
   
   for (i in 1:length(sigma)){
     if(i>=2){
@@ -29,8 +29,6 @@ dePlot1 <- function(mudif, delta, qij=FALSE, legend=FALSE,...){
       lines(c(sigma[i-1], sigma[i]), dat[7,1:2], col="orange",lwd=2)#r
     }
   }
-  abline(h=0, col="gray",lwd=0.7)
-  #title(main=paste("mu1-mu2=",mudif,"delta=",delta), cex.main=0.7)
   
   if(legend==TRUE){
     legend("topleft", 
@@ -47,8 +45,7 @@ dePlot1 <- function(mudif, delta, qij=FALSE, legend=FALSE,...){
 }
 
 
-dePlot1(-0.3,0.8)
-dePlot1(-0.3,1.0)
+#dePlot1(-0.3,1.0)
 
 
 

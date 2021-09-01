@@ -1,4 +1,3 @@
-
 source("./decomposition_fxn.R")
 
 #function to plot decomposition against mudif to find "differential coexistence"
@@ -10,7 +9,7 @@ source("./decomposition_fxn.R")
 #delta  an integer value of delta
 
 dePlot2 <- function(mudif = seq(0, -0.8, -0.01), sigma, delta, qij=FALSE, legend=FALSE,...){
-  load("./noise_etc.RData")
+  load("results_numeric/noise_etc.RData")
 
   store <- vector(mode='list', length=length(mudif))
   
@@ -20,8 +19,8 @@ dePlot2 <- function(mudif = seq(0, -0.8, -0.01), sigma, delta, qij=FALSE, legend
   
   range <- range(unlist(lapply(store, function(X){(X$D[6:8])})))
   
-  plot(0, xlab="", ylab="", ylim=range*1.2, xlim=c(max(mudif),min(mudif)), col="white",bty="l",... )
-  abline(h=0, col="gray",lwd=0.7)
+  plot(0, xlab="", ylab="", ylim=range*1.2, xlim=c(max(mudif),min(mudif)), col="white",... )
+  lines(range(mudif), rep(0,2), col="gray",lwd=0.7)
   
   for (i in 1:length(mudif)){
     if(i>=2){
@@ -31,7 +30,7 @@ dePlot2 <- function(mudif = seq(0, -0.8, -0.01), sigma, delta, qij=FALSE, legend
       }
       lines(c(mudif[i-1], mudif[i]), dat[6,1:2], col="red")#[E||C]
       lines(c(mudif[i-1], mudif[i]), dat[7,1:2], col="orange",lwd=2)#r
-      lines(c(mudif[i-1], mudif[i]), dat[8,1:2], col="navy", lty=5)
+      lines(c(mudif[i-1], mudif[i]), dat[8,1:2], col="navy")
       
       if(all(dat[8,]>0) & all(dat[7,]<0) ){ #impeding
         rect(mudif[i-1], range[1]*1.2, mudif[i], range[2]*1.2, col="hotpink2", border=NA, 
@@ -64,21 +63,6 @@ dePlot2 <- function(mudif = seq(0, -0.8, -0.01), sigma, delta, qij=FALSE, legend
 #dePlot2(mudif, 6,0.5)
 mudif = seq(0.0, -2.5, length.out = 50)
 
-mudif_list <- list(mudif,
-                   mudif,
-                   mudif,
-                   
-                   mudif,
-                   mudif,
-                   mudif,
-                   
-                   mudif,
-                   mudif,
-                   mudif,
-                   
-                   mudif,
-                   mudif,
-                   mudif)
 
 
 
